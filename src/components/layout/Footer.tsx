@@ -7,9 +7,9 @@ import {
   MapPin,
   Mail,
   Phone,
-  Zap,
   ArrowUpRight,
 } from 'lucide-react';
+import Logo from './Logo';
 
 /* ------------------------------------------------------------------ */
 /*  Data                                                               */
@@ -62,14 +62,11 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-12 pt-16 pb-12">
           {/* Column 1 – Brand */}
           <div className="lg:col-span-1">
-            <Link href="/" className="flex items-center gap-2 mb-5 group">
-              <div className="w-9 h-9 rounded-lg bg-gradient-to-br from-teal-500 to-cyan-400 flex items-center justify-center">
-                <Zap className="w-5 h-5 text-white" />
-              </div>
-              <span className="text-xl font-bold text-white font-heading tracking-tight">
-                Rank<span className="gradient-text-teal">Nex</span>{' '}
-                <span className="text-slate-400 font-normal text-sm">AI</span>
-              </span>
+            <Link
+              href="/"
+              className="inline-flex mb-5 transition-transform duration-300 hover:scale-[1.03]"
+            >
+              <Logo size={38} />
             </Link>
 
             <p className="text-slate-400 text-sm leading-relaxed mb-6">

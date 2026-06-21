@@ -5,13 +5,14 @@ import { ArrowRight, MessageCircle, Check } from 'lucide-react';
 import Link from 'next/link';
 import ParticleBackground from '@/components/ui/ParticleBackground';
 import GradientOrbs from '@/components/ui/GradientOrbs';
+import HeroVisual from '@/components/home/HeroVisual';
 import { getWhatsAppUrl } from '@/lib/utils';
 
 const trustPoints = ['No Long-Term Contracts', 'Free SEO Audit', 'Results in 90 Days'];
 
 export default function HeroSection() {
   return (
-    <section className="relative min-h-[100svh] flex items-center overflow-hidden">
+    <section className="relative min-h-[100svh] overflow-hidden pt-28 pb-20 md:pt-36 md:pb-28">
       {/* Background layers */}
       <div className="absolute inset-0 gradient-bg" />
       <ParticleBackground particleCount={60} connectionDistance={100} />
@@ -42,7 +43,7 @@ export default function HeroSection() {
       />
 
       {/* Content */}
-      <div className="container relative z-10 pt-32 pb-24 md:pt-36 md:pb-28">
+      <div className="container relative z-10">
         <div className="max-w-4xl mx-auto text-center">
           {/* Badge */}
           <motion.div
@@ -130,20 +131,10 @@ export default function HeroSection() {
             ))}
           </motion.div>
         </div>
-      </div>
 
-      {/* Scroll cue */}
-      <motion.div
-        className="absolute bottom-8 left-1/2 -translate-x-1/2 hidden md:flex flex-col items-center gap-2 text-slate-500"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 0.6, delay: 1.1 }}
-      >
-        <span className="text-[10px] tracking-[0.2em] uppercase">Scroll</span>
-        <span className="w-5 h-8 rounded-full border border-white/15 flex items-start justify-center p-1">
-          <span className="w-1 h-2 rounded-full bg-teal-400 animate-bounce" />
-        </span>
-      </motion.div>
+        {/* Hero dashboard visual */}
+        <HeroVisual />
+      </div>
 
       {/* Bottom gradient fade */}
       <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-navy-950 to-transparent pointer-events-none" />

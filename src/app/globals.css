@@ -25,9 +25,10 @@
    BASE STYLES
    ============================================ */
 
+/* NOTE: Do not reset margin/padding here. A universal `* { margin:0; padding:0 }`
+   is unlayered CSS and overrides Tailwind's layered p-*/m-* utilities, silently
+   breaking spacing site-wide. Tailwind v4 Preflight already resets these. */
 * {
-  margin: 0;
-  padding: 0;
   box-sizing: border-box;
 }
 
@@ -202,11 +203,38 @@ a:hover {
 
 .btn-primary:hover {
   transform: translateY(-2px);
-  box-shadow: 0 8px 30px rgba(0, 201, 167, 0.3);
+  box-shadow: 0 10px 34px rgba(0, 201, 167, 0.35);
+}
+
+.btn-primary:active {
+  transform: translateY(0);
 }
 
 .btn-primary:hover::before {
   opacity: 1;
+}
+
+/* Shine sweep on hover */
+.btn-primary::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -80%;
+  width: 45%;
+  height: 100%;
+  background: linear-gradient(
+    120deg,
+    transparent,
+    rgba(255, 255, 255, 0.35),
+    transparent
+  );
+  transform: skewX(-20deg);
+  transition: left 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  pointer-events: none;
+}
+
+.btn-primary:hover::after {
+  left: 130%;
 }
 
 .btn-primary span, .btn-primary svg {
@@ -292,7 +320,10 @@ a:hover {
 .container {
   max-width: 1280px;
   margin: 0 auto;
-  padding: 0 1.5rem;
+  /* Use left/right only — a `padding` shorthand here would clobber any
+     vertical padding utility applied to a .container element. */
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
 }
 
 /* ============================================
@@ -549,6 +580,22 @@ a:hover {
 
 @media (max-width: 480px) {
   .container {
-    padding: 0 1rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+}
+
+/* ============================================
+   REDUCED MOTION (accessibility)
+   ============================================ */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
   }
 }

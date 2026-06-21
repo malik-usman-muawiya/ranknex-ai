@@ -2,8 +2,8 @@
 
 import { useState, useEffect, useRef, useCallback } from 'react';
 import Link from 'next/link';
-import Image from 'next/image';
 import { usePathname, useRouter } from 'next/navigation';
+import Logo from './Logo';
 import { motion, AnimatePresence } from 'framer-motion';
 import {
   Menu,
@@ -18,7 +18,6 @@ import {
   Palette,
   ArrowRight,
   Sparkles,
-  Zap,
 } from 'lucide-react';
 
 /* ------------------------------------------------------------------ */
@@ -173,17 +172,13 @@ export default function Header() {
         <div className="container mx-auto max-w-7xl px-4 sm:px-6">
           <div className="flex items-center justify-between h-16 md:h-20">
             {/* ---- Logo ---- */}
-<button
-  onClick={handleLogoClick}
-  className="flex items-center select-none"
-  aria-label="RankNex AI Home"
->
-  <img
- src="/logo.png"
-  alt="RankNex AI"
-  className="h-9 w-auto object-contain"
-  />
-</button>
+            <button
+              onClick={handleLogoClick}
+              className="flex items-center select-none transition-transform duration-300 hover:scale-[1.03] active:scale-95"
+              aria-label="RankNex AI Home"
+            >
+              <Logo size={36} />
+            </button>
 
             {/* ---- Desktop Nav ---- */}
             <nav className="hidden lg:flex items-center gap-3">
