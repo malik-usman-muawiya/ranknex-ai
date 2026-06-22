@@ -74,9 +74,6 @@ export default function ContactContent() {
         setSubmitStatus("success");
         setResponseMsg("Message received! We'll contact you shortly.");
         reset();
-      }
-        setResponseMsg(resData.error || "Something went wrong. Please try again.");
-      }
     } catch {
       setSubmitStatus("error");
       setResponseMsg("Network error. Please try again later.");
