@@ -64,6 +64,8 @@ export default function ContactContent() {
         setSubmitStatus("success");
         setResponseMsg(resData.message || "Message sent successfully!");
         reset();
+        const whatsappMsg = `Hello RankNex AI! I just submitted a contact form.%0AName: ${data.name}%0AEmail: ${data.email}%0AService: ${data.service}%0AMessage: ${data.message}`;
+window.open(`https://wa.me/923224044150?text=${whatsappMsg}`, '_blank');
       } else {
         setSubmitStatus("error");
         setResponseMsg(resData.error || "Something went wrong. Please try again.");
