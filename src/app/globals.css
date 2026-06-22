@@ -392,6 +392,18 @@ a:hover {
   100% { transform: translateX(100%); }
 }
 
+/* Lightweight, compositor-driven entrance (replaces JS-driven motion on the
+   hero so it doesn't block the main thread / wait for hydration on landing). */
+@keyframes fade-up {
+  from { opacity: 0; transform: translateY(24px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-up {
+  opacity: 0;
+  animation: fade-up 0.6s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
 .animate-float {
   animation: float 6s ease-in-out infinite;
 }

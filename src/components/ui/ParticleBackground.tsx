@@ -158,7 +158,9 @@ export default function ParticleBackground({
       },
       { threshold: 0 }
     );
-    io.observe(canvas);
+    // Defer startup so the canvas loop doesn't compete with the hero's
+    // entrance animations during the critical first moments after load.
+    const startDelay = setTimeout(() => io.observe(canvas), 1100);
 
     const onVisibility = () => {
       if (document.hidden) stop();
@@ -173,6 +175,7 @@ export default function ParticleBackground({
     window.addEventListener('resize', handleResize);
 
     return () => {
+      clearTimeout(startDelay);
       stop();
       io.disconnect();
       document.removeEventListener('visibilitychange', onVisibility);

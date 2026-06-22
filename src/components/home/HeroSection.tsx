@@ -1,6 +1,5 @@
 'use client';
 
-import { motion } from 'framer-motion';
 import { ArrowRight, MessageCircle, Check } from 'lucide-react';
 import Link from 'next/link';
 import ParticleBackground from '@/components/ui/ParticleBackground';
@@ -46,11 +45,7 @@ export default function HeroSection() {
       <div className="container relative z-10">
         <div className="max-w-4xl mx-auto text-center">
           {/* Badge */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.1 }}
-          >
+          <div className="animate-fade-up" style={{ animationDelay: '0.05s' }}>
             <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-[11px] sm:text-xs font-semibold tracking-[0.15em] uppercase bg-teal-500/10 text-teal-400 border border-teal-500/20 mb-8 glow-teal">
               <span className="relative flex h-2 w-2">
                 <span className="absolute inline-flex h-full w-full rounded-full bg-teal-400 opacity-75 animate-ping" />
@@ -58,14 +53,12 @@ export default function HeroSection() {
               </span>
               AI-Powered Digital Marketing Agency
             </span>
-          </motion.div>
+          </div>
 
           {/* Headline */}
-          <motion.h1
-            className="text-[2.5rem] sm:text-5xl md:text-6xl lg:text-7xl font-bold font-heading leading-[1.05] tracking-tight mb-6"
-            initial={{ opacity: 0, y: 28 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.25 }}
+          <h1
+            className="text-[2.5rem] sm:text-5xl md:text-6xl lg:text-7xl font-bold font-heading leading-[1.05] tracking-tight mb-6 animate-fade-up"
+            style={{ animationDelay: '0.15s' }}
           >
             <span className="text-white">AI-Powered Digital</span>
             <br />
@@ -74,27 +67,23 @@ export default function HeroSection() {
             <span className="block mt-4 text-xl sm:text-2xl md:text-3xl lg:text-4xl font-medium text-transparent bg-clip-text bg-gradient-to-r from-slate-200 to-slate-400">
               Pakistan Talent, International Standards
             </span>
-          </motion.h1>
+          </h1>
 
           {/* Subheadline */}
-          <motion.p
-            className="max-w-2xl mx-auto text-base sm:text-lg text-slate-400 leading-relaxed mb-10"
-            initial={{ opacity: 0, y: 28 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.4 }}
+          <p
+            className="max-w-2xl mx-auto text-base sm:text-lg text-slate-400 leading-relaxed mb-10 animate-fade-up"
+            style={{ animationDelay: '0.25s' }}
           >
             RankNex AI helps businesses in the UK, US, and Pakistan grow online
             through smart SEO, AI-driven marketing, and full-stack development —
             delivered by a team that combines AI tools with real human expertise,
             at a fraction of the cost.
-          </motion.p>
+          </p>
 
           {/* CTAs */}
-          <motion.div
-            className="flex flex-col sm:flex-row items-center justify-center gap-4"
-            initial={{ opacity: 0, y: 28 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.55 }}
+          <div
+            className="flex flex-col sm:flex-row items-center justify-center gap-4 animate-fade-up"
+            style={{ animationDelay: '0.35s' }}
           >
             <Link href="/contact" className="btn-primary group text-base w-full sm:w-auto justify-center">
               <span>Get Your Free Audit</span>
@@ -109,14 +98,12 @@ export default function HeroSection() {
               <MessageCircle className="w-5 h-5" />
               <span>Chat on WhatsApp</span>
             </a>
-          </motion.div>
+          </div>
 
           {/* Trust indicators */}
-          <motion.div
-            className="mt-12 flex flex-wrap items-center justify-center gap-3"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.6, delay: 0.8 }}
+          <div
+            className="mt-12 flex flex-wrap items-center justify-center gap-3 animate-fade-up"
+            style={{ animationDelay: '0.45s' }}
           >
             {trustPoints.map((point) => (
               <span
@@ -129,7 +116,7 @@ export default function HeroSection() {
                 {point}
               </span>
             ))}
-          </motion.div>
+          </div>
         </div>
 
         {/* Hero dashboard visual */}

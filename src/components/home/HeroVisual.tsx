@@ -87,10 +87,11 @@ export default function HeroVisual() {
               {bars.map((h, i) => (
                 <motion.span
                   key={i}
-                  className="flex-1 rounded-t-sm bg-gradient-to-t from-teal-500/40 to-cyan-400/70"
-                  initial={{ height: 0 }}
-                  animate={{ height: `${h}%` }}
-                  transition={{ duration: 0.6, delay: 1.2 + i * 0.07, ease: 'easeOut' }}
+                  className="flex-1 rounded-t-sm bg-gradient-to-t from-teal-500/40 to-cyan-400/70 origin-bottom"
+                  style={{ height: `${h}%` }}
+                  initial={{ scaleY: 0 }}
+                  animate={{ scaleY: 1 }}
+                  transition={{ duration: 0.5, delay: 1.1 + i * 0.05, ease: 'easeOut' }}
                 />
               ))}
             </div>
