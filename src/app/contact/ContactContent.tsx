@@ -60,11 +60,9 @@ export default function ContactContent() {
 
       const resData = await response.json();
 
-      const resData = await response.json();
-
       // WhatsApp hamesha redirect karo
       const whatsappMsg = `Hello RankNex AI! I just submitted a contact form.%0AName: ${data.name}%0AEmail: ${data.email}%0AService: ${data.service}%0AMessage: ${data.message}`;
-      window.open(`https://wa.me/923224044150?text=${whatsappMsg}`, '_blank');
+      window.open(`https://wa.me/923224044150?text=${whatsappMsg}`, "_blank");
 
       if (response.ok) {
         setSubmitStatus("success");
@@ -74,6 +72,7 @@ export default function ContactContent() {
         setSubmitStatus("success");
         setResponseMsg("Message received! We'll contact you shortly.");
         reset();
+      }
     } catch {
       setSubmitStatus("error");
       setResponseMsg("Network error. Please try again later.");
@@ -83,8 +82,7 @@ export default function ContactContent() {
   };
 
   return (
-    <main className="relative overflow-hidden" style={{ paddingTop: '8rem', paddingBottom: '5rem' }}>
-      {/* Background orbs */}
+    <main className="relative overflow-hidden" style={{ paddingTop: "8rem", paddingBottom: "5rem" }}>
       <div className="orb orb-teal w-96 h-96 -top-48 -right-24 opacity-10" />
       <div className="orb orb-cyan w-72 h-72 bottom-12 -left-36 opacity-8" />
 
@@ -96,16 +94,13 @@ export default function ContactContent() {
         />
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 mt-12">
-          {/* Contact Information */}
           <div className="lg:col-span-5 space-y-8">
             <ScrollReveal direction="left" delay={0.1}>
               <div className="card h-full space-y-8 bg-navy-900/60 border border-white/5 backdrop-blur-sm p-8 rounded-2xl">
                 <h3 className="text-2xl font-bold text-white font-heading mb-6">
                   Contact Information
                 </h3>
-
                 <div className="space-y-6">
-                  {/* Address */}
                   <div className="flex items-start gap-4">
                     <div className="flex items-center justify-center w-12 h-12 rounded-xl bg-teal-500/10 text-teal-500 shrink-0">
                       <MapPin className="w-6 h-6" />
@@ -115,15 +110,13 @@ export default function ContactContent() {
                       <p className="text-slate-400 text-sm mt-1">Lahore, Pakistan</p>
                     </div>
                   </div>
-
-                  {/* Phone */}
                   <div className="flex items-start gap-4">
                     <div className="flex items-center justify-center w-12 h-12 rounded-xl bg-teal-500/10 text-teal-500 shrink-0">
                       <Phone className="w-6 h-6" />
                     </div>
                     <div>
                       <h4 className="text-white font-semibold">WhatsApp & Call</h4>
-                      <a
+                      
                         href="https://wa.me/923224044150"
                         target="_blank"
                         rel="noopener noreferrer"
@@ -133,15 +126,13 @@ export default function ContactContent() {
                       </a>
                     </div>
                   </div>
-
-                  {/* Email */}
                   <div className="flex items-start gap-4">
                     <div className="flex items-center justify-center w-12 h-12 rounded-xl bg-teal-500/10 text-teal-500 shrink-0">
                       <Mail className="w-6 h-6" />
                     </div>
                     <div>
                       <h4 className="text-white font-semibold">Email Us</h4>
-                      <a
+                      
                         href="mailto:info@ranknexai.com"
                         className="text-slate-400 hover:text-teal-400 text-sm mt-1 block"
                       >
@@ -150,10 +141,7 @@ export default function ContactContent() {
                     </div>
                   </div>
                 </div>
-
                 <hr className="border-white/5 my-8" />
-
-                {/* WhatsApp Instant CTA */}
                 <div className="p-6 rounded-xl bg-emerald-500/5 border border-emerald-500/20 text-center">
                   <div className="flex justify-center mb-3 text-emerald-400">
                     <MessageSquare className="w-8 h-8" />
@@ -162,7 +150,7 @@ export default function ContactContent() {
                   <p className="text-slate-400 text-sm mb-4">
                     Chat with our growth consultant instantly on WhatsApp.
                   </p>
-                  <a
+                  
                     href={getWhatsAppUrl("Hello RankNex AI, I'd like to ask about your services.")}
                     target="_blank"
                     rel="noopener noreferrer"
@@ -175,17 +163,14 @@ export default function ContactContent() {
             </ScrollReveal>
           </div>
 
-          {/* Contact Form */}
           <div className="lg:col-span-7">
             <ScrollReveal direction="right" delay={0.2}>
               <div className="card bg-navy-900/60 border border-white/5 backdrop-blur-sm p-8 rounded-2xl">
                 <h3 className="text-2xl font-bold text-white font-heading mb-6">
                   Send a Message
                 </h3>
-
                 <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                    {/* Name */}
                     <div>
                       <label htmlFor="name" className="block text-sm font-semibold text-slate-300 mb-2">
                         Your Name <span className="text-red-500">*</span>
@@ -206,8 +191,6 @@ export default function ContactContent() {
                         </p>
                       )}
                     </div>
-
-                    {/* Email */}
                     <div>
                       <label htmlFor="email" className="block text-sm font-semibold text-slate-300 mb-2">
                         Email Address <span className="text-red-500">*</span>
@@ -235,9 +218,7 @@ export default function ContactContent() {
                       )}
                     </div>
                   </div>
-
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                    {/* Phone */}
                     <div>
                       <label htmlFor="phone" className="block text-sm font-semibold text-slate-300 mb-2">
                         Phone Number <span className="text-slate-500">(Optional)</span>
@@ -250,8 +231,6 @@ export default function ContactContent() {
                         placeholder="+92 300 1234567"
                       />
                     </div>
-
-                    {/* Company */}
                     <div>
                       <label htmlFor="company" className="block text-sm font-semibold text-slate-300 mb-2">
                         Company Name <span className="text-slate-500">(Optional)</span>
@@ -265,8 +244,6 @@ export default function ContactContent() {
                       />
                     </div>
                   </div>
-
-                  {/* Service Dropdown */}
                   <div>
                     <label htmlFor="service" className="block text-sm font-semibold text-slate-300 mb-2">
                       Which Service Are You Interested In? <span className="text-red-500">*</span>
@@ -285,8 +262,6 @@ export default function ContactContent() {
                       <option value="Other">Other / General Inquiry</option>
                     </select>
                   </div>
-
-                  {/* Message */}
                   <div>
                     <label htmlFor="message" className="block text-sm font-semibold text-slate-300 mb-2">
                       Your Message <span className="text-red-500">*</span>
@@ -307,23 +282,18 @@ export default function ContactContent() {
                       </p>
                     )}
                   </div>
-
-                  {/* Submission Status Alerts */}
                   {submitStatus === "success" && (
                     <div className="flex items-center gap-3 bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 p-4 rounded-xl text-sm">
                       <CheckCircle2 className="w-5 h-5 shrink-0" />
                       <p>{responseMsg}</p>
                     </div>
                   )}
-
                   {submitStatus === "error" && (
                     <div className="flex items-center gap-3 bg-red-500/10 border border-red-500/20 text-red-400 p-4 rounded-xl text-sm">
                       <AlertCircle className="w-5 h-5 shrink-0" />
                       <p>{responseMsg}</p>
                     </div>
                   )}
-
-                  {/* Submit Button */}
                   <button
                     type="submit"
                     disabled={isSubmitting}
@@ -344,7 +314,6 @@ export default function ContactContent() {
           </div>
         </div>
 
-        {/* Free SEO Audit Banner */}
         <ScrollReveal delay={0.3}>
           <div className="mt-20 relative rounded-3xl overflow-hidden border border-white/5 bg-gradient-to-br from-teal-500/10 via-navy-900/60 to-cyan-500/10 p-8 md:p-12 text-center max-w-4xl mx-auto">
             <h3 className="text-2xl md:text-3xl font-bold font-heading text-white mb-4">
@@ -353,7 +322,7 @@ export default function ContactContent() {
             <p className="text-slate-400 max-w-2xl mx-auto mb-6 text-sm md:text-base">
               Wondering why your site isn&apos;t getting traffic? Let our digital audit team run a full diagnostic scan on your website&apos;s speed, mobile responsiveness, and keyword issues.
             </p>
-            <a
+            
               href={getWhatsAppUrl("Hello, I'd like to get a free SEO audit for my website: ")}
               target="_blank"
               rel="noopener noreferrer"
