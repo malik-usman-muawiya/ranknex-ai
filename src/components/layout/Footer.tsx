@@ -53,7 +53,7 @@ const socialLinks = [
 
 export default function Footer() {
   return (
-    <footer className="relative border-t border-white/[0.05] bg-navy-950">
+    <footer className="relative overflow-hidden border-t border-white/[0.05] bg-navy-950">
       {/* Decorative gradient orb */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[200px] bg-teal-500/[0.04] rounded-full blur-[100px] pointer-events-none" />
 

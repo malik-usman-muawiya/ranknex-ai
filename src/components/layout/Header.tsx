@@ -318,13 +318,17 @@ export default function Header() {
 
             {/* ---- Desktop CTA + Mobile Toggle ---- */}
             <div className="flex items-center gap-3">
-              <Link
-                href="/contact"
-                className="hidden lg:inline-flex btn-primary !py-2.5 !px-5 !text-sm !rounded-lg"
-              >
-                <span>Get Free Audit</span>
-                <TrendingUp className="w-4 h-4" />
-              </Link>
+              {/* Wrapper carries the responsive-hide: `.btn-primary` is
+                  unlayered and sets display, which would override `hidden`. */}
+              <div className="hidden lg:block">
+                <Link
+                  href="/contact"
+                  className="btn-primary !py-2.5 !px-5 !text-sm !rounded-lg"
+                >
+                  <span>Get Free Audit</span>
+                  <TrendingUp className="w-4 h-4" />
+                </Link>
+              </div>
 
               <button
                 onClick={() => setIsMobileOpen(!isMobileOpen)}

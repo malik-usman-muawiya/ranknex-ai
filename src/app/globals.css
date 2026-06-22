@@ -36,13 +36,18 @@ html {
   scroll-behavior: smooth;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  /* Decorative orbs/blurs intentionally bleed past the edges; clip the
+     horizontal axis so they never create a mobile horizontal scrollbar.
+     `clip` (not `hidden`) avoids creating a scroll container, so it doesn't
+     break position: sticky. */
+  overflow-x: clip;
 }
 
 body {
   font-family: var(--font-body);
   background-color: var(--color-navy-950);
   color: var(--color-slate-300);
-  overflow-x: hidden;
+  overflow-x: clip;
   line-height: 1.7;
 }
 
