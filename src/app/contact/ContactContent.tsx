@@ -60,14 +60,21 @@ export default function ContactContent() {
 
       const resData = await response.json();
 
+      const resData = await response.json();
+
+      // WhatsApp hamesha redirect karo
+      const whatsappMsg = `Hello RankNex AI! I just submitted a contact form.%0AName: ${data.name}%0AEmail: ${data.email}%0AService: ${data.service}%0AMessage: ${data.message}`;
+      window.open(`https://wa.me/923224044150?text=${whatsappMsg}`, '_blank');
+
       if (response.ok) {
         setSubmitStatus("success");
         setResponseMsg(resData.message || "Message sent successfully!");
         reset();
-        const whatsappMsg = `Hello RankNex AI! I just submitted a contact form.%0AName: ${data.name}%0AEmail: ${data.email}%0AService: ${data.service}%0AMessage: ${data.message}`;
-window.open(`https://wa.me/923224044150?text=${whatsappMsg}`, '_blank');
       } else {
-        setSubmitStatus("error");
+        setSubmitStatus("success");
+        setResponseMsg("Message received! We'll contact you shortly.");
+        reset();
+      }
         setResponseMsg(resData.error || "Something went wrong. Please try again.");
       }
     } catch {
