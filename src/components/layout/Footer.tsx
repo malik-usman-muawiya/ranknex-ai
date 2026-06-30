@@ -17,7 +17,7 @@ import Logo from './Logo';
 
 const services = [
   { label: 'SEO & AI Search', href: '/services/seo' },
-  { label: 'PPC Advertising', href: '/services/ppc' },
+  { label: 'PPC Advertising', href: '/services/ppc-advertising' },
   { label: 'Social Media Marketing', href: '/services/social-media' },
   { label: 'Content Writing', href: '/services/content-writing' },
   { label: 'Web Design & Development', href: '/services/web-designing' },

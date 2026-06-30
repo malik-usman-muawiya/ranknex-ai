@@ -40,7 +40,7 @@ const mainServices: ServiceItem[] = [
   },
   {
     label: 'PPC Advertising',
-    href: '/services/ppc',
+    href: '/services/ppc-advertising',
     icon: <MousePointerClick className="w-5 h-5" />,
     description: 'Maximize ROI with data-driven ad campaigns',
   },

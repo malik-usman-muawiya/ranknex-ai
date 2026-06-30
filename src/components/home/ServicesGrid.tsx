@@ -39,7 +39,7 @@ const services = [
     title: 'Build an Audience That Becomes a Customer Base.',
     description:
       'Strategy, content creation, community management, and paid social across Instagram, LinkedIn, TikTok, and Facebook. We build social presence with one goal: turning followers into buyers.',
-    href: '/services/social-media-marketing',
+    href: '/services/social-media',
     color: 'teal',
     ctaText: 'See Social Services',
   },
