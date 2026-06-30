@@ -18,51 +18,57 @@ import GradientOrbs from '@/components/ui/GradientOrbs';
 const services = [
   {
     icon: Search,
-    title: 'SEO Services',
+    title: 'Rank on Google. Show Up in ChatGPT. Get Found Everywhere.',
     description:
-      'Dominate search results with AI-powered SEO strategies. We combine technical optimization, strategic content, and smart link building to drive organic traffic that converts.',
+      'More people now search on AI tools — ChatGPT, Gemini, Perplexity — than you think. We optimize your website for traditional Google rankings AND for AI-powered search results. Technical SEO, content, link building, AEO, and GEO — all handled by one team.',
     href: '/services/seo',
     color: 'teal',
-  },
-  {
-    icon: Share2,
-    title: 'Social Media Marketing',
-    description:
-      'Build brand authority across platforms with data-driven social campaigns. From content creation to community management, we turn followers into loyal customers.',
-    href: '/services/social-media-marketing',
-    color: 'cyan',
+    ctaText: 'See SEO Services',
   },
   {
     icon: MousePointerClick,
-    title: 'PPC Advertising',
+    title: 'Pay for Clicks That Actually Buy.',
     description:
-      'Maximize ROI with precision-targeted ad campaigns on Google, Facebook, and LinkedIn. Every dollar works harder with our AI-optimized bidding strategies.',
+      "Google Ads, Facebook Ads, LinkedIn — managed with AI bidding so every pound and rupee goes where it converts. We don't optimise for impressions. We optimise for sales.",
     href: '/services/ppc-advertising',
+    color: 'cyan',
+    ctaText: 'See PPC Services',
+  },
+  {
+    icon: Share2,
+    title: 'Build an Audience That Becomes a Customer Base.',
+    description:
+      'Strategy, content creation, community management, and paid social across Instagram, LinkedIn, TikTok, and Facebook. We build social presence with one goal: turning followers into buyers.',
+    href: '/services/social-media-marketing',
     color: 'teal',
+    ctaText: 'See Social Services',
   },
   {
     icon: PenTool,
-    title: 'Content Writing',
+    title: 'Content That Ranks, Reads Well, and Converts.',
     description:
-      'Engage your audience with expert content that ranks. Our AI-enhanced writers create blog posts, web copy, and thought-leadership content that builds trust and drives action.',
+      'Blog posts, web copy, and articles researched with AI and written by human specialists. Every piece is built to rank for a specific keyword and move the reader toward a decision. No fluff. No filler.',
     href: '/services/content-writing',
     color: 'cyan',
+    ctaText: 'See Content Services',
   },
   {
     icon: MonitorSmartphone,
-    title: 'Web Design & Development',
+    title: 'A Website That Earns Its Keep.',
     description:
-      'Launch high-performance websites built for speed, conversions, and SEO. From custom designs to full-stack development, we build digital experiences that win.',
+      'Fast, SEO-ready, mobile-first websites built on WordPress or custom code. Designed to convert visitors — not just to look good in a Dribbble screenshot. Every site we build includes speed optimization, schema markup, and conversion-focused page structure.',
     href: '/services/web-designing',
     color: 'teal',
+    ctaText: 'See Web Services',
   },
   {
     icon: Palette,
-    title: 'Branding & Identity',
+    title: 'Look Like You Belong at the Top.',
     description:
-      'Stand out from the crowd with strategic brand identity design. From logo design to complete brand guidelines, we create visual identities that resonate with your audience.',
+      'Logo, brand colors, typography, and full visual identity — built so your business looks as credible online as it is in person. From first impression to lasting recognition.',
     href: '/services/branding',
     color: 'cyan',
+    ctaText: 'See Branding Services',
   },
 ];
 
@@ -79,8 +85,8 @@ export default function ServicesGrid() {
       <div className="container relative z-10">
         <SectionHeading
           tag="Our Services"
-          title={<>Comprehensive Digital Solutions <span className="gradient-text font-bold">That Deliver Results</span></>}
-          subtitle="From SEO to full-stack development, we provide end-to-end digital services powered by AI — designed to grow your business faster and smarter."
+          title={<>Everything You Need to Grow Online <span className="gradient-text font-bold">— In One Place</span></>}
+          subtitle="Six services. One team. Zero silos. Your marketing and tech stack, built to work together."
         />
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
@@ -115,7 +121,7 @@ export default function ServicesGrid() {
 
                     {/* Link */}
                     <div className="flex items-center gap-2 text-teal-500 text-sm font-semibold group-hover:gap-3 transition-all duration-300">
-                      <span>Learn More</span>
+                      <span>{service.ctaText} →</span>
                       <ArrowRight className="w-4 h-4" />
                     </div>
                   </motion.div>

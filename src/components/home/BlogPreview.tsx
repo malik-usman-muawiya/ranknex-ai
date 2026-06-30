@@ -8,32 +8,32 @@ import ScrollReveal from '@/components/ui/ScrollReveal';
 
 const blogPosts = [
   {
-    title: 'How AI Is Reshaping SEO in 2025: What Smart Businesses Need to Know',
+    title: 'What Is AEO? How to Get Your Business Featured in ChatGPT Answers (2026 Guide)',
     excerpt:
-      'Discover how artificial intelligence is transforming search engine optimization, from content generation to predictive analytics, and what it means for your business growth.',
-    category: 'SEO',
+      'A practical breakdown of Answer Engine Optimisation — what it is, why it matters now, and how to structure your content so AI tools recommend your business.',
+    category: 'AI Search',
     readTime: '7 min read',
-    date: 'June 15, 2025',
+    date: 'June 2026',
     slug: 'ai-reshaping-seo-2025',
     featured: true,
   },
   {
-    title: 'Why Pakistani Talent Is the Best-Kept Secret in Digital Marketing',
+    title: 'Outsource SEO to Pakistan: What UK Businesses Need to Know',
     excerpt:
       'International-quality digital services at a fraction of the cost. Learn why global businesses are partnering with Pakistani agencies like RankNex AI for growth.',
     category: 'Industry',
     readTime: '5 min read',
-    date: 'June 8, 2025',
+    date: 'June 2026',
     slug: 'pakistani-talent-digital-marketing',
     featured: false,
   },
   {
-    title: 'The Complete PPC Strategy Guide: From Zero to Profitable Ads',
+    title: 'GEO vs. SEO: How Generative Engine Optimisation Works in 2026',
     excerpt:
-      'A step-by-step guide to building high-ROI pay-per-click campaigns. Learn our proven framework that has helped clients reduce CPA by up to 52%.',
-    category: 'PPC',
+      'A step-by-step guide to how Generative Engine Optimisation differs from traditional SEO, and what it takes to appear in AI-generated search summaries.',
+    category: 'AI Search',
     readTime: '10 min read',
-    date: 'June 1, 2025',
+    date: 'June 2026',
     slug: 'complete-ppc-strategy-guide',
     featured: false,
   },
@@ -45,8 +45,8 @@ export default function BlogPreview() {
       <div className="container relative z-10">
         <SectionHeading
           tag="Blog & Insights"
-          title={<>Latest from the <span className="gradient-text font-bold">RankNex AI Blog</span></>}
-          subtitle="Expert insights, actionable strategies, and industry trends — everything you need to stay ahead in the digital marketing landscape."
+          title={<>Insights That Help You Grow <span className="gradient-text font-bold">— Not Just News About Us</span></>}
+          subtitle="Practical guides on SEO, AI search, and digital growth. Written by the same team that executes these strategies for clients every week."
         />
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 md:gap-8">
@@ -107,7 +107,7 @@ export default function BlogPreview() {
               href="/blog"
               className="btn-secondary inline-flex items-center gap-2"
             >
-              <span>View All Posts</span>
+              <span>Read All Insights</span>
               <ArrowRight className="w-4 h-4" />
             </Link>
           </div>

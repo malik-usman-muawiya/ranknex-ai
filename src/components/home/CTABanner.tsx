@@ -48,20 +48,21 @@ export default function CTABanner() {
                 </div>
 
                 <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold font-heading text-white mb-5 leading-tight max-w-3xl mx-auto">
-                  Ready to{' '}
-                  <span className="gradient-text">Dominate Your Market</span>
-                  {' '}with AI-Powered Growth?
+                  Find Out Exactly What&apos;s{' '}
+                  <span className="gradient-text">Holding Your Business Back</span>
+                  {' '}Online.
                 </h2>
 
                 <p className="text-base md:text-lg text-slate-400 max-w-xl mx-auto mb-10 leading-relaxed">
-                  Get a free, no-obligation SEO audit and discover exactly how
-                  RankNex AI can transform your digital presence. Most clients
-                  see measurable results within 90 days.
+                  We&apos;ll audit your website, your Google rankings, your
+                  competitors, and your AI search visibility — all at no
+                  cost. You&apos;ll get a real, actionable report. No sales
+                  pressure. No commitment.
                 </p>
 
                 <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
                   <Link href="/contact" className="btn-primary group text-base">
-                    <span>Get Your Free Audit</span>
+                    <span>Get My Free Audit</span>
                     <ArrowRight className="w-5 h-5 transition-transform group-hover:translate-x-1" />
                   </Link>
                   <a
@@ -71,13 +72,18 @@ export default function CTABanner() {
                     className="btn-secondary group text-base"
                   >
                     <MessageCircle className="w-5 h-5" />
-                    <span>Chat on WhatsApp</span>
+                    <span>Chat With Our Team on WhatsApp</span>
                   </a>
                 </div>
 
                 {/* Micro-trust */}
                 <p className="mt-8 text-xs text-slate-500">
-                  ✓ Free Audit &nbsp;·&nbsp; ✓ No Contracts &nbsp;·&nbsp; ✓ Results in 90 Days &nbsp;·&nbsp; ✓ Cancel Anytime
+                  ✓ Free Audit Worth $500 &nbsp;·&nbsp; ✓ Results in 90 Days or We Work Free &nbsp;·&nbsp; ✓ No Long-Term Contracts &nbsp;·&nbsp; ✓ Cancel Anytime
+                </p>
+
+                {/* Urgency line */}
+                <p className="mt-3 text-xs text-slate-600">
+                  We take on a limited number of new clients each month to protect delivery quality. Spots for July are currently open.
                 </p>
               </motion.div>
             </div>

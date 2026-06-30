@@ -8,10 +8,10 @@ import ScrollReveal from '@/components/ui/ScrollReveal';
 
 const caseStudies = [
   {
-    client: 'E-Commerce Fashion Brand',
+    client: 'UK E-Commerce Fashion Brand',
     industry: 'Retail & E-Commerce',
     location: 'United Kingdom',
-    challenge: 'Low organic traffic and high ad spend with minimal ROI.',
+    challenge: 'The brand was spending £3,000/month on paid ads with a cost-per-acquisition double the industry average. Organic traffic was flat for 18 months.',
     results: [
       { metric: 'Organic Traffic', value: '+320%', period: '6 months' },
       { metric: 'Revenue Growth', value: '+185%', period: 'Year-over-year' },
@@ -21,10 +21,10 @@ const caseStudies = [
     color: 'teal',
   },
   {
-    client: 'SaaS Startup',
+    client: 'US SaaS Startup',
     industry: 'Technology',
     location: 'United States',
-    challenge: 'New market entry with zero brand awareness and no inbound pipeline.',
+    challenge: 'New market entry — zero brand awareness, no inbound leads, and a 4-month runway to demonstrate growth to investors.',
     results: [
       { metric: 'Monthly Leads', value: '250+', period: 'from zero' },
       { metric: 'Domain Authority', value: '+35', period: '8 months' },
@@ -34,10 +34,10 @@ const caseStudies = [
     color: 'cyan',
   },
   {
-    client: 'Healthcare Provider',
+    client: 'Pakistan Healthcare Provider',
     industry: 'Healthcare',
     location: 'Pakistan',
-    challenge: 'Outdated website with poor UX, zero local visibility online.',
+    challenge: 'Outdated website with no mobile optimization, zero local search presence, and patient inquiries coming entirely through word of mouth.',
     results: [
       { metric: 'Website Traffic', value: '+410%', period: '4 months' },
       { metric: 'Patient Inquiries', value: '+200%', period: 'Monthly' },
@@ -54,8 +54,8 @@ export default function CaseStudyPreview() {
       <div className="container relative z-10">
         <SectionHeading
           tag="Case Studies"
-          title={<>Proven Results That <span className="gradient-text font-bold">Speak for Themselves</span></>}
-          subtitle="Real businesses. Real data. Real growth. Explore how RankNex AI has helped companies across the globe transform their digital presence."
+          title={<>Real Clients. Real Numbers. <span className="gradient-text font-bold">Nothing Embellished.</span></>}
+          subtitle="Every result you see below is documented. We share the campaign context, the approach, and the full outcome — because vague success stories help nobody."
         />
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 md:gap-8">
@@ -143,7 +143,7 @@ export default function CaseStudyPreview() {
               href="/case-studies"
               className="btn-secondary inline-flex items-center gap-2"
             >
-              <span>View All Case Studies</span>
+              <span>See All Client Results</span>
               <ExternalLink className="w-4 h-4" />
             </Link>
           </div>

@@ -10,33 +10,33 @@ const steps = [
   {
     icon: ClipboardCheck,
     number: '01',
-    title: 'Deep Audit',
+    title: 'Free Audit (Week 1)',
     description:
-      'We start by analyzing your website, competitors, and market position. Our AI tools uncover hidden opportunities and technical issues most agencies miss.',
+      "We analyze your website, your top 5 competitors, your keyword landscape, and your current search visibility — on Google and in AI tools. You get a real report, not a sales pitch. Most agencies charge $500 for this. We do it free because it's the foundation of everything.",
     color: 'teal',
   },
   {
     icon: Lightbulb,
     number: '02',
-    title: 'Custom Strategy',
+    title: 'Custom Strategy (Week 1-2)',
     description:
-      'Based on data — not guesswork — we build a tailored digital marketing strategy with clear KPIs, timelines, and a roadmap designed specifically for your business goals.',
+      'We map the fastest routes to measurable results: which keywords to target, which content to create, which technical issues to fix first, and how much of the budget should go to ads vs. organic. Every plan comes with clear KPIs and a 90-day milestone chart.',
     color: 'cyan',
   },
   {
     icon: Rocket,
     number: '03',
-    title: 'Execute & Optimize',
+    title: 'Execute (Weeks 2-12)',
     description:
-      'Our team implements the strategy across all channels, continuously optimizing with AI-powered insights. You see progress from week one, not month three.',
+      'Our team deploys across all agreed channels — SEO, content, ads, or web. AI tools help us move faster on research and analysis; experienced specialists make every strategic call. You get weekly progress updates, not a monthly surprise.',
     color: 'teal',
   },
   {
     icon: BarChart3,
     number: '04',
-    title: 'Report & Scale',
+    title: 'Report & Scale (Month 3 Onwards)',
     description:
-      "Transparent monthly reports show exactly what's working. We double down on winners, pivot where needed, and scale your success for long-term, sustainable growth.",
+      "At the 90-day mark, you'll see a full performance review against the KPIs we agreed on day one. From there, we double down on what's generating returns and expand into adjacent opportunities. This is where month-over-month compounding starts.",
     color: 'cyan',
   },
 ];
@@ -58,11 +58,11 @@ export default function ProcessSection() {
             Our Process
           </span>
           <h2 className="text-4xl md:text-5xl font-bold font-heading leading-tight text-white">
-            How We Deliver{' '}
-            <span className="text-teal-400">Guaranteed Results</span>
+            How We Get You From Audit to{' '}
+            <span className="text-teal-400">Growth in 90 Days</span>
           </h2>
           <p className="mt-4 mb-8 text-lg text-slate-400 max-w-2xl mx-auto text-center">
-            Our proven 4-step process takes the guesswork out of digital marketing. From audit to growth, every step is backed by data and powered by AI.
+            No guesswork. No generic packages. Four clear steps — and you know exactly what&apos;s happening at every one of them.
           </p>
         </div>
 

@@ -7,7 +7,12 @@ import GradientOrbs from '@/components/ui/GradientOrbs';
 import HeroVisual from '@/components/home/HeroVisual';
 import { getWhatsAppUrl } from '@/lib/utils';
 
-const trustPoints = ['No Long-Term Contracts', 'Free SEO Audit', 'Results in 90 Days'];
+const trustPoints = [
+  'Results in 90 Days or We Work Free',
+  'No Lock-In Contracts',
+  '50+ Businesses Served',
+  'Google + AI Search Optimisation',
+];
 
 export default function HeroSection() {
   return (
@@ -51,7 +56,7 @@ export default function HeroSection() {
                 <span className="absolute inline-flex h-full w-full rounded-full bg-teal-400 opacity-75 animate-ping" />
                 <span className="relative inline-flex h-2 w-2 rounded-full bg-teal-400" />
               </span>
-              AI-Powered Digital Marketing Agency
+              Pakistan&apos;s AI-First Digital Marketing Agency
             </span>
           </div>
 
@@ -60,13 +65,9 @@ export default function HeroSection() {
             className="text-[2.5rem] sm:text-5xl md:text-6xl lg:text-7xl font-bold font-heading leading-[1.05] tracking-tight mb-6 animate-fade-up"
             style={{ animationDelay: '0.15s' }}
           >
-            <span className="text-white">AI-Powered Digital</span>
+            <span className="text-white">More Traffic. More Leads.</span>
             <br />
-            <span className="text-white">Marketing &amp; </span>
-            <span className="gradient-text animate-gradient">IT Solutions</span>
-            <span className="block mt-4 text-xl sm:text-2xl md:text-3xl lg:text-4xl font-medium text-transparent bg-clip-text bg-gradient-to-r from-slate-200 to-slate-400">
-              Pakistan Talent, International Standards
-            </span>
+            <span className="gradient-text animate-gradient">60% Less Than What UK Agencies Charge.</span>
           </h1>
 
           {/* Subheadline */}
@@ -74,10 +75,10 @@ export default function HeroSection() {
             className="max-w-2xl mx-auto text-base sm:text-lg text-slate-400 leading-relaxed mb-10 animate-fade-up"
             style={{ animationDelay: '0.25s' }}
           >
-            RankNex AI helps businesses in the UK, US, and Pakistan grow online
-            through smart SEO, AI-driven marketing, and full-stack development —
-            delivered by a team that combines AI tools with real human expertise,
-            at a fraction of the cost.
+            We help businesses in the UK, US, and Pakistan rank on Google,
+            show up in AI search (ChatGPT, Gemini, Perplexity), and turn
+            that visibility into revenue. Expert team. AI-powered tools.
+            No long contracts.
           </p>
 
           {/* CTAs */}
@@ -86,7 +87,7 @@ export default function HeroSection() {
             style={{ animationDelay: '0.35s' }}
           >
             <Link href="/contact" className="btn-primary group text-base w-full sm:w-auto justify-center">
-              <span>Get Your Free Audit</span>
+              <span>Get Your Free SEO Audit — Worth $500</span>
               <ArrowRight className="w-5 h-5 transition-transform group-hover:translate-x-1" />
             </Link>
             <a
