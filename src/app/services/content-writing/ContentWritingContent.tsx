@@ -6,23 +6,28 @@ import { PenTool, Search, BookOpen, Mail } from "lucide-react";
 const contentFeatures = [
   {
     icon: Search,
-    title: "SEO Blog Writing",
-    description: "Attract organic search traffic with well-researched, high-value blog posts. We write detailed articles that answer your customers' queries and rank high on Google.",
+    title: "Blog Posts & Long-Form Articles",
+    description: "Research-backed articles targeting specific keywords, structured for readability and SEO, and written to move the reader toward a decision — not just to exist on your website.",
   },
   {
     icon: PenTool,
-    title: "Website Copywriting",
-    description: "Make an unforgettable first impression. We write copy for landing pages, homepages, services pages, and about pages that clearly communicates your value.",
+    title: "Website Copy",
+    description: "Homepage, service pages, about pages, and landing pages — written for conversion first, with SEO integrated naturally. We write for the human reading it, not the crawler indexing it.",
   },
   {
     icon: BookOpen,
-    title: "Case Studies & Whitepapers",
-    description: "Establish industry authority. Our team designs, interviews, and writes compelling case studies and guides that prove your capability and build credibility.",
+    title: "Product & Service Descriptions",
+    description: "Clear, specific, benefit-led descriptions that sell without overselling. We avoid generic marketing language and instead describe exactly what the product does and why it matters.",
   },
   {
     icon: Mail,
-    title: "Email & Newsletter Copy",
-    description: "Nurture leads and retain customers. We build strategic newsletter outlines and sales email sequences that keep subscribers engaged and increase conversions.",
+    title: "Email Newsletters & Sequences",
+    description: "Welcome series, nurture sequences, re-engagement campaigns — written to maintain audience attention and move subscribers toward conversion over time.",
+  },
+  {
+    icon: BookOpen,
+    title: "AI-Assisted Research & Content Briefs",
+    description: "For businesses with in-house writers, we produce detailed content briefs — keyword targets, structure, SERP analysis, competitor gaps, and semantic keywords — so your team can write faster and rank better.",
   },
 ];
 
@@ -79,14 +84,14 @@ export default function ContentWritingContent() {
   return (
     <ServicePageTemplate
       tag="Content Writing & Strategy"
-      headline="Content Writing & Strategy That Converts"
-      headlineAccent="Readers Into Customers"
-      description="Tell your brand story and climb search engine rankings. Our expert copywriters create high-value blogs, landing page copy, and case studies that rank and convert."
+      headline="Content That Ranks, Reads Well,"
+      headlineAccent="and Actually Converts."
+      description="Blog posts, landing pages, and web copy — researched with AI, written by specialists, and built around specific keywords and buyer intent. Not filler. Not AI dumps. Real content that earns rankings."
       features={contentFeatures}
       processSteps={contentProcess}
       benefits={contentBenefits}
       faqs={contentFaqs}
-      ctaTitle="Get a Free Content Sample"
+      ctaTitle="Get Sample Content & Pricing"
       ctaDescription="Want to test our quality first? We'll write a custom 500-word SEO blog outline or short intro paragraph for your chosen topic — 100% free, so you can see our style."
     />
   );

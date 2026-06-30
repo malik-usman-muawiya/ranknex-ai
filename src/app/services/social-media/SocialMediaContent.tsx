@@ -6,23 +6,28 @@ import { Users2, Compass, Image, BarChart3 } from "lucide-react";
 const smmFeatures = [
   {
     icon: Compass,
-    title: "Platform Strategy & Audit",
-    description: "We analyze your audience and competitors to determine which platforms (Facebook, Instagram, LinkedIn, TikTok, X) are most profitable for your brand.",
+    title: "Social Media Strategy",
+    description: "Before any content is created, we define: which platforms, what content types, what publishing frequency, and what the success metrics are. Your strategy is built from your business goals and your audience's actual behavior — not copied from a competitor.",
   },
   {
     icon: Image,
-    title: "Content Creation & Reels",
-    description: "Our design and copy teams produce eye-catching graphics, engaging copy, and viral-ready short-form video (Reels, TikToks, Shorts) to capture attention.",
+    title: "Content Creation & Management",
+    description: "Graphics, captions, short-form video, and carousels — produced to your brand standards and published on schedule. We handle the full content calendar: planning, production, scheduling, and community management (responding to comments and messages).",
   },
   {
     icon: Users2,
-    title: "Community Management",
-    description: "We actively monitor comments, direct messages, and brand mentions to engage with your audience, build loyalty, and route hot leads to your sales team.",
+    title: "Platform Management",
+    description: "Instagram, LinkedIn, Facebook, TikTok, and X/Twitter — we manage whichever platforms are relevant for your audience. We don't recommend platforms because they're popular. We recommend them because your customers are there.",
   },
   {
     icon: BarChart3,
-    title: "Paid Social Campaigns",
-    description: "Accelerate your results with hyper-targeted paid social ads. We design and optimize campaigns for lead generation, traffic, and direct e-commerce sales.",
+    title: "Paid Social Advertising",
+    description: "When organic reach isn't enough — or you need to accelerate growth — we run paid social campaigns alongside organic. Audience targeting, creative testing, and conversion optimization handled as one integrated effort.",
+  },
+  {
+    icon: BarChart3,
+    title: "Monthly Analytics & Reporting",
+    description: "Monthly reports covering follower growth, engagement rate, reach, website traffic from social, and leads generated — with context explaining what the numbers mean and what we're adjusting next month.",
   },
 ];
 
@@ -79,14 +84,14 @@ export default function SocialMediaContent() {
   return (
     <ServicePageTemplate
       tag="Social Media Marketing"
-      headline="Social Media Marketing That Builds"
-      headlineAccent="Brands & Revenue"
-      description="Engage your target audience where they spend their time. Our SMM specialists design and execute creative social media campaigns that turn passive followers into active buyers."
+      headline="Social Media That Builds Business —"
+      headlineAccent="Not Just Follower Counts."
+      description="Strategy, content creation, community management, and paid social — run by a team that measures success in leads and sales, not likes and shares."
       features={smmFeatures}
       processSteps={smmProcess}
       benefits={smmBenefits}
       faqs={smmFaqs}
-      ctaTitle="Get a Free Social Media Assessment"
+      ctaTitle="Get a Free Social Media Audit"
       ctaDescription="Let our social media strategists audit your current social channels. We will give you 3 actionable recommendations on how to improve your engagement and leads — completely free."
     />
   );

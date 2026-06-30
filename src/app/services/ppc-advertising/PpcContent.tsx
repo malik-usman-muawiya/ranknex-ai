@@ -7,22 +7,37 @@ const ppcFeatures = [
   {
     icon: Search,
     title: "Google Search Ads",
-    description: "Capture high-intent buyers exactly when they search for your services. We build and manage keyword-rich Google Ads campaigns that dominate the top spots.",
-  },
-  {
-    icon: Target,
-    title: "Social Media Advertising",
-    description: "Reach your demographic with high-performing ads on Facebook, Instagram, LinkedIn, and TikTok. We design visually striking ad creative that generates conversions.",
-  },
-  {
-    icon: MousePointerClick,
-    title: "Retargeting & Display Ads",
-    description: "Bring back warm prospects who visited your website but did not buy. Our retargeting campaigns keep your brand top-of-mind and increase overall conversion rates.",
+    description: "Show up at the top of Google when your ideal customer is actively searching for your product or service. We build search campaigns with tight keyword grouping, quality ad copy testing, and negative keyword management — so you're paying for intent, not browsing.",
   },
   {
     icon: Landmark,
-    title: "Landing Page Optimization",
-    description: "Ads are only half the battle. We review, build, and optimize high-converting landing pages to ensure you get the absolute maximum conversions from your paid clicks.",
+    title: "Google Shopping Campaigns (eCommerce)",
+    description: "For online stores, Shopping campaigns put your products in front of buyers with price and image — right at the moment of search. We optimise product feed quality, bidding strategy, and ROAS targets to maximise return on ad spend.",
+  },
+  {
+    icon: Target,
+    title: "Meta Ads (Facebook & Instagram)",
+    description: "Audience-based advertising for consumer and B2C brands. We build interest and lookalike audiences, test creative formats (static, video, carousel), and optimise toward conversion events — not vanity engagement metrics.",
+  },
+  {
+    icon: Target,
+    title: "LinkedIn Ads (B2B)",
+    description: "For businesses targeting decision-makers by job title, seniority, or company size, LinkedIn Ads are often the most cost-effective B2B paid channel. We manage Sponsored Content, Lead Gen Forms, and Message campaigns with a focus on MQL quality over volume.",
+  },
+  {
+    icon: MousePointerClick,
+    title: "Retargeting Campaigns",
+    description: "Most visitors don't convert on their first visit. Retargeting ads re-engage people who've already shown interest — typically at 3-5x the conversion rate of cold traffic. We build retargeting sequences across Google Display, Meta, and LinkedIn simultaneously.",
+  },
+  {
+    icon: Landmark,
+    title: "Landing Page Review & Recommendations",
+    description: "Sending strong ad traffic to a weak landing page is the most common PPC failure mode. Before we launch campaigns, we audit your landing pages for conversion rate killers — slow load time, unclear CTA, missing trust signals — and give you specific recommendations to fix them. This step alone often improves conversion rates before we've optimised a single bid.",
+  },
+  {
+    icon: MousePointerClick,
+    title: "Monthly ROI Reporting",
+    description: "Every month: total ad spend, cost per click, conversion rate, cost per lead or sale, and ROAS — in a format you can read in five minutes. We include a brief written summary of what we changed last month and what we're testing next.",
   },
 ];
 
@@ -78,15 +93,15 @@ const ppcFaqs = [
 export default function PpcContent() {
   return (
     <ServicePageTemplate
-      tag="Pay-Per-Click Advertising"
-      headline="PPC Advertising Services That Maximize"
-      headlineAccent="Every Dollar"
-      description="Get instant visibility and high-quality leads. Our certified paid ads specialists build, monitor, and optimize strategic PPC campaigns that drive direct ROI."
+      tag="PPC Management — Google, Meta & LinkedIn Ads"
+      headline="Stop Funding Campaigns That Guess."
+      headlineAccent="Start Running Ads That Convert."
+      description="We manage paid ad campaigns on Google, Meta, and LinkedIn — built around your cost-per-acquisition target, not around impressions. AI-optimised bidding. Monthly ROI reporting. No wasted spend."
       features={ppcFeatures}
       processSteps={ppcProcess}
       benefits={ppcBenefits}
       faqs={ppcFaqs}
-      ctaTitle="Request a Free Ad Account Audit"
+      ctaTitle="Get a Free PPC Audit"
       ctaDescription="Already running ads? Let our certified specialists perform a free audit on your Google or Meta ad account. We will uncover wasted spend and outline 3 key optimization tips."
     />
   );

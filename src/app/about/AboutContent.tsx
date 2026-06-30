@@ -11,50 +11,36 @@ import {
   TrendingUp,
   Users,
   Cpu,
-  Globe,
   ArrowRight,
-  MessageCircle,
   Sparkles,
-  Zap,
 } from 'lucide-react';
 import Link from 'next/link';
 
 const values = [
   {
     icon: TrendingUp,
-    title: 'Results Over Rhetoric',
-    description:
-      'We measure success in revenue growth, qualified leads, and market share — not vanity metrics.',
+    title: 'Results Before Relationships',
+    description: 'We earn long-term clients by delivering first.',
   },
   {
     icon: ShieldCheck,
-    title: 'Radical Transparency',
-    description:
-      'Every strategy, every decision, every dollar spent — fully visible to you. No black boxes.',
-  },
-  {
-    icon: Cpu,
-    title: 'AI-First Thinking',
-    description:
-      'We leverage machine learning and predictive analytics to make smarter decisions, faster.',
+    title: 'Transparency Over Comfort',
+    description: "We report what's actually happening, not what looks good.",
   },
   {
     icon: Users,
-    title: 'Partnership Mindset',
-    description:
-      'Your business goals become ours. We operate as an extension of your team, not a vendor.',
+    title: 'No Lock-In',
+    description: "Clients stay because they want to, not because they're trapped.",
   },
   {
     icon: Lightbulb,
-    title: 'Relentless Innovation',
-    description:
-      'The digital landscape evolves daily. We stay two steps ahead so you never fall behind.',
+    title: 'Honest Timelines',
+    description: "We tell you what's realistic, not what you want to hear.",
   },
   {
-    icon: Globe,
-    title: 'Global Standards, Local Insight',
-    description:
-      'Based in Pakistan, serving the world. We bring global best practices with local market understanding.',
+    icon: Cpu,
+    title: 'Quality Control',
+    description: 'AI tools accelerate our work; human judgment governs it.',
   },
 ];
 
@@ -83,8 +69,8 @@ export default function AboutContent() {
               transition={{ duration: 0.7, delay: 0.1 }}
               className="text-4xl md:text-5xl lg:text-6xl font-bold font-heading leading-tight mb-6"
             >
-              We Don&apos;t Just Rank You —{' '}
-              <span className="gradient-text">We Grow You</span>
+              We&apos;re RankNex AI. Built in Pakistan.{' '}
+              <span className="gradient-text">Built for Results.</span>
             </motion.h1>
 
             <motion.p
@@ -93,10 +79,10 @@ export default function AboutContent() {
               transition={{ duration: 0.6, delay: 0.2 }}
               className="text-lg md:text-xl text-slate-400 leading-relaxed max-w-3xl mx-auto"
             >
-              RankNex AI is a Pakistan-based, globally capable digital marketing agency
-              that combines artificial intelligence with battle-tested marketing
-              strategies to deliver measurable, sustainable growth for businesses of
-              every size.
+              A team of SEO specialists, content strategists, developers, and
+              designers — working from Lahore to deliver digital marketing
+              that competes with the best agencies in London and New York,
+              at a cost that makes sense for growing businesses.
             </motion.p>
           </div>
         </div>
@@ -112,30 +98,34 @@ export default function AboutContent() {
                   tag="Our Story"
                   title={
                     <>
-                      Born From <span className="gradient-text">Frustration</span>,
-                      Built for <span className="gradient-text">Results</span>
+                      Why We Started <span className="gradient-text">RankNex AI</span>
                     </>
                   }
                   align="left"
                 />
                 <div className="space-y-5 text-slate-300 leading-relaxed -mt-8">
                   <p>
-                    RankNex AI was founded on a simple observation: most businesses were
-                    paying for marketing that didn&apos;t work. Agencies were charging premium
-                    fees for generic strategies, recycled playbooks, and reports packed with
-                    numbers that meant nothing to the bottom line.
+                    The digital marketing industry has a pricing problem. A mid-size
+                    agency in London charges £3,000-8,000 per month for SEO. A
+                    similar agency in New York charges $5,000-12,000. The work
+                    itself — keyword research, content creation, technical audits,
+                    link building — doesn&apos;t cost that much to do well. The
+                    overhead does.
                   </p>
                   <p>
-                    We knew there had to be a better way. By combining the analytical power
-                    of artificial intelligence with the creative intuition of experienced
-                    marketers, we built an agency model that delivers what actually matters
-                    — qualified leads, revenue growth, and market dominance.
+                    Pakistan has a deep, experienced pool of digital marketing
+                    talent. Our team includes specialists who&apos;ve worked on UK,
+                    US, and Gulf market campaigns for years — people who understand
+                    international SEO requirements, cultural nuance, and the
+                    standards that Western clients expect. We built RankNex AI to
+                    bring that talent to businesses who need international-quality
+                    marketing but can&apos;t justify international-scale invoices.
                   </p>
                   <p>
-                    Today, we serve businesses across Pakistan, the UK, the Middle East, and
-                    North America. Our team operates from Lahore, but our standards are
-                    global, our ambitions are boundless, and our results speak louder than
-                    any pitch deck ever could.
+                    We&apos;re not a content mill. We&apos;re not a cheap alternative
+                    that delivers cheap results. We&apos;re a professional agency
+                    that happens to have lower overheads — and we pass that
+                    directly to clients.
                   </p>
                 </div>
               </div>
@@ -155,10 +145,10 @@ export default function AboutContent() {
                   </div>
                   <div className="grid grid-cols-2 gap-4">
                     {[
-                      { value: '150+', label: 'Projects Delivered' },
-                      { value: '40+', label: 'Active Clients' },
-                      { value: '5+', label: 'Countries Served' },
-                      { value: '97%', label: 'Client Retention' },
+                      { value: '50+', label: 'Clients Served' },
+                      { value: '90 Days', label: 'To First Results' },
+                      { value: '3+', label: 'Countries Served' },
+                      { value: '90%', label: 'Client Retention' },
                     ].map((stat, i) => (
                       <motion.div
                         key={stat.label}
@@ -186,10 +176,10 @@ export default function AboutContent() {
       <section className="section">
         <div className="container">
           <SectionHeading
-            tag="Mission & Vision"
+            tag="Our Mission"
             title={
               <>
-                The <span className="gradient-text">Purpose</span> Behind Every Pixel
+                What We&apos;re <span className="gradient-text">Actually Trying to Do</span>
               </>
             }
             subtitle="Every strategy we build, every campaign we run, and every line of code we write is guided by a clear mission and an ambitious vision."
@@ -205,10 +195,9 @@ export default function AboutContent() {
                   Our Mission
                 </h3>
                 <p className="text-slate-300 leading-relaxed">
-                  To democratize access to world-class digital marketing by combining AI-driven
-                  intelligence with human creativity — empowering businesses in Pakistan and
-                  beyond to compete and win on the global stage. We exist to make high-performance
-                  marketing accessible, transparent, and genuinely results-driven.
+                  Make it possible for a business in Leeds, or Houston, or Karachi
+                  to get the same quality of digital marketing as a company with
+                  a £50,000 monthly agency budget — for a fraction of that cost.
                 </p>
               </div>
             </ScrollReveal>
@@ -222,11 +211,11 @@ export default function AboutContent() {
                   Our Vision
                 </h3>
                 <p className="text-slate-300 leading-relaxed">
-                  To become the most trusted AI-powered digital marketing agency in South Asia
-                  by 2028 — known not for flashy promises, but for consistent, compounding
-                  results. We envision a future where every business, regardless of size or
-                  budget, has access to the same calibre of marketing intelligence that
-                  Fortune 500 companies enjoy.
+                  We believe good marketing shouldn&apos;t be a privilege of
+                  scale. And we believe the best way to prove that is to show
+                  results, be transparent about how we work, and never lock a
+                  client into a contract they can&apos;t leave if we&apos;re
+                  not delivering.
                 </p>
               </div>
             </ScrollReveal>
@@ -238,57 +227,35 @@ export default function AboutContent() {
       <section className="section section-alt">
         <div className="container">
           <SectionHeading
-            tag="Why We Exist"
+            tag="How We Work"
             title={
               <>
-                The Problem <span className="gradient-text">We Solve</span>
+                Our Approach — <span className="gradient-text">Practical Over Theoretical</span>
               </>
             }
-            subtitle="The digital marketing industry has a trust problem. We're here to fix it."
+            subtitle="We use AI tools. We're transparent about that."
           />
 
           <div className="max-w-4xl mx-auto">
             <ScrollReveal>
-              <div className="space-y-8">
-                {[
-                  {
-                    icon: Zap,
-                    title: 'Generic Strategies Don\'t Work',
-                    description:
-                      'Most agencies apply the same cookie-cutter approach to every client. We build custom strategies powered by AI analysis of your specific market, competitors, and audience.',
-                  },
-                  {
-                    icon: TrendingUp,
-                    title: 'Vanity Metrics Are Meaningless',
-                    description:
-                      'Impressions and likes don\'t pay the bills. We focus on metrics that matter — conversion rates, cost per acquisition, customer lifetime value, and revenue growth.',
-                  },
-                  {
-                    icon: ShieldCheck,
-                    title: 'Transparency Shouldn\'t Be Optional',
-                    description:
-                      'You deserve to know exactly where your money goes, what\'s working, and what isn\'t. We provide real-time dashboards, detailed reporting, and honest counsel — always.',
-                  },
-                ].map((item, i) => (
-                  <motion.div
-                    key={item.title}
-                    initial={{ opacity: 0, x: -30 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ delay: i * 0.15, duration: 0.5 }}
-                    className="flex gap-6 items-start"
-                  >
-                    <div className="w-12 h-12 rounded-lg bg-teal-500/10 flex items-center justify-center flex-shrink-0 mt-1">
-                      <item.icon className="w-6 h-6 text-teal-500" />
-                    </div>
-                    <div>
-                      <h3 className="text-xl font-bold text-white mb-2 font-heading">
-                        {item.title}
-                      </h3>
-                      <p className="text-slate-400 leading-relaxed">{item.description}</p>
-                    </div>
-                  </motion.div>
-                ))}
+              <div className="space-y-6 text-slate-300 leading-relaxed">
+                <p>
+                  AI helps us do keyword research faster, analyze competitors
+                  more thoroughly, and generate content frameworks more
+                  efficiently than manual methods allow.
+                </p>
+                <p>
+                  But every strategy is developed by an experienced specialist.
+                  Every piece of content is reviewed and edited by a human.
+                  Every recommendation is based on judgment, not just output.
+                </p>
+                <p>
+                  We also believe in communication that doesn&apos;t require a
+                  follow-up email to understand. Monthly reports are written
+                  in plain language. Recommendations come with reasons.
+                  Account managers are reachable on WhatsApp, not hidden
+                  behind a ticket system.
+                </p>
               </div>
             </ScrollReveal>
           </div>
@@ -302,10 +269,10 @@ export default function AboutContent() {
             tag="Our Values"
             title={
               <>
-                What We <span className="gradient-text">Stand For</span>
+                What We <span className="gradient-text">Won&apos;t Compromise On</span>
               </>
             }
-            subtitle="Six principles that guide every decision we make and every result we deliver."
+            subtitle="Five principles that guide every decision we make and every result we deliver."
           />
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -337,22 +304,22 @@ export default function AboutContent() {
                 tag="Our Team"
                 title={
                   <>
-                    Pakistan-Based.{' '}
-                    <span className="gradient-text">Globally Capable.</span>
+                    The People Behind{' '}
+                    <span className="gradient-text">the Results</span>
                   </>
                 }
                 align="left"
               />
               <div className="space-y-5 text-slate-300 leading-relaxed -mt-8">
                 <p>
+                  Our team is based in Lahore, Pakistan — one of South Asia&apos;s
+                  most active digital talent hubs. We work across UK, US, and
+                  Pakistani time zones.
+                </p>
+                <p>
                   Our team brings together SEO architects, paid media specialists, content
                   strategists, brand designers, and data scientists — all unified by a
                   commitment to performance that compounds over time.
-                </p>
-                <p>
-                  Operating from Lahore, Pakistan, we deliver work that meets and exceeds
-                  international standards. Our clients in the UK, UAE, and North America
-                  don&apos;t see us as an offshore team — they see us as their growth partners.
                 </p>
                 <p>
                   Every team member is trained in the latest AI tools, platform algorithms,
@@ -405,18 +372,13 @@ export default function AboutContent() {
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center relative z-10">
                 <Link href="/contact" className="btn-primary">
-                  <span>Get Your Free Audit</span>
+                  <span>Work With Our Team</span>
                   <ArrowRight className="w-4 h-4" />
                 </Link>
-                <a
-                  href="https://wa.me/9203224044150"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="btn-secondary"
-                >
-                  <MessageCircle className="w-4 h-4" />
-                  <span>Chat on WhatsApp</span>
-                </a>
+                <Link href="/case-studies" className="btn-secondary">
+                  <span>See Our Results</span>
+                  <ArrowRight className="w-4 h-4" />
+                </Link>
               </div>
             </div>
           </ScrollReveal>

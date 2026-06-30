@@ -2,6 +2,7 @@ import { Metadata } from "next";
 import HeroSection from "@/components/home/HeroSection";
 import StatsBar from "@/components/home/StatsBar";
 import ServicesGrid from "@/components/home/ServicesGrid";
+import AEOGeoSection from "@/components/home/AEOGeoSection";
 import WhyRankNex from "@/components/home/WhyRankNex";
 import ProcessSection from "@/components/home/ProcessSection";
 import TestimonialsSlider from "@/components/home/TestimonialsSlider";
@@ -41,6 +42,7 @@ export default function HomePage() {
       <HeroSection />
       <StatsBar />
       <ServicesGrid />
+      <AEOGeoSection />
       <WhyRankNex />
       <ProcessSection />
       <TestimonialsSlider />
