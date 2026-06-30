@@ -188,11 +188,7 @@ export default function Header() {
                   <div key={link.label} ref={dropdownRef} className="relative">
                     <button
                       onClick={() => setIsServicesOpen(!isServicesOpen)}
-                      className={`flex items-center gap-1 px-4 py-2 rounded-lg text-sm font-medium transition-colors duration-200 ${
-                        isActive(link.href)
-                          ? 'text-teal-500'
-                          : 'text-slate-300 hover:text-white'
-                      }`}
+                    className="flex items-center gap-1 px-4 py-2 rounded-lg text-sm font-medium transition-colors duration-200 text-teal-400 hover:text-teal-300"
                     >
                       {link.label}
                       <ChevronDown
