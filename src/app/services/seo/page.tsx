@@ -3,7 +3,7 @@ import SeoContent from "./SeoContent";
 
 export const metadata: Metadata = {
   title: "SEO Company Pakistan | Best SEO Services Agency - RankNex AI",
-  description: "RankNex AI is a top SEO company in Pakistan offering expert search engine optimization, local SEO, and GEO services for UK, US, and Pakistani businesses. Grow organic rankings.",
+  description: "RankNex AI is an SEO company in Pakistan offering search engine optimization, local SEO, and AI search (GEO) services for UK, US, and Pakistani businesses.",
   keywords: [
     "seo company pakistan",
     "best seo company in pakistan",
@@ -14,12 +14,12 @@ export const metadata: Metadata = {
     "SEO consultant Lahore"
   ],
   alternates: {
-    canonical: "https://ranknexai.com/services/seo",
+    canonical: "https://www.ranknexai.com/services/seo",
   },
   openGraph: {
     title: "Search Engine Optimization (SEO) Services | RankNex AI",
     description: "RankNex AI delivers SEO services for Pakistan, UK, and US clients. Grow organic traffic with technical, on-page, and off-page optimization.",
-    url: "https://ranknexai.com/services/seo",
+    url: "https://www.ranknexai.com/services/seo",
     siteName: "RankNex AI",
     locale: "en_US",
     type: "website",

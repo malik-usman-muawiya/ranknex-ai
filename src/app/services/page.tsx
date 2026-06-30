@@ -2,9 +2,9 @@ import type { Metadata } from 'next';
 import ServicesContent from './ServicesContent';
 
 export const metadata: Metadata = {
-  title: 'Digital Marketing Services | SEO, PPC, Social Media & Web Design | RankNex AI',
+  title: 'Digital Marketing Services | SEO & PPC',
   description:
-    'Explore RankNex AI\'s full suite of AI-powered digital marketing services. SEO, social media marketing, PPC advertising, content writing, web design, and branding. Results-driven strategies for businesses in Pakistan and worldwide.',
+    'Explore RankNex AI\'s digital marketing services, including SEO, PPC, social media, content, web design, and branding for UK, US, and Pakistani businesses.',
   keywords: [
     'digital marketing services pakistan',
     'seo services',
@@ -15,13 +15,13 @@ export const metadata: Metadata = {
     'branding agency',
   ],
   alternates: {
-    canonical: 'https://ranknexai.com/services',
+    canonical: 'https://www.ranknexai.com/services',
   },
   openGraph: {
     title: 'Digital Marketing Services | RankNex AI',
     description:
       'AI-powered SEO, PPC, social media, content, web design, and branding services that deliver measurable growth.',
-    url: 'https://ranknexai.com/services',
+    url: 'https://www.ranknexai.com/services',
     type: 'website',
   },
 };

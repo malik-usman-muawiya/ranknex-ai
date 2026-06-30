@@ -3,8 +3,8 @@ import Link from "next/link";
 import { ArrowRight, Search, Globe, Zap, BarChart3, Users, Shield, Headphones, CheckCircle2, Bot } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "AI-Powered Digital Marketing & IT Services for US Businesses | RankNex AI",
-  description: "Affordable, AI-driven digital marketing, SEO, and IT solutions for US businesses. Premium quality, competitive pricing. Get your free audit today.",
+  title: "AI-Powered Digital Marketing for US Businesses",
+  description: "RankNex AI delivers affordable, AI-driven digital marketing and SEO solutions for US businesses, with premium quality and fully transparent pricing.",
   keywords: [
     "ai automation company",
     "digital marketing agency usa affordable",
@@ -14,12 +14,12 @@ export const metadata: Metadata = {
     "affordable seo services usa",
   ],
   alternates: {
-    canonical: "https://ranknexai.com/us",
+    canonical: "https://www.ranknexai.com/us",
   },
   openGraph: {
     title: "AI-Powered Digital Marketing & IT Services for US Businesses | RankNex AI",
     description: "Affordable, AI-driven digital marketing, SEO, and IT solutions for US businesses.",
-    url: "https://ranknexai.com/us",
+    url: "https://www.ranknexai.com/us",
     siteName: "RankNex AI",
     type: "website",
     locale: "en_US",

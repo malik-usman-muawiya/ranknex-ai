@@ -36,12 +36,12 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     title: `${post.metaTitle || post.title} | RankNex AI`,
     description: post.metaDescription || defaultDesc,
     alternates: {
-      canonical: `https://ranknexai.com/blog/${post.slug}`,
+      canonical: `https://www.ranknexai.com/blog/${post.slug}`,
     },
     openGraph: {
       title: post.title,
       description: post.excerpt,
-      url: `https://ranknexai.com/blog/${post.slug}`,
+      url: `https://www.ranknexai.com/blog/${post.slug}`,
       type: "article",
       publishedTime: post.publishedAt?.toISOString(),
       modifiedTime: post.updatedAt.toISOString(),
@@ -77,7 +77,7 @@ export default async function BlogPostPage({ params }: PageProps) {
     })
     .catch(() => []);
 
-  const shareUrl = `https://ranknexai.com/blog/${post.slug}`;
+  const shareUrl = `https://www.ranknexai.com/blog/${post.slug}`;
   const timeToRead = readingTime(post.content);
 
   // Article Schema

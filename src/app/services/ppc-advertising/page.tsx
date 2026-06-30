@@ -13,12 +13,12 @@ export const metadata: Metadata = {
     "paid advertising agency"
   ],
   alternates: {
-    canonical: "https://ranknexai.com/services/ppc-advertising",
+    canonical: "https://www.ranknexai.com/services/ppc-advertising",
   },
   openGraph: {
     title: "PPC Advertising Services | RankNex AI",
     description: "certified search and social ad management designed to lower cost per lead and maximize your return on ad spend.",
-    url: "https://ranknexai.com/services/ppc-advertising",
+    url: "https://www.ranknexai.com/services/ppc-advertising",
     siteName: "RankNex AI",
     locale: "en_US",
     type: "website",
