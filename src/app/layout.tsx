@@ -28,7 +28,7 @@ const outfit = Outfit({
 /* ------------------------------------------------------------------ */
 
 export const metadata: Metadata = {
-  metadataBase: new URL(process.env.NEXTAUTH_URL || 'https://ranknexai.com'),
+  metadataBase: new URL(process.env.NEXTAUTH_URL || 'https://www.ranknexai.com'),
   title: {
     default: 'RankNex AI | AI-Powered Digital Marketing Agency',
     template: '%s | RankNex AI',
