@@ -50,6 +50,9 @@ export const metadata: Metadata = {
   authors: [{ name: 'RankNex AI' }],
   creator: 'RankNex AI',
   publisher: 'RankNex AI',
+  verification: {
+    google: 'qMWb_E5Pen6eDab21VurvVn9ikqqb--QfV3SnEbYArg',
+  },
   robots: {
     index: true,
     follow: true,
