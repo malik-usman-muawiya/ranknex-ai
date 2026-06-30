@@ -8,10 +8,10 @@ import HeroVisual from '@/components/home/HeroVisual';
 import { getWhatsAppUrl } from '@/lib/utils';
 
 const trustPoints = [
-  'Results in 90 Days or We Work Free',
+  'Results in 90 Days',
   'No Lock-In Contracts',
   '50+ Businesses Served',
-  'Google + AI Search Optimisation',
+  'Google + AI Optimisation',
 ];
 
 export default function HeroSection() {
@@ -103,16 +103,16 @@ export default function HeroSection() {
 
           {/* Trust indicators */}
           <div
-            className="mt-12 flex flex-wrap items-center justify-center gap-3 animate-fade-up"
+            className="mt-12 flex flex-wrap items-center justify-center gap-2 sm:gap-3 animate-fade-up"
             style={{ animationDelay: '0.45s' }}
           >
             {trustPoints.map((point) => (
               <span
                 key={point}
-                className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm text-slate-300 bg-white/[0.03] border border-white/10 backdrop-blur-sm"
+                className="inline-flex items-center gap-1.5 px-3 py-1.5 sm:px-4 sm:py-2 rounded-full text-xs sm:text-sm text-slate-300 bg-white/[0.03] border border-white/10 backdrop-blur-sm whitespace-nowrap"
               >
-                <span className="flex items-center justify-center w-4 h-4 rounded-full bg-teal-500/15 text-teal-400">
-                  <Check className="w-3 h-3" strokeWidth={3} />
+                <span className="flex items-center justify-center w-3.5 h-3.5 sm:w-4 sm:h-4 rounded-full bg-teal-500/15 text-teal-400 shrink-0">
+                  <Check className="w-2.5 h-2.5 sm:w-3 sm:h-3" strokeWidth={3} />
                 </span>
                 {point}
               </span>
