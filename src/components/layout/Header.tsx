@@ -33,22 +33,22 @@ interface ServiceItem {
 
 const mainServices: ServiceItem[] = [
   {
-    label: 'SEO',
+    label: 'SEO & AI Search',
     href: '/services/seo',
     icon: <Search className="w-5 h-5" />,
     description: 'Dominate search rankings with AI-driven strategies',
-  },
-  {
-    label: 'Social Media',
-    href: '/services/social-media',
-    icon: <Share2 className="w-5 h-5" />,
-    description: 'Build brand presence across all platforms',
   },
   {
     label: 'PPC Advertising',
     href: '/services/ppc',
     icon: <MousePointerClick className="w-5 h-5" />,
     description: 'Maximize ROI with data-driven ad campaigns',
+  },
+  {
+    label: 'Social Media Marketing',
+    href: '/services/social-media',
+    icon: <Share2 className="w-5 h-5" />,
+    description: 'Build brand presence across all platforms',
   },
   {
     label: 'Content Writing',
@@ -60,13 +60,13 @@ const mainServices: ServiceItem[] = [
 
 const moreServices: ServiceItem[] = [
   {
-    label: 'Web Designing',
+    label: 'Web Design & Development',
     href: '/services/web-designing',
     icon: <Layout className="w-5 h-5" />,
     description: 'Stunning, performance-optimized websites',
   },
   {
-    label: 'Branding',
+    label: 'Branding & Identity',
     href: '/services/branding',
     icon: <Palette className="w-5 h-5" />,
     description: 'Craft a memorable brand identity',

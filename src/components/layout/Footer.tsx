@@ -16,12 +16,12 @@ import Logo from './Logo';
 /* ------------------------------------------------------------------ */
 
 const services = [
-  { label: 'SEO', href: '/services/seo' },
-  { label: 'Social Media', href: '/services/social-media' },
+  { label: 'SEO & AI Search', href: '/services/seo' },
   { label: 'PPC Advertising', href: '/services/ppc' },
+  { label: 'Social Media Marketing', href: '/services/social-media' },
   { label: 'Content Writing', href: '/services/content-writing' },
-  { label: 'Web Designing', href: '/services/web-designing' },
-  { label: 'Branding', href: '/services/branding' },
+  { label: 'Web Design & Development', href: '/services/web-designing' },
+  { label: 'Branding & Identity', href: '/services/branding' },
 ];
 
 const quickLinks = [
@@ -146,7 +146,7 @@ export default function Footer() {
                   className="flex items-start gap-3 text-slate-400 text-sm hover:text-teal-500 transition-colors group"
                 >
                   <Phone className="w-4 h-4 mt-0.5 text-teal-500/60 group-hover:text-teal-500 transition-colors shrink-0" />
-                  <span>03224044150</span>
+                  <span>+92 322 404 4150</span>
                 </a>
               </li>
               <li>
