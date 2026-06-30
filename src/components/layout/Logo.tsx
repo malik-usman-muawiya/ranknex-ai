@@ -4,10 +4,6 @@ interface LogoProps {
   size?: number;
 }
 
-/**
- * RankNex AI brand logo — a crisp, lightweight SVG growth-chart monogram
- * plus wordmark. Replaces the heavy PNG and scales perfectly at any size.
- */
 export default function Logo({ className = '', showWordmark = true, size = 38 }: LogoProps) {
   return (
     <span className={`inline-flex items-center gap-2.5 ${className}`}>
@@ -25,10 +21,8 @@ export default function Logo({ className = '', showWordmark = true, size = 38 }:
             <stop offset="1" stopColor="#06B6D4" />
           </linearGradient>
         </defs>
-        {/* Rounded tile */}
         <rect x="0.5" y="0.5" width="39" height="39" rx="12" fill="url(#rnLogoGrad)" />
         <rect x="0.5" y="0.5" width="39" height="39" rx="12" fill="#FFFFFF" fillOpacity="0.08" />
-        {/* Upward growth chart with arrow */}
         <path
           d="M9.5 28 L16.5 20.5 L22.5 24 L30.5 13.5"
           stroke="#06283D"
@@ -45,7 +39,6 @@ export default function Logo({ className = '', showWordmark = true, size = 38 }:
         />
         <circle cx="9.5" cy="28" r="2.1" fill="#06283D" />
       </svg>
-
       {showWordmark && (
         <span
           className="font-heading font-extrabold tracking-tight leading-none whitespace-nowrap"
