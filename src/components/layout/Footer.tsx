@@ -180,11 +180,11 @@ export default function Footer() {
         </div>
 
         {/* ---- Bottom bar ---- */}
-        <div className="border-t border-white/[0.05] py-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+        <div className="border-t border-white/[0.05] py-6 flex flex-col sm:flex-row items-center justify-between gap-4 pr-0 sm:pr-20">
           <p className="text-slate-500 text-xs text-center sm:text-left">
             &copy; {new Date().getFullYear()} RankNex AI. All rights reserved.
           </p>
-          <div className="flex items-center gap-6">
+          <div className="flex items-center gap-6 pb-16 sm:pb-0">
             <Link
               href="/privacy-policy"
               className="text-slate-500 text-xs hover:text-slate-300 transition-colors"
