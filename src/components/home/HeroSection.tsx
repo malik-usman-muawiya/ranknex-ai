@@ -65,9 +65,9 @@ export default function HeroSection() {
             className="text-[2.5rem] sm:text-5xl md:text-6xl lg:text-7xl font-bold font-heading leading-[1.05] tracking-tight mb-6 animate-fade-up"
             style={{ animationDelay: '0.15s' }}
           >
-            <span className="text-white">More Traffic. More Leads.</span>
+            <span className="text-white">More Than Rankings.</span>
             <br />
-            <span className="gradient-text animate-gradient">60% Less Than What UK Agencies Charge.</span>
+            <span className="gradient-text animate-gradient">We Build Businesses.</span>
           </h1>
 
           {/* Subheadline */}
