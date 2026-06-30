@@ -55,7 +55,7 @@ export default function CTABanner() {
 
                 <p className="text-base md:text-lg text-slate-400 max-w-xl mx-auto mb-10 leading-relaxed">
                   We&apos;ll audit your website, your Google rankings, your
-                  competitors, and your AI search visibility — all at no
+                  competitors, and your AI search visibility, all at no
                   cost. You&apos;ll get a real, actionable report. No sales
                   pressure. No commitment.
                 </p>

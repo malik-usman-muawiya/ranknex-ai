@@ -7,27 +7,27 @@ const smmFeatures = [
   {
     icon: Compass,
     title: "Social Media Strategy",
-    description: "Before any content is created, we define: which platforms, what content types, what publishing frequency, and what the success metrics are. Your strategy is built from your business goals and your audience's actual behavior — not copied from a competitor.",
+    description: "Before any content is created, we define: which platforms, what content types, what publishing frequency, and what the success metrics are. Your strategy is built from your business goals and your audience's actual behavior, not copied from a competitor.",
   },
   {
     icon: Image,
     title: "Content Creation & Management",
-    description: "Graphics, captions, short-form video, and carousels — produced to your brand standards and published on schedule. We handle the full content calendar: planning, production, scheduling, and community management (responding to comments and messages).",
+    description: "Graphics, captions, short-form video, and carousels, produced to your brand standards and published on schedule. We handle the full content calendar: planning, production, scheduling, and community management (responding to comments and messages).",
   },
   {
     icon: Users2,
     title: "Platform Management",
-    description: "Instagram, LinkedIn, Facebook, TikTok, and X/Twitter — we manage whichever platforms are relevant for your audience. We don't recommend platforms because they're popular. We recommend them because your customers are there.",
+    description: "Instagram, LinkedIn, Facebook, TikTok, and X/Twitter. We manage whichever platforms are relevant for your audience. We don't recommend platforms because they're popular. We recommend them because your customers are there.",
   },
   {
     icon: BarChart3,
     title: "Paid Social Advertising",
-    description: "When organic reach isn't enough — or you need to accelerate growth — we run paid social campaigns alongside organic. Audience targeting, creative testing, and conversion optimization handled as one integrated effort.",
+    description: "When organic reach isn't enough, or you need to accelerate growth, we run paid social campaigns alongside organic. Audience targeting, creative testing, and conversion optimization handled as one integrated effort.",
   },
   {
     icon: BarChart3,
     title: "Monthly Analytics & Reporting",
-    description: "Monthly reports covering follower growth, engagement rate, reach, website traffic from social, and leads generated — with context explaining what the numbers mean and what we're adjusting next month.",
+    description: "Monthly reports covering follower growth, engagement rate, reach, website traffic from social, and leads generated, with context explaining what the numbers mean and what we're adjusting next month.",
   },
 ];
 
@@ -84,15 +84,15 @@ export default function SocialMediaContent() {
   return (
     <ServicePageTemplate
       tag="Social Media Marketing"
-      headline="Social Media That Builds Business —"
+      headline="Social Media That Builds Business."
       headlineAccent="Not Just Follower Counts."
-      description="Strategy, content creation, community management, and paid social — run by a team that measures success in leads and sales, not likes and shares."
+      description="Strategy, content creation, community management, and paid social, run by a team that measures success in leads and sales, not likes and shares."
       features={smmFeatures}
       processSteps={smmProcess}
       benefits={smmBenefits}
       faqs={smmFaqs}
       ctaTitle="Get a Free Social Media Audit"
-      ctaDescription="Let our social media strategists audit your current social channels. We will give you 3 actionable recommendations on how to improve your engagement and leads — completely free."
+      ctaDescription="Let our social media strategists audit your current social channels. We will give you 3 actionable recommendations on how to improve your engagement and leads, completely free."
     />
   );
 }

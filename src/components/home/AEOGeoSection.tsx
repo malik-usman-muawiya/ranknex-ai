@@ -30,13 +30,13 @@ export default function AEOGeoSection() {
         <SectionHeading
           tag="AI Search"
           title={<>Search Is Changing. <span className="gradient-text font-bold">Is Your Business Keeping Up?</span></>}
-          subtitle="Google isn't the only place people search anymore. Millions of users now ask ChatGPT, Gemini, and Perplexity questions — and those AI tools pick businesses to recommend based on how well-structured and authoritative your online presence is."
+          subtitle="Google isn't the only place people search anymore. Millions of users now ask ChatGPT, Gemini, and Perplexity questions, and those AI tools pick businesses to recommend based on how well-structured and authoritative your online presence is."
         />
 
         <div className="max-w-3xl mx-auto -mt-6 mb-12 text-center">
           <p className="text-slate-400 leading-relaxed">
             We call this AEO (Answer Engine Optimization) and GEO (Generative
-            Engine Optimization). We include both in every SEO engagement —
+            Engine Optimization). We include both in every SEO engagement,
             because showing up in AI answers is where search is heading, and
             getting there early is a significant competitive advantage.
           </p>

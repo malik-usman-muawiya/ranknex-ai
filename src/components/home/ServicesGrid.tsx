@@ -20,7 +20,7 @@ const services = [
     icon: Search,
     title: 'Rank on Google. Show Up in ChatGPT. Get Found Everywhere.',
     description:
-      'More people now search on AI tools — ChatGPT, Gemini, Perplexity — than you think. We optimize your website for traditional Google rankings AND for AI-powered search results. Technical SEO, content, link building, AEO, and GEO — all handled by one team.',
+      'More people now search on AI tools. ChatGPT, Gemini, Perplexity, than you think. We optimize your website for traditional Google rankings AND for AI-powered search results. Technical SEO, content, link building, AEO, and GEO, all handled by one team.',
     href: '/services/seo',
     color: 'teal',
     ctaText: 'See SEO Services',
@@ -29,7 +29,7 @@ const services = [
     icon: MousePointerClick,
     title: 'Pay for Clicks That Actually Buy.',
     description:
-      "Google Ads, Facebook Ads, LinkedIn — managed with AI bidding so every pound and rupee goes where it converts. We don't optimise for impressions. We optimise for sales.",
+      "Google Ads, Facebook Ads, LinkedIn, managed with AI bidding so every pound and rupee goes where it converts. We don't optimise for impressions. We optimise for sales.",
     href: '/services/ppc-advertising',
     color: 'cyan',
     ctaText: 'See PPC Services',
@@ -56,7 +56,7 @@ const services = [
     icon: MonitorSmartphone,
     title: 'A Website That Earns Its Keep.',
     description:
-      'Fast, SEO-ready, mobile-first websites built on WordPress or custom code. Designed to convert visitors — not just to look good in a Dribbble screenshot. Every site we build includes speed optimization, schema markup, and conversion-focused page structure.',
+      'Fast, SEO-ready, mobile-first websites built on WordPress or custom code. Designed to convert visitors, not just to look good in a Dribbble screenshot. Every site we build includes speed optimization, schema markup, and conversion-focused page structure.',
     href: '/services/web-designing',
     color: 'teal',
     ctaText: 'See Web Services',
@@ -65,7 +65,7 @@ const services = [
     icon: Palette,
     title: 'Look Like You Belong at the Top.',
     description:
-      'Logo, brand colors, typography, and full visual identity — built so your business looks as credible online as it is in person. From first impression to lasting recognition.',
+      'Logo, brand colors, typography, and full visual identity, built so your business looks as credible online as it is in person. From first impression to lasting recognition.',
     href: '/services/branding',
     color: 'cyan',
     ctaText: 'See Branding Services',
@@ -85,7 +85,7 @@ export default function ServicesGrid() {
       <div className="container relative z-10">
         <SectionHeading
           tag="Our Services"
-          title={<>Everything You Need to Grow Online <span className="gradient-text font-bold">— In One Place</span></>}
+          title={<>Everything You Need to Grow Online <span className="gradient-text font-bold">: In One Place</span></>}
           subtitle="Six services. One team. Zero silos. Your marketing and tech stack, built to work together."
         />
 

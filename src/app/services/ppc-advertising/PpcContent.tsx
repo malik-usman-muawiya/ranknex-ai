@@ -7,17 +7,17 @@ const ppcFeatures = [
   {
     icon: Search,
     title: "Google Search Ads",
-    description: "Show up at the top of Google when your ideal customer is actively searching for your product or service. We build search campaigns with tight keyword grouping, quality ad copy testing, and negative keyword management — so you're paying for intent, not browsing.",
+    description: "Show up at the top of Google when your ideal customer is actively searching for your product or service. We build search campaigns with tight keyword grouping, quality ad copy testing, and negative keyword management, so you're paying for intent, not browsing.",
   },
   {
     icon: Landmark,
     title: "Google Shopping Campaigns (eCommerce)",
-    description: "For online stores, Shopping campaigns put your products in front of buyers with price and image — right at the moment of search. We optimise product feed quality, bidding strategy, and ROAS targets to maximise return on ad spend.",
+    description: "For online stores, Shopping campaigns put your products in front of buyers with price and image, right at the moment of search. We optimise product feed quality, bidding strategy, and ROAS targets to maximise return on ad spend.",
   },
   {
     icon: Target,
     title: "Meta Ads (Facebook & Instagram)",
-    description: "Audience-based advertising for consumer and B2C brands. We build interest and lookalike audiences, test creative formats (static, video, carousel), and optimise toward conversion events — not vanity engagement metrics.",
+    description: "Audience-based advertising for consumer and B2C brands. We build interest and lookalike audiences, test creative formats (static, video, carousel), and optimise toward conversion events, not vanity engagement metrics.",
   },
   {
     icon: Target,
@@ -27,17 +27,17 @@ const ppcFeatures = [
   {
     icon: MousePointerClick,
     title: "Retargeting Campaigns",
-    description: "Most visitors don't convert on their first visit. Retargeting ads re-engage people who've already shown interest — typically at 3-5x the conversion rate of cold traffic. We build retargeting sequences across Google Display, Meta, and LinkedIn simultaneously.",
+    description: "Most visitors don't convert on their first visit. Retargeting ads re-engage people who've already shown interest, typically at 3-5x the conversion rate of cold traffic. We build retargeting sequences across Google Display, Meta, and LinkedIn simultaneously.",
   },
   {
     icon: Landmark,
     title: "Landing Page Review & Recommendations",
-    description: "Sending strong ad traffic to a weak landing page is the most common PPC failure mode. Before we launch campaigns, we audit your landing pages for conversion rate killers — slow load time, unclear CTA, missing trust signals — and give you specific recommendations to fix them. This step alone often improves conversion rates before we've optimised a single bid.",
+    description: "Sending strong ad traffic to a weak landing page is the most common PPC failure mode. Before we launch campaigns, we audit your landing pages for conversion rate killers, slow load time, unclear CTA, missing trust signals, and give you specific recommendations to fix them. This step alone often improves conversion rates before we've optimised a single bid.",
   },
   {
     icon: MousePointerClick,
     title: "Monthly ROI Reporting",
-    description: "Every month: total ad spend, cost per click, conversion rate, cost per lead or sale, and ROAS — in a format you can read in five minutes. We include a brief written summary of what we changed last month and what we're testing next.",
+    description: "Every month: total ad spend, cost per click, conversion rate, cost per lead or sale, and ROAS, in a format you can read in five minutes. We include a brief written summary of what we changed last month and what we're testing next.",
   },
 ];
 
@@ -93,10 +93,10 @@ const ppcFaqs = [
 export default function PpcContent() {
   return (
     <ServicePageTemplate
-      tag="PPC Management — Google, Meta & LinkedIn Ads"
+      tag="PPC Management. Google, Meta & LinkedIn Ads"
       headline="Stop Funding Campaigns That Guess."
       headlineAccent="Start Running Ads That Convert."
-      description="We manage paid ad campaigns on Google, Meta, and LinkedIn — built around your cost-per-acquisition target, not around impressions. AI-optimised bidding. Monthly ROI reporting. No wasted spend."
+      description="We manage paid ad campaigns on Google, Meta, and LinkedIn, built around your cost-per-acquisition target, not around impressions. AI-optimised bidding. Monthly ROI reporting. No wasted spend."
       features={ppcFeatures}
       processSteps={ppcProcess}
       benefits={ppcBenefits}

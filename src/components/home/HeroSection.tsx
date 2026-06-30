@@ -87,7 +87,7 @@ export default function HeroSection() {
             style={{ animationDelay: '0.35s' }}
           >
             <Link href="/contact" className="btn-primary group text-base w-full sm:w-auto justify-center">
-              <span>Get Your Free SEO Audit — Worth $500</span>
+              <span>Get Your Free SEO Audit. Worth $500</span>
               <ArrowRight className="w-5 h-5 transition-transform group-hover:translate-x-1" />
             </Link>
             <a

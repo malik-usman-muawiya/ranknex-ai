@@ -12,7 +12,7 @@ const testimonials = [
     role: 'CEO, TechVentures UK',
     location: 'London, United Kingdom',
     content:
-      'RankNex AI completely transformed our online presence. Within 4 months, our organic traffic increased by 320% and we\'re now ranking on page 1 for our top 15 keywords. The ROI has been incredible — easily the best investment we\'ve made in marketing.',
+      'RankNex AI completely transformed our online presence. Within 4 months, our organic traffic increased by 320% and we\'re now ranking on page 1 for our top 15 keywords. The ROI has been incredible, easily the best investment we\'ve made in marketing.',
     rating: 5,
     avatar: 'JR',
   },
@@ -30,7 +30,7 @@ const testimonials = [
     role: 'Founder, UrbanStyle Pk',
     location: 'Lahore, Pakistan',
     content:
-      'As a startup, we needed an agency that could deliver maximum impact on a tight budget. RankNex AI delivered beyond our expectations — our e-commerce sales grew 250% in just 6 months. Their AI tools give them an unfair advantage.',
+      'As a startup, we needed an agency that could deliver maximum impact on a tight budget. RankNex AI delivered beyond our expectations, our e-commerce sales grew 250% in just 6 months. Their AI tools give them an unfair advantage.',
     rating: 5,
     avatar: 'AH',
   },

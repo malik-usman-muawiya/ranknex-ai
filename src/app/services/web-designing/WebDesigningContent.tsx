@@ -7,37 +7,37 @@ const webFeatures = [
   {
     icon: Monitor,
     title: "Custom Web Design",
-    description: "Wireframes, design mockups, and final design — built to your brand and optimised for your audience. We don't use generic templates. Every design starts from your goals, your users, and your market position.",
+    description: "Wireframes, design mockups, and final design, built to your brand and optimised for your audience. We don't use generic templates. Every design starts from your goals, your users, and your market position.",
   },
   {
     icon: Cpu,
     title: "WordPress Development",
-    description: "Custom WordPress builds using Elementor or custom theme development — with clean code, minimal plugin footprint, and performance optimization built in from the start.",
+    description: "Custom WordPress builds using Elementor or custom theme development, with clean code, minimal plugin footprint, and performance optimization built in from the start.",
   },
   {
     icon: Cpu,
     title: "Next.js & Custom Development",
-    description: "For sites that need more performance or functionality than WordPress can comfortably deliver — landing page frameworks, custom applications, or complex multi-page builds — we build on Next.js or appropriate custom stack.",
+    description: "For sites that need more performance or functionality than WordPress can comfortably deliver, such as landing page frameworks, custom applications, or complex multi-page builds, we build on Next.js or appropriate custom stack.",
   },
   {
     icon: HeartHandshake,
     title: "eCommerce Development",
-    description: "WooCommerce and Shopify stores — product page structure, checkout flow optimization, payment gateway integration, and technical SEO for eCommerce built in from day one.",
+    description: "WooCommerce and Shopify stores, product page structure, checkout flow optimization, payment gateway integration, and technical SEO for eCommerce built in from day one.",
   },
   {
     icon: Monitor,
     title: "Website Redesigns",
-    description: "If your current site is outdated or underperforming, we audit what's working and rebuild strategically — preserving your existing SEO equity through careful redirect mapping.",
+    description: "If your current site is outdated or underperforming, we audit what's working and rebuild strategically, preserving your existing SEO equity through careful redirect mapping.",
   },
   {
     icon: ShieldCheck,
     title: "Speed & Performance Optimisation",
-    description: "Core Web Vitals improvement, image compression, caching, lazy loading, and CDN setup — for sites that are built but loading too slowly to compete in search.",
+    description: "Core Web Vitals improvement, image compression, caching, lazy loading, and CDN setup, for sites that are built but loading too slowly to compete in search.",
   },
   {
     icon: ShieldCheck,
     title: "Ongoing Maintenance",
-    description: "Security updates, plugin updates, backups, minor content changes, and performance monitoring — so your site stays fast, secure, and current without requiring your attention.",
+    description: "Security updates, plugin updates, backups, minor content changes, and performance monitoring, so your site stays fast, secure, and current without requiring your attention.",
   },
 ];
 
@@ -94,15 +94,15 @@ export default function WebDesigningContent() {
   return (
     <ServicePageTemplate
       tag="Web Design & Development"
-      headline="Websites Built to Convert —"
+      headline="Websites Built to Convert."
       headlineAccent="Not Just to Look Good."
-      description="Fast, SEO-ready, mobile-first websites — built on WordPress, Next.js, or custom code. Designed for the visitor, built for the algorithm, and delivered with clean handoff documentation your team can actually use."
+      description="Fast, SEO-ready, mobile-first websites, built on WordPress, Next.js, or custom code. Designed for the visitor, built for the algorithm, and delivered with clean handoff documentation your team can actually use."
       features={webFeatures}
       processSteps={webProcess}
       benefits={webBenefits}
       faqs={webFaqs}
       ctaTitle="Get a Free Website Audit"
-      ctaDescription="Let's discuss your vision. We will outline a complete website structure and create a basic layout concept diagram for your new homepage — 100% free."
+      ctaDescription="Let's discuss your vision. We will outline a complete website structure and create a basic layout concept diagram for your new homepage, 100% free."
     />
   );
 }

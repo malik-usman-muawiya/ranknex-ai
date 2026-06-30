@@ -7,12 +7,12 @@ const contentFeatures = [
   {
     icon: Search,
     title: "Blog Posts & Long-Form Articles",
-    description: "Research-backed articles targeting specific keywords, structured for readability and SEO, and written to move the reader toward a decision — not just to exist on your website.",
+    description: "Research-backed articles targeting specific keywords, structured for readability and SEO, and written to move the reader toward a decision, not just to exist on your website.",
   },
   {
     icon: PenTool,
     title: "Website Copy",
-    description: "Homepage, service pages, about pages, and landing pages — written for conversion first, with SEO integrated naturally. We write for the human reading it, not the crawler indexing it.",
+    description: "Homepage, service pages, about pages, and landing pages, written for conversion first, with SEO integrated naturally. We write for the human reading it, not the crawler indexing it.",
   },
   {
     icon: BookOpen,
@@ -22,12 +22,12 @@ const contentFeatures = [
   {
     icon: Mail,
     title: "Email Newsletters & Sequences",
-    description: "Welcome series, nurture sequences, re-engagement campaigns — written to maintain audience attention and move subscribers toward conversion over time.",
+    description: "Welcome series, nurture sequences, re-engagement campaigns, written to maintain audience attention and move subscribers toward conversion over time.",
   },
   {
     icon: BookOpen,
     title: "AI-Assisted Research & Content Briefs",
-    description: "For businesses with in-house writers, we produce detailed content briefs — keyword targets, structure, SERP analysis, competitor gaps, and semantic keywords — so your team can write faster and rank better.",
+    description: "For businesses with in-house writers, we produce detailed content briefs, keyword targets, structure, SERP analysis, competitor gaps, and semantic keywords, so your team can write faster and rank better.",
   },
 ];
 
@@ -86,13 +86,13 @@ export default function ContentWritingContent() {
       tag="Content Writing & Strategy"
       headline="Content That Ranks, Reads Well,"
       headlineAccent="and Actually Converts."
-      description="Blog posts, landing pages, and web copy — researched with AI, written by specialists, and built around specific keywords and buyer intent. Not filler. Not AI dumps. Real content that earns rankings."
+      description="Blog posts, landing pages, and web copy, researched with AI, written by specialists, and built around specific keywords and buyer intent. Not filler. Not AI dumps. Real content that earns rankings."
       features={contentFeatures}
       processSteps={contentProcess}
       benefits={contentBenefits}
       faqs={contentFaqs}
       ctaTitle="Get Sample Content & Pricing"
-      ctaDescription="Want to test our quality first? We'll write a custom 500-word SEO blog outline or short intro paragraph for your chosen topic — 100% free, so you can see our style."
+      ctaDescription="Want to test our quality first? We'll write a custom 500-word SEO blog outline or short intro paragraph for your chosen topic, 100% free, so you can see our style."
     />
   );
 }

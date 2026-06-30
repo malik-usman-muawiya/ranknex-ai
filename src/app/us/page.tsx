@@ -68,7 +68,7 @@ const usServices = [
 const whyChooseUs = [
   {
     title: "AI-First Approach",
-    description: "We leverage AI for research, analysis, and optimization — delivering faster results with data-driven precision.",
+    description: "We leverage AI for research, analysis, and optimization, delivering faster results with data-driven precision.",
   },
   {
     title: "US-Quality at Better Rates",
@@ -88,7 +88,7 @@ const whyChooseUs = [
   },
   {
     title: "Scalable Engagement",
-    description: "Start small, scale fast. Our flexible engagement models adapt as your business grows — no rigid retainers.",
+    description: "Start small, scale fast. Our flexible engagement models adapt as your business grows, no rigid retainers.",
   },
 ];
 
@@ -115,7 +115,7 @@ export default function USPage() {
             
             <p className="text-lg md:text-xl text-slate-300 mb-10 max-w-3xl mx-auto leading-relaxed">
               RankNex AI combines artificial intelligence with human expertise to deliver SEO, PPC, 
-              AI automation, and full-stack development services to US companies — with the quality of a 
+              AI automation, and full-stack development services to US companies, with the quality of a 
               Silicon Valley agency and the economics that make growth actually profitable.
             </p>
             
@@ -159,7 +159,7 @@ export default function USPage() {
               Enterprise-Grade Services, <span className="gradient-text-teal">Startup-Friendly Pricing</span>
             </h2>
             <p className="text-slate-400 max-w-2xl mx-auto text-lg">
-              From AI automation to full-funnel marketing — everything a US business needs to dominate digitally.
+              From AI automation to full-funnel marketing, everything a US business needs to dominate digitally.
             </p>
           </div>
 
@@ -217,7 +217,7 @@ export default function USPage() {
               { step: "01", title: "Discovery Call", desc: "We learn your business, goals, and challenges in a 30-minute strategy call." },
               { step: "02", title: "Free Audit", desc: "We analyze your digital presence and deliver a detailed opportunity report." },
               { step: "03", title: "Custom Roadmap", desc: "A tailored strategy with clear KPIs, timelines, and resource allocation." },
-              { step: "04", title: "Execute & Scale", desc: "We implement, optimize, and scale — with transparent monthly reporting." },
+              { step: "04", title: "Execute & Scale", desc: "We implement, optimize, and scale, with transparent monthly reporting." },
             ].map((item, i) => (
               <div key={i} className="text-center">
                 <div className="text-5xl font-bold text-teal-500/20 mb-4 font-heading">{item.step}</div>

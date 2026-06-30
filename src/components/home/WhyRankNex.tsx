@@ -14,33 +14,33 @@ import ScrollReveal from '@/components/ui/ScrollReveal';
 const differentiators = [
   {
     icon: Bot,
-    title: 'AEO + GEO — AI Search Optimisation Included',
+    title: 'AEO + GEO. AI Search Optimisation Included',
     description:
-      "ChatGPT and Gemini now answer search queries for millions of people every day. We optimize your content so your business appears in those AI answers — not just Google's blue links. Most UK and US agencies charge an extra $2,000/month for this. We include it in every SEO engagement.",
+      "ChatGPT and Gemini now answer search queries for millions of people every day. We optimize your content so your business appears in those AI answers, not just Google's blue links. Most UK and US agencies charge an extra $2,000/month for this. We include it in every SEO engagement.",
   },
   {
     icon: DollarSign,
     title: '60% Lower Cost. Same Quality. Verifiable.',
     description:
-      'Our team is based in Lahore, Pakistan — one of South Asia\'s most active digital marketing hubs. That means you get the same calibre of strategy and execution as a London agency at 60% lower cost. Not because we cut corners. Because our overheads are lower, and we pass that directly to you.',
+      'Our team is based in Lahore, Pakistan, one of South Asia\'s most active digital marketing hubs. That means you get the same calibre of strategy and execution as a London agency at 60% lower cost. Not because we cut corners. Because our overheads are lower, and we pass that directly to you.',
   },
   {
     icon: ShieldCheck,
-    title: '90-Day Results Guarantee — or We Work Free',
+    title: '90-Day Results Guarantee, or We Work Free',
     description:
-      "We guarantee measurable movement in your target metrics within 90 days — or we keep working without charging you until we get there. We've offered this since day one. It keeps us honest.",
+      "We guarantee measurable movement in your target metrics within 90 days, or we keep working without charging you until we get there. We've offered this since day one. It keeps us honest.",
   },
   {
     icon: HeartHandshake,
     title: 'One Account Manager. One Point of Truth.',
     description:
-      'No rotating junior staff. No support tickets. You work with one dedicated strategist who knows your project, your goals, and your history — and is reachable on WhatsApp.',
+      'No rotating junior staff. No support tickets. You work with one dedicated strategist who knows your project, your goals, and your history, and is reachable on WhatsApp.',
   },
   {
     icon: Zap,
     title: 'No Lock-In Contracts',
     description:
-      "Month-to-month by default. You stay because the results make it obvious. We've had clients for 18+ months on rolling monthly arrangements — because it works, not because they're trapped.",
+      "Month-to-month by default. You stay because the results make it obvious. We've had clients for 18+ months on rolling monthly arrangements, because it works, not because they're trapped.",
   },
   {
     icon: BarChart3,
@@ -57,7 +57,7 @@ export default function WhyRankNex() {
         <SectionHeading
           tag="Why Choose Us"
           title={<>The Case for Choosing <span className="gradient-text font-bold">RankNex AI</span></>}
-          subtitle="We'll make this simple. Here is exactly what you get that most agencies don't offer — and what it means for your business."
+          subtitle="We'll make this simple. Here is exactly what you get that most agencies don't offer, and what it means for your business."
         />
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">

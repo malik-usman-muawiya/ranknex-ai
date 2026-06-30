@@ -47,7 +47,7 @@ export default function ServicePageTemplate({
   benefits,
   faqs,
   ctaTitle = 'Ready to Get Started?',
-  ctaDescription = "Book a free consultation and discover how we can accelerate your growth. No obligations, no pressure — just honest, actionable insights.",
+  ctaDescription = "Book a free consultation and discover how we can accelerate your growth. No obligations, no pressure, just honest, actionable insights.",
 }: ServicePageTemplateProps) {
   return (
     <main>

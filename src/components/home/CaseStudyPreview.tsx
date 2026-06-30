@@ -24,7 +24,7 @@ const caseStudies = [
     client: 'US SaaS Startup',
     industry: 'Technology',
     location: 'United States',
-    challenge: 'New market entry — zero brand awareness, no inbound leads, and a 4-month runway to demonstrate growth to investors.',
+    challenge: 'New market entry, zero brand awareness, no inbound leads, and a 4-month runway to demonstrate growth to investors.',
     results: [
       { metric: 'Monthly Leads', value: '250+', period: 'from zero' },
       { metric: 'Domain Authority', value: '+35', period: '8 months' },
@@ -55,7 +55,7 @@ export default function CaseStudyPreview() {
         <SectionHeading
           tag="Case Studies"
           title={<>Real Clients. Real Numbers. <span className="gradient-text font-bold">Nothing Embellished.</span></>}
-          subtitle="Every result you see below is documented. We share the campaign context, the approach, and the full outcome — because vague success stories help nobody."
+          subtitle="Every result you see below is documented. We share the campaign context, the approach, and the full outcome, because vague success stories help nobody."
         />
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 md:gap-8">

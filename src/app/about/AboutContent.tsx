@@ -80,7 +80,7 @@ export default function AboutContent() {
               className="text-lg md:text-xl text-slate-400 leading-relaxed max-w-3xl mx-auto"
             >
               A team of SEO specialists, content strategists, developers, and
-              designers — working from Lahore to deliver digital marketing
+              designers, working from Lahore to deliver digital marketing
               that competes with the best agencies in London and New York,
               at a cost that makes sense for growing businesses.
             </motion.p>
@@ -108,14 +108,14 @@ export default function AboutContent() {
                     The digital marketing industry has a pricing problem. A mid-size
                     agency in London charges £3,000-8,000 per month for SEO. A
                     similar agency in New York charges $5,000-12,000. The work
-                    itself — keyword research, content creation, technical audits,
-                    link building — doesn&apos;t cost that much to do well. The
+                    itself, keyword research, content creation, technical audits,
+                    link building, doesn&apos;t cost that much to do well. The
                     overhead does.
                   </p>
                   <p>
                     Pakistan has a deep, experienced pool of digital marketing
                     talent. Our team includes specialists who&apos;ve worked on UK,
-                    US, and Gulf market campaigns for years — people who understand
+                    US, and Gulf market campaigns for years, people who understand
                     international SEO requirements, cultural nuance, and the
                     standards that Western clients expect. We built RankNex AI to
                     bring that talent to businesses who need international-quality
@@ -124,7 +124,7 @@ export default function AboutContent() {
                   <p>
                     We&apos;re not a content mill. We&apos;re not a cheap alternative
                     that delivers cheap results. We&apos;re a professional agency
-                    that happens to have lower overheads — and we pass that
+                    that happens to have lower overheads, and we pass that
                     directly to clients.
                   </p>
                 </div>
@@ -197,7 +197,7 @@ export default function AboutContent() {
                 <p className="text-slate-300 leading-relaxed">
                   Make it possible for a business in Leeds, or Houston, or Karachi
                   to get the same quality of digital marketing as a company with
-                  a £50,000 monthly agency budget — for a fraction of that cost.
+                  a £50,000 monthly agency budget, for a fraction of that cost.
                 </p>
               </div>
             </ScrollReveal>
@@ -230,7 +230,7 @@ export default function AboutContent() {
             tag="How We Work"
             title={
               <>
-                Our Approach — <span className="gradient-text">Practical Over Theoretical</span>
+                Our Approach, <span className="gradient-text">Practical Over Theoretical</span>
               </>
             }
             subtitle="We use AI tools. We're transparent about that."
@@ -312,13 +312,13 @@ export default function AboutContent() {
               />
               <div className="space-y-5 text-slate-300 leading-relaxed -mt-8">
                 <p>
-                  Our team is based in Lahore, Pakistan — one of South Asia&apos;s
+                  Our team is based in Lahore, Pakistan, one of South Asia&apos;s
                   most active digital talent hubs. We work across UK, US, and
                   Pakistani time zones.
                 </p>
                 <p>
                   Our team brings together SEO architects, paid media specialists, content
-                  strategists, brand designers, and data scientists — all unified by a
+                  strategists, brand designers, and data scientists, all unified by a
                   commitment to performance that compounds over time.
                 </p>
                 <p>
@@ -368,7 +368,7 @@ export default function AboutContent() {
               </h2>
               <p className="text-slate-400 text-lg mb-8 max-w-2xl mx-auto relative z-10">
                 Get a free, no-obligation audit of your digital presence. We&apos;ll show you
-                exactly where you&apos;re leaving money on the table — and how to capture it.
+                exactly where you&apos;re leaving money on the table, and how to capture it.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center relative z-10">
                 <Link href="/contact" className="btn-primary">

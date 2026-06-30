@@ -10,7 +10,7 @@ const blogPosts = [
   {
     title: 'What Is AEO? How to Get Your Business Featured in ChatGPT Answers (2026 Guide)',
     excerpt:
-      'A practical breakdown of Answer Engine Optimisation — what it is, why it matters now, and how to structure your content so AI tools recommend your business.',
+      'A practical breakdown of Answer Engine Optimisation, what it is, why it matters now, and how to structure your content so AI tools recommend your business.',
     category: 'AI Search',
     readTime: '7 min read',
     date: 'June 2026',
@@ -45,7 +45,7 @@ export default function BlogPreview() {
       <div className="container relative z-10">
         <SectionHeading
           tag="Blog & Insights"
-          title={<>Insights That Help You Grow <span className="gradient-text font-bold">— Not Just News About Us</span></>}
+          title={<>Insights That Help You Grow <span className="gradient-text font-bold">: Not Just News About Us</span></>}
           subtitle="Practical guides on SEO, AI search, and digital growth. Written by the same team that executes these strategies for clients every week."
         />
 

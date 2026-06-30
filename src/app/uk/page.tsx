@@ -4,7 +4,7 @@ import { ArrowRight, Search, Globe, Zap, BarChart3, Users, Shield, Headphones, C
 
 export const metadata: Metadata = {
   title: "Digital Marketing & SEO Services for UK Businesses | RankNex AI",
-  description: "Affordable, high-quality digital marketing and SEO services for UK businesses. Get international-standard results from RankNex AI — your outsourced digital growth partner.",
+  description: "Affordable, high-quality digital marketing and SEO services for UK businesses. Get international-standard results from RankNex AI, your outsourced digital growth partner.",
   keywords: [
     "seo uk services",
     "seo uk expert",
@@ -43,13 +43,13 @@ const ukServices = [
   {
     icon: Users,
     title: "Social Media Management",
-    description: "Build your brand presence across UK social media. From LinkedIn for B2B to Instagram for consumer brands — strategic, results-driven management.",
+    description: "Build your brand presence across UK social media. From LinkedIn for B2B to Instagram for consumer brands, strategic, results-driven management.",
     href: "/services/social-media",
   },
   {
     icon: Globe,
     title: "Website Design & Maintenance",
-    description: "Professional website design and ongoing maintenance for UK businesses. WordPress, custom builds, e-commerce — all built for performance.",
+    description: "Professional website design and ongoing maintenance for UK businesses. WordPress, custom builds, e-commerce, all built for performance.",
     href: "/services/web-designing",
   },
   {
@@ -69,7 +69,7 @@ const ukServices = [
 const whyChooseUs = [
   {
     title: "UK-Quality, Pakistan-Priced",
-    description: "Get the same calibre of digital marketing work you'd expect from a London agency — at 40-60% lower cost.",
+    description: "Get the same calibre of digital marketing work you'd expect from a London agency, at 40-60% lower cost.",
   },
   {
     title: "Dedicated Account Manager",
@@ -77,7 +77,7 @@ const whyChooseUs = [
   },
   {
     title: "AI-Powered Efficiency",
-    description: "We use AI tools for research, analysis, and optimisation — which means faster execution without cutting corners.",
+    description: "We use AI tools for research, analysis, and optimisation, which means faster execution without cutting corners.",
   },
   {
     title: "Transparent Reporting",
@@ -116,7 +116,7 @@ export default function UKPage() {
             
             <p className="text-lg md:text-xl text-slate-300 mb-10 max-w-3xl mx-auto leading-relaxed">
               RankNex AI is a Pakistan-based digital agency delivering international-standard SEO, PPC, 
-              social media, and web services to UK businesses — at a fraction of the cost of hiring a London agency. 
+              social media, and web services to UK businesses, at a fraction of the cost of hiring a London agency. 
               Same expertise. Same results. Significantly better value.
             </p>
             

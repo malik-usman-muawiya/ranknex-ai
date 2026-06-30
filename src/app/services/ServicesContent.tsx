@@ -22,7 +22,7 @@ const services = [
     title: 'Search Engine Optimization',
     slug: '/services/seo',
     description:
-      'Dominate search results with AI-driven SEO strategies. Technical audits, on-page optimization, link building, local SEO, and GEO — engineered for sustainable rankings.',
+      'Dominate search results with AI-driven SEO strategies. Technical audits, on-page optimization, link building, local SEO, and GEO, engineered for sustainable rankings.',
     features: ['Technical SEO', 'On-Page & Off-Page', 'Local SEO', 'GEO Optimization'],
   },
   {
@@ -102,7 +102,7 @@ export default function ServicesContent() {
               transition={{ duration: 0.6, delay: 0.2 }}
               className="text-lg md:text-xl text-slate-400 leading-relaxed max-w-3xl mx-auto"
             >
-              From search engine optimization to brand identity — every service we offer
+              From search engine optimization to brand identity, every service we offer
               is powered by AI intelligence, backed by data, and focused on one thing:
               growing your business.
             </motion.p>

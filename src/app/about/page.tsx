@@ -4,7 +4,7 @@ import AboutContent from './AboutContent';
 export const metadata: Metadata = {
   title: 'About RankNex AI | AI-Powered SEO & Digital Marketing Agency in Pakistan',
   description:
-    'Learn about RankNex AI — a Pakistan-based, globally capable digital marketing agency combining AI intelligence with human creativity to deliver measurable growth for businesses worldwide.',
+    'Learn about RankNex AI, a Pakistan-based, globally capable digital marketing agency combining AI intelligence with human creativity to deliver measurable growth for businesses worldwide.',
   keywords: [
     'about ranknex ai',
     'digital marketing agency pakistan',

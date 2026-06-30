@@ -7,32 +7,32 @@ const brandingFeatures = [
   {
     icon: Palette,
     title: "Logo Design",
-    description: "A professional, original logo — delivered in all formats (SVG, PNG, PDF) and variants (full color, mono, light, dark) needed for every use case. Not a template. Not a stock icon with your name next to it.",
+    description: "A professional, original logo, delivered in all formats (SVG, PNG, PDF) and variants (full color, mono, light, dark) needed for every use case. Not a template. Not a stock icon with your name next to it.",
   },
   {
     icon: Compass,
     title: "Brand Color Palette & Typography",
-    description: "A defined color system and typeface selection that works across digital and print — with specific hex codes, RGB values, and usage rules documented so your brand stays consistent even when someone else is creating assets.",
+    description: "A defined color system and typeface selection that works across digital and print, with specific hex codes, RGB values, and usage rules documented so your brand stays consistent even when someone else is creating assets.",
   },
   {
     icon: BookOpen,
     title: "Brand Guidelines Document",
-    description: "A single document that defines how your brand looks and sounds everywhere. Logo usage rules, color codes, typography, tone of voice, do's and don'ts — so every piece of content you produce looks like it came from the same place.",
+    description: "A single document that defines how your brand looks and sounds everywhere. Logo usage rules, color codes, typography, tone of voice, do's and don'ts, so every piece of content you produce looks like it came from the same place.",
   },
   {
     icon: Layers,
     title: "Social Media Brand Kit",
-    description: "Profile images, cover photos, post templates, and story templates — sized and designed for each platform, ready to use immediately.",
+    description: "Profile images, cover photos, post templates, and story templates, sized and designed for each platform, ready to use immediately.",
   },
   {
     icon: Layers,
     title: "Business Cards & Stationery",
-    description: "Print-ready designs for business cards, letterheads, email signatures, and other stationery — formatted correctly for both digital and professional printing.",
+    description: "Print-ready designs for business cards, letterheads, email signatures, and other stationery, formatted correctly for both digital and professional printing.",
   },
   {
     icon: Compass,
     title: "Brand Refresh (Existing Brands)",
-    description: "If you have an existing brand that's lost coherence over time or simply needs modernising — we audit what's worth keeping and redesign strategically, rather than starting from scratch unnecessarily.",
+    description: "If you have an existing brand that's lost coherence over time or simply needs modernising, we audit what's worth keeping and redesign strategically, rather than starting from scratch unnecessarily.",
   },
 ];
 
@@ -91,7 +91,7 @@ export default function BrandingContent() {
       tag="Brand Identity & Strategy"
       headline="Your Brand Is the Reason Someone Chooses You"
       headlineAccent="Over a Cheaper Option."
-      description="We build brand identities that communicate credibility instantly — logo, visual system, and brand guidelines that stay consistent across your website, social, and everything in between."
+      description="We build brand identities that communicate credibility instantly, logo, visual system, and brand guidelines that stay consistent across your website, social, and everything in between."
       features={brandingFeatures}
       processSteps={brandingProcess}
       benefits={brandingBenefits}

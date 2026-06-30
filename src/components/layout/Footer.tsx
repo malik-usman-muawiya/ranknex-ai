@@ -70,7 +70,7 @@ export default function Footer() {
             </Link>
 
             <p className="text-slate-400 text-sm leading-relaxed mb-6">
-              RankNex AI — Pakistan&apos;s AI-powered digital marketing agency.
+              RankNex AI. Pakistan&apos;s AI-powered digital marketing agency.
               Serving businesses in the UK, US, and Pakistan since 2024. No
               lock-in contracts. 90-day results guarantee.
             </p>

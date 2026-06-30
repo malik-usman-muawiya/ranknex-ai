@@ -12,7 +12,7 @@ const steps = [
     number: '01',
     title: 'Free Audit (Week 1)',
     description:
-      "We analyze your website, your top 5 competitors, your keyword landscape, and your current search visibility — on Google and in AI tools. You get a real report, not a sales pitch. Most agencies charge $500 for this. We do it free because it's the foundation of everything.",
+      "We analyze your website, your top 5 competitors, your keyword landscape, and your current search visibility, on Google and in AI tools. You get a real report, not a sales pitch. Most agencies charge $500 for this. We do it free because it's the foundation of everything.",
     color: 'teal',
   },
   {
@@ -28,7 +28,7 @@ const steps = [
     number: '03',
     title: 'Execute (Weeks 2-12)',
     description:
-      'Our team deploys across all agreed channels — SEO, content, ads, or web. AI tools help us move faster on research and analysis; experienced specialists make every strategic call. You get weekly progress updates, not a monthly surprise.',
+      'Our team deploys across all agreed channels. SEO, content, ads, or web. AI tools help us move faster on research and analysis; experienced specialists make every strategic call. You get weekly progress updates, not a monthly surprise.',
     color: 'teal',
   },
   {
@@ -62,7 +62,7 @@ export default function ProcessSection() {
             <span className="text-teal-400">Growth in 90 Days</span>
           </h2>
           <p className="mt-4 mb-8 text-lg text-slate-400 max-w-2xl mx-auto text-center">
-            No guesswork. No generic packages. Four clear steps — and you know exactly what&apos;s happening at every one of them.
+            No guesswork. No generic packages. Four clear steps, and you know exactly what&apos;s happening at every one of them.
           </p>
         </div>
 
