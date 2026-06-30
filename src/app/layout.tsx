@@ -31,11 +31,11 @@ const outfit = Outfit({
 export const metadata: Metadata = {
   metadataBase: new URL(process.env.NEXTAUTH_URL || 'https://www.ranknexai.com'),
   title: {
-    default: 'RankNex AI | AI-Powered Digital Marketing Agency',
+    default: 'RankNex AI | AI-Powered SEO & Digital Marketing Agency',
     template: '%s | RankNex AI',
   },
   description:
-    'RankNex AI delivers AI-powered digital marketing, SEO, PPC, social media, and web development services for businesses in Pakistan, UK, and US. Get your free audit today.',
+    'RankNex AI is an AI-powered SEO and digital marketing agency helping UK, US, and Pakistani businesses rank higher on Google and generate more leads online.',
   keywords: [
     'digital marketing agency',
     'SEO company Pakistan',
@@ -70,13 +70,13 @@ export const metadata: Metadata = {
     locale: 'en_US',
     url: '/',
     siteName: 'RankNex AI',
-    title: 'RankNex AI | AI-Powered Digital Marketing Agency',
+    title: 'RankNex AI | AI-Powered SEO & Digital Marketing Agency',
     description:
       'AI-powered digital marketing agency delivering measurable growth through SEO, PPC, social media, and web solutions.',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'RankNex AI | AI-Powered Digital Marketing Agency',
+    title: 'RankNex AI | AI-Powered SEO & Digital Marketing Agency',
     description:
       'AI-powered digital marketing agency delivering measurable growth through SEO, PPC, social media, and web solutions.',
   },

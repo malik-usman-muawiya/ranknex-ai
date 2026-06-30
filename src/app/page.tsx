@@ -11,8 +11,8 @@ import BlogPreview from "@/components/home/BlogPreview";
 import CTABanner from "@/components/home/CTABanner";
 
 export const metadata: Metadata = {
-  title: "RankNex AI | AI-Powered Digital Marketing & SEO Agency in Pakistan",
-  description: "RankNex AI delivers world-class SEO, AI automation solutions, PPC advertising, social media marketing, content writing, and web development for UK, US, and Pakistani businesses. Get your free digital audit today.",
+  title: "RankNex AI | AI-Powered SEO & Digital Marketing Agency",
+  description: "RankNex AI is an AI-powered SEO and digital marketing agency helping UK, US, and Pakistani businesses rank higher on Google and generate more leads online.",
   keywords: [
     "digital marketing agency Pakistan",
     "best SEO company in Pakistan",
@@ -24,12 +24,12 @@ export const metadata: Metadata = {
     "branding agency Pakistan"
   ],
   alternates: {
-    canonical: "https://ranknexai.com",
+    canonical: "https://www.ranknexai.com/",
   },
   openGraph: {
-    title: "RankNex AI | AI-Powered Digital Marketing & SEO Agency",
-    description: "RankNex AI delivers world-class SEO, AI automation, PPC, social media, content writing, and web development for global businesses.",
-    url: "https://ranknexai.com",
+    title: "RankNex AI | AI-Powered SEO & Digital Marketing Agency",
+    description: "AI-powered SEO and digital marketing agency helping UK, US, and Pakistani businesses rank higher and get more leads.",
+    url: "https://www.ranknexai.com/",
     siteName: "RankNex AI",
     locale: "en_US",
     type: "website",
