@@ -136,7 +136,7 @@ export default function ContactContent() {
                         rel="noopener noreferrer"
                         className="text-slate-400 hover:text-teal-400 text-sm mt-1 block"
                       >
-                        +92 (322) 404-4150
+                        +92 322 4044150
                       </a>
                     </div>
                   </div>

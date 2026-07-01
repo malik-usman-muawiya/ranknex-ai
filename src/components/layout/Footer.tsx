@@ -146,7 +146,7 @@ export default function Footer() {
                   className="flex items-start gap-3 text-slate-400 text-sm hover:text-teal-500 transition-colors group"
                 >
                   <Phone className="w-4 h-4 mt-0.5 text-teal-500/60 group-hover:text-teal-500 transition-colors shrink-0" />
-                  <span>+92 322 404 4150</span>
+                  <span>+92 322 4044150</span>
                 </a>
               </li>
               <li>
