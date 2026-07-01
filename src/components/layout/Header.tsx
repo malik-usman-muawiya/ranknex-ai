@@ -115,7 +115,9 @@ export default function Header() {
     if (clickTimestamps.current.length >= REQUIRED_CLICKS) {
       clickTimestamps.current = [];
       router.push('/admin/login');
+      return;
     }
+    router.push('/');
   }, [router]);
 
   // Scroll listener
