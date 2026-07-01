@@ -1,4 +1,5 @@
 import { Metadata } from "next";
+import prisma from "@/lib/db";
 import HeroSection from "@/components/home/HeroSection";
 import StatsBar from "@/components/home/StatsBar";
 import ServicesGrid from "@/components/home/ServicesGrid";
@@ -36,7 +37,35 @@ export const metadata: Metadata = {
   },
 };
 
-export default function HomePage() {
+// Render on-demand so the page never tries to reach the database at build time.
+export const dynamic = "force-dynamic";
+
+export default async function HomePage() {
+  const latestPostsRaw = await prisma.blogPost
+    .findMany({
+      where: { status: "PUBLISHED" },
+      include: { category: true },
+      orderBy: { createdAt: "desc" },
+      take: 3,
+    })
+    .catch(() => []);
+
+  const latestPosts = latestPostsRaw.map((post, index) => {
+    const wordCount = post.content.replace(/<[^>]*>/g, " ").split(/\s+/).filter(Boolean).length;
+    const readTime = `${Math.max(1, Math.round(wordCount / 200))} min read`;
+    return {
+      title: post.title,
+      excerpt: post.excerpt,
+      slug: post.slug,
+      category: post.category?.name ?? "Insights",
+      readTime,
+      featured: index === 0,
+      date: post.publishedAt
+        ? post.publishedAt.toLocaleDateString("en-US", { month: "long", year: "numeric" })
+        : post.createdAt.toLocaleDateString("en-US", { month: "long", year: "numeric" }),
+    };
+  });
+
   return (
     <main className="relative min-h-screen bg-navy-950 text-slate-300 overflow-hidden">
       <HeroSection />
@@ -47,7 +76,7 @@ export default function HomePage() {
       <ProcessSection />
       <TestimonialsSlider />
       <CaseStudyPreview />
-      <BlogPreview />
+      <BlogPreview posts={latestPosts} />
       <CTABanner />
     </main>
   );
