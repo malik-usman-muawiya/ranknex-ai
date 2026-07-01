@@ -1,6 +1,7 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { createPortal } from "react-dom";
 import Image from "next/image";
 import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
@@ -25,6 +26,11 @@ interface CaseStudiesContentProps {
 export default function CaseStudiesContent({ caseStudies }: CaseStudiesContentProps) {
   const [selectedStudy, setSelectedStudy] = useState<CaseStudy | null>(null);
   const [activeFilter, setActiveFilter] = useState("All");
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   const industries = ["All", ...Array.from(new Set(caseStudies.map((cs) => cs.clientIndustry)))];
 
@@ -146,7 +152,8 @@ export default function CaseStudiesContent({ caseStudies }: CaseStudiesContentPr
           })}
         </div>
 
-        {/* Modal Detail Overlay */}
+        {/* Modal Detail Overlay - rendered via portal to escape overflow-hidden ancestors */}
+        {mounted && createPortal(
         <AnimatePresence>
           {selectedStudy && (
             <motion.div
@@ -254,7 +261,9 @@ export default function CaseStudiesContent({ caseStudies }: CaseStudiesContentPr
               </motion.div>
             </motion.div>
           )}
-        </AnimatePresence>
+        </AnimatePresence>,
+        document.body
+        )}
       </div>
     </main>
   );
