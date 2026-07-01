@@ -50,7 +50,7 @@ export const metadata: Metadata = {
   creator: 'RankNex AI',
   publisher: 'RankNex AI',
   verification: {
-    google: 'qMWb_E5Pen6eDab21VurvVn9ikqqb--QfV3SnEbYArg',
+    google: ['qMWb_E5Pen6eDab21VurvVn9ikqqb--QfV3SnEbYArg', 'et2Kkk3hPQLyESPRCU7SDwYB3lAYZerTmjxlKUD8m6g'],
   },
   robots: {
     index: true,
