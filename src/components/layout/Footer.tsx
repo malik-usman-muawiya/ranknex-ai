@@ -187,7 +187,7 @@ export default function Footer() {
             <Building2 className="w-3 h-3" />
             Office Address
           </span>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 lg:gap-10">
             {offices.map((office) => (
               <div
                 key={office.country}
