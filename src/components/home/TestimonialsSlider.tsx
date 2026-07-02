@@ -133,7 +133,7 @@ export default function TestimonialsSlider() {
                         <p className="text-slate-400 text-xs">
                           {testimonials[current].role}
                         </p>
-                        <p className="text-slate-500 text-xs">
+                        <p className="text-slate-400 text-xs">
                           {testimonials[current].location}
                         </p>
                       </div>

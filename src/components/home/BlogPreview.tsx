@@ -60,7 +60,7 @@ export default function BlogPreview({ posts }: { posts: BlogPostPreview[] }) {
                   </p>
 
                   {/* Meta */}
-                  <div className="flex items-center justify-between text-xs text-slate-500 pt-4 border-t border-navy-700/50">
+                  <div className="flex items-center justify-between text-xs text-slate-400 pt-4 border-t border-navy-700/50">
                     <div className="flex items-center gap-4">
                       <span className="flex items-center gap-1.5">
                         <Calendar className="w-3.5 h-3.5" />

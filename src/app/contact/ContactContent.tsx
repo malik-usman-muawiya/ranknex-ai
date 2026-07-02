@@ -247,7 +247,7 @@ export default function ContactContent() {
                     {/* Phone */}
                     <div>
                       <label htmlFor="phone" className="block text-sm font-semibold text-slate-300 mb-2">
-                        Phone Number <span className="text-slate-500">(Optional)</span>
+                        Phone Number <span className="text-slate-400">(Optional)</span>
                       </label>
                       <input
                         type="tel"
@@ -261,7 +261,7 @@ export default function ContactContent() {
                     {/* Company */}
                     <div>
                       <label htmlFor="company" className="block text-sm font-semibold text-slate-300 mb-2">
-                        Company Name <span className="text-slate-500">(Optional)</span>
+                        Company Name <span className="text-slate-400">(Optional)</span>
                       </label>
                       <input
                         type="text"

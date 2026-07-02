@@ -94,9 +94,9 @@ export default function Footer() {
 
           {/* Column 2 – Services */}
           <div>
-            <h4 className="text-white font-semibold text-sm uppercase tracking-wider mb-5">
+            <p className="text-white font-semibold text-sm uppercase tracking-wider mb-5">
               Services
-            </h4>
+            </p>
             <ul className="space-y-3">
               {services.map((item) => (
                 <li key={item.href}>
@@ -114,9 +114,9 @@ export default function Footer() {
 
           {/* Column 3 – Quick Links */}
           <div>
-            <h4 className="text-white font-semibold text-sm uppercase tracking-wider mb-5">
+            <p className="text-white font-semibold text-sm uppercase tracking-wider mb-5">
               Quick Links
-            </h4>
+            </p>
             <ul className="space-y-3">
               {quickLinks.map((item) => (
                 <li key={item.href}>
@@ -134,9 +134,9 @@ export default function Footer() {
 
           {/* Column 4 – Contact */}
           <div>
-            <h4 className="text-white font-semibold text-sm uppercase tracking-wider mb-5">
+            <p className="text-white font-semibold text-sm uppercase tracking-wider mb-5">
               Contact Us
-            </h4>
+            </p>
             <ul className="space-y-4">
               <li>
                 <a
@@ -181,19 +181,19 @@ export default function Footer() {
 
         {/* ---- Bottom bar ---- */}
         <div className="border-t border-white/[0.05] py-6 flex flex-col sm:flex-row items-center justify-between gap-4 pr-0 sm:pr-20">
-          <p className="text-slate-500 text-xs text-center sm:text-left">
+          <p className="text-slate-400 text-xs text-center sm:text-left">
             &copy; {new Date().getFullYear()} RankNex AI. All rights reserved.
           </p>
           <div className="flex items-center gap-6 pb-16 sm:pb-0">
             <Link
               href="/privacy-policy"
-              className="text-slate-500 text-xs hover:text-slate-300 transition-colors"
+              className="text-slate-400 text-xs hover:text-slate-300 transition-colors"
             >
               Privacy Policy
             </Link>
             <Link
               href="/terms"
-              className="text-slate-500 text-xs hover:text-slate-300 transition-colors"
+              className="text-slate-400 text-xs hover:text-slate-300 transition-colors"
             >
               Terms of Service
             </Link>

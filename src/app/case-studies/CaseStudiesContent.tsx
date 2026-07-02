@@ -134,7 +134,7 @@ export default function CaseStudiesContent({ caseStudies }: CaseStudiesContentPr
                         {metrics.slice(0, 3).map((m, index) => (
                           <div key={index} className="text-center">
                             <div className="text-sm font-bold text-teal-400">{m.value}</div>
-                            <div className="text-[10px] text-slate-500 font-semibold uppercase truncate">
+                            <div className="text-[10px] text-slate-400 font-semibold uppercase truncate">
                               {m.label}
                             </div>
                           </div>
@@ -194,7 +194,7 @@ export default function CaseStudiesContent({ caseStudies }: CaseStudiesContentPr
                   <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 bg-navy-950 p-6 rounded-xl border border-white/5 text-center">
                     {parseMetrics(selectedStudy.metrics).map((m, index) => (
                       <div key={index} className="space-y-1">
-                        <div className="text-xs text-slate-500 font-bold uppercase tracking-wider">
+                        <div className="text-xs text-slate-400 font-bold uppercase tracking-wider">
                           {m.label}
                         </div>
                         <div className="text-2xl font-bold text-teal-400">{m.value}</div>
