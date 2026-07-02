@@ -185,19 +185,27 @@ export default function Footer() {
           <p className="text-white font-semibold text-sm uppercase tracking-wider mb-5">
             Office Address
           </p>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {offices.map((office) => (
-              <div key={office.country}>
-                <div className="flex items-center gap-2 mb-1.5">
-                  <span className="text-lg" aria-hidden="true">
-                    {office.flag}
-                  </span>
-                  <span className="text-white font-semibold text-sm">
+              <div key={office.country} className="flex items-start gap-3">
+                <span className="shrink-0 w-8 h-8 rounded-md overflow-hidden border border-white/10 mt-0.5">
+                  <img
+                    src={`https://flagcdn.com/w40/${office.code}.png`}
+                    srcSet={`https://flagcdn.com/w40/${office.code}.png 1x, https://flagcdn.com/w80/${office.code}.png 2x`}
+                    alt={`${office.country} flag`}
+                    className="w-full h-full object-cover"
+                    width={32}
+                    height={32}
+                    loading="lazy"
+                  />
+                </span>
+                <div>
+                  <p className="text-white font-semibold text-sm leading-tight">
                     {office.country}{' '}
-                    <span className="text-slate-400 font-normal">({office.label})</span>
-                  </span>
+                    <span className="text-slate-500 font-normal">({office.label})</span>
+                  </p>
+                  <p className="text-slate-400 text-sm mt-1">{office.address}</p>
                 </div>
-                <p className="text-slate-400 text-sm">{office.address}</p>
               </div>
             ))}
           </div>
