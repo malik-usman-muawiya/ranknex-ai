@@ -10,6 +10,7 @@ import {
   ArrowUpRight,
 } from 'lucide-react';
 import Logo from './Logo';
+import { offices } from '@/lib/offices';
 
 /* ------------------------------------------------------------------ */
 /*  Data                                                               */
@@ -176,6 +177,29 @@ export default function Footer() {
                 <ArrowUpRight className="w-3.5 h-3.5" />
               </Link>
             </div>
+          </div>
+        </div>
+
+        {/* ---- Office Address ---- */}
+        <div className="border-t border-white/[0.05] py-8">
+          <p className="text-white font-semibold text-sm uppercase tracking-wider mb-5">
+            Office Address
+          </p>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+            {offices.map((office) => (
+              <div key={office.country}>
+                <div className="flex items-center gap-2 mb-1.5">
+                  <span className="text-lg" aria-hidden="true">
+                    {office.flag}
+                  </span>
+                  <span className="text-white font-semibold text-sm">
+                    {office.country}{' '}
+                    <span className="text-slate-400 font-normal">({office.label})</span>
+                  </span>
+                </div>
+                <p className="text-slate-400 text-sm">{office.address}</p>
+              </div>
+            ))}
           </div>
         </div>
 
