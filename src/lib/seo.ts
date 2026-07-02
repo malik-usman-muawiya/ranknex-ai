@@ -1,6 +1,6 @@
 import { Metadata } from "next";
 
-const SITE_URL = process.env.NEXTAUTH_URL || "https://ranknexai.com";
+const SITE_URL = process.env.NEXTAUTH_URL || "https://www.ranknexai.com";
 const SITE_NAME = "RankNex AI";
 const DEFAULT_DESCRIPTION = "RankNex AI delivers AI-powered digital marketing, SEO, PPC, social media, and web development services for businesses in Pakistan, UK, and US. Get your free audit today.";
 
