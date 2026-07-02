@@ -4,7 +4,7 @@ import Link from "next/link";
 import Image from "next/image";
 import prisma from "@/lib/db";
 import { formatDate, readingTime } from "@/lib/utils";
-import { generateArticleSchema } from "@/lib/seo";
+import { generateArticleSchema, generateBreadcrumbSchema } from "@/lib/seo";
 import { Calendar, Clock, ArrowLeft, Tag, Share2, Facebook, Twitter, Linkedin } from "lucide-react";
 import ScrollReveal from "@/components/ui/ScrollReveal";
 
@@ -90,12 +90,22 @@ export default async function BlogPostPage({ params }: PageProps) {
     featuredImage: post.featuredImage,
   });
 
+  const breadcrumbSchema = generateBreadcrumbSchema([
+    { name: "Home", url: "/" },
+    { name: "Blog", url: "/blog" },
+    { name: post.title, url: `/blog/${post.slug}` },
+  ]);
+
   return (
     <main className="relative overflow-hidden bg-navy-950 text-slate-300" style={{ paddingTop: '8rem', paddingBottom: '5rem' }}>
       {/* Schema JSON-LD */}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
       />
 
       {/* Background Orbs */}

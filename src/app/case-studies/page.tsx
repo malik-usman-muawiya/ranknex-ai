@@ -2,6 +2,7 @@ import { Metadata } from "next";
 import prisma from "@/lib/db";
 import CaseStudiesContent from "./CaseStudiesContent";
 import type { CaseStudy } from "@/types";
+import { generateBreadcrumbSchema } from "@/lib/seo";
 
 export const metadata: Metadata = {
   title: "Client Results & Case Studies | RankNex AI Pakistan",
@@ -44,5 +45,18 @@ export default async function CaseStudiesPage() {
     updatedAt: study.updatedAt.toISOString(),
   })) as unknown as CaseStudy[];
 
-  return <CaseStudiesContent caseStudies={caseStudies} />;
+  const breadcrumbSchema = generateBreadcrumbSchema([
+    { name: "Home", url: "/" },
+    { name: "Case Studies", url: "/case-studies" },
+  ]);
+
+  return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
+      <CaseStudiesContent caseStudies={caseStudies} />
+    </>
+  );
 }

@@ -2,6 +2,7 @@ import { Metadata } from "next";
 import prisma from "@/lib/db";
 import BlogContent from "./BlogContent";
 import type { BlogPost, BlogCategory } from "@/types";
+import { generateBreadcrumbSchema } from "@/lib/seo";
 
 export const metadata: Metadata = {
   title: "SEO & Digital Marketing Blog | RankNex AI Insights",
@@ -83,11 +84,22 @@ export default async function BlogPage() {
 
   const initialTotalPages = Math.ceil(total / 9) || 1;
 
+  const breadcrumbSchema = generateBreadcrumbSchema([
+    { name: "Home", url: "/" },
+    { name: "Blog", url: "/blog" },
+  ]);
+
   return (
-    <BlogContent
-      initialPosts={initialPosts}
-      categories={categories}
-      initialTotalPages={initialTotalPages}
-    />
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
+      <BlogContent
+        initialPosts={initialPosts}
+        categories={categories}
+        initialTotalPages={initialTotalPages}
+      />
+    </>
   );
 }

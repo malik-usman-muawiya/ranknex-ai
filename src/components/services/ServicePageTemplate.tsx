@@ -1,11 +1,13 @@
 'use client';
 
+import { usePathname } from 'next/navigation';
 import ScrollReveal from '@/components/ui/ScrollReveal';
 import SectionHeading from '@/components/ui/SectionHeading';
 import FAQ from '@/components/ui/FAQ';
 import { motion } from 'framer-motion';
 import { ArrowRight, MessageCircle, CheckCircle2, LucideIcon } from 'lucide-react';
 import Link from 'next/link';
+import { generateBreadcrumbSchema, generateFAQSchema, generateServiceSchema } from '@/lib/seo';
 
 interface Feature {
   icon: LucideIcon;
@@ -49,8 +51,41 @@ export default function ServicePageTemplate({
   ctaTitle = 'Ready to Get Started?',
   ctaDescription = "Book a free consultation and discover how we can accelerate your growth. No obligations, no pressure, just honest, actionable insights.",
 }: ServicePageTemplateProps) {
+  const pathname = usePathname();
+  const serviceName = `${headline} ${headlineAccent}`.trim();
+
+  const breadcrumbSchema = generateBreadcrumbSchema([
+    { name: 'Home', url: '/' },
+    { name: 'Services', url: '/services' },
+    { name: serviceName, url: pathname },
+  ]);
+
+  const serviceSchema = generateServiceSchema({
+    name: serviceName,
+    description,
+    url: pathname,
+  });
+
+  const faqSchema = faqs && faqs.length > 0 ? generateFAQSchema(faqs) : null;
+
   return (
     <main>
+      {/* Structured data: Breadcrumbs, Service, and FAQ for rich results */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }}
+      />
+      {faqSchema && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+        />
+      )}
+
       {/* Hero Section */}
       <section className="relative overflow-hidden" style={{ paddingTop: '8rem', paddingBottom: '5rem' }}>
         <div className="orb orb-teal w-96 h-96 -top-48 -right-24 opacity-10" />
