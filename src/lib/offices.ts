@@ -5,13 +5,17 @@ export interface Office {
   address: string;
 }
 
-// Add more offices here as addresses are confirmed (e.g. Pakistan).
-// Used on both the Contact page and the site Footer.
 export const offices: Office[] = [
   {
     flag: "🇬🇧",
     country: "United Kingdom",
     label: "UK Office",
     address: "Ainsworth St, Blackburn BB1 6AF, UK",
+  },
+  {
+    flag: "🇵🇰",
+    country: "Pakistan",
+    label: "Global Delivery Center",
+    address: "J88P+723, Bhamma, Lahore, Pakistan",
   },
 ];

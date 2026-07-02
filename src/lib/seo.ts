@@ -144,8 +144,9 @@ export function generateOrganizationSchema() {
     ],
     address: {
       "@type": "PostalAddress",
-      addressCountry: "PK",
+      streetAddress: "J88P+723, Bhamma",
       addressLocality: "Lahore",
+      addressCountry: "PK",
     },
   };
 }
