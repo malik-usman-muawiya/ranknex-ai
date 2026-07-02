@@ -60,10 +60,9 @@ export default function HeroSection() {
             </span>
           </div>
 
-          {/* Headline */}
+          {/* Headline - no fade animation: this is the LCP element, must paint immediately */}
           <h1
-            className="text-[2.5rem] sm:text-5xl md:text-6xl lg:text-7xl font-bold font-heading leading-[1.05] tracking-tight mb-6 animate-fade-up"
-            style={{ animationDelay: '0.15s' }}
+            className="text-[2.5rem] sm:text-5xl md:text-6xl lg:text-7xl font-bold font-heading leading-[1.05] tracking-tight mb-6"
           >
             <span className="text-white">More Than Rankings.</span>
             <br />
