@@ -14,6 +14,7 @@ import {
 } from "lucide-react";
 import ScrollReveal from "@/components/ui/ScrollReveal";
 import SectionHeading from "@/components/ui/SectionHeading";
+import OfficeLocations from "@/components/contact/OfficeLocations";
 import { getWhatsAppUrl } from "@/lib/utils";
 
 function WhatsAppIcon({ className }: { className?: string }) {
@@ -101,6 +102,12 @@ export default function ContactContent() {
           title={<>Let&apos;s Build Something <span className="gradient-text">Remarkable</span></>}
           subtitle="Have a project in mind or want to grow your search visibility? Send us a message or chat with us on WhatsApp. We get back to you within 24 hours."
         />
+
+        <div className="mt-12">
+          <ScrollReveal direction="up" delay={0.1}>
+            <OfficeLocations />
+          </ScrollReveal>
+        </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 mt-12">
           {/* Contact Information */}
