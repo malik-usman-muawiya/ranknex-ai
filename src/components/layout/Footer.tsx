@@ -8,6 +8,7 @@ import {
   Mail,
   Phone,
   ArrowUpRight,
+  Building2,
 } from 'lucide-react';
 import Logo from './Logo';
 import { offices } from '@/lib/offices';
@@ -182,13 +183,20 @@ export default function Footer() {
 
         {/* ---- Office Address ---- */}
         <div className="border-t border-white/[0.05] py-8">
-          <p className="text-white font-semibold text-sm uppercase tracking-wider mb-5">
+          <span className="inline-flex items-center gap-1.5 text-teal-500 text-[11px] font-semibold uppercase tracking-widest bg-teal-500/10 border border-teal-500/20 rounded-full px-3 py-1 mb-6">
+            <Building2 className="w-3 h-3" />
             Office Address
-          </p>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          </span>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
             {offices.map((office) => (
-              <div key={office.country} className="flex items-start gap-3">
-                <span className="shrink-0 w-8 h-8 rounded-md overflow-hidden border border-white/10 mt-0.5">
+              <div
+                key={office.country}
+                className="group relative flex items-start gap-3 rounded-xl border border-white/[0.06] bg-white/[0.02] p-4 overflow-hidden transition-colors duration-300 hover:border-teal-500/20"
+              >
+                {/* Glow */}
+                <div className="absolute -top-8 -right-8 w-24 h-24 bg-teal-500/[0.08] rounded-full blur-2xl opacity-60 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
+
+                <span className="relative shrink-0 w-8 h-8 rounded-md overflow-hidden border border-white/10 mt-0.5">
                   <img
                     src={`https://flagcdn.com/w40/${office.code}.png`}
                     srcSet={`https://flagcdn.com/w40/${office.code}.png 1x, https://flagcdn.com/w80/${office.code}.png 2x`}
@@ -199,12 +207,15 @@ export default function Footer() {
                     loading="lazy"
                   />
                 </span>
-                <div>
+                <div className="relative">
                   <p className="text-white font-semibold text-sm leading-tight">
                     {office.country}{' '}
                     <span className="text-slate-500 font-normal">({office.label})</span>
                   </p>
-                  <p className="text-slate-400 text-sm mt-1">{office.address}</p>
+                  <p className="flex items-start gap-1.5 text-slate-400 text-sm mt-1.5">
+                    <MapPin className="w-3.5 h-3.5 mt-0.5 text-teal-500/50 shrink-0" />
+                    <span>{office.address}</span>
+                  </p>
                 </div>
               </div>
             ))}
