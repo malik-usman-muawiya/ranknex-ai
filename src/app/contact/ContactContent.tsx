@@ -126,7 +126,7 @@ export default function ContactContent() {
                     </div>
                     <div>
                       <h4 className="text-white font-semibold">Our Location</h4>
-                      <p className="text-slate-400 text-sm mt-1">Lahore, Pakistan</p>
+                      <p className="text-slate-400 text-sm mt-1">Badami Bagh, Lahore</p>
                     </div>
                   </div>
 
