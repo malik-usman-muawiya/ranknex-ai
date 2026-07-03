@@ -140,7 +140,7 @@ export function generateOrganizationSchema() {
       "https://www.facebook.com/ranknexai",
       "https://www.linkedin.com/company/ranknexai",
       "https://twitter.com/ranknexai",
-      "https://www.instagram.com/ranknexai",
+      "https://www.instagram.com/ranknexai/",
     ],
     address: {
       "@type": "PostalAddress",

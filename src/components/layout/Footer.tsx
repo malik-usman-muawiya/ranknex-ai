@@ -39,7 +39,7 @@ const socialLinks = [
   { icon: Twitter, href: 'https://twitter.com/ranknexai', label: 'Twitter' },
   {
     icon: Instagram,
-    href: 'https://instagram.com/ranknexai',
+    href: 'https://www.instagram.com/ranknexai/',
     label: 'Instagram',
   },
   {
