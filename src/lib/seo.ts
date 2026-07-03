@@ -144,7 +144,7 @@ export function generateOrganizationSchema() {
     ],
     address: {
       "@type": "PostalAddress",
-      streetAddress: "J88P+723, Bhamma",
+      streetAddress: "Near Minar-e-Pakistan, Badami Bagh",
       addressLocality: "Lahore",
       addressCountry: "PK",
     },

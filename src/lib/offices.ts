@@ -18,6 +18,6 @@ export const offices: Office[] = [
     code: "pk",
     country: "Pakistan",
     label: "Global Delivery Center",
-    address: "J88P+723, Bhamma, Lahore, Pakistan",
+    address: "Near Minar-e-Pakistan, Badami Bagh, Lahore, Pakistan",
   },
 ];
