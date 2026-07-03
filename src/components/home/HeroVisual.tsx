@@ -27,10 +27,7 @@ export default function HeroVisual() {
           <span className="w-3 h-3 rounded-full bg-red-400/70" />
           <span className="w-3 h-3 rounded-full bg-amber-400/70" />
           <span className="w-3 h-3 rounded-full bg-teal-400/70" />
-          <span className="ml-3 hidden sm:inline-flex items-center text-[11px] text-slate-500 bg-white/[0.04] border border-white/[0.06] rounded-md px-2.5 py-1 font-mono">
-            app.ranknexai.com/analytics
-          </span>
-          <span className="ml-3 sm:hidden text-xs text-slate-400 font-medium">RankNex Analytics</span>
+          <span className="ml-3 text-xs text-slate-400 font-medium">RankNex Analytics</span>
           <span className="ml-auto inline-flex items-center gap-1.5 text-[10px] font-semibold text-teal-400 bg-teal-500/10 px-2 py-1 rounded-full">
             <span className="w-1.5 h-1.5 rounded-full bg-teal-400 animate-pulse" /> Live
           </span>
