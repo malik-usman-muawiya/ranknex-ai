@@ -6,6 +6,7 @@ import { useForm } from "react-hook-form";
 import { ArrowLeft, Save, Loader2, Sparkles } from "lucide-react";
 import Link from "next/link";
 import ImageUploader from "@/components/admin/ImageUploader";
+import RichTextEditor from "@/components/admin/RichTextEditor";
 import { slugify } from "@/lib/utils";
 import type { BlogPost, BlogCategory } from "@/types";
 
@@ -199,26 +200,23 @@ export default function BlogEditor({ initialData, categories, mode }: BlogEditor
               {errors.excerpt && <p className="text-red-500 text-xs mt-1.5">{errors.excerpt.message}</p>}
             </div>
 
-            {/* Rich Content Editor (HTML Textarea) */}
+            {/* Rich Content Editor (WordPress-style WYSIWYG) */}
             <div>
               <div className="flex justify-between items-center mb-2">
-                <label htmlFor="content" className="block text-sm font-semibold text-slate-300">
+                <label className="block text-sm font-semibold text-slate-300">
                   Article Body <span className="text-red-500">*</span>
                 </label>
                 <span className="text-[10px] text-slate-500 font-bold uppercase tracking-wide bg-white/5 border border-white/5 px-2 py-0.5 rounded flex items-center gap-1">
                   <Sparkles className="w-3 h-3 text-teal-500" />
-                  HTML Supported
+                  Rich Editor
                 </span>
               </div>
-              <textarea
-                id="content"
-                rows={16}
-                {...register("content", { required: "Body content is required" })}
-                className={`w-full bg-navy-950 border rounded-xl p-4 text-white text-sm font-mono placeholder-slate-600 focus:outline-none focus:ring-2 focus:ring-teal-500/20 ${
-                  errors.content ? "border-red-500/60 focus:border-red-500" : "border-white/10 focus:border-teal-500"
-                }`}
-                placeholder="<h2>Introduction</h2><p>Write your article here using clean HTML formatting. Support tags like &lt;h2&gt;, &lt;p&gt;, &lt;ul&gt;, &lt;li&gt;, &lt;strong&gt;, etc. to align with global CSS typography styles.</p>"
-              ></textarea>
+              <input type="hidden" {...register("content", { required: "Body content is required" })} />
+              <RichTextEditor
+                value={watch("content")}
+                onChange={(html) => setValue("content", html, { shouldValidate: true, shouldDirty: true })}
+                placeholder="Write your article here. Use the toolbar for headings, bold, lists, links, and images."
+              />
               {errors.content && <p className="text-red-500 text-xs mt-1.5">{errors.content.message}</p>}
             </div>
           </div>
