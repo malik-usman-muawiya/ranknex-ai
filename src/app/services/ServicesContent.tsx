@@ -221,7 +221,7 @@ export default function ServicesContent() {
                   <ArrowRight className="w-4 h-4" />
                 </Link>
                 <a
-                  href="https://wa.me/9203224044150"
+                  href="https://wa.me/923224044150"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="btn-secondary"

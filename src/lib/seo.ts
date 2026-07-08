@@ -1,6 +1,6 @@
 import { Metadata } from "next";
 
-const SITE_URL = process.env.NEXTAUTH_URL || "https://ranknexai.com";
+const SITE_URL = process.env.NEXTAUTH_URL || "https://www.ranknexai.com";
 const SITE_NAME = "RankNex AI";
 const DEFAULT_DESCRIPTION = "RankNex AI delivers AI-powered digital marketing, SEO, PPC, social media, and web development services for businesses in Pakistan, UK, and US. Get your free audit today.";
 
@@ -140,12 +140,13 @@ export function generateOrganizationSchema() {
       "https://www.facebook.com/ranknexai",
       "https://www.linkedin.com/company/ranknexai",
       "https://twitter.com/ranknexai",
-      "https://www.instagram.com/ranknexai",
+      "https://www.instagram.com/ranknexai/",
     ],
     address: {
       "@type": "PostalAddress",
-      addressCountry: "PK",
+      streetAddress: "Near Minar-e-Pakistan, Badami Bagh",
       addressLocality: "Lahore",
+      addressCountry: "PK",
     },
   };
 }
@@ -174,10 +175,36 @@ export function generateServiceSchema(service: {
   };
 }
 
-export function generateWebsiteSchema() {
+export function generateBreadcrumbSchema(items: { name: string; url: string }[]) {
   return {
     "@context": "https://schema.org",
-    "@type": "WebSite",
+    "@type": "BreadcrumbList",
+    itemListElement: items.map((item, index) => ({
+      "@type": "ListItem",
+      position: index + 1,
+      name: item.name,
+      item: item.url.startsWith("http") ? item.url : `${SITE_URL}${item.url}`,
+    })),
+  };
+}
+
+export function generateFAQSchema(faqs: { question: string; answer: string }[]) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: faqs.map((faq) => ({
+      "@type": "Question",
+      name: faq.question,
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: faq.answer,
+      },
+    })),
+  };
+}
+
+export function generateWebsiteSchema() {
+  return {
     name: SITE_NAME,
     url: SITE_URL,
     potentialAction: {

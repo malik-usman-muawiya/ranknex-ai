@@ -2,9 +2,7 @@ import type { Metadata } from 'next';
 import { Inter, Outfit } from 'next/font/google';
 import './globals.css';
 import Providers from '@/components/Providers';
-import Header from '@/components/layout/Header';
-import Footer from '@/components/layout/Footer';
-import WhatsAppButton from '@/components/layout/WhatsAppButton';
+import SiteChrome from '@/components/layout/SiteChrome';
 import GoogleAnalytics from '@/components/GoogleAnalytics';
 import { generateOrganizationSchema, generateWebsiteSchema } from '@/lib/seo';
 
@@ -31,11 +29,11 @@ const outfit = Outfit({
 export const metadata: Metadata = {
   metadataBase: new URL(process.env.NEXTAUTH_URL || 'https://www.ranknexai.com'),
   title: {
-    default: 'RankNex AI | AI-Powered Digital Marketing Agency',
+    default: 'RankNex AI | AI-Powered SEO & Digital Marketing Agency',
     template: '%s | RankNex AI',
   },
   description:
-    'RankNex AI delivers AI-powered digital marketing, SEO, PPC, social media, and web development services for businesses in Pakistan, UK, and US. Get your free audit today.',
+    'RankNex AI is an AI-powered SEO and digital marketing agency helping UK, US, and Pakistani businesses rank higher on Google and generate more leads online.',
   keywords: [
     'digital marketing agency',
     'SEO company Pakistan',
@@ -52,7 +50,7 @@ export const metadata: Metadata = {
   creator: 'RankNex AI',
   publisher: 'RankNex AI',
   verification: {
-    google: 'qMWb_E5Pen6eDab21VurvVn9ikqqb--QfV3SnEbYArg',
+    google: ['qMWb_E5Pen6eDab21VurvVn9ikqqb--QfV3SnEbYArg', 'et2Kkk3hPQLyESPRCU7SDwYB3lAYZerTmjxlKUD8m6g'],
   },
   robots: {
     index: true,
@@ -70,13 +68,13 @@ export const metadata: Metadata = {
     locale: 'en_US',
     url: '/',
     siteName: 'RankNex AI',
-    title: 'RankNex AI | AI-Powered Digital Marketing Agency',
+    title: 'RankNex AI | AI-Powered SEO & Digital Marketing Agency',
     description:
       'AI-powered digital marketing agency delivering measurable growth through SEO, PPC, social media, and web solutions.',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'RankNex AI | AI-Powered Digital Marketing Agency',
+    title: 'RankNex AI | AI-Powered SEO & Digital Marketing Agency',
     description:
       'AI-powered digital marketing agency delivering measurable growth through SEO, PPC, social media, and web solutions.',
   },
@@ -100,6 +98,8 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${inter.variable} ${outfit.variable}`}>
       <head>
+        <link rel="preconnect" href="https://www.googletagmanager.com" />
+        <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
         {/* Organization structured data */}
         <script
           type="application/ld+json"
@@ -118,12 +118,7 @@ export default function RootLayout({
       <body className="bg-navy-950 text-slate-300 antialiased">
         <GoogleAnalytics />
         <Providers>
-          <div className="flex flex-col min-h-screen">
-            <Header />
-            <main className="flex-1">{children}</main>
-            <Footer />
-          </div>
-          <WhatsAppButton />
+          <SiteChrome>{children}</SiteChrome>
         </Providers>
       </body>
     </html>

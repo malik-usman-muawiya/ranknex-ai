@@ -2,10 +2,11 @@ import { Metadata } from "next";
 import prisma from "@/lib/db";
 import CaseStudiesContent from "./CaseStudiesContent";
 import type { CaseStudy } from "@/types";
+import { generateBreadcrumbSchema } from "@/lib/seo";
 
 export const metadata: Metadata = {
-  title: "Case Studies & Results | Digital Marketing Client Stories - RankNex AI",
-  description: "Read our case studies to see how RankNex AI helped brands grow organic traffic, lower cost-per-acquisition (CPA), and scale leads globally.",
+  title: "Client Results & Case Studies | RankNex AI Pakistan",
+  description: "See how RankNex AI helped UK, US, and Pakistani brands grow organic traffic, lower acquisition costs, and scale qualified leads through SEO and PPC.",
   keywords: [
     "digital marketing case studies",
     "seo results client stories",
@@ -14,12 +15,12 @@ export const metadata: Metadata = {
     "ranknex ai results"
   ],
   alternates: {
-    canonical: "https://ranknexai.com/case-studies",
+    canonical: "https://www.ranknexai.com/case-studies",
   },
   openGraph: {
     title: "Case Studies & Client Success Stories | RankNex AI",
     description: "Proof in numbers. Real growth results and case studies from search engine optimization, PPC advertising, and web development.",
-    url: "https://ranknexai.com/case-studies",
+    url: "https://www.ranknexai.com/case-studies",
     siteName: "RankNex AI",
     locale: "en_US",
     type: "website",
@@ -44,5 +45,18 @@ export default async function CaseStudiesPage() {
     updatedAt: study.updatedAt.toISOString(),
   })) as unknown as CaseStudy[];
 
-  return <CaseStudiesContent caseStudies={caseStudies} />;
+  const breadcrumbSchema = generateBreadcrumbSchema([
+    { name: "Home", url: "/" },
+    { name: "Case Studies", url: "/case-studies" },
+  ]);
+
+  return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
+      <CaseStudiesContent caseStudies={caseStudies} />
+    </>
+  );
 }

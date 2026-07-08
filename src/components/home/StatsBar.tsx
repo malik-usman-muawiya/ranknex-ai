@@ -72,7 +72,7 @@ export default function StatsBar() {
                     <div className="text-sm font-semibold text-white mb-0.5">
                       {stat.label}
                     </div>
-                    <div className="text-xs text-slate-500">
+                    <div className="text-xs text-slate-400">
                       {stat.description}
                     </div>
                   </div>

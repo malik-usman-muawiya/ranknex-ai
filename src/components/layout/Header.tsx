@@ -40,7 +40,7 @@ const mainServices: ServiceItem[] = [
   },
   {
     label: 'PPC Advertising',
-    href: '/services/ppc',
+    href: '/services/ppc-advertising',
     icon: <MousePointerClick className="w-5 h-5" />,
     description: 'Maximize ROI with data-driven ad campaigns',
   },
@@ -84,7 +84,7 @@ const navLinks: NavLink[] = [
   { label: 'About Us', href: '/about' },
   { label: 'Services', href: '/services', hasDropdown: true },
   { label: 'Blogs', href: '/blog' },
-  { label: 'Results', href: '/case-studies' },
+  { label: 'Case Studies', href: '/case-studies' },
   { label: 'Contact Us', href: '/contact' },
 ];
 
@@ -115,7 +115,9 @@ export default function Header() {
     if (clickTimestamps.current.length >= REQUIRED_CLICKS) {
       clickTimestamps.current = [];
       router.push('/admin/login');
+      return;
     }
+    router.push('/');
   }, [router]);
 
   // Scroll listener

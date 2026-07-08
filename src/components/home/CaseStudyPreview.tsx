@@ -74,14 +74,14 @@ export default function CaseStudyPreview() {
                         study.color === 'teal' ? 'bg-teal-500' : 'bg-cyan-400'
                       }`}
                     />
-                    <span className="text-xs font-medium text-slate-500 uppercase tracking-wider">
+                    <span className="text-xs font-medium text-slate-400 uppercase tracking-wider">
                       {study.industry}
                     </span>
                   </div>
                   <h3 className="text-xl font-bold font-heading text-white mb-1">
                     {study.client}
                   </h3>
-                  <p className="text-sm text-slate-500">{study.location}</p>
+                  <p className="text-sm text-slate-400">{study.location}</p>
                 </div>
 
                 {/* Challenge */}
@@ -99,7 +99,7 @@ export default function CaseStudyPreview() {
                     >
                       <div>
                         <p className="text-sm text-slate-300">{result.metric}</p>
-                        <p className="text-xs text-slate-500">{result.period}</p>
+                        <p className="text-xs text-slate-400">{result.period}</p>
                       </div>
                       <div className="flex items-center gap-1.5">
                         <TrendingUp className="w-4 h-4 text-teal-500" />

@@ -7,6 +7,7 @@ const tiles = [
 ];
 
 const bars = [38, 52, 46, 64, 58, 76, 70, 88];
+const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug'];
 
 /**
  * Static analytics-dashboard visual. Renders in final state (no per-element
@@ -26,7 +27,7 @@ export default function HeroVisual() {
           <span className="w-3 h-3 rounded-full bg-red-400/70" />
           <span className="w-3 h-3 rounded-full bg-amber-400/70" />
           <span className="w-3 h-3 rounded-full bg-teal-400/70" />
-          <span className="ml-3 text-xs text-slate-400 font-medium">RankNex Analytics</span>
+          <span className="ml-3 text-xs text-slate-400 font-medium">Client Growth Report</span>
           <span className="ml-auto inline-flex items-center gap-1.5 text-[10px] font-semibold text-teal-400 bg-teal-500/10 px-2 py-1 rounded-full">
             <span className="w-1.5 h-1.5 rounded-full bg-teal-400 animate-pulse" /> Live
           </span>
@@ -37,10 +38,11 @@ export default function HeroVisual() {
           {/* Header row */}
           <div className="flex items-end justify-between mb-5">
             <div className="text-left">
-              <p className="text-xs text-slate-400 mb-1">Organic Traffic</p>
+              <p className="text-xs text-slate-400 mb-1">Organic Traffic · Last 30 days</p>
               <p className="text-2xl sm:text-3xl font-bold text-white font-heading tracking-tight">
                 128,540
               </p>
+              <p className="text-[10px] text-slate-500 mt-1">Updated 2 min ago</p>
             </div>
             <span className="inline-flex items-center gap-1 text-teal-400 text-sm font-semibold bg-teal-500/10 border border-teal-500/20 px-2.5 py-1 rounded-lg">
               <TrendingUp className="w-4 h-4" /> +217%
@@ -58,6 +60,19 @@ export default function HeroVisual() {
                     <stop offset="100%" stopColor="#00C9A7" stopOpacity="0" />
                   </linearGradient>
                 </defs>
+                {/* Grid lines — real dashboards always show a reference grid */}
+                {[24, 48, 72, 96].map((y) => (
+                  <line
+                    key={y}
+                    x1="0"
+                    y1={y}
+                    x2="320"
+                    y2={y}
+                    stroke="#FFFFFF"
+                    strokeOpacity="0.05"
+                    strokeWidth="1"
+                  />
+                ))}
                 <path
                   d="M0 100 L40 92 L80 96 L120 74 L160 78 L200 52 L240 40 L280 30 L320 12 L320 120 L0 120 Z"
                   fill="url(#heroArea)"
@@ -70,7 +85,24 @@ export default function HeroVisual() {
                   strokeLinecap="round"
                   strokeLinejoin="round"
                 />
+                {/* Endpoint marker — the "current value" dot real charts end on */}
+                <circle cx="320" cy="12" r="4.5" fill="#06283D" stroke="#00E6BF" strokeWidth="2.5" />
+                <circle cx="320" cy="12" r="4.5" fill="#00E6BF" opacity="0.35">
+                  <animate attributeName="r" values="4.5;9;4.5" dur="2s" repeatCount="indefinite" />
+                  <animate attributeName="opacity" values="0.35;0;0.35" dur="2s" repeatCount="indefinite" />
+                </circle>
               </svg>
+              {/* X-axis month labels */}
+              <div className="flex items-center justify-between mt-1.5 px-0.5">
+                {months.map((m, i) => (
+                  <span
+                    key={m}
+                    className={`text-[9px] ${i === months.length - 1 ? 'text-teal-400 font-semibold' : 'text-slate-600'}`}
+                  >
+                    {m}
+                  </span>
+                ))}
+              </div>
             </div>
 
             {/* Bar chart */}

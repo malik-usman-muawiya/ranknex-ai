@@ -77,7 +77,7 @@ export default function CTABanner() {
                 </div>
 
                 {/* Micro-trust */}
-                <p className="mt-8 text-xs text-slate-500">
+                <p className="mt-8 text-xs text-slate-400">
                   ✓ Free Audit Worth $500 &nbsp;·&nbsp; ✓ Results in 90 Days or We Work Free &nbsp;·&nbsp; ✓ No Long-Term Contracts &nbsp;·&nbsp; ✓ Cancel Anytime
                 </p>
 

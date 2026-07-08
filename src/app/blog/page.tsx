@@ -2,10 +2,11 @@ import { Metadata } from "next";
 import prisma from "@/lib/db";
 import BlogContent from "./BlogContent";
 import type { BlogPost, BlogCategory } from "@/types";
+import { generateBreadcrumbSchema } from "@/lib/seo";
 
 export const metadata: Metadata = {
-  title: "SEO, AI & Digital Marketing Blog | RankNex AI",
-  description: "Stay ahead with RankNex AI's latest articles and insights on search engine optimization, AI automation solutions, PPC advertising, and brand strategy.",
+  title: "SEO & Digital Marketing Blog | RankNex AI Insights",
+  description: "Read RankNex AI's blog for expert insights on SEO, AI search optimization, PPC advertising, and digital marketing strategy for UK, US, and Pakistani brands.",
   keywords: [
     "digital marketing blog",
     "seo tips and tricks",
@@ -15,12 +16,12 @@ export const metadata: Metadata = {
     "content marketing guides"
   ],
   alternates: {
-    canonical: "https://ranknexai.com/blog",
+    canonical: "https://www.ranknexai.com/blog",
   },
   openGraph: {
     title: "Blog & Industry Insights | RankNex AI",
     description: "Expert digital growth strategies, guides, and tips in search engine optimization, conversion marketing, and artificial intelligence tools.",
-    url: "https://ranknexai.com/blog",
+    url: "https://www.ranknexai.com/blog",
     siteName: "RankNex AI",
     locale: "en_US",
     type: "website",
@@ -83,11 +84,22 @@ export default async function BlogPage() {
 
   const initialTotalPages = Math.ceil(total / 9) || 1;
 
+  const breadcrumbSchema = generateBreadcrumbSchema([
+    { name: "Home", url: "/" },
+    { name: "Blog", url: "/blog" },
+  ]);
+
   return (
-    <BlogContent
-      initialPosts={initialPosts}
-      categories={categories}
-      initialTotalPages={initialTotalPages}
-    />
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
+      <BlogContent
+        initialPosts={initialPosts}
+        categories={categories}
+        initialTotalPages={initialTotalPages}
+      />
+    </>
   );
 }

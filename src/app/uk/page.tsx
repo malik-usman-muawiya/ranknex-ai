@@ -1,10 +1,11 @@
 import { Metadata } from "next";
 import Link from "next/link";
 import { ArrowRight, Search, Globe, Zap, BarChart3, Users, Shield, Headphones, CheckCircle2 } from "lucide-react";
+import { generateBreadcrumbSchema } from "@/lib/seo";
 
 export const metadata: Metadata = {
-  title: "Digital Marketing & SEO Services for UK Businesses | RankNex AI",
-  description: "Affordable, high-quality digital marketing and SEO services for UK businesses. Get international-standard results from RankNex AI, your outsourced digital growth partner.",
+  title: "Digital Marketing & SEO Services for UK Brands",
+  description: "RankNex AI offers affordable, high-quality digital marketing and SEO services for UK businesses, delivering international-standard results at lower cost.",
   keywords: [
     "seo uk services",
     "seo uk expert",
@@ -15,12 +16,12 @@ export const metadata: Metadata = {
     "uk wordpress support services",
   ],
   alternates: {
-    canonical: "https://ranknexai.com/uk",
+    canonical: "https://www.ranknexai.com/uk",
   },
   openGraph: {
     title: "Digital Marketing & SEO Services for UK Businesses | RankNex AI",
     description: "Affordable, high-quality digital marketing and SEO services for UK businesses.",
-    url: "https://ranknexai.com/uk",
+    url: "https://www.ranknexai.com/uk",
     siteName: "RankNex AI",
     type: "website",
     locale: "en_GB",
@@ -94,8 +95,17 @@ const whyChooseUs = [
 ];
 
 export default function UKPage() {
+  const breadcrumbSchema = generateBreadcrumbSchema([
+    { name: "Home", url: "/" },
+    { name: "UK", url: "/uk" },
+  ]);
   return (
     <main>
+      {/* Structured data: Breadcrumbs */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
       {/* Hero Section */}
       <section className="relative min-h-[80vh] flex items-center" style={{ paddingTop: '8rem', paddingBottom: '5rem' }}>
         <div className="absolute inset-0 gradient-bg" />

@@ -6,40 +6,19 @@ import Link from 'next/link';
 import SectionHeading from '@/components/ui/SectionHeading';
 import ScrollReveal from '@/components/ui/ScrollReveal';
 
-const blogPosts = [
-  {
-    title: 'What Is AEO? How to Get Your Business Featured in ChatGPT Answers (2026 Guide)',
-    excerpt:
-      'A practical breakdown of Answer Engine Optimisation, what it is, why it matters now, and how to structure your content so AI tools recommend your business.',
-    category: 'AI Search',
-    readTime: '7 min read',
-    date: 'June 2026',
-    slug: 'ai-reshaping-seo-2025',
-    featured: true,
-  },
-  {
-    title: 'Outsource SEO to Pakistan: What UK Businesses Need to Know',
-    excerpt:
-      'International-quality digital services at a fraction of the cost. Learn why global businesses are partnering with Pakistani agencies like RankNex AI for growth.',
-    category: 'Industry',
-    readTime: '5 min read',
-    date: 'June 2026',
-    slug: 'pakistani-talent-digital-marketing',
-    featured: false,
-  },
-  {
-    title: 'GEO vs. SEO: How Generative Engine Optimisation Works in 2026',
-    excerpt:
-      'A step-by-step guide to how Generative Engine Optimisation differs from traditional SEO, and what it takes to appear in AI-generated search summaries.',
-    category: 'AI Search',
-    readTime: '10 min read',
-    date: 'June 2026',
-    slug: 'complete-ppc-strategy-guide',
-    featured: false,
-  },
-];
+interface BlogPostPreview {
+  title: string;
+  excerpt: string;
+  slug: string;
+  category: string;
+  readTime: string;
+  date: string;
+  featured: boolean;
+}
 
-export default function BlogPreview() {
+export default function BlogPreview({ posts }: { posts: BlogPostPreview[] }) {
+  if (!posts || posts.length === 0) return null;
+
   return (
     <section className="section section-alt relative overflow-hidden">
       <div className="container relative z-10">
@@ -50,7 +29,7 @@ export default function BlogPreview() {
         />
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 md:gap-8">
-          {blogPosts.map((post, index) => (
+          {posts.map((post, index) => (
             <ScrollReveal key={index} delay={index * 0.12}>
               <Link href={`/blog/${post.slug}`} className="block h-full">
                 <motion.article
@@ -81,7 +60,7 @@ export default function BlogPreview() {
                   </p>
 
                   {/* Meta */}
-                  <div className="flex items-center justify-between text-xs text-slate-500 pt-4 border-t border-navy-700/50">
+                  <div className="flex items-center justify-between text-xs text-slate-400 pt-4 border-t border-navy-700/50">
                     <div className="flex items-center gap-4">
                       <span className="flex items-center gap-1.5">
                         <Calendar className="w-3.5 h-3.5" />
