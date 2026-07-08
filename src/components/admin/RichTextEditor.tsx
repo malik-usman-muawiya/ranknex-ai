@@ -142,7 +142,7 @@ function Toolbar({ editor }: { editor: Editor }) {
   };
 
   return (
-    <div className="flex flex-wrap items-center gap-1.5 p-2.5 bg-navy-900 border border-white/10 border-b-0 rounded-t-xl">
+    <div className="flex flex-wrap items-center gap-1.5 p-2.5 bg-navy-900 border border-white/10 border-b-0 rounded-t-xl sticky top-16 lg:top-0 z-10">
       <ToolbarButton
         title="Bold"
         active={editor.isActive("bold")}
