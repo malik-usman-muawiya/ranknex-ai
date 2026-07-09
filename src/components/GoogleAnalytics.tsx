@@ -1,10 +1,19 @@
 'use client';
 
 import Script from 'next/script';
+import { usePathname } from 'next/navigation';
 
 const GA_MEASUREMENT_ID = 'G-BM80MRMXD3';
 
 export default function GoogleAnalytics() {
+  const pathname = usePathname();
+
+  // Never load analytics on admin/CMS backend routes — those are internal
+  // team pages, not public traffic, and would skew real visitor data.
+  if (pathname?.startsWith('/admin')) {
+    return null;
+  }
+
   return (
     <>
       <Script
