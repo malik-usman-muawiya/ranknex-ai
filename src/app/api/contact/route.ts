@@ -4,7 +4,24 @@ import prisma from "@/lib/db";
 export async function POST(request: NextRequest) {
   try {
     const body = await request.json();
-    const { name, email, phone, company, service, message } = body;
+    const { name, email, phone, company, service, message, website, elapsedMs } = body;
+
+    // Honeypot: a filled hidden field means a bot submitted the form.
+    // Return a fake success so bots don't learn to adapt.
+    if (website) {
+      return NextResponse.json(
+        { message: "Thank you! Your message has been received. We'll get back to you soon." },
+        { status: 201 }
+      );
+    }
+
+    // Timing check: forms filled in under 3 seconds are almost always bots.
+    if (typeof elapsedMs === "number" && elapsedMs < 3000) {
+      return NextResponse.json(
+        { message: "Thank you! Your message has been received. We'll get back to you soon." },
+        { status: 201 }
+      );
+    }
 
     if (!name || !email || !service || !message) {
       return NextResponse.json(

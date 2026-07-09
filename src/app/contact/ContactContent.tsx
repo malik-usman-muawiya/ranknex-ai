@@ -37,12 +37,14 @@ interface ContactFormData {
   company: string;
   service: string;
   message: string;
+  website: string; // honeypot — real users never see or fill this
 }
 
 export default function ContactContent() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState<"idle" | "success" | "error">("idle");
   const [responseMsg, setResponseMsg] = useState("");
+  const [formLoadedAt] = useState(() => Date.now());
 
   const {
     register,
@@ -57,10 +59,20 @@ export default function ContactContent() {
       company: "",
       service: "SEO",
       message: "",
+      website: "",
     },
   });
 
   const onSubmit = async (data: ContactFormData) => {
+    // Honeypot: bots fill every field, including this hidden one. Real users
+    // never see it, so if it has a value, silently drop the submission.
+    if (data.website) {
+      setSubmitStatus("success");
+      setResponseMsg("Thank you! Your message has been received. We'll get back to you soon.");
+      reset();
+      return;
+    }
+
     setIsSubmitting(true);
     setSubmitStatus("idle");
     setResponseMsg("");
@@ -69,7 +81,7 @@ export default function ContactContent() {
       const response = await fetch("/api/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(data),
+        body: JSON.stringify({ ...data, elapsedMs: Date.now() - formLoadedAt }),
       });
 
       const resData = await response.json();
@@ -198,6 +210,21 @@ export default function ContactContent() {
                 </h3>
 
                 <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
+                  {/* Honeypot field — hidden from real users, bots fill it in */}
+                  <div
+                    aria-hidden="true"
+                    style={{ position: "absolute", left: "-9999px", width: "1px", height: "1px", overflow: "hidden" }}
+                  >
+                    <label htmlFor="website">Website</label>
+                    <input
+                      type="text"
+                      id="website"
+                      tabIndex={-1}
+                      autoComplete="off"
+                      {...register("website")}
+                    />
+                  </div>
+
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                     {/* Name */}
                     <div>
