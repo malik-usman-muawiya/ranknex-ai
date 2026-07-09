@@ -1,9 +1,7 @@
 import Link from 'next/link';
 import {
   Facebook,
-  Twitter,
   Instagram,
-  Linkedin,
   MapPin,
   Mail,
   Phone,
@@ -36,16 +34,10 @@ const quickLinks = [
 
 const socialLinks = [
   { icon: Facebook, href: 'https://facebook.com/ranknexai', label: 'Facebook' },
-  { icon: Twitter, href: 'https://twitter.com/ranknexai', label: 'Twitter' },
   {
     icon: Instagram,
     href: 'https://www.instagram.com/ranknexai/',
     label: 'Instagram',
-  },
-  {
-    icon: Linkedin,
-    href: 'https://linkedin.com/company/ranknexai',
-    label: 'LinkedIn',
   },
 ];
 
