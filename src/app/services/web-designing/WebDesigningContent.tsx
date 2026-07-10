@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import ServicePageTemplate from "@/components/services/ServicePageTemplate";
 import { Monitor, Cpu, ShieldCheck, HeartHandshake } from "lucide-react";
 
@@ -32,7 +33,19 @@ const webFeatures = [
   {
     icon: ShieldCheck,
     title: "Speed & Performance Optimisation",
-    description: "Core Web Vitals improvement, image compression, caching, lazy loading, and CDN setup, for sites that are built but loading too slowly to compete in search.",
+    description: (
+      <>
+        Core Web Vitals improvement, image compression, caching, lazy
+        loading, and CDN setup, for sites that are built but loading too
+        slowly to compete in search. Speed is one of the technical factors
+        our{" "}
+        <Link href="/services/seo" className="text-teal-400 hover:text-teal-300 underline underline-offset-2">
+          SEO team
+        </Link>{" "}
+        audits, so every site we build starts from a search-ready
+        foundation.
+      </>
+    ),
   },
   {
     icon: ShieldCheck,

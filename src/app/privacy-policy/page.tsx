@@ -7,6 +7,21 @@ export const metadata: Metadata = {
   alternates: {
     canonical: 'https://www.ranknexai.com/privacy-policy',
   },
+  openGraph: {
+    title: 'Privacy Policy | RankNex AI',
+    description:
+      'Read the RankNex AI privacy policy to understand how we collect, use, and protect your personal information when you use our website and services.',
+    url: 'https://www.ranknexai.com/privacy-policy',
+    siteName: 'RankNex AI',
+    locale: 'en_US',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Privacy Policy | RankNex AI',
+    description:
+      'Read the RankNex AI privacy policy to understand how we collect, use, and protect your personal information when you use our website and services.',
+  },
   robots: {
     index: true,
     follow: true,

@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import ServicePageTemplate from "@/components/services/ServicePageTemplate";
 import { ShieldAlert, Compass, Target, LineChart, Cpu } from "lucide-react";
 
@@ -22,7 +23,18 @@ const seoFeatures = [
   {
     icon: LineChart,
     title: "Content Strategy & Creation",
-    description: "We build a content plan around the keywords and topics your audience is searching for, and either execute it ourselves or brief your team. Blog posts, landing pages, FAQ content, and pillar pages, all structured to rank and to convert once people arrive.",
+    description: (
+      <>
+        We build a content plan around the keywords and topics your audience
+        is searching for, and either execute it ourselves through our{" "}
+        <Link href="/services/content-writing" className="text-teal-400 hover:text-teal-300 underline underline-offset-2">
+          content writing service
+        </Link>{" "}
+        or brief your team. Blog posts, landing pages, FAQ content, and
+        pillar pages, all structured to rank and to convert once people
+        arrive.
+      </>
+    ),
   },
   {
     icon: LineChart,

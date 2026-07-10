@@ -33,7 +33,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   const defaultDesc = post.excerpt;
 
   return {
-    title: `${post.metaTitle || post.title} | RankNex AI`,
+    title: post.metaTitle || post.title,
     description: post.metaDescription || defaultDesc,
     alternates: {
       canonical: `https://www.ranknexai.com/blog/${post.slug}`,
@@ -46,6 +46,12 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
       publishedTime: post.publishedAt?.toISOString(),
       modifiedTime: post.updatedAt.toISOString(),
       images: post.featuredImage ? [{ url: post.featuredImage }] : [],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: post.metaTitle || post.title,
+      description: post.metaDescription || post.excerpt,
+      images: post.featuredImage ? [post.featuredImage] : undefined,
     },
   };
 }

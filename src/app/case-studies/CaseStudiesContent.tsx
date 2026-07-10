@@ -39,9 +39,42 @@ export default function CaseStudiesContent({ caseStudies }: CaseStudiesContentPr
       ? caseStudies
       : caseStudies.filter((cs) => cs.clientIndustry === activeFilter);
 
-  // Parse metrics text (e.g. "Metric: Value, Metric2: Value2") into badges
+  // Parse metrics into {label, value} badges. Handles two possible formats
+  // coming from the CMS: a JSON string (object map or array of pairs), or
+  // plain "Metric: Value, Metric2: Value2" text.
   const parseMetrics = (metricsString: string | null) => {
     if (!metricsString) return [];
+
+    const trimmed = metricsString.trim();
+
+    if (trimmed.startsWith("{") || trimmed.startsWith("[")) {
+      try {
+        const parsed = JSON.parse(trimmed);
+
+        if (Array.isArray(parsed)) {
+          return parsed
+            .map((item) => {
+              if (item && typeof item === "object") {
+                const label = item.label ?? item.name ?? item.key ?? "";
+                const value = item.value ?? item.val ?? "";
+                return { label: String(label), value: String(value) };
+              }
+              return { label: String(item), value: "" };
+            })
+            .filter((m) => m.label);
+        }
+
+        if (parsed && typeof parsed === "object") {
+          return Object.entries(parsed).map(([label, value]) => ({
+            label,
+            value: String(value),
+          }));
+        }
+      } catch {
+        // Not valid JSON despite the leading brace — fall through to plain-text parsing.
+      }
+    }
+
     return metricsString.split(",").map((m) => {
       const parts = m.split(":");
       return {

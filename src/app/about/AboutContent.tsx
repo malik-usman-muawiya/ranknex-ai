@@ -69,8 +69,8 @@ export default function AboutContent() {
               transition={{ duration: 0.7, delay: 0.1 }}
               className="text-4xl md:text-5xl lg:text-6xl font-bold font-heading leading-tight mb-6"
             >
-              We&apos;re RankNex AI. Built in Pakistan.{' '}
-              <span className="gradient-text">Built for Results.</span>
+              We Built RankNex AI Because UK and US Agencies{' '}
+              <span className="gradient-text">Overcharge by 60%.</span>
             </motion.h1>
 
             <motion.p
@@ -79,10 +79,11 @@ export default function AboutContent() {
               transition={{ duration: 0.6, delay: 0.2 }}
               className="text-lg md:text-xl text-slate-400 leading-relaxed max-w-3xl mx-auto"
             >
-              A team of SEO specialists, content strategists, developers, and
-              designers, working from Lahore to deliver digital marketing
-              that competes with the best agencies in London and New York,
-              at a cost that makes sense for growing businesses.
+              50+ clients. 90-day results guarantee. A team of SEO specialists,
+              content strategists, developers, and designers working from
+              Lahore, delivering the same calibre of digital marketing as
+              London and New York agencies, at a cost that actually makes
+              sense.
             </motion.p>
           </div>
         </div>

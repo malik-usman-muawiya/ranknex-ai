@@ -12,7 +12,7 @@ import { generateBreadcrumbSchema, generateFAQSchema, generateServiceSchema } fr
 interface Feature {
   icon: LucideIcon;
   title: string;
-  description: string;
+  description: React.ReactNode;
 }
 
 interface ProcessStep {

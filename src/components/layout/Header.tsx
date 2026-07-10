@@ -188,8 +188,12 @@ export default function Header() {
                 link.hasDropdown ? (
                   /* Services with dropdown */
                   <div key={link.label} ref={dropdownRef} className="relative">
-                    <button
-                      onClick={() => setIsServicesOpen(!isServicesOpen)}
+                    <Link
+                      href={link.href}
+                      onClick={(e) => {
+                        e.preventDefault();
+                        setIsServicesOpen(!isServicesOpen);
+                      }}
                     className="flex items-center gap-1 px-4 py-2 rounded-lg text-sm font-medium transition-colors duration-200 text-teal-400 hover:text-teal-300"
                     >
                       {link.label}
@@ -198,7 +202,7 @@ export default function Header() {
                           isServicesOpen ? 'rotate-180' : ''
                         }`}
                       />
-                    </button>
+                    </Link>
 
                     {/* Mega menu dropdown */}
                     <AnimatePresence>

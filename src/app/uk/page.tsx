@@ -1,7 +1,8 @@
 import { Metadata } from "next";
 import Link from "next/link";
 import { ArrowRight, Search, Globe, Zap, BarChart3, Users, Shield, Headphones, CheckCircle2 } from "lucide-react";
-import { generateBreadcrumbSchema } from "@/lib/seo";
+import { generateBreadcrumbSchema, generateFAQSchema } from "@/lib/seo";
+import FAQ from "@/components/ui/FAQ";
 
 export const metadata: Metadata = {
   title: "Digital Marketing & SEO Services for UK Brands",
@@ -94,17 +95,46 @@ const whyChooseUs = [
   },
 ];
 
+const ukFaqs = [
+  {
+    question: "Is a Pakistan-based agency reliable for UK SEO?",
+    answer:
+      "Yes. Google ranks pages the same way regardless of where the agency managing them is based, what matters is technical execution, content quality, and link authority. Our team has years of experience specifically with UK search intent, UK English conventions, and UK-market keyword research. We work UK business hours where needed, communicate over WhatsApp, Slack, or email, and provide the same monthly reporting and account management you'd expect from a London agency, at 60% lower cost.",
+  },
+  {
+    question: "Why do UK agencies charge so much more for the same work?",
+    answer:
+      "UK agency pricing largely reflects UK office rent, salaries, and overhead, not a difference in the actual SEO or marketing work being delivered. A typical UK agency charges £3,000-8,000 a month for SEO. We deliver the same scope of work (technical audits, content, link building, reporting) for a fraction of that, because our costs are lower, not because we cut corners.",
+  },
+  {
+    question: "How do we communicate and manage projects across time zones?",
+    answer:
+      "Pakistan is 5 hours ahead of the UK (4 hours during UK summer time), which gives us several hours of working-day overlap. We use WhatsApp, email, and scheduled video calls, and every client gets a dedicated account manager as a single point of contact, so nothing gets lost between time zones.",
+  },
+  {
+    question: "Do you offer contracts, or is it month-to-month?",
+    answer:
+      "All engagements are month-to-month by default, no long-term lock-in. SEO results compound over time, so most clients choose to stay, but that decision is always yours to make based on the results you're seeing.",
+  },
+];
+
 export default function UKPage() {
   const breadcrumbSchema = generateBreadcrumbSchema([
     { name: "Home", url: "/" },
     { name: "UK", url: "/uk" },
   ]);
+  const faqSchema = generateFAQSchema(ukFaqs);
   return (
     <main>
       {/* Structured data: Breadcrumbs */}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
+      {/* Structured data: FAQ */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
       {/* Hero Section */}
       <section className="relative min-h-[80vh] flex items-center" style={{ paddingTop: '8rem', paddingBottom: '5rem' }}>
@@ -125,9 +155,10 @@ export default function UKPage() {
             </h1>
             
             <p className="text-lg md:text-xl text-slate-300 mb-10 max-w-3xl mx-auto leading-relaxed">
-              RankNex AI is a Pakistan-based digital agency delivering international-standard SEO, PPC, 
-              social media, and web services to UK businesses, at a fraction of the cost of hiring a London agency. 
-              Same expertise. Same results. Significantly better value.
+              A typical UK SEO agency charges £3,000-8,000 a month. RankNex AI is a
+              Pakistan-based digital agency delivering the same international-standard
+              SEO, PPC, social media, and web services to UK businesses, remotely,
+              at 60% lower cost. Same expertise. Same results. Significantly better value.
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -244,6 +275,20 @@ export default function UKPage() {
                 )}
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ */}
+      <section className="section section-alt">
+        <div className="container">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold font-heading mb-4">
+              UK Businesses <span className="gradient-text-teal">Ask Us This a Lot</span>
+            </h2>
+          </div>
+          <div className="max-w-3xl mx-auto">
+            <FAQ items={ukFaqs} />
           </div>
         </div>
       </section>

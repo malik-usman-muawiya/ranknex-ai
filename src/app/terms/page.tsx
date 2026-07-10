@@ -7,6 +7,21 @@ export const metadata: Metadata = {
   alternates: {
     canonical: 'https://www.ranknexai.com/terms',
   },
+  openGraph: {
+    title: 'Terms of Service | RankNex AI',
+    description:
+      'Read the RankNex AI terms of service governing the use of our website and digital marketing, SEO, PPC, content, web design, and branding services.',
+    url: 'https://www.ranknexai.com/terms',
+    siteName: 'RankNex AI',
+    locale: 'en_US',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Terms of Service | RankNex AI',
+    description:
+      'Read the RankNex AI terms of service governing the use of our website and digital marketing, SEO, PPC, content, web design, and branding services.',
+  },
   robots: {
     index: true,
     follow: true,
