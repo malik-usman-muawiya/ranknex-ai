@@ -87,3 +87,16 @@ model ContactSubmission {
 
   @@map("contact_submissions")
 }
+
+model ChatbotFAQ {
+  id        String   @id @default(cuid())
+  question  String
+  answer    String
+  order     Int      @default(0)
+  active    Boolean  @default(true)
+  createdAt DateTime @default(now()) @map("created_at")
+  updatedAt DateTime @updatedAt @map("updated_at")
+
+  @@index([active])
+  @@map("chatbot_faqs")
+}

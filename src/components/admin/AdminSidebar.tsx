@@ -13,12 +13,14 @@ import {
   Menu,
   X,
   Compass,
+  MessageSquare,
 } from "lucide-react";
 
 const menuItems = [
   { label: "Dashboard", href: "/admin", icon: LayoutDashboard },
   { label: "Blog Posts", href: "/admin/blogs", icon: FileText },
   { label: "Case Studies", href: "/admin/case-studies", icon: Briefcase },
+  { label: "Chatbot Q&A", href: "/admin/chatbot", icon: MessageSquare },
   { label: "Submissions", href: "/admin/contacts", icon: Inbox },
 ];
 

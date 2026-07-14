@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import { RANKNEX_SYSTEM_PROMPT } from "@/lib/chatbotKnowledge";
+import prisma from "@/lib/db";
 
 export const runtime = "nodejs";
 
@@ -21,6 +22,28 @@ export async function POST(req: NextRequest) {
       );
     }
 
+    // Pull admin-managed Q&A from the database and fold it into the system
+    // prompt, so new questions/answers added in the CMS take effect
+    // immediately without any code change or redeploy.
+    let knowledgeBase = RANKNEX_SYSTEM_PROMPT;
+    try {
+      const faqs = await prisma.chatbotFAQ.findMany({
+        where: { active: true },
+        orderBy: [{ order: "asc" }, { createdAt: "asc" }],
+      });
+
+      if (faqs.length > 0) {
+        const faqText = faqs
+          .map((f) => `Q: ${f.question}\nA: ${f.answer}`)
+          .join("\n\n");
+        knowledgeBase += `\n\nADDITIONAL KNOWN QUESTIONS & ANSWERS (use these verbatim when the visitor's question matches one of these, otherwise answer from the facts above):\n\n${faqText}`;
+      }
+    } catch (dbError) {
+      // If the DB is unreachable, fall back to the static prompt rather
+      // than failing the whole chat request.
+      console.error("Error loading chatbot FAQs from DB:", dbError);
+    }
+
     // Convert our simple message format to Gemini's format
     const contents = messages.map((m) => ({
       role: m.role === "assistant" ? "model" : "user",
@@ -33,7 +56,7 @@ export async function POST(req: NextRequest) {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
-          system_instruction: { parts: [{ text: RANKNEX_SYSTEM_PROMPT }] },
+          system_instruction: { parts: [{ text: knowledgeBase }] },
           contents,
           generationConfig: {
             temperature: 0.5,
