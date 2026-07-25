@@ -165,12 +165,13 @@ export default async function BlogPostPage({ params }: PageProps) {
 
         {/* Featured Image */}
         {post.featuredImage && (
-          <ScrollReveal delay={0.2} className="relative h-[250px] sm:h-[400px] w-full rounded-2xl overflow-hidden mb-12 bg-navy-800">
+          <ScrollReveal delay={0.2} className="relative w-full rounded-2xl overflow-hidden mb-12 bg-navy-800">
             <Image
               src={post.featuredImage}
               alt={post.title}
-              fill
-              className="object-cover"
+              width={1600}
+              height={900}
+              className="w-full h-auto"
               sizes="(max-width: 768px) 100vw, 800px"
               priority
             />
