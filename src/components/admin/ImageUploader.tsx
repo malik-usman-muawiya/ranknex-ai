@@ -2,6 +2,7 @@
 
 import { useState, useRef } from "react";
 import Image from "next/image";
+import { upload } from "@vercel/blob/client";
 import { Upload, X, Loader2, Image as ImageIcon } from "lucide-react";
 
 interface ImageUploaderProps {
@@ -27,25 +28,16 @@ export default function ImageUploader({
     setIsUploading(true);
     setError("");
 
-    const formData = new FormData();
-    formData.append("file", file);
-
     try {
-      const response = await fetch("/api/upload", {
-        method: "POST",
-        body: formData,
+      const blob = await upload(file.name, file, {
+        access: "public",
+        handleUploadUrl: "/api/upload",
       });
 
-      const data = await response.json();
-
-      if (response.ok) {
-        setImageUrl(data.url);
-        onUploadSuccess(data.url);
-      } else {
-        setError(data.error || "Failed to upload image.");
-      }
-    } catch {
-      setError("Network error. Failed to upload image.");
+      setImageUrl(blob.url);
+      onUploadSuccess(blob.url);
+    } catch (err) {
+      setError(err instanceof Error ? err.message : "Failed to upload image.");
     } finally {
       setIsUploading(false);
     }

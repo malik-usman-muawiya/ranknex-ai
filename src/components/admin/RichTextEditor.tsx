@@ -2,6 +2,7 @@
 
 import { useCallback, useRef, useState } from "react";
 import { useEditor, EditorContent, type Editor } from "@tiptap/react";
+import { upload } from "@vercel/blob/client";
 import StarterKit from "@tiptap/starter-kit";
 import TiptapImage from "@tiptap/extension-image";
 import LinkExtension from "@tiptap/extension-link";
@@ -111,30 +112,25 @@ function Toolbar({ editor }: { editor: Editor }) {
 
     setIsUploadingImg(true);
     try {
-      const formData = new FormData();
-      formData.append("file", file);
+      const blob = await upload(file.name, file, {
+        access: "public",
+        handleUploadUrl: "/api/upload",
+      });
 
-      const res = await fetch("/api/upload", { method: "POST", body: formData });
-      const data = await res.json();
+      const alt = window.prompt("Alt text (describes the image for SEO & accessibility):", "") || "";
+      const title = window.prompt("Image title (optional, shown as tooltip on hover):", "") || "";
 
-      if (res.ok && data.url) {
-        const alt = window.prompt("Alt text (describes the image for SEO & accessibility):", "") || "";
-        const title = window.prompt("Image title (optional, shown as tooltip on hover):", "") || "";
-
-        editor
-          .chain()
-          .focus()
-          .setImage({ src: data.url, alt, title: title || undefined } as {
-            src: string;
-            alt: string;
-            title?: string;
-          })
-          .run();
-      } else {
-        alert(data.error || "Image upload failed.");
-      }
-    } catch {
-      alert("Network error. Image upload failed.");
+      editor
+        .chain()
+        .focus()
+        .setImage({ src: blob.url, alt, title: title || undefined } as {
+          src: string;
+          alt: string;
+          title?: string;
+        })
+        .run();
+    } catch (err) {
+      alert(err instanceof Error ? err.message : "Image upload failed.");
     } finally {
       setIsUploadingImg(false);
       if (fileInputRef.current) fileInputRef.current.value = "";
