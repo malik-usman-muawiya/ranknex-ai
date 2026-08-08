@@ -62,7 +62,7 @@ export default function AEOGeoSection() {
         </div>
 
         <div className="text-center">
-          <Link href="/services/seo" className="btn-secondary inline-flex items-center gap-2">
+          <Link href="/services/aeo-geo-optimization" className="btn-secondary inline-flex items-center gap-2">
             <span>See How We Handle AI Search</span>
             <ArrowRight className="w-4 h-4" />
           </Link>
