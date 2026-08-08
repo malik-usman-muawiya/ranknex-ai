@@ -24,11 +24,11 @@ const nextConfig: NextConfig = {
             key: "Content-Security-Policy",
             value: [
               "default-src 'self'",
-              "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.googletagmanager.com",
+              "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.googletagmanager.com https://www.clarity.ms",
               "style-src 'self' 'unsafe-inline'",
               "img-src 'self' https: data: blob:",
               "font-src 'self' data:",
-              "connect-src 'self' https://www.googletagmanager.com https://www.google-analytics.com https://generativelanguage.googleapis.com https://*.public.blob.vercel-storage.com",
+              "connect-src 'self' https://www.googletagmanager.com https://www.google-analytics.com https://generativelanguage.googleapis.com https://*.public.blob.vercel-storage.com https://www.clarity.ms https://*.clarity.ms",
               "object-src 'none'",
               "base-uri 'self'",
               "form-action 'self'",

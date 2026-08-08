@@ -4,6 +4,7 @@ import './globals.css';
 import Providers from '@/components/Providers';
 import SiteChrome from '@/components/layout/SiteChrome';
 import GoogleAnalytics from '@/components/GoogleAnalytics';
+import ClarityAnalytics from '@/components/ClarityAnalytics';
 import { generateOrganizationSchema, generateWebsiteSchema } from '@/lib/seo';
 
 /* ------------------------------------------------------------------ */
@@ -117,6 +118,7 @@ export default function RootLayout({
       </head>
       <body className="bg-navy-950 text-slate-300 antialiased">
         <GoogleAnalytics />
+        <ClarityAnalytics />
         <Providers>
           <SiteChrome>{children}</SiteChrome>
         </Providers>
