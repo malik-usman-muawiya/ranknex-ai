@@ -61,6 +61,7 @@ export default function Footer() {
               className="inline-flex mb-5 transition-transform duration-300 hover:scale-[1.03]"
             >
               <Logo size={38} />
+              <span className="sr-only">RankNex AI — Home</span>
             </Link>
 
             <p className="text-slate-400 text-sm leading-relaxed mb-6">
