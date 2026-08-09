@@ -8,42 +8,45 @@ import ScrollReveal from '@/components/ui/ScrollReveal';
 
 const caseStudies = [
   {
-    client: 'UK E-Commerce Fashion Brand',
-    industry: 'Retail & E-Commerce',
-    location: 'United Kingdom',
-    challenge: 'The brand was spending £3,000/month on paid ads with a cost-per-acquisition double the industry average. Organic traffic was flat for 18 months.',
+    slug: 'flagship-98k-clicks-256k-revenue',
+    client: 'Combined Local + E-Commerce SEO',
+    industry: 'E-Commerce & Local Search',
+    location: 'Flagship Result',
+    challenge: 'Average ranking position sat at 17, and store revenue growth had plateaued despite steady traffic.',
     results: [
-      { metric: 'Organic Traffic', value: '+320%', period: '6 months' },
-      { metric: 'Revenue Growth', value: '+185%', period: 'Year-over-year' },
-      { metric: 'Cost Per Acquisition', value: '-52%', period: 'vs. previous agency' },
+      { metric: 'Organic Clicks', value: '98K', period: '6-month trend' },
+      { metric: 'Monthly Revenue', value: '$256.9K', period: '+54.6% MoM' },
+      { metric: 'Average Position', value: '17 → 8.5', period: '6 months' },
     ],
-    services: ['SEO', 'PPC', 'Content Writing'],
+    services: ['SEO', 'Local SEO', 'E-Commerce'],
     color: 'teal',
   },
   {
-    client: 'US SaaS Startup',
-    industry: 'Technology',
-    location: 'United States',
-    challenge: 'New market entry, zero brand awareness, no inbound leads, and a 4-month runway to demonstrate growth to investors.',
+    slug: 'organic-search-growth-16x-clicks',
+    client: 'Primary Website Organic Growth',
+    industry: 'Organic SEO',
+    location: 'Verified in Search Console',
+    challenge: 'Ranking stuck at position 27 (page 3), with organic traffic flat for months before this engagement.',
     results: [
-      { metric: 'Monthly Leads', value: '250+', period: 'from zero' },
-      { metric: 'Domain Authority', value: '+35', period: '8 months' },
-      { metric: 'MQL to SQL Rate', value: '38%', period: 'industry avg: 13%' },
+      { metric: 'Organic Clicks', value: '16x', period: '6-month trend' },
+      { metric: 'Impressions', value: '17x', period: '6-month trend' },
+      { metric: 'Average Position', value: '27 → 6.2', period: 'Page 3 to Page 1' },
     ],
-    services: ['SEO', 'Content Writing', 'Social Media'],
+    services: ['SEO', 'Technical SEO', 'Content'],
     color: 'cyan',
   },
   {
-    client: 'Pakistan Healthcare Provider',
-    industry: 'Healthcare',
-    location: 'Pakistan',
-    challenge: 'Outdated website with no mobile optimization, zero local search presence, and patient inquiries coming entirely through word of mouth.',
+    slug: 'local-seo-513-phone-calls',
+    client: 'Local Service Business',
+    industry: 'Local SEO',
+    location: 'Google Business Profile',
+    challenge: 'Business Profile was not optimized for the right categories, and average position sat around 12.',
     results: [
-      { metric: 'Website Traffic', value: '+410%', period: '4 months' },
-      { metric: 'Patient Inquiries', value: '+200%', period: 'Monthly' },
-      { metric: 'Google Maps Ranking', value: 'Top 3', period: 'Local search' },
+      { metric: 'Phone Calls Generated', value: '513', period: '6 months' },
+      { metric: 'Total GBP Interactions', value: '2,750', period: '6 months' },
+      { metric: 'Average Position', value: '12 → 7.9', period: '6 months' },
     ],
-    services: ['Web Design', 'Local SEO', 'Branding'],
+    services: ['Local SEO', 'Google Business Profile'],
     color: 'teal',
   },
 ];
@@ -125,7 +128,7 @@ export default function CaseStudyPreview() {
 
                 {/* CTA */}
                 <Link
-                  href="/case-studies"
+                  href={`/case-studies/${study.slug}`}
                   className="flex items-center gap-2 text-teal-500 text-sm font-semibold group-hover:gap-3 transition-all duration-300"
                 >
                   <span>View Full Case Study</span>
