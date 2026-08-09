@@ -1,6 +1,7 @@
 import { Metadata } from "next";
 import prisma from "@/lib/db";
 import CaseStudiesContent from "./CaseStudiesContent";
+import PortfolioHighlights from "./PortfolioHighlights";
 import type { CaseStudy } from "@/types";
 import { generateBreadcrumbSchema } from "@/lib/seo";
 
@@ -56,6 +57,7 @@ export default async function CaseStudiesPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
       />
+      <PortfolioHighlights />
       <CaseStudiesContent caseStudies={caseStudies} />
     </>
   );
