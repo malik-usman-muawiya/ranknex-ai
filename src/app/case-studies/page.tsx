@@ -1,8 +1,5 @@
 import { Metadata } from "next";
-import prisma from "@/lib/db";
-import CaseStudiesContent from "./CaseStudiesContent";
 import PortfolioHighlights from "./PortfolioHighlights";
-import type { CaseStudy } from "@/types";
 import { generateBreadcrumbSchema } from "@/lib/seo";
 
 export const metadata: Metadata = {
@@ -32,20 +29,6 @@ export const metadata: Metadata = {
 export const dynamic = "force-dynamic";
 
 export default async function CaseStudiesPage() {
-  // Fall back to an empty state if the database is unavailable.
-  const studiesRaw = await prisma.caseStudy
-    .findMany({
-      where: { published: true },
-      orderBy: { createdAt: "desc" },
-    })
-    .catch(() => []);
-
-  const caseStudies: CaseStudy[] = studiesRaw.map((study) => ({
-    ...study,
-    createdAt: study.createdAt.toISOString(),
-    updatedAt: study.updatedAt.toISOString(),
-  })) as unknown as CaseStudy[];
-
   const breadcrumbSchema = generateBreadcrumbSchema([
     { name: "Home", url: "/" },
     { name: "Case Studies", url: "/case-studies" },
@@ -58,7 +41,6 @@ export default async function CaseStudiesPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
       />
       <PortfolioHighlights />
-      <CaseStudiesContent caseStudies={caseStudies} />
     </>
   );
 }
