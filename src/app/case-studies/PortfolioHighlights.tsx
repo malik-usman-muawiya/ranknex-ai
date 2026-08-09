@@ -12,7 +12,7 @@ const highlights = [
     tag: "Flagship Result",
     title: "98K Organic Clicks & $256K Monthly Revenue",
     stat: "+54.6% Revenue",
-    image: "/case-studies/p7-store-overview.png",
+    image: "/case-studies/p7-6month.png",
   },
   {
     slug: "organic-search-growth-16x-clicks",
@@ -26,14 +26,14 @@ const highlights = [
     tag: "E-Commerce SEO",
     title: "Orders Doubled, Revenue Up 74% in 1 Month",
     stat: "+74% Revenue",
-    image: "/case-studies/p2-store-overview.png",
+    image: "/case-studies/p2-search-mobile.png",
   },
   {
     slug: "local-seo-513-phone-calls",
     tag: "Local SEO",
     title: "513 Phone Calls from Google Business Profile",
     stat: "2,750 Interactions",
-    image: "/case-studies/p6-gbp-calls.png",
+    image: "/case-studies/p6-3months.png",
   },
   {
     slug: "uk-ecommerce-seo-order-growth",
