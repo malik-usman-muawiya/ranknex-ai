@@ -77,8 +77,8 @@ export default function PortfolioHighlights() {
                     </h3>
                     <div className="mt-auto flex items-center justify-between">
                       <span className="text-teal-400 font-bold text-sm">{h.stat}</span>
-                      <span className="flex items-center gap-1 text-xs text-slate-400 group-hover:text-teal-400 transition-colors">
-                        Read case study
+                      <span className="flex items-center gap-1 text-xs font-semibold text-teal-400 group-hover:gap-2 transition-all">
+                        Read More
                         <ArrowRight className="w-3.5 h-3.5" />
                       </span>
                     </div>
