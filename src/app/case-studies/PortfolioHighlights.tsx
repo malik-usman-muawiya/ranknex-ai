@@ -59,20 +59,19 @@ export default function PortfolioHighlights() {
             <ScrollReveal key={h.slug} delay={i * 0.08}>
               <Link href={`/case-studies/${h.slug}`} className="group block h-full">
                 <div className="card overflow-hidden p-0 h-full flex flex-col">
-                  <div className="relative w-full bg-white overflow-hidden">
+                  <div className="relative w-full aspect-[21/9] bg-white overflow-hidden flex-shrink-0">
                     <Image
                       src={h.image}
                       alt={h.title}
-                      width={1310}
-                      height={550}
-                      className="w-full h-auto transition-transform duration-300 group-hover:scale-105"
+                      fill
+                      className="object-cover transition-transform duration-300 group-hover:scale-105"
                     />
                   </div>
                   <div className="p-5 flex flex-col flex-1">
                     <span className="text-xs font-semibold tracking-wide uppercase text-teal-400 mb-2">
                       {h.tag}
                     </span>
-                    <h3 className="text-white font-bold font-heading mb-3 leading-snug">
+                    <h3 className="text-white font-bold font-heading mb-3 leading-snug min-h-[3rem] line-clamp-2">
                       {h.title}
                     </h3>
                     <div className="mt-auto flex items-center justify-between">
