@@ -25,10 +25,7 @@ export const metadata: Metadata = {
   },
 };
 
-// Render on-demand so the page never tries to reach the database at build time.
-export const dynamic = "force-dynamic";
-
-export default async function CaseStudiesPage() {
+export default function CaseStudiesPage() {
   const breadcrumbSchema = generateBreadcrumbSchema([
     { name: "Home", url: "/" },
     { name: "Case Studies", url: "/case-studies" },
