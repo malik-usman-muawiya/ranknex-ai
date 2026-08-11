@@ -3,7 +3,7 @@ import PortfolioHighlights from "./PortfolioHighlights";
 import { generateBreadcrumbSchema } from "@/lib/seo";
 
 export const metadata: Metadata = {
-  title: "Client Results & Case Studies | RankNex AI Pakistan",
+  title: "Client Results & Case Studies | Lahore SEO",
   description: "See how RankNex AI helped UK, US, and Pakistani brands grow organic traffic, lower acquisition costs, and scale qualified leads through SEO and PPC.",
   keywords: [
     "digital marketing case studies",
@@ -16,7 +16,7 @@ export const metadata: Metadata = {
     canonical: "https://www.ranknexai.com/case-studies",
   },
   openGraph: {
-    title: "Case Studies & Client Success Stories | RankNex AI",
+    title: "Client Results & Case Studies | Lahore SEO | RankNex AI",
     description: "Proof in numbers. Real growth results and case studies from search engine optimization, PPC advertising, and web development.",
     url: "https://www.ranknexai.com/case-studies",
     siteName: "RankNex AI",

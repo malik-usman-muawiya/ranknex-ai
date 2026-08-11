@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Terms of Service | RankNex AI',
+  title: 'Terms of Service',
   description:
     'Read the RankNex AI terms of service governing the use of our website and digital marketing, SEO, PPC, content, web design, and branding services.',
   alternates: {

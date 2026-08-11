@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Privacy Policy | RankNex AI',
+  title: 'Privacy Policy',
   description:
     'Read the RankNex AI privacy policy to understand how we collect, use, and protect your personal information when you use our website and services.',
   alternates: {

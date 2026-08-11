@@ -5,7 +5,7 @@ import type { BlogPost, BlogCategory } from "@/types";
 import { generateBreadcrumbSchema } from "@/lib/seo";
 
 export const metadata: Metadata = {
-  title: "SEO & Digital Marketing Blog | RankNex AI Insights",
+  title: "SEO & Digital Marketing Blog Insights",
   description: "Read RankNex AI's blog for expert insights on SEO, AI search optimization, PPC advertising, and digital marketing strategy for UK, US, and Pakistani brands.",
   keywords: [
     "digital marketing blog",

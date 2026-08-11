@@ -2,7 +2,7 @@ import { Metadata } from "next";
 import PortfolioCaseStudy from "@/components/portfolio/PortfolioCaseStudy";
 
 export const metadata: Metadata = {
-  title: "E-Commerce SEO Case Study: +74% Revenue in 1 Month | RankNex AI",
+  title: "E-Commerce SEO Case Study: +74% Revenue in 1 Month",
   description:
     "How RankNex AI's e-commerce SEO work grew a store's monthly revenue by 74%, orders by 101%, and organic clicks by 26.6%, verified with real store dashboard data.",
   alternates: {
