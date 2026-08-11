@@ -93,7 +93,7 @@ export default function ServicesContent() {
               className="text-4xl md:text-5xl lg:text-6xl font-bold font-heading leading-tight mb-6"
             >
               Full-Stack <span className="gradient-text">Digital Marketing</span>{' '}
-              Services
+              Services in Lahore, Pakistan
             </motion.h1>
 
             <motion.p
@@ -197,6 +197,28 @@ export default function ServicesContent() {
               </ScrollReveal>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* Location Trust Section */}
+      <section className="section">
+        <div className="container max-w-3xl">
+          <SectionHeading
+            tag="Where We Work"
+            title={
+              <>
+                Digital Marketing Agency in Pakistan,{' '}
+                <span className="gradient-text">Trusted by UK &amp; US Clients</span>
+              </>
+            }
+          />
+          <p className="text-slate-300 leading-relaxed text-center">
+            RankNex AI is based in Lahore, Pakistan, and works with businesses across
+            the UK, US, and Pakistan. Every service on this page, SEO, PPC, social
+            media, content, web design, and branding, is delivered by the same team
+            working within the same account, so nothing gets lost in translation
+            between agencies.
+          </p>
         </div>
       </section>
 

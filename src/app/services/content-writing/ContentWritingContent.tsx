@@ -91,6 +91,12 @@ export default function ContentWritingContent() {
       processSteps={contentProcess}
       benefits={contentBenefits}
       faqs={contentFaqs}
+      regionSections={[
+        {
+          title: "SEO Content Writing Services for UK & US Businesses",
+          description: "We write blog posts, landing pages, and web copy for UK and US brands, matched to how their audiences actually search and speak, British or American English conventions included. Every piece is built around real keyword targets and buyer intent, not generic filler.",
+        },
+      ]}
       ctaTitle="Get Sample Content & Pricing"
       ctaDescription="Want to test our quality first? We'll write a custom 500-word SEO blog outline or short intro paragraph for your chosen topic, 100% free, so you can see our style."
     />

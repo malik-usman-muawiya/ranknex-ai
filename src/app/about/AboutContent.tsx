@@ -129,6 +129,20 @@ export default function AboutContent() {
                     directly to clients.
                   </p>
                 </div>
+
+                <h2 className="text-2xl font-bold font-heading text-white mt-10 mb-4">
+                  Why a Digital Marketing Agency in Pakistan Works for UK &amp; US Budgets
+                </h2>
+                <div className="space-y-5 text-slate-300 leading-relaxed">
+                  <p>
+                    A UK or US business paying £3,000-8,000 a month for SEO isn&apos;t
+                    paying for better strategy, it&apos;s paying for higher rent and
+                    higher salaries in London or New York. A digital marketing agency
+                    in Pakistan delivers the same technical depth and account
+                    management standard, without that overhead, which is why more UK
+                    and US businesses are working with Lahore-based teams every year.
+                  </p>
+                </div>
               </div>
             </ScrollReveal>
 
@@ -305,8 +319,8 @@ export default function AboutContent() {
                 tag="Our Team"
                 title={
                   <>
-                    The People Behind{' '}
-                    <span className="gradient-text">the Results</span>
+                    A Trusted SEO Company in Lahore,{' '}
+                    <span className="gradient-text">Serving Clients Worldwide</span>
                   </>
                 }
                 align="left"

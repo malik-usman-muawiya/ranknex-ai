@@ -30,11 +30,11 @@ const outfit = Outfit({
 export const metadata: Metadata = {
   metadataBase: new URL(process.env.NEXTAUTH_URL || 'https://www.ranknexai.com'),
   title: {
-    default: 'RankNex AI | AI-Powered SEO & Digital Marketing Agency',
+    default: 'SEO Company in Lahore, Pakistan | For UK & US | RankNex AI',
     template: '%s | RankNex AI',
   },
   description:
-    'RankNex AI is an AI-powered SEO and digital marketing agency helping UK, US, and Pakistani businesses rank higher on Google and generate more leads online.',
+    'RankNex AI is a leading SEO company in Lahore offering digital marketing for UK, US, and Pakistani businesses. AI-powered SEO, PPC, and AEO/GEO. Free audit.',
   keywords: [
     'digital marketing agency',
     'SEO company Pakistan',
@@ -69,15 +69,15 @@ export const metadata: Metadata = {
     locale: 'en_US',
     url: '/',
     siteName: 'RankNex AI',
-    title: 'RankNex AI | AI-Powered SEO & Digital Marketing Agency',
+    title: 'SEO Company in Lahore, Pakistan | For UK & US | RankNex AI',
     description:
-      'AI-powered digital marketing agency delivering measurable growth through SEO, PPC, social media, and web solutions.',
+      'RankNex AI is a leading SEO company in Lahore offering digital marketing for UK, US, and Pakistani businesses. AI-powered SEO, PPC, and AEO/GEO. Free audit.',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'RankNex AI | AI-Powered SEO & Digital Marketing Agency',
+    title: 'SEO Company in Lahore, Pakistan | For UK & US | RankNex AI',
     description:
-      'AI-powered digital marketing agency delivering measurable growth through SEO, PPC, social media, and web solutions.',
+      'RankNex AI is a leading SEO company in Lahore offering digital marketing for UK, US, and Pakistani businesses. AI-powered SEO, PPC, and AEO/GEO. Free audit.',
   },
   alternates: {
     canonical: '/',

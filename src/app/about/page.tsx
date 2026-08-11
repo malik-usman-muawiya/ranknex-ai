@@ -3,9 +3,9 @@ import AboutContent from './AboutContent';
 import { generateBreadcrumbSchema } from '@/lib/seo';
 
 export const metadata: Metadata = {
-  title: 'About Us | RankNex AI, A Pakistan-Based SEO Agency',
+  title: 'About Us | SEO Company in Lahore, Pakistan',
   description:
-    'RankNex AI is a Pakistan-based digital marketing agency combining AI tools with human expertise to deliver SEO growth for UK, US, and Pakistani businesses.',
+    'RankNex AI is a leading SEO company in Lahore, Pakistan offering digital marketing to UK, US, and Pakistani clients since 2024. Free SEO audit available.',
   keywords: [
     'about ranknex ai',
     'digital marketing agency pakistan',
@@ -18,9 +18,9 @@ export const metadata: Metadata = {
     canonical: 'https://www.ranknexai.com/about',
   },
   openGraph: {
-    title: 'About RankNex AI | AI-Powered Digital Marketing Agency',
+    title: 'About Us | SEO Company in Lahore, Pakistan | RankNex AI',
     description:
-      'We combine AI intelligence with human creativity to deliver measurable growth for businesses in Pakistan, UK, and beyond.',
+      'RankNex AI is a leading SEO company in Lahore, Pakistan offering digital marketing to UK, US, and Pakistani clients since 2024. Free SEO audit available.',
     url: 'https://www.ranknexai.com/about',
     type: 'website',
   },

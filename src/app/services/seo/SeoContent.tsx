@@ -120,6 +120,21 @@ const seoFaqs = [
   },
 ];
 
+const seoRegionSections = [
+  {
+    title: "SEO Services for UK Businesses",
+    description: "We work with UK businesses across every sector, delivering technical SEO, content, and link building built around UK search conventions, UK English, and local competitor landscapes. Communication happens on your schedule, with clear monthly reporting and no long-term lock-in.",
+  },
+  {
+    title: "SEO Services for US Businesses",
+    description: "US clients get the same full-stack SEO approach: keyword research built around US search intent, content that matches how American buyers actually search, and technical execution that holds up against larger, better-funded competitors.",
+  },
+  {
+    title: "Why Work with an SEO Consultant in Lahore Instead of a Local Agency",
+    description: "An SEO consultant in Lahore delivers the same technical depth as a local UK or US agency, at a fraction of the overhead cost. You are not trading quality for price, you are cutting out the rent and salary premium that inflates local agency invoices.",
+  },
+];
+
 export default function SeoContent() {
   return (
     <ServicePageTemplate
@@ -131,6 +146,7 @@ export default function SeoContent() {
       processSteps={seoProcess}
       benefits={seoBenefits}
       faqs={seoFaqs}
+      regionSections={seoRegionSections}
       ctaTitle="Get a Free SEO Audit"
       ctaDescription="Find out exactly what is holding your website back from ranking on page 1. Get a comprehensive technical and content audit from our experts today, 100% free."
     />

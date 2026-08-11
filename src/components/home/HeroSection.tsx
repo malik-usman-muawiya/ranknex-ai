@@ -56,7 +56,7 @@ export default function HeroSection() {
                 <span className="absolute inline-flex h-full w-full rounded-full bg-teal-400 opacity-75 animate-ping" />
                 <span className="relative inline-flex h-2 w-2 rounded-full bg-teal-400" />
               </span>
-              Pakistan&apos;s AI-First Digital Marketing Agency
+              Pakistan&apos;s AI-First SEO Company, Serving UK &amp; US Businesses
             </span>
           </div>
 

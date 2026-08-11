@@ -112,7 +112,7 @@ export default function ContactContent() {
         <SectionHeading
           tag="Get In Touch"
           title={<>Let&apos;s Build Something <span className="gradient-text">Remarkable</span></>}
-          subtitle="Have a project in mind or want to grow your search visibility? Send us a message or chat with us on WhatsApp. We get back to you within 24 hours."
+          subtitle="Talk to an SEO company in Lahore, Pakistan working with UK & US clients. Send us a message or chat with us on WhatsApp. We get back to you within 24 hours."
         />
 
         <div className="mt-12">

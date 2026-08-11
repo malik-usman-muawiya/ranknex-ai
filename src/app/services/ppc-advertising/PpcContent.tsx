@@ -101,6 +101,12 @@ export default function PpcContent() {
       processSteps={ppcProcess}
       benefits={ppcBenefits}
       faqs={ppcFaqs}
+      regionSections={[
+        {
+          title: "Google Ads Management for UK & US Businesses",
+          description: "We run certified Google Ads and Meta Ads management for UK and US clients, with campaigns structured around local search behaviour, currency, and competitor landscape in each market. Monthly reporting is built around the metrics that matter to you: cost per lead, ROAS, and pipeline value, not just clicks.",
+        },
+      ]}
       ctaTitle="Get a Free PPC Audit"
       ctaDescription="Already running ads? Let our certified specialists perform a free audit on your Google or Meta ad account. We will uncover wasted spend and outline 3 key optimization tips."
     />

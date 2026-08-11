@@ -3,7 +3,7 @@ import ContactContent from "./ContactContent";
 import { generateBreadcrumbSchema } from "@/lib/seo";
 
 export const metadata: Metadata = {
-  title: "Contact RankNex AI | Get a Free SEO & PPC Site Audit",
+  title: "Contact Us | SEO Company in Lahore, Pakistan",
   description: "Contact RankNex AI, a digital marketing and SEO agency serving UK, US, and Pakistani businesses. Request a free audit or discuss your growth goals today.",
   keywords: [
     "contact ranknex ai",
@@ -17,7 +17,7 @@ export const metadata: Metadata = {
     canonical: "https://www.ranknexai.com/contact",
   },
   openGraph: {
-    title: "Contact RankNex AI | Digital Marketing Partner",
+    title: "Contact Us | SEO Company in Lahore, Pakistan | RankNex AI",
     description: "Ready to scale your business online? Send us a message or chat on WhatsApp. Get a response from our growth consultant within 24 hours.",
     url: "https://www.ranknexai.com/contact",
     siteName: "RankNex AI",

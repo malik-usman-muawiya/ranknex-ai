@@ -91,6 +91,12 @@ export default function SocialMediaContent() {
       processSteps={smmProcess}
       benefits={smmBenefits}
       faqs={smmFaqs}
+      regionSections={[
+        {
+          title: "Social Media Management for UK & US Brands",
+          description: "We manage social presence for UK and US brands across Instagram, LinkedIn, Facebook, and TikTok, with content and posting schedules built around each market's audience behaviour and time zones. Paid social campaigns run alongside organic content, with monthly reporting on engagement, reach, and leads generated.",
+        },
+      ]}
       ctaTitle="Get a Free Social Media Audit"
       ctaDescription="Let our social media strategists audit your current social channels. We will give you 3 actionable recommendations on how to improve your engagement and leads, completely free."
     />

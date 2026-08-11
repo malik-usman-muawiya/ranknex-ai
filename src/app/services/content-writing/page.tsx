@@ -2,7 +2,7 @@ import { Metadata } from "next";
 import ContentWritingContent from "./ContentWritingContent";
 
 export const metadata: Metadata = {
-  title: "SEO Content Writing Services | RankNex AI Pakistan",
+  title: "SEO Content Writing Services in Lahore, PK",
   description: "RankNex AI offers expert content writing and SEO content marketing for UK, US, and Pakistani brands, written to rank and convert readers into customers.",
   keywords: [
     "content marketing",
@@ -16,7 +16,7 @@ export const metadata: Metadata = {
     canonical: "https://www.ranknexai.com/services/content-writing",
   },
   openGraph: {
-    title: "Content Writing & Strategy Services | RankNex AI",
+    title: "SEO Content Writing Services in Lahore, PK | RankNex AI",
     description: "Engage your audience and climb search rankings with expert copywriting, SEO blog posts, and website content optimized for conversions.",
     url: "https://www.ranknexai.com/services/content-writing",
     siteName: "RankNex AI",

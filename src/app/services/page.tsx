@@ -3,9 +3,9 @@ import ServicesContent from './ServicesContent';
 import { generateBreadcrumbSchema } from '@/lib/seo';
 
 export const metadata: Metadata = {
-  title: 'Digital Marketing Services | SEO & PPC',
+  title: 'SEO, PPC & Web Design Services in Lahore, PK',
   description:
-    'Explore RankNex AI\'s digital marketing services, including SEO, PPC, social media, content, web design, and branding for UK, US, and Pakistani businesses.',
+    'Full-stack digital marketing from RankNex AI, an SEO company in Lahore, Pakistan serving UK, US, and local businesses: SEO, PPC, social, content, web design.',
   keywords: [
     'digital marketing services pakistan',
     'seo services',
@@ -19,9 +19,9 @@ export const metadata: Metadata = {
     canonical: 'https://www.ranknexai.com/services',
   },
   openGraph: {
-    title: 'Digital Marketing Services | RankNex AI',
+    title: 'SEO, PPC & Web Design Services in Lahore, PK | RankNex AI',
     description:
-      'AI-powered SEO, PPC, social media, content, web design, and branding services that deliver measurable growth.',
+      'Full-stack digital marketing from RankNex AI, an SEO company in Lahore, Pakistan serving UK, US, and local businesses: SEO, PPC, social, content, web design.',
     url: 'https://www.ranknexai.com/services',
     type: 'website',
   },

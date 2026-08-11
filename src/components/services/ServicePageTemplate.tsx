@@ -26,6 +26,11 @@ interface FAQItem {
   answer: string;
 }
 
+interface RegionSection {
+  title: string;
+  description: string;
+}
+
 interface ServicePageTemplateProps {
   tag: string;
   headline: string;
@@ -35,6 +40,7 @@ interface ServicePageTemplateProps {
   processSteps: ProcessStep[];
   benefits: string[];
   faqs: FAQItem[];
+  regionSections?: RegionSection[];
   ctaTitle?: string;
   ctaDescription?: string;
 }
@@ -48,6 +54,7 @@ export default function ServicePageTemplate({
   processSteps,
   benefits,
   faqs,
+  regionSections,
   ctaTitle = 'Ready to Get Started?',
   ctaDescription = "Book a free consultation and discover how we can accelerate your growth. No obligations, no pressure, just honest, actionable insights.",
 }: ServicePageTemplateProps) {
@@ -245,6 +252,28 @@ export default function ServicePageTemplate({
           </div>
         </div>
       </section>
+
+      {/* Region-specific sections (UK / US / local market) */}
+      {regionSections && regionSections.length > 0 && (
+        <section className="section">
+          <div className="container">
+            <div className={`grid ${regionSections.length >= 3 ? 'md:grid-cols-3' : regionSections.length === 2 ? 'md:grid-cols-2' : ''} gap-8 max-w-5xl mx-auto`}>
+              {regionSections.map((r, i) => (
+                <ScrollReveal key={r.title} delay={i * 0.08}>
+                  <div className="card h-full">
+                    <h2 className="text-xl font-bold text-white mb-3 font-heading">
+                      {r.title}
+                    </h2>
+                    <p className="text-slate-400 leading-relaxed text-sm">
+                      {r.description}
+                    </p>
+                  </div>
+                </ScrollReveal>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
 
       {/* FAQ */}
       <section className="section section-alt">

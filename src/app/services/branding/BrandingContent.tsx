@@ -96,6 +96,12 @@ export default function BrandingContent() {
       processSteps={brandingProcess}
       benefits={brandingBenefits}
       faqs={brandingFaqs}
+      regionSections={[
+        {
+          title: "Logo Design Company in Lahore, Serving Clients Worldwide",
+          description: "We design logos and full brand identities for clients across the UK, US, and Pakistan, from a design team based in Lahore. Every project includes strategy, visual design, and a complete brand guidelines document, so your identity stays consistent everywhere it's used.",
+        },
+      ]}
       ctaTitle="Start Your Branding Project"
       ctaDescription="Ready to define your brand identity? Schedule a free 30-minute discovery call with our brand strategists to discuss your vision and outline a custom roadmap."
     />
