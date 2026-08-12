@@ -1,25 +1,26 @@
 import { Metadata } from "next";
 import Link from "next/link";
 import { ArrowRight, Search, Globe, Zap, BarChart3, Users, Shield, Headphones, CheckCircle2, Bot } from "lucide-react";
-import { generateBreadcrumbSchema } from "@/lib/seo";
+import { generateBreadcrumbSchema, generateFAQSchema } from "@/lib/seo";
+import FAQ from "@/components/ui/FAQ";
 
 export const metadata: Metadata = {
-  title: "AI-Powered Digital Marketing for US Businesses",
-  description: "RankNex AI delivers affordable, AI-driven digital marketing and SEO solutions for US businesses, with premium quality and fully transparent pricing.",
+  title: "Digital Marketing Agency for US Businesses",
+  description: "RankNex AI is an outsourced digital marketing agency for US businesses, delivering SEO, PPC, and AI search visibility at 60% lower cost than local agencies.",
   keywords: [
-    "ai automation company",
-    "digital marketing agency usa affordable",
-    "it services for businesses",
-    "managed it services companies",
-    "it service companies",
-    "affordable seo services usa",
+    "digital marketing agency for us businesses",
+    "outsourced digital marketing agency usa",
+    "affordable digital marketing agency usa",
+    "ai powered digital marketing agency",
+    "seo agency for us small business",
+    "managed seo services usa",
   ],
   alternates: {
     canonical: "https://www.ranknexai.com/us",
   },
   openGraph: {
-    title: "AI-Powered Digital Marketing & IT Services for US Businesses | RankNex AI",
-    description: "Affordable, AI-driven digital marketing, SEO, and IT solutions for US businesses.",
+    title: "Digital Marketing Agency for US Businesses | RankNex AI",
+    description: "RankNex AI is an outsourced digital marketing agency for US businesses, delivering SEO, PPC, and AI search visibility at 60% lower cost than local agencies.",
     url: "https://www.ranknexai.com/us",
     siteName: "RankNex AI",
     type: "website",
@@ -30,39 +31,39 @@ export const metadata: Metadata = {
 const usServices = [
   {
     icon: Search,
-    title: "SEO & Organic Growth",
-    description: "Data-driven SEO strategies built for the competitive US market. From local SEO to enterprise-level campaigns that deliver consistent organic traffic growth.",
+    title: "SEO & AI Search (AEO/GEO)",
+    description: "Technical fixes, content strategy, and visibility in ChatGPT, Gemini, and Google AI Overviews, alongside traditional Google rankings.",
     href: "/services/seo",
   },
   {
     icon: BarChart3,
-    title: "PPC & Paid Advertising",
-    description: "Google Ads, Meta Ads, and LinkedIn campaigns managed by experts who focus on ROAS and cost-per-acquisition, not vanity metrics.",
+    title: "Google Ads & Meta Ads Management",
+    description: "Paid campaigns built around your CAC targets, not impressions. Google Ads, Meta Ads, and LinkedIn managed with ROAS as the north star.",
     href: "/services/ppc-advertising",
   },
   {
-    icon: Bot,
-    title: "AI Automation Solutions",
-    description: "Custom AI chatbots, workflow automation, and intelligent tools that reduce operational costs and accelerate business processes.",
-    href: "/services/seo",
+    icon: Zap,
+    title: "Content & Copywriting",
+    description: "Blog posts, landing pages, and email sequences written specifically for US audiences and search intent, not generic filler.",
+    href: "/services/content-writing",
   },
   {
     icon: Globe,
-    title: "Web Development",
-    description: "High-performance websites and web applications built with modern frameworks. Fast, secure, conversion-optimized, and built to scale.",
+    title: "Web Design & Development",
+    description: "Fast, conversion-focused sites built on Next.js or WordPress. High-performance and built to scale with your business.",
     href: "/services/web-designing",
   },
   {
     icon: Users,
     title: "Social Media Marketing",
-    description: "Strategic social media management for US brands. Build authority on LinkedIn, grow on Instagram and TikTok, and drive real business results.",
+    description: "Organic and paid strategy across the platforms your US customers actually use, from LinkedIn authority-building to TikTok reach.",
     href: "/services/social-media",
   },
   {
-    icon: Zap,
-    title: "Content Strategy",
-    description: "SEO-optimized content that establishes authority, generates leads, and supports your sales funnel from awareness to conversion.",
-    href: "/services/content-writing",
+    icon: Bot,
+    title: "Brand Identity",
+    description: "Visual systems that read as credible to a US buyer from the first impression, logo, guidelines, and full brand identity.",
+    href: "/services/branding",
   },
 ];
 
@@ -93,17 +94,46 @@ const whyChooseUs = [
   },
 ];
 
+const usFaqs = [
+  {
+    question: "Is it actually reliable to outsource marketing to a Pakistan-based team for a US business?",
+    answer: "Yes, when the agency operates on clear contracts, transparent reporting, and real-time communication. RankNex AI works US hours, reports in plain English, and never locks you into a contract you can't leave.",
+  },
+  {
+    question: "Will my ad account and analytics be fully in my ownership?",
+    answer: "Yes. Google Ads, Meta Ads, Analytics, and Search Console access all remain under your own accounts. We work inside your infrastructure, not ours.",
+  },
+  {
+    question: "How is pricing structured for US clients?",
+    answer: "Monthly retainers in USD, scoped to the channels you need (SEO, PPC, content, or a combined package). No annual contracts required.",
+  },
+  {
+    question: "Do you handle AEO and GEO for ChatGPT and Google AI Overviews?",
+    answer: "Yes, included in every SEO engagement by default, not billed as a separate add-on.",
+  },
+  {
+    question: "How fast can we expect results?",
+    answer: "Most US clients see measurable movement in rankings, traffic, or ad efficiency within 90 days. We guarantee it, or we keep working at no extra charge until we hit it.",
+  },
+];
+
 export default function USPage() {
   const breadcrumbSchema = generateBreadcrumbSchema([
     { name: "Home", url: "/" },
     { name: "US", url: "/us" },
   ]);
+  const faqSchema = generateFAQSchema(usFaqs);
   return (
     <main>
       {/* Structured data: Breadcrumbs */}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
+      {/* Structured data: FAQ */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
       {/* Hero Section */}
       <section className="relative min-h-[80vh] flex items-center" style={{ paddingTop: '8rem', paddingBottom: '5rem' }}>
@@ -142,6 +172,25 @@ export default function USPage() {
         </div>
       </section>
 
+      {/* Trust Bar */}
+      <section className="py-6 border-y border-white/5 relative z-10">
+        <div className="container">
+          <div className="flex flex-wrap justify-center gap-x-10 gap-y-3 text-sm text-slate-300">
+            {[
+              "US Timezone Availability",
+              "English-Native Reporting",
+              "No Lock-In Contracts",
+              "AEO/GEO Included for ChatGPT & Google AI Overviews",
+            ].map((item) => (
+              <div key={item} className="flex items-center gap-2">
+                <CheckCircle2 className="w-4 h-4 text-teal-400 flex-shrink-0" />
+                <span>{item}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Stats */}
       <section className="py-12 relative z-10">
         <div className="container">
@@ -157,6 +206,58 @@ export default function USPage() {
                 <div className="text-slate-400 text-sm">{stat.label}</div>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Why US Businesses Work With RankNex AI */}
+      <section className="section">
+        <div className="container max-w-4xl">
+          <div className="text-center mb-14">
+            <h2 className="text-3xl md:text-4xl font-bold font-heading mb-4">
+              Why US Businesses Work With <span className="gradient-text-teal">RankNex AI</span>
+            </h2>
+          </div>
+
+          <div className="space-y-10">
+            <div>
+              <h3 className="text-xl font-bold font-heading mb-3 text-white">
+                Silicon Valley Quality Standards. Pakistan-Level Overheads.
+              </h3>
+              <p className="text-slate-400 leading-relaxed">
+                US agencies price SEO and PPC retainers based on San Francisco or New York
+                office rent, not on the actual cost of doing the work. RankNex AI runs the
+                same audit process, the same keyword research discipline, and the same
+                AI-assisted workflows top US agencies use, from a delivery base where those
+                overheads don&apos;t exist. You get the strategy quality of an $8,000/month
+                agency at a fraction of the invoice.
+              </p>
+            </div>
+
+            <div>
+              <h3 className="text-xl font-bold font-heading mb-3 text-white">
+                Built for How US Buyers Actually Search Now
+              </h3>
+              <p className="text-slate-400 leading-relaxed">
+                More of your US customers are asking ChatGPT and Google&apos;s AI Overviews
+                before they ever type a query into classic Google search. RankNex AI includes
+                AEO (Answer Engine Optimization) and GEO (Generative Engine Optimization) in
+                every US engagement by default, not as a $2,000/month add-on the way most
+                American agencies structure it.
+              </p>
+            </div>
+
+            <div>
+              <h3 className="text-xl font-bold font-heading mb-3 text-white">
+                Real-Time Availability, Not Overnight Delays
+              </h3>
+              <p className="text-slate-400 leading-relaxed">
+                Outsourcing gets a bad reputation when &quot;support&quot; means waiting
+                until the next US morning for a reply. Your RankNex AI account manager works
+                US business hours, is reachable directly on WhatsApp or email, and joins live
+                calls, not async ticket threads.
+              </p>
+            </div>
           </div>
         </div>
       </section>
@@ -239,6 +340,47 @@ export default function USPage() {
         </div>
       </section>
 
+      {/* Cost Comparison */}
+      <section className="section section-alt">
+        <div className="container max-w-3xl">
+          <div className="text-center mb-10">
+            <h2 className="text-3xl md:text-4xl font-bold font-heading mb-4">
+              The Real <span className="gradient-text-teal">Cost Comparison</span>
+            </h2>
+            <p className="text-slate-400">
+              Here&apos;s what the same scope of SEO and PPC management typically costs,
+              based on published US agency pricing.
+            </p>
+          </div>
+          <div className="space-y-4">
+            {[
+              { label: "Mid-size US agency (SEO + PPC retainer)", value: "$5,000 \u2013 $12,000/month" },
+              { label: "RankNex AI (same scope, same reporting cadence)", value: "A fraction of that, month-to-month, no lock-in" },
+              { label: "What doesn't change", value: "Strategy quality, communication standards, and the 90-day results benchmark" },
+            ].map((row) => (
+              <div key={row.label} className="card-glass flex flex-col sm:flex-row sm:items-center justify-between gap-2 py-5">
+                <span className="text-slate-300">{row.label}</span>
+                <span className="text-teal-400 font-semibold">{row.value}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ */}
+      <section className="section">
+        <div className="container">
+          <div className="text-center mb-14">
+            <h2 className="text-3xl md:text-4xl font-bold font-heading mb-4">
+              US Businesses <span className="gradient-text-teal">Ask Us This a Lot</span>
+            </h2>
+          </div>
+          <div className="max-w-3xl mx-auto">
+            <FAQ items={usFaqs} />
+          </div>
+        </div>
+      </section>
+
       {/* CTA */}
       <section className="section">
         <div className="container">
@@ -246,15 +388,15 @@ export default function USPage() {
             <div className="orb orb-cyan w-[300px] h-[300px] -top-20 -left-20 opacity-20" />
             <div className="relative z-10">
               <h2 className="text-3xl md:text-4xl font-bold font-heading mb-4">
-                Ready to Scale Your Business with AI-Powered Marketing?
+                Get a Free Audit of Your US Marketing Performance
               </h2>
               <p className="text-slate-300 text-lg mb-8 max-w-2xl mx-auto">
-                Join 150+ businesses that trust RankNex AI for their digital growth. 
-                Get a free audit and see exactly where the opportunities are.
+                We&apos;ll analyze your site, your top 5 US competitors, and your visibility
+                on Google and AI search. No cost, no obligation.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Link href="/contact" className="btn-primary text-lg px-8 py-4">
-                  <span>Get Your Free Audit</span>
+                  <span>Get Your Free US Audit</span>
                   <ArrowRight className="w-5 h-5" />
                 </Link>
                 <Link href="https://wa.me/923224044150" className="btn-secondary text-lg px-8 py-4">

@@ -5,23 +5,22 @@ import { generateBreadcrumbSchema, generateFAQSchema } from "@/lib/seo";
 import FAQ from "@/components/ui/FAQ";
 
 export const metadata: Metadata = {
-  title: "Digital Marketing & SEO Services for UK Brands",
-  description: "RankNex AI offers affordable, high-quality digital marketing and SEO services for UK businesses, delivering international-standard results at lower cost.",
+  title: "Digital Marketing Agency for UK Businesses",
+  description: "RankNex AI is an outsourced SEO and digital marketing agency for UK businesses, delivering technical SEO, PPC, and AEO/GEO at 60% lower cost than local UK agencies.",
   keywords: [
-    "seo uk services",
+    "digital marketing agency for uk businesses",
+    "outsourced seo agency uk",
+    "affordable digital marketing agency uk",
+    "seo services uk",
     "seo uk expert",
-    "digital marketing agency uk affordable",
-    "outsourced it support uk",
-    "small business it support london",
-    "website maintenance uk",
-    "uk wordpress support services",
+    "small business marketing agency uk",
   ],
   alternates: {
     canonical: "https://www.ranknexai.com/uk",
   },
   openGraph: {
-    title: "Digital Marketing & SEO Services for UK Businesses | RankNex AI",
-    description: "Affordable, high-quality digital marketing and SEO services for UK businesses.",
+    title: "Digital Marketing Agency for UK Businesses | RankNex AI",
+    description: "RankNex AI is an outsourced SEO and digital marketing agency for UK businesses, delivering technical SEO, PPC, and AEO/GEO at 60% lower cost than local UK agencies.",
     url: "https://www.ranknexai.com/uk",
     siteName: "RankNex AI",
     type: "website",
@@ -32,38 +31,38 @@ export const metadata: Metadata = {
 const ukServices = [
   {
     icon: Search,
-    title: "SEO Services for UK Businesses",
-    description: "Dominate Google UK search results. Our SEO experts understand the UK market, local search algorithms, and what British consumers search for.",
+    title: "SEO & AI Search (AEO/GEO)",
+    description: "Technical fixes, content strategy, and visibility in ChatGPT, Gemini, and Google AI Overviews for UK search terms, alongside traditional rankings.",
     href: "/services/seo",
   },
   {
     icon: BarChart3,
-    title: "PPC & Google Ads Management",
-    description: "Get more qualified leads with expert Google Ads management. We optimise campaigns for UK audiences to maximise your return on ad spend.",
+    title: "Google Ads & Meta Ads Management",
+    description: "Paid campaigns built around UK cost-per-lead targets. Google Ads, Meta Ads, and LinkedIn managed with ROAS as the north star.",
     href: "/services/ppc-advertising",
   },
   {
-    icon: Users,
-    title: "Social Media Management",
-    description: "Build your brand presence across UK social media. From LinkedIn for B2B to Instagram for consumer brands, strategic, results-driven management.",
-    href: "/services/social-media",
-  },
-  {
-    icon: Globe,
-    title: "Website Design & Maintenance",
-    description: "Professional website design and ongoing maintenance for UK businesses. WordPress, custom builds, e-commerce, all built for performance.",
-    href: "/services/web-designing",
-  },
-  {
     icon: Zap,
-    title: "Content Marketing",
-    description: "SEO-optimised content that ranks and converts. Blog articles, landing pages, and lead magnets crafted for UK audiences.",
+    title: "Content & Copywriting",
+    description: "Blog posts, landing pages, and email sequences written in British English for UK search intent, not translated from a US template.",
     href: "/services/content-writing",
   },
   {
+    icon: Globe,
+    title: "Web Design & Development",
+    description: "Fast, mobile-first sites built for UK Core Web Vitals performance. WordPress, custom builds, e-commerce, all built for performance.",
+    href: "/services/web-designing",
+  },
+  {
+    icon: Users,
+    title: "Social Media Marketing",
+    description: "Organic and paid strategy across the platforms UK customers use most, from LinkedIn for B2B to Instagram for consumer brands.",
+    href: "/services/social-media",
+  },
+  {
     icon: Shield,
-    title: "Branding & Visual Identity",
-    description: "Stand out in the UK market with strategic branding that communicates trust, quality, and professionalism.",
+    title: "Brand Identity",
+    description: "Visual systems that read as credible and local to a UK buyer, logo, guidelines, and full brand identity.",
     href: "/services/branding",
   },
 ];
@@ -100,6 +99,11 @@ const ukFaqs = [
     question: "Is a Pakistan-based agency reliable for UK SEO?",
     answer:
       "Yes. Google ranks pages the same way regardless of where the agency managing them is based, what matters is technical execution, content quality, and link authority. Our team has years of experience specifically with UK search intent, UK English conventions, and UK-market keyword research. We work UK business hours where needed, communicate over WhatsApp, Slack, or email, and provide the same monthly reporting and account management you'd expect from a London agency, at 60% lower cost.",
+  },
+  {
+    question: "Do you have a physical presence in the UK?",
+    answer:
+      "We operate as a remote-first digital delivery team based in Lahore, Pakistan, with dedicated UK working-hours availability rather than a UK office. That structure is exactly what keeps our pricing 60% below typical London agency rates without compromising on communication or reporting standards.",
   },
   {
     question: "Why do UK agencies charge so much more for the same work?",
@@ -174,6 +178,25 @@ export default function UKPage() {
         </div>
       </section>
 
+      {/* Trust Bar */}
+      <section className="py-6 border-y border-white/5 relative z-10">
+        <div className="container">
+          <div className="flex flex-wrap justify-center gap-x-10 gap-y-3 text-sm text-slate-300">
+            {[
+              "UK Working-Hours Support",
+              "No Lock-In Contracts",
+              "GDPR/PECR-Aware Reporting & Data Handling",
+              "AEO/GEO Included for ChatGPT & Google AI Overviews",
+            ].map((item) => (
+              <div key={item} className="flex items-center gap-2">
+                <CheckCircle2 className="w-4 h-4 text-teal-400 flex-shrink-0" />
+                <span>{item}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Stats */}
       <section className="py-12 relative z-10">
         <div className="container">
@@ -189,6 +212,56 @@ export default function UKPage() {
                 <div className="text-slate-400 text-sm">{stat.label}</div>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Why UK Businesses Work With RankNex AI */}
+      <section className="section">
+        <div className="container max-w-4xl">
+          <div className="text-center mb-14">
+            <h2 className="text-3xl md:text-4xl font-bold font-heading mb-4">
+              Why UK Businesses Work With <span className="gradient-text-teal">RankNex AI</span>
+            </h2>
+          </div>
+
+          <div className="space-y-10">
+            <div>
+              <h3 className="text-xl font-bold font-heading mb-3 text-white">
+                UK Working-Hours Support, Without UK Office Overheads
+              </h3>
+              <p className="text-slate-400 leading-relaxed">
+                Most agencies offering &quot;affordable UK SEO&quot; from overseas give you
+                a generic support inbox and no real availability during your working day.
+                RankNex AI assigns every UK client a dedicated account manager who works UK
+                hours where needed, reachable directly on WhatsApp or email, not a rotating
+                ticket queue.
+              </p>
+            </div>
+
+            <div>
+              <h3 className="text-xl font-bold font-heading mb-3 text-white">
+                London Agency Standards. Not London Agency Invoices.
+              </h3>
+              <p className="text-slate-400 leading-relaxed">
+                A mid-size London SEO or PPC agency typically charges £3,000-8,000 a month.
+                RankNex AI runs the same audit rigour, the same reporting standards, and the
+                same AEO/GEO inclusion, at roughly 60% lower cost, because our delivery
+                overheads simply aren&apos;t London office overheads.
+              </p>
+            </div>
+
+            <div>
+              <h3 className="text-xl font-bold font-heading mb-3 text-white">
+                Built for UK Search Behaviour, Not a US Template
+              </h3>
+              <p className="text-slate-400 leading-relaxed">
+                UK search intent, spelling conventions, and buyer language differ from the
+                US. Our content and on-page work is written and optimised specifically for
+                a UK audience, not adapted from an American template with the currency
+                symbol swapped.
+              </p>
+            </div>
           </div>
         </div>
       </section>
@@ -279,6 +352,33 @@ export default function UKPage() {
         </div>
       </section>
 
+      {/* Cost Comparison */}
+      <section className="section">
+        <div className="container max-w-3xl">
+          <div className="text-center mb-10">
+            <h2 className="text-3xl md:text-4xl font-bold font-heading mb-4">
+              The Real <span className="gradient-text-teal">Cost Comparison</span>
+            </h2>
+            <p className="text-slate-400">
+              Here&apos;s what the same scope of SEO and PPC management typically costs,
+              based on published UK agency pricing.
+            </p>
+          </div>
+          <div className="space-y-4">
+            {[
+              { label: "Mid-size London/Manchester agency (SEO + PPC retainer)", value: "£3,000 \u2013 £8,000/month" },
+              { label: "RankNex AI (same scope, same reporting cadence, UK point of contact)", value: "A fraction of that, month-to-month, no lock-in" },
+              { label: "What doesn't change", value: "Strategy quality, transparent reporting, and the 90-day results benchmark" },
+            ].map((row) => (
+              <div key={row.label} className="card-glass flex flex-col sm:flex-row sm:items-center justify-between gap-2 py-5">
+                <span className="text-slate-300">{row.label}</span>
+                <span className="text-teal-400 font-semibold">{row.value}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* FAQ */}
       <section className="section section-alt">
         <div className="container">
@@ -300,14 +400,15 @@ export default function UKPage() {
             <div className="orb orb-teal w-[300px] h-[300px] -top-20 -right-20 opacity-20" />
             <div className="relative z-10">
               <h2 className="text-3xl md:text-4xl font-bold font-heading mb-4">
-                Ready to Grow Your UK Business Online?
+                Get a Free Audit of Your UK Marketing Performance
               </h2>
               <p className="text-slate-300 text-lg mb-8 max-w-2xl mx-auto">
-                Get a free, no-obligation audit of your website and digital marketing. We&apos;ll show you exactly where the opportunities are.
+                We&apos;ll analyze your site, your top 5 UK competitors, and your visibility
+                on Google and AI search. No cost, no obligation.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Link href="/contact" className="btn-primary text-lg px-8 py-4">
-                  <span>Get Your Free Audit</span>
+                  <span>Get Your Free UK Audit</span>
                   <ArrowRight className="w-5 h-5" />
                 </Link>
                 <Link href="https://wa.me/923224044150" className="btn-secondary text-lg px-8 py-4">

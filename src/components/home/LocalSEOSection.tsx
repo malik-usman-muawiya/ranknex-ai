@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { MapPin, Globe2 } from "lucide-react";
+import { MapPin, Globe2, ArrowRight } from "lucide-react";
 import SectionHeading from "@/components/ui/SectionHeading";
 import ScrollReveal from "@/components/ui/ScrollReveal";
 
@@ -46,6 +46,52 @@ export default function LocalSEOSection() {
                 dedicated account manager, so nothing gets lost between time zones.
               </p>
             </div>
+          </ScrollReveal>
+        </div>
+
+        <SectionHeading
+          tag="Who We Serve"
+          title={<>Built for Growing Businesses in the <span className="gradient-text font-bold">UK &amp; US</span></>}
+          subtitle="Two markets, two dedicated pages, two teams that understand exactly how buyers search in each one."
+        />
+
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
+          <ScrollReveal>
+            <Link href="/uk" className="card h-full block group">
+              <span className="text-sm font-semibold text-teal-400 mb-4 inline-block">
+                🇬🇧 UK Working-Hours Support
+              </span>
+              <h3 className="text-xl font-bold font-heading text-white mb-3">
+                Built for UK Businesses. UK Working Hours, UK Search Behaviour.
+              </h3>
+              <p className="text-slate-400 leading-relaxed mb-5">
+                SEO, PPC, and content that speaks British English and understands UK
+                search behaviour, delivered by a dedicated account manager reachable
+                during UK working hours, not a generic overseas support inbox.
+              </p>
+              <span className="text-teal-400 font-semibold text-sm inline-flex items-center gap-1 group-hover:gap-2 transition-all">
+                See UK Services <ArrowRight className="w-4 h-4" />
+              </span>
+            </Link>
+          </ScrollReveal>
+
+          <ScrollReveal delay={0.1}>
+            <Link href="/us" className="card h-full block group">
+              <span className="text-sm font-semibold text-cyan-400 mb-4 inline-block">
+                🇺🇸 US Timezone Coverage
+              </span>
+              <h3 className="text-xl font-bold font-heading text-white mb-3">
+                Silicon Valley Quality. Without the Silicon Valley Invoice.
+              </h3>
+              <p className="text-slate-400 leading-relaxed mb-5">
+                AI-powered SEO, PPC, and AEO/GEO built for how US buyers actually
+                search, with US working-hours availability and reporting your team
+                can act on same-day.
+              </p>
+              <span className="text-cyan-400 font-semibold text-sm inline-flex items-center gap-1 group-hover:gap-2 transition-all">
+                See US Services <ArrowRight className="w-4 h-4" />
+              </span>
+            </Link>
           </ScrollReveal>
         </div>
 
