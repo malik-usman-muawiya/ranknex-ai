@@ -103,7 +103,12 @@ const ukFaqs = [
   {
     question: "Do you have a physical presence in the UK?",
     answer:
-      "We operate as a remote-first digital delivery team based in Lahore, Pakistan, with dedicated UK working-hours availability rather than a UK office. That structure is exactly what keeps our pricing 60% below typical London agency rates without compromising on communication or reporting standards.",
+      "Yes. RankNex AI maintains a registered UK office at Ainsworth St, Blackburn BB1 6AF, in addition to our global delivery centre in Lahore.",
+  },
+  {
+    question: "Is my data handled in line with UK GDPR?",
+    answer:
+      "Yes. We collect and process client data in line with UK GDPR and PECR requirements, and we're transparent about what analytics and tracking tools are in use on your account.",
   },
   {
     question: "Why do UK agencies charge so much more for the same work?",
@@ -183,10 +188,10 @@ export default function UKPage() {
         <div className="container">
           <div className="flex flex-wrap justify-center gap-x-10 gap-y-3 text-sm text-slate-300">
             {[
+              "Registered UK Office \u2013 Blackburn, BB1 6AF",
               "UK Working-Hours Support",
               "No Lock-In Contracts",
               "GDPR/PECR-Aware Reporting & Data Handling",
-              "AEO/GEO Included for ChatGPT & Google AI Overviews",
             ].map((item) => (
               <div key={item} className="flex items-center gap-2">
                 <CheckCircle2 className="w-4 h-4 text-teal-400 flex-shrink-0" />
@@ -228,14 +233,15 @@ export default function UKPage() {
           <div className="space-y-10">
             <div>
               <h3 className="text-xl font-bold font-heading mb-3 text-white">
-                UK Working-Hours Support, Without UK Office Overheads
+                A Digital Marketing Agency With an Actual UK Office
               </h3>
               <p className="text-slate-400 leading-relaxed">
-                Most agencies offering &quot;affordable UK SEO&quot; from overseas give you
-                a generic support inbox and no real availability during your working day.
-                RankNex AI assigns every UK client a dedicated account manager who works UK
-                hours where needed, reachable directly on WhatsApp or email, not a rotating
-                ticket queue.
+                Most agencies offering &quot;affordable UK SEO&quot; from overseas are
+                exactly that: overseas, with no UK entity, no UK point of contact, and no
+                accountability if something goes wrong. RankNex AI maintains a registered
+                UK office at Ainsworth St, Blackburn BB1 6AF, alongside our delivery team
+                in Lahore. You get a real UK presence for contracts and communication, and
+                the cost advantage of a Pakistan-based delivery team.
               </p>
             </div>
 

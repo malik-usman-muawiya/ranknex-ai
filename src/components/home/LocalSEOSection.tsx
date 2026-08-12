@@ -59,15 +59,15 @@ export default function LocalSEOSection() {
           <ScrollReveal>
             <Link href="/uk" className="card h-full block group">
               <span className="text-sm font-semibold text-teal-400 mb-4 inline-block">
-                🇬🇧 UK Working-Hours Support
+                🇬🇧 UK Delivery, UK Office
               </span>
               <h3 className="text-xl font-bold font-heading text-white mb-3">
-                Built for UK Businesses. UK Working Hours, UK Search Behaviour.
+                Built for UK Businesses. Backed by a Real UK Office.
               </h3>
               <p className="text-slate-400 leading-relaxed mb-5">
                 SEO, PPC, and content that speaks British English and understands UK
-                search behaviour, delivered by a dedicated account manager reachable
-                during UK working hours, not a generic overseas support inbox.
+                search behaviour, delivered by a team with an actual registered office
+                in Blackburn, not just a claim on a website.
               </p>
               <span className="text-teal-400 font-semibold text-sm inline-flex items-center gap-1 group-hover:gap-2 transition-all">
                 See UK Services <ArrowRight className="w-4 h-4" />

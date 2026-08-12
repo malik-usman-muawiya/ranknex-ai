@@ -23,10 +23,8 @@ SERVICES (link to /services/[slug])
 - Branding & Identity, /services/branding
 
 OFFICES
-- Pakistan (Global Delivery Center): Bhamma, Lahore, Pakistan
-- We serve UK and US clients remotely, there is no physical UK/US office;
-  if asked about a UK or US office, say the team works remotely with
-  strong UK-hours overlap, do not state a specific foreign address
+- UK Office: Ainsworth St, Blackburn BB1 6AF, UK
+- Pakistan (Global Delivery Center): Near Minar-e-Pakistan, Badami Bagh, Lahore, Pakistan
 
 CONTACT
 - Phone / WhatsApp: +92 322 4044150
