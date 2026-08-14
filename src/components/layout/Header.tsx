@@ -8,81 +8,22 @@ import { motion, AnimatePresence } from 'framer-motion';
 import {
   Menu,
   X,
-  ChevronDown,
-  Search,
   TrendingUp,
-  Share2,
-  MousePointerClick,
-  PenTool,
-  Layout,
-  Palette,
-  ArrowRight,
-  Sparkles,
 } from 'lucide-react';
 
 /* ------------------------------------------------------------------ */
 /*  Navigation data                                                    */
 /* ------------------------------------------------------------------ */
 
-interface ServiceItem {
-  label: string;
-  href: string;
-  icon: React.ReactNode;
-  description: string;
-}
-
-const mainServices: ServiceItem[] = [
-  {
-    label: 'SEO & AI Search',
-    href: '/services/seo',
-    icon: <Search className="w-5 h-5" />,
-    description: 'Dominate search rankings with AI-driven strategies',
-  },
-  {
-    label: 'PPC Advertising',
-    href: '/services/ppc-advertising',
-    icon: <MousePointerClick className="w-5 h-5" />,
-    description: 'Maximize ROI with data-driven ad campaigns',
-  },
-  {
-    label: 'Social Media Marketing',
-    href: '/services/social-media',
-    icon: <Share2 className="w-5 h-5" />,
-    description: 'Build brand presence across all platforms',
-  },
-  {
-    label: 'Content Writing',
-    href: '/services/content-writing',
-    icon: <PenTool className="w-5 h-5" />,
-    description: 'Compelling content that converts visitors',
-  },
-];
-
-const moreServices: ServiceItem[] = [
-  {
-    label: 'Web Design & Development',
-    href: '/services/web-designing',
-    icon: <Layout className="w-5 h-5" />,
-    description: 'Stunning, performance-optimized websites',
-  },
-  {
-    label: 'Branding & Identity',
-    href: '/services/branding',
-    icon: <Palette className="w-5 h-5" />,
-    description: 'Craft a memorable brand identity',
-  },
-];
-
 interface NavLink {
   label: string;
   href: string;
-  hasDropdown?: boolean;
 }
 
 const navLinks: NavLink[] = [
   { label: 'Home', href: '/' },
   { label: 'About Us', href: '/about' },
-  { label: 'Services', href: '/services', hasDropdown: true },
+  { label: 'Services', href: '/services' },
   { label: 'Blogs', href: '/blog' },
   { label: 'Case Studies', href: '/case-studies' },
   { label: 'Contact Us', href: '/contact' },
@@ -98,8 +39,6 @@ export default function Header() {
 
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileOpen, setIsMobileOpen] = useState(false);
-  const [isServicesOpen, setIsServicesOpen] = useState(false);
-  const [isMobileServicesOpen, setIsMobileServicesOpen] = useState(false);
 
   // Hidden admin access: 6 clicks on logo within 3 seconds
   const clickTimestamps = useRef<number[]>([]);
@@ -138,20 +77,7 @@ export default function Header() {
   // Close mobile menu on route change
   useEffect(() => {
     setIsMobileOpen(false);
-    setIsMobileServicesOpen(false);
   }, [pathname]);
-
-  // Close services dropdown on click outside
-  const dropdownRef = useRef<HTMLDivElement>(null);
-  useEffect(() => {
-    const onClick = (e: MouseEvent) => {
-      if (dropdownRef.current && !dropdownRef.current.contains(e.target as Node)) {
-        setIsServicesOpen(false);
-      }
-    };
-    document.addEventListener('mousedown', onClick);
-    return () => document.removeEventListener('mousedown', onClick);
-  }, []);
 
   const isActive = (href: string) => {
     if (href === '/') return pathname === '/';
@@ -184,138 +110,19 @@ export default function Header() {
 
             {/* ---- Desktop Nav ---- */}
             <nav className="hidden lg:flex items-center gap-3">
-              {navLinks.map((link) =>
-                link.hasDropdown ? (
-                  /* Services with dropdown */
-                  <div key={link.label} ref={dropdownRef} className="relative">
-                    <Link
-                      href={link.href}
-                      onClick={(e) => {
-                        e.preventDefault();
-                        setIsServicesOpen(!isServicesOpen);
-                      }}
-                    className="flex items-center gap-1 px-4 py-2 rounded-lg text-sm font-medium transition-colors duration-200 text-teal-400 hover:text-teal-300"
-                    >
-                      {link.label}
-                      <ChevronDown
-                        className={`w-4 h-4 transition-transform duration-200 ${
-                          isServicesOpen ? 'rotate-180' : ''
-                        }`}
-                      />
-                    </Link>
-
-                    {/* Mega menu dropdown */}
-                    <AnimatePresence>
-                      {isServicesOpen && (
-                        <motion.div
-                          initial={{ opacity: 0, y: 10, scale: 0.95 }}
-                          animate={{ opacity: 1, y: 0, scale: 1 }}
-                          exit={{ opacity: 0, y: 10, scale: 0.95 }}
-                          transition={{ duration: 0.2 }}
-                          className="absolute top-full left-1/2 -translate-x-1/2 mt-2 w-[600px] bg-navy-900/98 backdrop-blur-xl border border-white/10 rounded-2xl p-6 shadow-2xl shadow-black/50"
-                        >
-                          {/* Arrow */}
-                          <div className="absolute -top-2 left-1/2 -translate-x-1/2 w-4 h-4 rotate-45 bg-navy-900/98 border-l border-t border-white/10" />
-
-                          <div className="grid grid-cols-2 gap-6 relative z-10">
-                            {/* Main services */}
-                            <div>
-                              <p className="text-xs font-semibold text-slate-400 uppercase tracking-wider mb-3">
-                                Core Services
-                              </p>
-                              <div className="space-y-1">
-                                {mainServices.map((service) => (
-                                  <Link
-                                    key={service.href}
-                                    href={service.href}
-                                    onClick={() => setIsServicesOpen(false)}
-                                    className="flex items-start gap-3 p-3 rounded-xl hover:bg-white/[0.04] transition-colors group/item"
-                                  >
-                                    <div className="mt-0.5 p-2 rounded-lg bg-teal-500/10 text-teal-500 group-hover/item:bg-teal-500/20 transition-colors">
-                                      {service.icon}
-                                    </div>
-                                    <div>
-                                      <p className="text-white text-sm font-medium">
-                                        {service.label}
-                                      </p>
-                                      <p className="text-slate-400 text-xs mt-0.5 leading-relaxed">
-                                        {service.description}
-                                      </p>
-                                    </div>
-                                  </Link>
-                                ))}
-                              </div>
-                            </div>
-
-                            {/* More services */}
-                            <div>
-                              <p className="text-xs font-semibold text-slate-400 uppercase tracking-wider mb-3">
-                                More
-                              </p>
-                              <div className="space-y-1">
-                                {moreServices.map((service) => (
-                                  <Link
-                                    key={service.href}
-                                    href={service.href}
-                                    onClick={() => setIsServicesOpen(false)}
-                                    className="flex items-start gap-3 p-3 rounded-xl hover:bg-white/[0.04] transition-colors group/item"
-                                  >
-                                    <div className="mt-0.5 p-2 rounded-lg bg-cyan-400/10 text-cyan-400 group-hover/item:bg-cyan-400/20 transition-colors">
-                                      {service.icon}
-                                    </div>
-                                    <div>
-                                      <p className="text-white text-sm font-medium">
-                                        {service.label}
-                                      </p>
-                                      <p className="text-slate-400 text-xs mt-0.5 leading-relaxed">
-                                        {service.description}
-                                      </p>
-                                    </div>
-                                  </Link>
-                                ))}
-                              </div>
-
-                              {/* CTA inside dropdown */}
-                              <div className="mt-4 p-4 rounded-xl bg-gradient-to-br from-teal-500/10 to-cyan-400/5 border border-teal-500/10">
-                                <div className="flex items-center gap-2 mb-1">
-                                  <Sparkles className="w-4 h-4 text-teal-500" />
-                                  <p className="text-white text-sm font-semibold">
-                                    Free SEO Audit
-                                  </p>
-                                </div>
-                                <p className="text-slate-400 text-xs mb-3">
-                                  Get a comprehensive analysis of your website
-                                </p>
-                                <Link
-                                  href="/contact"
-                                  onClick={() => setIsServicesOpen(false)}
-                                  className="inline-flex items-center gap-1 text-teal-500 text-xs font-semibold hover:text-teal-400 transition-colors"
-                                >
-                                  Get Started
-                                  <ArrowRight className="w-3 h-3" />
-                                </Link>
-                              </div>
-                            </div>
-                          </div>
-                        </motion.div>
-                      )}
-                    </AnimatePresence>
-                  </div>
-                ) : (
-                  /* Regular nav link */
-                  <Link
-                    key={link.label}
-                    href={link.href}
-                    className={`px-4 py-2 rounded-lg text-sm font-medium transition-colors duration-200 ${
-                      isActive(link.href)
-                        ? 'text-teal-500'
-                        : 'text-slate-300 hover:text-white'
-                    }`}
-                  >
-                    {link.label}
-                  </Link>
-                )
-              )}
+              {navLinks.map((link) => (
+                <Link
+                  key={link.label}
+                  href={link.href}
+                  className={`px-4 py-2 rounded-lg text-sm font-medium transition-colors duration-200 ${
+                    isActive(link.href)
+                      ? 'text-teal-500'
+                      : 'text-slate-300 hover:text-white'
+                  }`}
+                >
+                  {link.label}
+                </Link>
+              ))}
             </nav>
 
             {/* ---- Desktop CTA + Mobile Toggle ---- */}
@@ -406,67 +213,17 @@ export default function Header() {
                       }}
                       transition={{ duration: 0.3 }}
                     >
-                      {link.hasDropdown ? (
-                        <>
-                          <button
-                            onClick={() =>
-                              setIsMobileServicesOpen(!isMobileServicesOpen)
-                            }
-                            className={`flex items-center justify-between w-full px-4 py-3 rounded-xl text-sm font-medium transition-colors ${
-                              isActive(link.href)
-                                ? 'text-teal-500 bg-teal-500/[0.08]'
-                                : 'text-slate-300 hover:text-white hover:bg-white/[0.04]'
-                            }`}
-                          >
-                            {link.label}
-                            <ChevronDown
-                              className={`w-4 h-4 transition-transform duration-200 ${
-                                isMobileServicesOpen ? 'rotate-180' : ''
-                              }`}
-                            />
-                          </button>
-
-                          <AnimatePresence>
-                            {isMobileServicesOpen && (
-                              <motion.div
-                                initial={{ height: 0, opacity: 0 }}
-                                animate={{ height: 'auto', opacity: 1 }}
-                                exit={{ height: 0, opacity: 0 }}
-                                transition={{ duration: 0.25 }}
-                                className="overflow-hidden"
-                              >
-                                <div className="pl-4 py-2 space-y-0.5">
-                                  {[...mainServices, ...moreServices].map(
-                                    (service) => (
-                                      <Link
-                                        key={service.href}
-                                        href={service.href}
-                                        className="flex items-center gap-3 px-4 py-2.5 rounded-lg text-sm text-slate-400 hover:text-white hover:bg-white/[0.04] transition-colors"
-                                      >
-                                        <span className="text-teal-500/70">
-                                          {service.icon}
-                                        </span>
-                                        {service.label}
-                                      </Link>
-                                    )
-                                  )}
-                                </div>
-                              </motion.div>
-                            )}
-                          </AnimatePresence>
-                        </>
-                      ) : (
-                        <Link
-                          href={link.href}
-                          className={`block px-4 py-3 rounded-xl text-sm font-medium transition-colors ${
-                            isActive(link.href)
-                              ? 'text-teal-500 bg-teal-500/[0.08]'
-                              : 'text-slate-300 hover:text-white hover:bg-white/[0.04]'
-                          }`}
-                        >
-                          {link.label}
-                        </Link>
-                      )}
+                      <Link
+                        href={link.href}
+                        onClick={() => setIsMobileOpen(false)}
+                        className={`block px-4 py-3 rounded-xl text-sm font-medium transition-colors ${
+                          isActive(link.href)
+                            ? 'text-teal-500 bg-teal-500/[0.08]'
+                            : 'text-slate-300 hover:text-white hover:bg-white/[0.04]'
+                        }`}
+                      >
+                        {link.label}
+                      </Link>
                     </motion.li>
                   ))}
                 </motion.ul>
