@@ -173,7 +173,7 @@ export default function ServicePageTemplate({
                   <div className="w-12 h-12 rounded-lg bg-teal-500/10 flex items-center justify-center mb-5 group-hover:bg-teal-500/20 transition-colors">
                     <feature.icon className="w-6 h-6 text-teal-500" />
                   </div>
-                  <h3 className="text-lg font-bold text-white mb-3 font-heading">
+                  <h3 className="text-lg font-bold text-navy-950 mb-3 font-heading">
                     {feature.title}
                   </h3>
                   <p className="text-slate-400 leading-relaxed text-sm">
@@ -220,7 +220,7 @@ export default function ServicePageTemplate({
 
             <ScrollReveal direction="right" delay={0.2}>
               <div className="card-glass p-8">
-                <h3 className="text-xl font-bold text-white mb-6 font-heading">
+                <h3 className="text-xl font-bold text-navy-950 mb-6 font-heading">
                   Our Process
                 </h3>
                 <div className="space-y-6">
@@ -239,7 +239,7 @@ export default function ServicePageTemplate({
                         </span>
                       </div>
                       <div>
-                        <h4 className="text-white font-semibold mb-1">{step.title}</h4>
+                        <h4 className="text-navy-950 font-semibold mb-1">{step.title}</h4>
                         <p className="text-slate-400 text-sm leading-relaxed">
                           {step.description}
                         </p>
@@ -261,7 +261,7 @@ export default function ServicePageTemplate({
               {regionSections.map((r, i) => (
                 <ScrollReveal key={r.title} delay={i * 0.08}>
                   <div className="card h-full">
-                    <h2 className="text-xl font-bold text-white mb-3 font-heading">
+                    <h2 className="text-xl font-bold text-navy-950 mb-3 font-heading">
                       {r.title}
                     </h2>
                     <p className="text-slate-400 leading-relaxed text-sm">

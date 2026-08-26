@@ -17,7 +17,7 @@ export default function BlogCard({ post }: BlogCardProps) {
     <Link href={`/blog/${post.slug}`} className="group block">
       <article className="card h-full flex flex-col overflow-hidden !p-0">
         {/* Featured Image */}
-        <div className="relative h-52 w-full overflow-hidden bg-navy-800">
+        <div className="relative h-52 w-full overflow-hidden bg-mist-200">
           {post.featuredImage ? (
             <Image
               src={post.featuredImage}
@@ -34,7 +34,7 @@ export default function BlogCard({ post }: BlogCardProps) {
             </div>
           )}
           {post.category && (
-            <span className="absolute left-4 top-4 rounded-full bg-teal-500/90 px-3 py-1 text-xs font-semibold text-white backdrop-blur-sm">
+            <span className="absolute left-4 top-4 rounded-full bg-teal-500/90 px-3 py-1 text-xs font-semibold text-navy-950 backdrop-blur-sm">
               {post.category.name}
             </span>
           )}
@@ -55,7 +55,7 @@ export default function BlogCard({ post }: BlogCardProps) {
           </div>
 
           {/* Title */}
-          <h3 className="mb-2 text-lg font-bold leading-tight text-white transition-colors group-hover:text-teal-500">
+          <h3 className="mb-2 text-lg font-bold leading-tight text-navy-950 transition-colors group-hover:text-teal-500">
             {post.title}
           </h3>
 

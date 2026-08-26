@@ -103,7 +103,7 @@ export default async function BlogPostPage({ params }: PageProps) {
   ]);
 
   return (
-    <main className="relative overflow-hidden bg-navy-950 text-slate-300" style={{ paddingTop: '8rem', paddingBottom: '5rem' }}>
+    <main className="relative overflow-hidden bg-white text-slate-300" style={{ paddingTop: '8rem', paddingBottom: '5rem' }}>
       {/* Schema JSON-LD */}
       <script
         type="application/ld+json"
@@ -138,7 +138,7 @@ export default async function BlogPostPage({ params }: PageProps) {
                 {post.category.name}
               </span>
             )}
-            <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold font-heading text-white leading-tight">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold font-heading text-navy-950 leading-tight">
               {post.title}
             </h1>
             <p className="text-slate-400 text-base md:text-lg leading-relaxed">
@@ -146,7 +146,7 @@ export default async function BlogPostPage({ params }: PageProps) {
             </p>
 
             {/* Meta */}
-            <div className="flex flex-wrap items-center gap-6 py-4 border-y border-white/5 text-sm text-slate-400">
+            <div className="flex flex-wrap items-center gap-6 py-4 border-y border-navy-950/5 text-sm text-slate-400">
               <div className="flex items-center gap-2">
                 <Calendar className="w-4 h-4 text-teal-500" />
                 <span>{formatDate(post.publishedAt || post.createdAt)}</span>
@@ -157,7 +157,7 @@ export default async function BlogPostPage({ params }: PageProps) {
               </div>
               <div className="flex items-center gap-2">
                 <span>By</span>
-                <span className="text-white font-semibold">RankNex AI Team</span>
+                <span className="text-navy-950 font-semibold">RankNex AI Team</span>
               </div>
             </div>
           </div>
@@ -165,7 +165,7 @@ export default async function BlogPostPage({ params }: PageProps) {
 
         {/* Featured Image */}
         {post.featuredImage && (
-          <ScrollReveal delay={0.2} className="relative w-full rounded-2xl overflow-hidden mb-12 bg-navy-800">
+          <ScrollReveal delay={0.2} className="relative w-full rounded-2xl overflow-hidden mb-12 bg-mist-200">
             <Image
               src={post.featuredImage}
               alt={post.title}
@@ -191,11 +191,11 @@ export default async function BlogPostPage({ params }: PageProps) {
 
             {/* Tags */}
             {post.tags && (
-              <ScrollReveal delay={0.3} className="mt-12 flex flex-wrap gap-2 pt-6 border-t border-white/5">
+              <ScrollReveal delay={0.3} className="mt-12 flex flex-wrap gap-2 pt-6 border-t border-navy-950/5">
                 {post.tags.split(",").map((tag) => (
                   <span
                     key={tag}
-                    className="inline-flex items-center gap-1.5 px-3 py-1 rounded-lg bg-navy-800 text-xs font-semibold text-slate-400 border border-white/5"
+                    className="inline-flex items-center gap-1.5 px-3 py-1 rounded-lg bg-mist-200 text-xs font-semibold text-slate-400 border border-navy-950/5"
                   >
                     <Tag className="w-3.5 h-3.5" />
                     {tag.trim()}
@@ -208,8 +208,8 @@ export default async function BlogPostPage({ params }: PageProps) {
           {/* Sidebar Share */}
           <div className="lg:col-span-3 lg:sticky lg:top-28 h-fit space-y-6">
             <ScrollReveal delay={0.3}>
-              <div className="card p-6 bg-navy-900/40 border border-white/5 rounded-2xl backdrop-blur-sm">
-                <h4 className="text-white font-bold font-heading mb-4 flex items-center gap-2 text-sm uppercase tracking-wider">
+              <div className="card p-6 bg-mist-100/40 border border-navy-950/5 rounded-2xl backdrop-blur-sm">
+                <h4 className="text-navy-950 font-bold font-heading mb-4 flex items-center gap-2 text-sm uppercase tracking-wider">
                   <Share2 className="w-4 h-4 text-teal-500" />
                   Share Article
                 </h4>
@@ -254,9 +254,9 @@ export default async function BlogPostPage({ params }: PageProps) {
 
         {/* Related Posts */}
         {relatedPosts.length > 0 && (
-          <div className="mt-20 pt-10 border-t border-white/5">
+          <div className="mt-20 pt-10 border-t border-navy-950/5">
             <ScrollReveal delay={0.1}>
-              <h3 className="text-2xl font-bold font-heading text-white mb-8">
+              <h3 className="text-2xl font-bold font-heading text-navy-950 mb-8">
                 Related Articles
               </h3>
             </ScrollReveal>
@@ -264,9 +264,9 @@ export default async function BlogPostPage({ params }: PageProps) {
               {relatedPosts.map((rPost, idx) => (
                 <ScrollReveal key={rPost.id} delay={idx * 0.05} direction="up">
                   <Link href={`/blog/${rPost.slug}`} className="group block">
-                    <article className="card h-full flex flex-col overflow-hidden !p-0 bg-navy-900/30 hover:border-teal-500/30 transition-all border border-white/5 rounded-2xl">
+                    <article className="card h-full flex flex-col overflow-hidden !p-0 bg-mist-100/30 hover:border-teal-500/30 transition-all border border-navy-950/5 rounded-2xl">
                       {/* Image */}
-                      <div className="relative h-44 w-full bg-navy-800 overflow-hidden">
+                      <div className="relative h-44 w-full bg-mist-200 overflow-hidden">
                         {rPost.featuredImage ? (
                           <Image
                             src={rPost.featuredImage}
@@ -285,7 +285,7 @@ export default async function BlogPostPage({ params }: PageProps) {
                       </div>
                       {/* Title */}
                       <div className="p-4 flex-1 flex flex-col justify-between">
-                        <h4 className="text-white font-bold text-sm leading-snug group-hover:text-teal-400 transition-colors line-clamp-2">
+                        <h4 className="text-navy-950 font-bold text-sm leading-snug group-hover:text-teal-400 transition-colors line-clamp-2">
                           {rPost.title}
                         </h4>
                         <div className="mt-4 flex items-center justify-between text-xs text-slate-400">

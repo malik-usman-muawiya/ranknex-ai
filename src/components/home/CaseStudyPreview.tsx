@@ -81,7 +81,7 @@ export default function CaseStudyPreview() {
                       {study.industry}
                     </span>
                   </div>
-                  <h3 className="text-xl font-bold font-heading text-white mb-1">
+                  <h3 className="text-xl font-bold font-heading text-navy-950 mb-1">
                     {study.client}
                   </h3>
                   <p className="text-sm text-slate-400">{study.location}</p>

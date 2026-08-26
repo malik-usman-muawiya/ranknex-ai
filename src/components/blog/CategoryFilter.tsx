@@ -18,7 +18,7 @@ export default function CategoryFilter({
         className={`rounded-full px-4 py-2 text-sm font-medium transition-all ${
           activeCategory === 'all'
             ? 'bg-teal-500 text-white shadow-lg shadow-teal-500/20'
-            : 'border border-white/10 bg-navy-800/50 text-slate-300 hover:border-teal-500/30 hover:text-white'
+            : 'border border-navy-950/10 bg-mist-200/50 text-slate-300 hover:border-teal-500/30 hover:text-navy-950'
         }`}
       >
         All Posts
@@ -30,7 +30,7 @@ export default function CategoryFilter({
           className={`rounded-full px-4 py-2 text-sm font-medium transition-all ${
             activeCategory === category.slug
               ? 'bg-teal-500 text-white shadow-lg shadow-teal-500/20'
-              : 'border border-white/10 bg-navy-800/50 text-slate-300 hover:border-teal-500/30 hover:text-white'
+              : 'border border-navy-950/10 bg-mist-200/50 text-slate-300 hover:border-teal-500/30 hover:text-navy-950'
           }`}
         >
           {category.name}

@@ -127,7 +127,7 @@ export default function TestimonialsSlider() {
                         {testimonials[current].avatar}
                       </div>
                       <div>
-                        <p className="text-white font-semibold text-sm">
+                        <p className="text-navy-950 font-semibold text-sm">
                           {testimonials[current].name}
                         </p>
                         <p className="text-slate-400 text-xs">

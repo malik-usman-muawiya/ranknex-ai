@@ -51,7 +51,7 @@ export default function AEOGeoSection() {
                   <div className="inline-flex items-center justify-center w-12 h-12 rounded-xl bg-teal-500/10 text-teal-500 mb-4">
                     <Icon className="w-6 h-6" />
                   </div>
-                  <h3 className="text-base font-bold font-heading text-white mb-1">
+                  <h3 className="text-base font-bold font-heading text-navy-950 mb-1">
                     {channel.title}
                   </h3>
                   <p className="text-slate-400 text-sm">{channel.description}</p>

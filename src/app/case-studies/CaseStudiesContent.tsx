@@ -85,7 +85,7 @@ export default function CaseStudiesContent({ caseStudies }: CaseStudiesContentPr
   };
 
   return (
-    <main className="relative overflow-hidden bg-navy-950 text-slate-300" style={{ paddingTop: '8rem', paddingBottom: '5rem' }}>
+    <main className="relative overflow-hidden bg-white text-slate-300" style={{ paddingTop: '8rem', paddingBottom: '5rem' }}>
       {/* Background Orbs */}
       <div className="orb orb-teal w-96 h-96 -top-48 -right-24 opacity-10" />
       <div className="orb orb-cyan w-72 h-72 top-1/2 -left-36 opacity-5" />
@@ -108,7 +108,7 @@ export default function CaseStudiesContent({ caseStudies }: CaseStudiesContentPr
                   className={`rounded-full px-5 py-2 text-sm font-semibold transition-all cursor-pointer ${
                     activeFilter === industry
                       ? "bg-teal-500 text-white shadow-lg shadow-teal-500/25"
-                      : "border border-white/10 bg-navy-900/50 text-slate-300 hover:border-teal-500/30 hover:text-white"
+                      : "border border-navy-950/10 bg-mist-100/50 text-slate-300 hover:border-teal-500/30 hover:text-navy-950"
                   }`}
                 >
                   {industry}
@@ -126,11 +126,11 @@ export default function CaseStudiesContent({ caseStudies }: CaseStudiesContentPr
               <ScrollReveal key={study.id} delay={idx * 0.05} direction="up">
                 <div
                   onClick={() => setSelectedStudy(study)}
-                  className="group cursor-pointer card h-full flex flex-col justify-between overflow-hidden !p-0 bg-navy-900/40 hover:border-teal-500/30 border border-white/5 rounded-2xl transition-all"
+                  className="group cursor-pointer card h-full flex flex-col justify-between overflow-hidden !p-0 bg-mist-100/40 hover:border-teal-500/30 border border-navy-950/5 rounded-2xl transition-all"
                 >
                   <div>
                     {/* Cover image */}
-                    <div className="relative h-48 w-full bg-navy-800 overflow-hidden">
+                    <div className="relative h-48 w-full bg-mist-200 overflow-hidden">
                       {study.coverImage ? (
                         <Image
                           src={study.coverImage}
@@ -144,14 +144,14 @@ export default function CaseStudiesContent({ caseStudies }: CaseStudiesContentPr
                           <TrendingUp className="w-12 h-12 text-navy-600" />
                         </div>
                       )}
-                      <span className="absolute left-4 top-4 rounded-full bg-navy-950/80 border border-white/10 px-3 py-1 text-xs font-semibold text-teal-400 backdrop-blur-sm">
+                      <span className="absolute left-4 top-4 rounded-full bg-white/80 border border-navy-950/10 px-3 py-1 text-xs font-semibold text-teal-400 backdrop-blur-sm">
                         {study.clientIndustry}
                       </span>
                     </div>
 
                     {/* Content */}
                     <div className="p-6 space-y-4">
-                      <h3 className="text-xl font-bold text-white font-heading group-hover:text-teal-400 transition-colors line-clamp-2">
+                      <h3 className="text-xl font-bold text-navy-950 font-heading group-hover:text-teal-400 transition-colors line-clamp-2">
                         {study.title}
                       </h3>
                       <p className="text-slate-400 text-sm line-clamp-3">
@@ -163,7 +163,7 @@ export default function CaseStudiesContent({ caseStudies }: CaseStudiesContentPr
                   {/* Metrics Badges Footer */}
                   <div className="p-6 pt-0 space-y-4">
                     {metrics.length > 0 && (
-                      <div className="grid grid-cols-3 gap-2 pt-4 border-t border-white/5">
+                      <div className="grid grid-cols-3 gap-2 pt-4 border-t border-navy-950/5">
                         {metrics.slice(0, 3).map((m, index) => (
                           <div key={index} className="text-center">
                             <div className="text-sm font-bold text-teal-400">{m.value}</div>
@@ -193,7 +193,7 @@ export default function CaseStudiesContent({ caseStudies }: CaseStudiesContentPr
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
-              className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-navy-950/80 backdrop-blur-sm"
+              className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-white/80 backdrop-blur-sm"
               onClick={() => setSelectedStudy(null)}
             >
               <motion.div
@@ -201,13 +201,13 @@ export default function CaseStudiesContent({ caseStudies }: CaseStudiesContentPr
                 animate={{ scale: 1, y: 0 }}
                 exit={{ scale: 0.95, y: 20 }}
                 transition={{ type: "spring", duration: 0.5 }}
-                className="relative w-full max-w-3xl max-h-[85vh] overflow-y-auto bg-navy-900 border border-white/10 rounded-2xl p-6 sm:p-8 space-y-6 scrollbar"
+                className="relative w-full max-w-3xl max-h-[85vh] overflow-y-auto bg-mist-100 border border-navy-950/10 rounded-2xl p-6 sm:p-8 space-y-6 scrollbar"
                 onClick={(e) => e.stopPropagation()}
               >
                 {/* Close Button */}
                 <button
                   onClick={() => setSelectedStudy(null)}
-                  className="absolute right-4 top-4 p-2 text-slate-400 hover:text-white bg-white/5 hover:bg-white/10 rounded-xl transition-all cursor-pointer"
+                  className="absolute right-4 top-4 p-2 text-slate-400 hover:text-navy-950 bg-white/5 hover:bg-white/10 rounded-xl transition-all cursor-pointer"
                 >
                   <X className="w-5 h-5" />
                 </button>
@@ -217,14 +217,14 @@ export default function CaseStudiesContent({ caseStudies }: CaseStudiesContentPr
                   <span className="inline-block px-3 py-1 rounded-full text-xs font-semibold bg-teal-500/10 text-teal-400 border border-teal-500/20 mb-3">
                     {selectedStudy.clientIndustry}
                   </span>
-                  <h2 className="text-2xl sm:text-3xl font-bold font-heading text-white pr-10">
+                  <h2 className="text-2xl sm:text-3xl font-bold font-heading text-navy-950 pr-10">
                     {selectedStudy.title}
                   </h2>
                 </div>
 
                 {/* Metrics Highlights Banner */}
                 {selectedStudy.metrics && (
-                  <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 bg-navy-950 p-6 rounded-xl border border-white/5 text-center">
+                  <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 bg-white p-6 rounded-xl border border-navy-950/5 text-center">
                     {parseMetrics(selectedStudy.metrics).map((m, index) => (
                       <div key={index} className="space-y-1">
                         <div className="text-xs text-slate-400 font-bold uppercase tracking-wider">
@@ -244,7 +244,7 @@ export default function CaseStudiesContent({ caseStudies }: CaseStudiesContentPr
                       <Info className="w-5 h-5" />
                     </div>
                     <div>
-                      <h4 className="text-white font-bold font-heading mb-1.5">The Challenge</h4>
+                      <h4 className="text-navy-950 font-bold font-heading mb-1.5">The Challenge</h4>
                       <p className="text-slate-400 text-sm leading-relaxed">{selectedStudy.challenge}</p>
                     </div>
                   </div>
@@ -255,7 +255,7 @@ export default function CaseStudiesContent({ caseStudies }: CaseStudiesContentPr
                       <Compass className="w-5 h-5" />
                     </div>
                     <div>
-                      <h4 className="text-white font-bold font-heading mb-1.5">Our Strategy</h4>
+                      <h4 className="text-navy-950 font-bold font-heading mb-1.5">Our Strategy</h4>
                       <p className="text-slate-400 text-sm leading-relaxed">{selectedStudy.strategy}</p>
                     </div>
                   </div>
@@ -266,18 +266,18 @@ export default function CaseStudiesContent({ caseStudies }: CaseStudiesContentPr
                       <LineChart className="w-5 h-5" />
                     </div>
                     <div>
-                      <h4 className="text-white font-bold font-heading mb-1.5">The Results</h4>
+                      <h4 className="text-navy-950 font-bold font-heading mb-1.5">The Results</h4>
                       <p className="text-slate-400 text-sm leading-relaxed">{selectedStudy.results}</p>
                     </div>
                   </div>
                 </div>
 
-                <hr className="border-white/5 my-4" />
+                <hr className="border-navy-950/5 my-4" />
 
                 {/* CTA */}
                 <div className="flex flex-col sm:flex-row gap-4 justify-between items-center bg-teal-500/5 border border-teal-500/10 p-5 rounded-xl">
                   <div className="text-left">
-                    <h5 className="text-white font-bold text-sm">Want similar results for your business?</h5>
+                    <h5 className="text-navy-950 font-bold text-sm">Want similar results for your business?</h5>
                     <p className="text-slate-400 text-xs mt-0.5">
                       Contact us today for a free custom marketing audit.
                     </p>

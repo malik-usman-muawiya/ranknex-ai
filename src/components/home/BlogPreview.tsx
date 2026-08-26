@@ -50,7 +50,7 @@ export default function BlogPreview({ posts }: { posts: BlogPostPreview[] }) {
                   </div>
 
                   {/* Title */}
-                  <h3 className="text-lg font-bold font-heading text-white mb-3 group-hover:text-teal-500 transition-colors duration-300 leading-snug">
+                  <h3 className="text-lg font-bold font-heading text-navy-950 mb-3 group-hover:text-teal-500 transition-colors duration-300 leading-snug">
                     {post.title}
                   </h3>
 

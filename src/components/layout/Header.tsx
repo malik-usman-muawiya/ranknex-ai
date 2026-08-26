@@ -117,7 +117,7 @@ export default function Header() {
                   className={`px-4 py-2 rounded-lg text-sm font-medium transition-colors duration-200 ${
                     isActive(link.href)
                       ? 'text-teal-500'
-                      : 'text-slate-300 hover:text-white'
+                      : 'text-slate-300 hover:text-navy-950'
                   }`}
                 >
                   {link.label}
@@ -141,7 +141,7 @@ export default function Header() {
 
               <button
                 onClick={() => setIsMobileOpen(!isMobileOpen)}
-                className="lg:hidden p-2 rounded-lg text-slate-300 hover:text-white hover:bg-white/[0.05] transition-colors"
+                className="lg:hidden p-2 rounded-lg text-slate-300 hover:text-navy-950 hover:bg-teal-500/[0.07] transition-colors"
                 aria-label="Toggle menu"
               >
                 {isMobileOpen ? (
@@ -175,16 +175,16 @@ export default function Header() {
               animate={{ x: 0 }}
               exit={{ x: '100%' }}
               transition={{ type: 'spring', damping: 30, stiffness: 300 }}
-              className="fixed top-0 right-0 bottom-0 z-50 w-[300px] max-w-[85vw] bg-navy-900 border-l border-white/[0.05] overflow-y-auto lg:hidden"
+              className="fixed top-0 right-0 bottom-0 z-50 w-[300px] max-w-[85vw] bg-mist-100 border-l border-navy-950/[0.06] overflow-y-auto lg:hidden"
             >
               {/* Header */}
-              <div className="flex items-center justify-between p-4 border-b border-white/[0.05]">
-                <span className="text-lg font-bold text-white font-heading">
+              <div className="flex items-center justify-between p-4 border-b border-navy-950/[0.06]">
+                <span className="text-lg font-bold text-navy-950 font-heading">
                   Menu
                 </span>
                 <button
                   onClick={() => setIsMobileOpen(false)}
-                  className="p-2 rounded-lg text-slate-400 hover:text-white hover:bg-white/[0.05] transition-colors"
+                  className="p-2 rounded-lg text-slate-400 hover:text-navy-950 hover:bg-teal-500/[0.07] transition-colors"
                   aria-label="Close menu"
                 >
                   <X className="w-5 h-5" />
@@ -219,7 +219,7 @@ export default function Header() {
                         className={`block px-4 py-3 rounded-xl text-sm font-medium transition-colors ${
                           isActive(link.href)
                             ? 'text-teal-500 bg-teal-500/[0.08]'
-                            : 'text-slate-300 hover:text-white hover:bg-white/[0.04]'
+                            : 'text-slate-300 hover:text-navy-950 hover:bg-teal-500/[0.06]'
                         }`}
                       >
                         {link.label}
@@ -233,7 +233,7 @@ export default function Header() {
                   initial={{ opacity: 0, y: 10 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.4 }}
-                  className="mt-6 pt-6 border-t border-white/[0.05]"
+                  className="mt-6 pt-6 border-t border-navy-950/[0.06]"
                 >
                   <Link
                     href="/contact"

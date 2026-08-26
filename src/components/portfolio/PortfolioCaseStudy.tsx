@@ -60,7 +60,7 @@ export default function PortfolioCaseStudy({
             <span className="inline-block text-xs font-semibold tracking-wide uppercase text-teal-400 bg-teal-500/10 border border-teal-500/20 rounded-full px-4 py-1.5 mb-6">
               {tag}
             </span>
-            <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold font-heading text-white leading-tight max-w-3xl mb-4">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold font-heading text-navy-950 leading-tight max-w-3xl mb-4">
               {title}
             </h1>
             <p className="text-slate-400 text-lg mb-10">{clientLine}</p>
@@ -88,7 +88,7 @@ export default function PortfolioCaseStudy({
       <section className="section">
         <div className="container max-w-3xl">
           <ScrollReveal>
-            <h2 className="text-2xl font-bold font-heading text-white mb-4">Overview</h2>
+            <h2 className="text-2xl font-bold font-heading text-navy-950 mb-4">Overview</h2>
             <p className="text-slate-300 leading-relaxed">{overview}</p>
           </ScrollReveal>
         </div>
@@ -98,7 +98,7 @@ export default function PortfolioCaseStudy({
       <section className="section section-alt">
         <div className="container max-w-3xl">
           <ScrollReveal>
-            <h2 className="text-2xl font-bold font-heading text-white mb-6">The Challenge</h2>
+            <h2 className="text-2xl font-bold font-heading text-navy-950 mb-6">The Challenge</h2>
             <ul className="space-y-3">
               {challenge.map((c, i) => (
                 <li key={i} className="flex items-start gap-3 text-slate-300 leading-relaxed">
@@ -115,7 +115,7 @@ export default function PortfolioCaseStudy({
       <section className="section">
         <div className="container max-w-3xl">
           <ScrollReveal>
-            <h2 className="text-2xl font-bold font-heading text-white mb-8">
+            <h2 className="text-2xl font-bold font-heading text-navy-950 mb-8">
               What We Did
             </h2>
           </ScrollReveal>
@@ -127,7 +127,7 @@ export default function PortfolioCaseStudy({
                     {i + 1}
                   </div>
                   <div>
-                    <h3 className="text-lg font-bold text-white mb-1.5">{s.title}</h3>
+                    <h3 className="text-lg font-bold text-navy-950 mb-1.5">{s.title}</h3>
                     <p className="text-slate-400 leading-relaxed">{s.description}</p>
                   </div>
                 </div>
@@ -142,7 +142,7 @@ export default function PortfolioCaseStudy({
         <section className="section section-alt">
           <div className="container">
             <ScrollReveal>
-              <h2 className="text-2xl font-bold font-heading text-white mb-8 text-center">
+              <h2 className="text-2xl font-bold font-heading text-navy-950 mb-8 text-center">
                 Performance Data
               </h2>
             </ScrollReveal>
@@ -160,7 +160,7 @@ export default function PortfolioCaseStudy({
                         sizes="(max-width: 768px) 100vw, 600px"
                       />
                     </div>
-                    <div className="px-4 py-3 border-t border-white/5">
+                    <div className="px-4 py-3 border-t border-navy-950/5">
                       <p className="text-sm text-slate-400">{g.caption}</p>
                     </div>
                   </div>
@@ -175,7 +175,7 @@ export default function PortfolioCaseStudy({
       <section className="section">
         <div className="container max-w-3xl">
           <ScrollReveal>
-            <h2 className="text-2xl font-bold font-heading text-white mb-6">The Results</h2>
+            <h2 className="text-2xl font-bold font-heading text-navy-950 mb-6">The Results</h2>
             <ul className="space-y-3 mb-10">
               {results.map((r, i) => (
                 <li key={i} className="flex items-start gap-3 text-slate-300 leading-relaxed">
@@ -208,7 +208,7 @@ export default function PortfolioCaseStudy({
       <section className="section section-alt">
         <div className="container max-w-2xl text-center">
           <ScrollReveal>
-            <h2 className="text-2xl md:text-3xl font-bold font-heading text-white mb-4">
+            <h2 className="text-2xl md:text-3xl font-bold font-heading text-navy-950 mb-4">
               Want Results Like This for Your Business?
             </h2>
             <p className="text-slate-400 mb-8">

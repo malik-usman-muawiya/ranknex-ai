@@ -61,7 +61,7 @@ export default function LocalSEOSection() {
               <span className="text-sm font-semibold text-teal-400 mb-4 inline-block">
                 🇬🇧 UK Delivery, UK Office
               </span>
-              <h3 className="text-xl font-bold font-heading text-white mb-3">
+              <h3 className="text-xl font-bold font-heading text-navy-950 mb-3">
                 Built for UK Businesses. Backed by a Real UK Office.
               </h3>
               <p className="text-slate-400 leading-relaxed mb-5">
@@ -80,7 +80,7 @@ export default function LocalSEOSection() {
               <span className="text-sm font-semibold text-cyan-400 mb-4 inline-block">
                 🇺🇸 US Timezone Coverage
               </span>
-              <h3 className="text-xl font-bold font-heading text-white mb-3">
+              <h3 className="text-xl font-bold font-heading text-navy-950 mb-3">
                 Silicon Valley Quality. Without the Silicon Valley Invoice.
               </h3>
               <p className="text-slate-400 leading-relaxed mb-5">
@@ -113,7 +113,7 @@ export default function LocalSEOSection() {
             <Link
               key={s.href}
               href={s.href}
-              className="card-glass text-center py-5 px-3 text-sm font-semibold text-white hover:text-teal-400 transition-colors"
+              className="card-glass text-center py-5 px-3 text-sm font-semibold text-navy-950 hover:text-teal-400 transition-colors"
             >
               {s.label}
             </Link>

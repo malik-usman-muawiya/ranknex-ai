@@ -130,7 +130,7 @@ export default function AboutContent() {
                   </p>
                 </div>
 
-                <h2 className="text-2xl font-bold font-heading text-white mt-10 mb-4">
+                <h2 className="text-2xl font-bold font-heading text-navy-950 mt-10 mb-4">
                   Why a Digital Marketing Agency in Pakistan Works for UK &amp; US Budgets
                 </h2>
                 <div className="space-y-5 text-slate-300 leading-relaxed">
@@ -154,7 +154,7 @@ export default function AboutContent() {
                       <Sparkles className="w-7 h-7 text-teal-500" />
                     </div>
                     <div>
-                      <h3 className="text-2xl font-bold text-white">AI + Human</h3>
+                      <h3 className="text-2xl font-bold text-navy-950">AI + Human</h3>
                       <p className="text-slate-400">The perfect combination</p>
                     </div>
                   </div>
@@ -171,7 +171,7 @@ export default function AboutContent() {
                         whileInView={{ opacity: 1, scale: 1 }}
                         viewport={{ once: true }}
                         transition={{ delay: 0.3 + i * 0.1 }}
-                        className="bg-navy-900/50 rounded-lg p-4 text-center"
+                        className="bg-mist-100/50 rounded-lg p-4 text-center"
                       >
                         <div className="text-2xl font-bold gradient-text-teal">
                           {stat.value}
@@ -206,7 +206,7 @@ export default function AboutContent() {
                 <div className="w-14 h-14 rounded-xl bg-teal-500/10 flex items-center justify-center mb-6">
                   <Target className="w-7 h-7 text-teal-500" />
                 </div>
-                <h3 className="text-2xl font-bold text-white mb-4 font-heading">
+                <h3 className="text-2xl font-bold text-navy-950 mb-4 font-heading">
                   Our Mission
                 </h3>
                 <p className="text-slate-300 leading-relaxed">
@@ -222,7 +222,7 @@ export default function AboutContent() {
                 <div className="w-14 h-14 rounded-xl bg-cyan-400/10 flex items-center justify-center mb-6">
                   <Eye className="w-7 h-7 text-cyan-400" />
                 </div>
-                <h3 className="text-2xl font-bold text-white mb-4 font-heading">
+                <h3 className="text-2xl font-bold text-navy-950 mb-4 font-heading">
                   Our Vision
                 </h3>
                 <p className="text-slate-300 leading-relaxed">
@@ -297,7 +297,7 @@ export default function AboutContent() {
                   <div className="w-12 h-12 rounded-lg bg-teal-500/10 flex items-center justify-center mb-5 group-hover:bg-teal-500/20 transition-colors">
                     <value.icon className="w-6 h-6 text-teal-500" />
                   </div>
-                  <h3 className="text-lg font-bold text-white mb-3 font-heading">
+                  <h3 className="text-lg font-bold text-navy-950 mb-3 font-heading">
                     {value.title}
                   </h3>
                   <p className="text-slate-400 leading-relaxed text-sm">
@@ -360,7 +360,7 @@ export default function AboutContent() {
                     transition={{ delay: 0.2 + i * 0.1 }}
                     className="card-glass p-5 text-center"
                   >
-                    <h4 className="text-white font-semibold mb-1">{role.title}</h4>
+                    <h4 className="text-navy-950 font-semibold mb-1">{role.title}</h4>
                     <p className="text-slate-400 text-sm">{role.desc}</p>
                   </motion.div>
                 ))}

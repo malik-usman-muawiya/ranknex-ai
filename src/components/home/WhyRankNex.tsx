@@ -71,7 +71,7 @@ export default function WhyRankNex() {
                       <Icon className="w-6 h-6" />
                     </div>
                     <div>
-                      <h3 className="text-lg font-bold font-heading text-white mb-2 group-hover:text-teal-500 transition-colors duration-300">
+                      <h3 className="text-lg font-bold font-heading text-navy-950 mb-2 group-hover:text-teal-500 transition-colors duration-300">
                         {item.title}
                       </h3>
                       <p className="text-slate-400 text-sm leading-relaxed">

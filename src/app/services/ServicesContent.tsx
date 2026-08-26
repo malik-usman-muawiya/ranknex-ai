@@ -122,7 +122,7 @@ export default function ServicesContent() {
                       <service.icon className="w-7 h-7 text-teal-500" />
                     </div>
 
-                    <h2 className="text-xl font-bold text-white mb-3 font-heading group-hover:text-teal-500 transition-colors">
+                    <h2 className="text-xl font-bold text-navy-950 mb-3 font-heading group-hover:text-teal-500 transition-colors">
                       {service.title}
                     </h2>
 
@@ -134,7 +134,7 @@ export default function ServicesContent() {
                       {service.features.map((feature) => (
                         <span
                           key={feature}
-                          className="text-xs px-3 py-1 rounded-full bg-navy-700/50 text-slate-300 border border-white/5"
+                          className="text-xs px-3 py-1 rounded-full bg-navy-700/50 text-slate-300 border border-navy-950/5"
                         >
                           {feature}
                         </span>
@@ -189,7 +189,7 @@ export default function ServicesContent() {
                   <div className="w-14 h-14 rounded-xl bg-teal-500/10 flex items-center justify-center mx-auto mb-5">
                     <item.icon className="w-7 h-7 text-teal-500" />
                   </div>
-                  <h3 className="text-lg font-bold text-white mb-3 font-heading">
+                  <h3 className="text-lg font-bold text-navy-950 mb-3 font-heading">
                     {item.title}
                   </h3>
                   <p className="text-slate-400 leading-relaxed">{item.desc}</p>

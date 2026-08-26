@@ -49,7 +49,7 @@ export default function StatsBar() {
                 return (
                   <div
                     key={index}
-                    className="text-center group lg:px-4 lg:border-l lg:border-white/[0.06] lg:first:border-l-0"
+                    className="text-center group lg:px-4 lg:border-l lg:border-navy-950/[0.07] lg:first:border-l-0"
                   >
                     <div className="inline-flex items-center justify-center w-12 h-12 rounded-xl bg-teal-500/10 text-teal-400 mb-4 ring-1 ring-teal-500/20 group-hover:bg-teal-500/20 group-hover:scale-110 transition-all duration-300">
                       <Icon className="w-6 h-6" />
@@ -69,7 +69,7 @@ export default function StatsBar() {
                         />
                       )}
                     </div>
-                    <div className="text-sm font-semibold text-white mb-0.5">
+                    <div className="text-sm font-semibold text-navy-950 mb-0.5">
                       {stat.label}
                     </div>
                     <div className="text-xs text-slate-400">

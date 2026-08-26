@@ -173,7 +173,7 @@ export default function USPage() {
       </section>
 
       {/* Trust Bar */}
-      <section className="py-6 border-y border-white/5 relative z-10">
+      <section className="py-6 border-y border-navy-950/5 relative z-10">
         <div className="container">
           <div className="flex flex-wrap justify-center gap-x-10 gap-y-3 text-sm text-slate-300">
             {[
@@ -221,7 +221,7 @@ export default function USPage() {
 
           <div className="space-y-10">
             <div>
-              <h3 className="text-xl font-bold font-heading mb-3 text-white">
+              <h3 className="text-xl font-bold font-heading mb-3 text-navy-950">
                 Silicon Valley Quality Standards. Pakistan-Level Overheads.
               </h3>
               <p className="text-slate-400 leading-relaxed">
@@ -235,7 +235,7 @@ export default function USPage() {
             </div>
 
             <div>
-              <h3 className="text-xl font-bold font-heading mb-3 text-white">
+              <h3 className="text-xl font-bold font-heading mb-3 text-navy-950">
                 Built for How US Buyers Actually Search Now
               </h3>
               <p className="text-slate-400 leading-relaxed">
@@ -248,7 +248,7 @@ export default function USPage() {
             </div>
 
             <div>
-              <h3 className="text-xl font-bold font-heading mb-3 text-white">
+              <h3 className="text-xl font-bold font-heading mb-3 text-navy-950">
                 Real-Time Availability, Not Overnight Delays
               </h3>
               <p className="text-slate-400 leading-relaxed">

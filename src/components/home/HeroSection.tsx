@@ -64,7 +64,7 @@ export default function HeroSection() {
           <h1
             className="text-[2.5rem] sm:text-5xl md:text-6xl lg:text-7xl font-bold font-heading leading-[1.05] tracking-tight mb-6"
           >
-            <span className="text-white">More Than Rankings.</span>
+            <span className="text-navy-950">More Than Rankings.</span>
             <br />
             <span className="gradient-text animate-gradient">We Build Businesses.</span>
           </h1>
@@ -108,7 +108,7 @@ export default function HeroSection() {
             {trustPoints.map((point) => (
               <span
                 key={point}
-                className="inline-flex items-center gap-1.5 px-3 py-1.5 sm:px-4 sm:py-2 rounded-full text-xs sm:text-sm text-slate-300 bg-white/[0.03] border border-white/10 backdrop-blur-sm whitespace-nowrap"
+                className="inline-flex items-center gap-1.5 px-3 py-1.5 sm:px-4 sm:py-2 rounded-full text-xs sm:text-sm text-slate-300 bg-mist-100 border border-navy-950/10 backdrop-blur-sm whitespace-nowrap"
               >
                 <span className="flex items-center justify-center w-3.5 h-3.5 sm:w-4 sm:h-4 rounded-full bg-teal-500/15 text-teal-400 shrink-0">
                   <Check className="w-2.5 h-2.5 sm:w-3 sm:h-3" strokeWidth={3} />

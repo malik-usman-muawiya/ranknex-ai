@@ -184,7 +184,7 @@ export default function UKPage() {
       </section>
 
       {/* Trust Bar */}
-      <section className="py-6 border-y border-white/5 relative z-10">
+      <section className="py-6 border-y border-navy-950/5 relative z-10">
         <div className="container">
           <div className="flex flex-wrap justify-center gap-x-10 gap-y-3 text-sm text-slate-300">
             {[
@@ -232,7 +232,7 @@ export default function UKPage() {
 
           <div className="space-y-10">
             <div>
-              <h3 className="text-xl font-bold font-heading mb-3 text-white">
+              <h3 className="text-xl font-bold font-heading mb-3 text-navy-950">
                 A Digital Marketing Agency With an Actual UK Office
               </h3>
               <p className="text-slate-400 leading-relaxed">
@@ -246,7 +246,7 @@ export default function UKPage() {
             </div>
 
             <div>
-              <h3 className="text-xl font-bold font-heading mb-3 text-white">
+              <h3 className="text-xl font-bold font-heading mb-3 text-navy-950">
                 London Agency Standards. Not London Agency Invoices.
               </h3>
               <p className="text-slate-400 leading-relaxed">
@@ -258,7 +258,7 @@ export default function UKPage() {
             </div>
 
             <div>
-              <h3 className="text-xl font-bold font-heading mb-3 text-white">
+              <h3 className="text-xl font-bold font-heading mb-3 text-navy-950">
                 Built for UK Search Behaviour, Not a US Template
               </h3>
               <p className="text-slate-400 leading-relaxed">

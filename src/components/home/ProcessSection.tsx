@@ -57,7 +57,7 @@ export default function ProcessSection() {
           <span className="inline-block px-4 py-1.5 rounded-full text-sm font-semibold tracking-wide text-teal-500 border border-teal-500/20 bg-teal-500/5 mb-4">
             Our Process
           </span>
-          <h2 className="text-4xl md:text-5xl font-bold font-heading leading-tight text-white">
+          <h2 className="text-4xl md:text-5xl font-bold font-heading leading-tight text-navy-950">
             How We Get You From Audit to{' '}
             <span className="text-teal-400">Growth in 90 Days</span>
           </h2>
@@ -92,7 +92,7 @@ export default function ProcessSection() {
                     </motion.div>
                     {/* Step number badge */}
                     <span
-                      className={`absolute -top-2 -right-2 w-7 h-7 rounded-lg flex items-center justify-center text-xs font-bold text-white ${
+                      className={`absolute -top-2 -right-2 w-7 h-7 rounded-lg flex items-center justify-center text-xs font-bold text-navy-950 ${
                         step.color === 'teal' ? 'bg-teal-500' : 'bg-cyan-500'
                       }`}
                     >
@@ -101,7 +101,7 @@ export default function ProcessSection() {
                   </div>
 
                   {/* Content */}
-                  <h3 className="text-lg font-bold font-heading text-white mb-3 group-hover:text-teal-500 transition-colors duration-300">
+                  <h3 className="text-lg font-bold font-heading text-navy-950 mb-3 group-hover:text-teal-500 transition-colors duration-300">
                     {step.title}
                   </h3>
                   <p className="text-slate-400 text-sm leading-relaxed">

@@ -47,7 +47,7 @@ export default function CTABanner() {
                   <Sparkles className="w-8 h-8" />
                 </div>
 
-                <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold font-heading text-white mb-5 leading-tight max-w-3xl mx-auto">
+                <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold font-heading text-navy-950 mb-5 leading-tight max-w-3xl mx-auto">
                   Find Out Exactly What&apos;s{' '}
                   <span className="gradient-text">Holding Your Business Back</span>
                   {' '}Online.

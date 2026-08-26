@@ -116,7 +116,7 @@ export default function RootLayout({
           }}
         />
       </head>
-      <body className="bg-navy-950 text-slate-300 antialiased">
+      <body className="bg-white text-slate-300 antialiased">
         <GoogleAnalytics />
         <ClarityAnalytics />
         <Providers>

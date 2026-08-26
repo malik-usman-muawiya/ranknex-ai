@@ -37,14 +37,14 @@ export default function PrivacyPolicyPage() {
       <div className="orb orb-cyan w-72 h-72 bottom-12 -left-36 opacity-8" />
 
       <div className="container relative z-10 max-w-3xl mx-auto px-4 sm:px-6">
-        <h1 className="text-4xl sm:text-5xl font-bold font-heading text-white mb-4">
+        <h1 className="text-4xl sm:text-5xl font-bold font-heading text-navy-950 mb-4">
           Privacy <span className="gradient-text">Policy</span>
         </h1>
         <p className="text-slate-400 text-sm mb-12">Last updated: {lastUpdated}</p>
 
         <div className="space-y-10 text-slate-300 leading-relaxed">
           <section>
-            <h2 className="text-2xl font-bold text-white font-heading mb-3">1. Introduction</h2>
+            <h2 className="text-2xl font-bold text-navy-950 font-heading mb-3">1. Introduction</h2>
             <p>
               RankNex AI (&quot;we,&quot; &quot;us,&quot; or &quot;our&quot;) operates ranknexai.com (the
               &quot;Site&quot;) and provides digital marketing, SEO, PPC, content writing, web design, and
@@ -55,16 +55,16 @@ export default function PrivacyPolicyPage() {
           </section>
 
           <section>
-            <h2 className="text-2xl font-bold text-white font-heading mb-3">2. Information We Collect</h2>
+            <h2 className="text-2xl font-bold text-navy-950 font-heading mb-3">2. Information We Collect</h2>
             <p className="mb-3">We collect information in the following ways:</p>
             <p className="mb-3">
-              <span className="text-white font-semibold">Information you provide directly:</span> When you
+              <span className="text-navy-950 font-semibold">Information you provide directly:</span> When you
               submit a contact form, request a free audit, or reach out via WhatsApp or email, we collect
               details such as your name, email address, phone number, company name, the service you are
               interested in, and any message you send us.
             </p>
             <p>
-              <span className="text-white font-semibold">Information collected automatically:</span> When you
+              <span className="text-navy-950 font-semibold">Information collected automatically:</span> When you
               browse the Site, we automatically collect certain technical data, including your IP address,
               browser type, device information, pages visited, time spent on pages, and referring URLs. This
               is collected through Google Analytics and similar tools.
@@ -72,7 +72,7 @@ export default function PrivacyPolicyPage() {
           </section>
 
           <section>
-            <h2 className="text-2xl font-bold text-white font-heading mb-3">3. How We Use Your Information</h2>
+            <h2 className="text-2xl font-bold text-navy-950 font-heading mb-3">3. How We Use Your Information</h2>
             <p className="mb-3">We use the information we collect to:</p>
             <ul className="list-disc list-inside space-y-2 ml-2">
               <li>Respond to your inquiries and provide the services you request</li>
@@ -85,7 +85,7 @@ export default function PrivacyPolicyPage() {
           </section>
 
           <section>
-            <h2 className="text-2xl font-bold text-white font-heading mb-3">4. Cookies and Tracking Technologies</h2>
+            <h2 className="text-2xl font-bold text-navy-950 font-heading mb-3">4. Cookies and Tracking Technologies</h2>
             <p>
               Our Site uses cookies and similar tracking technologies, including Google Analytics, to
               understand how visitors interact with the Site. Cookies are small text files stored on your
@@ -95,7 +95,7 @@ export default function PrivacyPolicyPage() {
           </section>
 
           <section>
-            <h2 className="text-2xl font-bold text-white font-heading mb-3">5. How We Share Your Information</h2>
+            <h2 className="text-2xl font-bold text-navy-950 font-heading mb-3">5. How We Share Your Information</h2>
             <p className="mb-3">
               We do not sell your personal information. We may share your information with:
             </p>
@@ -110,7 +110,7 @@ export default function PrivacyPolicyPage() {
           </section>
 
           <section>
-            <h2 className="text-2xl font-bold text-white font-heading mb-3">6. Data Retention</h2>
+            <h2 className="text-2xl font-bold text-navy-950 font-heading mb-3">6. Data Retention</h2>
             <p>
               We retain personal information for as long as necessary to fulfill the purposes outlined in
               this policy, unless a longer retention period is required or permitted by law.
@@ -118,7 +118,7 @@ export default function PrivacyPolicyPage() {
           </section>
 
           <section>
-            <h2 className="text-2xl font-bold text-white font-heading mb-3">7. Data Security</h2>
+            <h2 className="text-2xl font-bold text-navy-950 font-heading mb-3">7. Data Security</h2>
             <p>
               We implement reasonable technical and organizational measures to protect your personal
               information from unauthorized access, alteration, disclosure, or destruction. However, no
@@ -128,7 +128,7 @@ export default function PrivacyPolicyPage() {
           </section>
 
           <section>
-            <h2 className="text-2xl font-bold text-white font-heading mb-3">8. Your Rights</h2>
+            <h2 className="text-2xl font-bold text-navy-950 font-heading mb-3">8. Your Rights</h2>
             <p>
               Depending on your location, you may have the right to access, correct, delete, or restrict the
               use of your personal information. To exercise these rights, contact us using the details
@@ -137,7 +137,7 @@ export default function PrivacyPolicyPage() {
           </section>
 
           <section>
-            <h2 className="text-2xl font-bold text-white font-heading mb-3">9. Third-Party Links</h2>
+            <h2 className="text-2xl font-bold text-navy-950 font-heading mb-3">9. Third-Party Links</h2>
             <p>
               Our Site may contain links to third-party websites. We are not responsible for the privacy
               practices or content of those websites. We encourage you to review the privacy policies of any
@@ -146,7 +146,7 @@ export default function PrivacyPolicyPage() {
           </section>
 
           <section>
-            <h2 className="text-2xl font-bold text-white font-heading mb-3">10. Children&apos;s Privacy</h2>
+            <h2 className="text-2xl font-bold text-navy-950 font-heading mb-3">10. Children&apos;s Privacy</h2>
             <p>
               Our Site and services are not directed at individuals under the age of 18. We do not knowingly
               collect personal information from children.
@@ -154,7 +154,7 @@ export default function PrivacyPolicyPage() {
           </section>
 
           <section>
-            <h2 className="text-2xl font-bold text-white font-heading mb-3">11. Changes to This Policy</h2>
+            <h2 className="text-2xl font-bold text-navy-950 font-heading mb-3">11. Changes to This Policy</h2>
             <p>
               We may update this Privacy Policy from time to time. Any changes will be posted on this page
               with an updated &quot;Last updated&quot; date. We encourage you to review this policy
@@ -163,7 +163,7 @@ export default function PrivacyPolicyPage() {
           </section>
 
           <section>
-            <h2 className="text-2xl font-bold text-white font-heading mb-3">12. Contact Us</h2>
+            <h2 className="text-2xl font-bold text-navy-950 font-heading mb-3">12. Contact Us</h2>
             <p className="mb-3">
               If you have any questions about this Privacy Policy or how we handle your information, please
               contact us:

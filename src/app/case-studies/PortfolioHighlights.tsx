@@ -71,7 +71,7 @@ export default function PortfolioHighlights() {
                     <span className="text-xs font-semibold tracking-wide uppercase text-teal-400 mb-2">
                       {h.tag}
                     </span>
-                    <h3 className="text-white font-bold font-heading mb-3 leading-snug min-h-[3rem] line-clamp-2">
+                    <h3 className="text-navy-950 font-bold font-heading mb-3 leading-snug min-h-[3rem] line-clamp-2">
                       {h.title}
                     </h3>
                     <div className="mt-auto flex items-center justify-between">

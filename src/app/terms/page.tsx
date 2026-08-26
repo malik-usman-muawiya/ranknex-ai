@@ -37,14 +37,14 @@ export default function TermsPage() {
       <div className="orb orb-cyan w-72 h-72 bottom-12 -left-36 opacity-8" />
 
       <div className="container relative z-10 max-w-3xl mx-auto px-4 sm:px-6">
-        <h1 className="text-4xl sm:text-5xl font-bold font-heading text-white mb-4">
+        <h1 className="text-4xl sm:text-5xl font-bold font-heading text-navy-950 mb-4">
           Terms of <span className="gradient-text">Service</span>
         </h1>
         <p className="text-slate-400 text-sm mb-12">Last updated: {lastUpdated}</p>
 
         <div className="space-y-10 text-slate-300 leading-relaxed">
           <section>
-            <h2 className="text-2xl font-bold text-white font-heading mb-3">1. Agreement to Terms</h2>
+            <h2 className="text-2xl font-bold text-navy-950 font-heading mb-3">1. Agreement to Terms</h2>
             <p>
               These Terms of Service (&quot;Terms&quot;) govern your access to and use of the RankNex AI
               website at ranknexai.com (the &quot;Site&quot;) and any services we provide, including SEO,
@@ -55,7 +55,7 @@ export default function TermsPage() {
           </section>
 
           <section>
-            <h2 className="text-2xl font-bold text-white font-heading mb-3">2. Use of the Site</h2>
+            <h2 className="text-2xl font-bold text-navy-950 font-heading mb-3">2. Use of the Site</h2>
             <p className="mb-3">
               You agree to use the Site only for lawful purposes and in accordance with these Terms. You
               agree not to:
@@ -69,7 +69,7 @@ export default function TermsPage() {
           </section>
 
           <section>
-            <h2 className="text-2xl font-bold text-white font-heading mb-3">3. Services and Engagements</h2>
+            <h2 className="text-2xl font-bold text-navy-950 font-heading mb-3">3. Services and Engagements</h2>
             <p className="mb-3">
               Any Services provided by RankNex AI, including audits, SEO campaigns, advertising management,
               content creation, web development, or branding work, are subject to a separate written or
@@ -84,7 +84,7 @@ export default function TermsPage() {
           </section>
 
           <section>
-            <h2 className="text-2xl font-bold text-white font-heading mb-3">4. No Guaranteed Results</h2>
+            <h2 className="text-2xl font-bold text-navy-950 font-heading mb-3">4. No Guaranteed Results</h2>
             <p>
               Digital marketing, including SEO and PPC advertising, depends on numerous factors outside our
               direct control, including search engine algorithm changes, market competition, and platform
@@ -96,7 +96,7 @@ export default function TermsPage() {
           </section>
 
           <section>
-            <h2 className="text-2xl font-bold text-white font-heading mb-3">5. Intellectual Property</h2>
+            <h2 className="text-2xl font-bold text-navy-950 font-heading mb-3">5. Intellectual Property</h2>
             <p className="mb-3">
               All content on the Site, including text, graphics, logos, and design elements, is the property
               of RankNex AI or its licensors and is protected by applicable intellectual property laws. You
@@ -110,7 +110,7 @@ export default function TermsPage() {
           </section>
 
           <section>
-            <h2 className="text-2xl font-bold text-white font-heading mb-3">6. Third-Party Links and Tools</h2>
+            <h2 className="text-2xl font-bold text-navy-950 font-heading mb-3">6. Third-Party Links and Tools</h2>
             <p>
               The Site may contain links to third-party websites or integrate third-party tools, such as
               WhatsApp or Google Analytics. We are not responsible for the content, policies, or practices of
@@ -119,7 +119,7 @@ export default function TermsPage() {
           </section>
 
           <section>
-            <h2 className="text-2xl font-bold text-white font-heading mb-3">7. Limitation of Liability</h2>
+            <h2 className="text-2xl font-bold text-navy-950 font-heading mb-3">7. Limitation of Liability</h2>
             <p>
               To the fullest extent permitted by law, RankNex AI shall not be liable for any indirect,
               incidental, special, or consequential damages arising from your use of the Site or our
@@ -128,7 +128,7 @@ export default function TermsPage() {
           </section>
 
           <section>
-            <h2 className="text-2xl font-bold text-white font-heading mb-3">8. Indemnification</h2>
+            <h2 className="text-2xl font-bold text-navy-950 font-heading mb-3">8. Indemnification</h2>
             <p>
               You agree to indemnify and hold harmless RankNex AI, its team members, and affiliates from any
               claims, damages, or expenses arising from your misuse of the Site or violation of these Terms.
@@ -136,7 +136,7 @@ export default function TermsPage() {
           </section>
 
           <section>
-            <h2 className="text-2xl font-bold text-white font-heading mb-3">9. Governing Law</h2>
+            <h2 className="text-2xl font-bold text-navy-950 font-heading mb-3">9. Governing Law</h2>
             <p>
               These Terms shall be governed by and construed in accordance with the laws of Pakistan, without
               regard to its conflict of law principles. Any disputes arising from these Terms or your use of
@@ -145,7 +145,7 @@ export default function TermsPage() {
           </section>
 
           <section>
-            <h2 className="text-2xl font-bold text-white font-heading mb-3">10. Changes to These Terms</h2>
+            <h2 className="text-2xl font-bold text-navy-950 font-heading mb-3">10. Changes to These Terms</h2>
             <p>
               We may revise these Terms from time to time. Any changes will be posted on this page with an
               updated &quot;Last updated&quot; date. Continued use of the Site after changes are posted
@@ -154,7 +154,7 @@ export default function TermsPage() {
           </section>
 
           <section>
-            <h2 className="text-2xl font-bold text-white font-heading mb-3">11. Contact Us</h2>
+            <h2 className="text-2xl font-bold text-navy-950 font-heading mb-3">11. Contact Us</h2>
             <p className="mb-3">If you have any questions about these Terms, please contact us:</p>
             <ul className="space-y-1">
               <li>

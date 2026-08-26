@@ -90,7 +90,7 @@ export default function BlogContent({
 
         {/* Filters and Search */}
         <ScrollReveal delay={0.1}>
-          <div className="flex flex-col md:flex-row gap-6 justify-between items-start md:items-center mb-12 bg-navy-900/40 p-6 rounded-2xl border border-white/5 backdrop-blur-sm">
+          <div className="flex flex-col md:flex-row gap-6 justify-between items-start md:items-center mb-12 bg-mist-100/40 p-6 rounded-2xl border border-navy-950/5 backdrop-blur-sm">
             <CategoryFilter
               categories={categories}
               activeCategory={category}
@@ -116,8 +116,8 @@ export default function BlogContent({
           </div>
         ) : (
           /* Empty State */
-          <div className="text-center py-20 bg-navy-900/30 rounded-2xl border border-white/5">
-            <h4 className="text-xl font-semibold text-white mb-2">No Articles Found</h4>
+          <div className="text-center py-20 bg-mist-100/30 rounded-2xl border border-navy-950/5">
+            <h4 className="text-xl font-semibold text-navy-950 mb-2">No Articles Found</h4>
             <p className="text-slate-400 text-sm max-w-md mx-auto">
               We couldn&apos;t find any blog posts matching your search query or selected category. Try checking your spelling or selecting another category.
             </p>
@@ -130,7 +130,7 @@ export default function BlogContent({
             <button
               onClick={() => handlePageChange(page - 1)}
               disabled={page === 1}
-              className="px-4 py-2 text-sm font-semibold rounded-lg bg-navy-800 border border-white/5 text-slate-300 hover:text-white hover:border-teal-500 disabled:opacity-40 disabled:hover:border-white/5 cursor-pointer"
+              className="px-4 py-2 text-sm font-semibold rounded-lg bg-mist-200 border border-navy-950/5 text-slate-300 hover:text-navy-950 hover:border-teal-500 disabled:opacity-40 disabled:hover:border-navy-950/5 cursor-pointer"
             >
               Previous
             </button>
@@ -141,7 +141,7 @@ export default function BlogContent({
                 className={`w-10 h-10 text-sm font-semibold rounded-lg transition-all cursor-pointer ${
                   page === pNum
                     ? "bg-teal-500 text-white shadow-lg shadow-teal-500/25"
-                    : "bg-navy-800 border border-white/5 text-slate-300 hover:text-white hover:border-teal-500/50"
+                    : "bg-mist-200 border border-navy-950/5 text-slate-300 hover:text-navy-950 hover:border-teal-500/50"
                 }`}
               >
                 {pNum}
@@ -150,7 +150,7 @@ export default function BlogContent({
             <button
               onClick={() => handlePageChange(page + 1)}
               disabled={page === totalPages}
-              className="px-4 py-2 text-sm font-semibold rounded-lg bg-navy-800 border border-white/5 text-slate-300 hover:text-white hover:border-teal-500 disabled:opacity-40 disabled:hover:border-white/5 cursor-pointer"
+              className="px-4 py-2 text-sm font-semibold rounded-lg bg-mist-200 border border-navy-950/5 text-slate-300 hover:text-navy-950 hover:border-teal-500 disabled:opacity-40 disabled:hover:border-navy-950/5 cursor-pointer"
             >
               Next
             </button>

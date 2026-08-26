@@ -68,7 +68,7 @@ export default async function HomePage() {
   });
 
   return (
-    <main className="relative min-h-screen bg-navy-950 text-slate-300 overflow-hidden">
+    <main className="relative min-h-screen bg-white text-slate-300 overflow-hidden">
       <HeroSection />
       <StatsBar />
       <ServicesGrid />

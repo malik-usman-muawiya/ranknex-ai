@@ -125,8 +125,8 @@ export default function ContactContent() {
           {/* Contact Information */}
           <div className="lg:col-span-5 space-y-8">
             <ScrollReveal direction="left" delay={0.1}>
-              <div className="card h-full space-y-8 bg-navy-900/60 border border-white/5 backdrop-blur-sm p-8 rounded-2xl">
-                <h3 className="text-2xl font-bold text-white font-heading mb-6">
+              <div className="card h-full space-y-8 bg-mist-100/60 border border-navy-950/5 backdrop-blur-sm p-8 rounded-2xl">
+                <h3 className="text-2xl font-bold text-navy-950 font-heading mb-6">
                   Contact Information
                 </h3>
 
@@ -137,7 +137,7 @@ export default function ContactContent() {
                       <MapPin className="w-6 h-6" />
                     </div>
                     <div>
-                      <h4 className="text-white font-semibold">Our Location</h4>
+                      <h4 className="text-navy-950 font-semibold">Our Location</h4>
                       <p className="text-slate-400 text-sm mt-1">Badami Bagh, Lahore</p>
                     </div>
                   </div>
@@ -148,7 +148,7 @@ export default function ContactContent() {
                       <Phone className="w-6 h-6" />
                     </div>
                     <div>
-                      <h4 className="text-white font-semibold">WhatsApp & Call</h4>
+                      <h4 className="text-navy-950 font-semibold">WhatsApp & Call</h4>
                       <a
                         href="https://wa.me/923224044150"
                         target="_blank"
@@ -166,7 +166,7 @@ export default function ContactContent() {
                       <Mail className="w-6 h-6" />
                     </div>
                     <div>
-                      <h4 className="text-white font-semibold">Email Us</h4>
+                      <h4 className="text-navy-950 font-semibold">Email Us</h4>
                       <a
                         href="mailto:info@ranknexai.com"
                         className="text-slate-400 hover:text-teal-400 text-sm mt-1 block"
@@ -177,14 +177,14 @@ export default function ContactContent() {
                   </div>
                 </div>
 
-                <hr className="border-white/5 my-8" />
+                <hr className="border-navy-950/5 my-8" />
 
                 {/* WhatsApp Instant CTA */}
                 <div className="p-6 rounded-xl bg-emerald-500/5 border border-emerald-500/20 text-center">
                   <div className="flex justify-center mb-3 text-emerald-400">
                     <WhatsAppIcon className="w-8 h-8" />
                   </div>
-                  <h4 className="text-white font-bold font-heading mb-2">Need a faster response?</h4>
+                  <h4 className="text-navy-950 font-bold font-heading mb-2">Need a faster response?</h4>
                   <p className="text-slate-400 text-sm mb-4">
                     Chat with our growth consultant instantly on WhatsApp.
                   </p>
@@ -192,7 +192,7 @@ export default function ContactContent() {
                     href={getWhatsAppUrl("Hello RankNex AI, I'd like to ask about your services.")}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 bg-[#25D366] !text-white font-bold px-6 py-2.5 rounded-lg hover:bg-[#20ba59] transition-colors"
+                    className="inline-flex items-center gap-2 bg-[#25D366] !text-navy-950 font-bold px-6 py-2.5 rounded-lg hover:bg-[#20ba59] transition-colors"
                   >
                     Chat on WhatsApp
                   </a>
@@ -204,8 +204,8 @@ export default function ContactContent() {
           {/* Contact Form */}
           <div className="lg:col-span-7">
             <ScrollReveal direction="right" delay={0.2}>
-              <div className="card bg-navy-900/60 border border-white/5 backdrop-blur-sm p-8 rounded-2xl">
-                <h3 className="text-2xl font-bold text-white font-heading mb-6">
+              <div className="card bg-mist-100/60 border border-navy-950/5 backdrop-blur-sm p-8 rounded-2xl">
+                <h3 className="text-2xl font-bold text-navy-950 font-heading mb-6">
                   Send a Message
                 </h3>
 
@@ -235,8 +235,8 @@ export default function ContactContent() {
                         type="text"
                         id="name"
                         {...register("name", { required: "Name is required" })}
-                        className={`w-full bg-navy-950 border rounded-xl py-3 px-4 text-white text-sm placeholder-slate-600 focus:outline-none focus:ring-2 focus:ring-teal-500/20 ${
-                          errors.name ? "border-red-500/60 focus:border-red-500" : "border-white/10 focus:border-teal-500"
+                        className={`w-full bg-white border rounded-xl py-3 px-4 text-navy-950 text-sm placeholder-slate-600 focus:outline-none focus:ring-2 focus:ring-teal-500/20 ${
+                          errors.name ? "border-red-500/60 focus:border-red-500" : "border-navy-950/10 focus:border-teal-500"
                         }`}
                         placeholder="John Doe"
                       />
@@ -263,8 +263,8 @@ export default function ContactContent() {
                             message: "Please enter a valid email address",
                           },
                         })}
-                        className={`w-full bg-navy-950 border rounded-xl py-3 px-4 text-white text-sm placeholder-slate-600 focus:outline-none focus:ring-2 focus:ring-teal-500/20 ${
-                          errors.email ? "border-red-500/60 focus:border-red-500" : "border-white/10 focus:border-teal-500"
+                        className={`w-full bg-white border rounded-xl py-3 px-4 text-navy-950 text-sm placeholder-slate-600 focus:outline-none focus:ring-2 focus:ring-teal-500/20 ${
+                          errors.email ? "border-red-500/60 focus:border-red-500" : "border-navy-950/10 focus:border-teal-500"
                         }`}
                         placeholder="john@example.com"
                       />
@@ -287,7 +287,7 @@ export default function ContactContent() {
                         type="tel"
                         id="phone"
                         {...register("phone")}
-                        className="w-full bg-navy-950 border border-white/10 rounded-xl py-3 px-4 text-white text-sm placeholder-slate-600 focus:outline-none focus:border-teal-500 focus:ring-2 focus:ring-teal-500/20"
+                        className="w-full bg-white border border-navy-950/10 rounded-xl py-3 px-4 text-navy-950 text-sm placeholder-slate-600 focus:outline-none focus:border-teal-500 focus:ring-2 focus:ring-teal-500/20"
                         placeholder="+92 300 1234567"
                       />
                     </div>
@@ -301,7 +301,7 @@ export default function ContactContent() {
                         type="text"
                         id="company"
                         {...register("company")}
-                        className="w-full bg-navy-950 border border-white/10 rounded-xl py-3 px-4 text-white text-sm placeholder-slate-600 focus:outline-none focus:border-teal-500 focus:ring-2 focus:ring-teal-500/20"
+                        className="w-full bg-white border border-navy-950/10 rounded-xl py-3 px-4 text-navy-950 text-sm placeholder-slate-600 focus:outline-none focus:border-teal-500 focus:ring-2 focus:ring-teal-500/20"
                         placeholder="Your Company LLC"
                       />
                     </div>
@@ -315,7 +315,7 @@ export default function ContactContent() {
                     <select
                       id="service"
                       {...register("service", { required: "Please select a service" })}
-                      className="w-full bg-navy-950 border border-white/10 rounded-xl py-3 px-4 text-slate-300 text-sm focus:outline-none focus:border-teal-500 focus:ring-2 focus:ring-teal-500/20"
+                      className="w-full bg-white border border-navy-950/10 rounded-xl py-3 px-4 text-slate-300 text-sm focus:outline-none focus:border-teal-500 focus:ring-2 focus:ring-teal-500/20"
                     >
                       <option value="SEO">Search Engine Optimization (SEO)</option>
                       <option value="Social Media">Social Media Marketing (SMM)</option>
@@ -336,8 +336,8 @@ export default function ContactContent() {
                       id="message"
                       rows={5}
                       {...register("message", { required: "Message is required" })}
-                      className={`w-full bg-navy-950 border rounded-xl py-3 px-4 text-white text-sm placeholder-slate-600 focus:outline-none focus:ring-2 focus:ring-teal-500/20 ${
-                        errors.message ? "border-red-500/60 focus:border-red-500" : "border-white/10 focus:border-teal-500"
+                      className={`w-full bg-white border rounded-xl py-3 px-4 text-navy-950 text-sm placeholder-slate-600 focus:outline-none focus:ring-2 focus:ring-teal-500/20 ${
+                        errors.message ? "border-red-500/60 focus:border-red-500" : "border-navy-950/10 focus:border-teal-500"
                       }`}
                       placeholder="Tell us about your project, goals, and any questions you have..."
                     ></textarea>
@@ -387,8 +387,8 @@ export default function ContactContent() {
 
         {/* Free SEO Audit Banner */}
         <ScrollReveal delay={0.3}>
-          <div className="mt-20 relative rounded-3xl overflow-hidden border border-white/5 bg-gradient-to-br from-teal-500/10 via-navy-900/60 to-cyan-500/10 p-8 md:p-12 text-center max-w-4xl mx-auto">
-            <h3 className="text-2xl md:text-3xl font-bold font-heading text-white mb-4">
+          <div className="mt-20 relative rounded-3xl overflow-hidden border border-navy-950/5 bg-gradient-to-br from-teal-500/10 via-navy-900/60 to-cyan-500/10 p-8 md:p-12 text-center max-w-4xl mx-auto">
+            <h3 className="text-2xl md:text-3xl font-bold font-heading text-navy-950 mb-4">
               Get Your <span className="gradient-text">Free SEO Audit</span> Today
             </h3>
             <p className="text-slate-400 max-w-2xl mx-auto mb-6 text-sm md:text-base">

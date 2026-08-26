@@ -21,9 +21,9 @@ export default function HeroVisual() {
       <div className="absolute -inset-6 rounded-[2.5rem] bg-teal-500/10 blur-3xl pointer-events-none" />
 
       {/* Dashboard card */}
-      <div className="relative glass-strong rounded-2xl border border-white/10 overflow-hidden shadow-2xl shadow-black/50">
+      <div className="relative glass-strong rounded-2xl border border-navy-950/10 overflow-hidden shadow-2xl shadow-black/50">
         {/* Window top bar */}
-        <div className="flex items-center gap-2 px-4 py-3 border-b border-white/[0.06]">
+        <div className="flex items-center gap-2 px-4 py-3 border-b border-navy-950/[0.07]">
           <span className="w-3 h-3 rounded-full bg-red-400/70" />
           <span className="w-3 h-3 rounded-full bg-amber-400/70" />
           <span className="w-3 h-3 rounded-full bg-teal-400/70" />
@@ -39,7 +39,7 @@ export default function HeroVisual() {
           <div className="flex items-end justify-between mb-5">
             <div className="text-left">
               <p className="text-xs text-slate-400 mb-1">Organic Traffic · Last 30 days</p>
-              <p className="text-2xl sm:text-3xl font-bold text-white font-heading tracking-tight">
+              <p className="text-2xl sm:text-3xl font-bold text-navy-950 font-heading tracking-tight">
                 128,540
               </p>
               <p className="text-[10px] text-slate-500 mt-1">Updated 2 min ago</p>
@@ -56,8 +56,8 @@ export default function HeroVisual() {
               <svg viewBox="0 0 320 120" className="w-full h-full" preserveAspectRatio="none">
                 <defs>
                   <linearGradient id="heroArea" x1="0" y1="0" x2="0" y2="1">
-                    <stop offset="0%" stopColor="#00C9A7" stopOpacity="0.35" />
-                    <stop offset="100%" stopColor="#00C9A7" stopOpacity="0" />
+                    <stop offset="0%" stopColor="#00D2D2" stopOpacity="0.35" />
+                    <stop offset="100%" stopColor="#00D2D2" stopOpacity="0" />
                   </linearGradient>
                 </defs>
                 {/* Grid lines — real dashboards always show a reference grid */}
@@ -68,8 +68,8 @@ export default function HeroVisual() {
                     y1={y}
                     x2="320"
                     y2={y}
-                    stroke="#FFFFFF"
-                    strokeOpacity="0.05"
+                    stroke="#0A0F1E"
+                    strokeOpacity="0.06"
                     strokeWidth="1"
                   />
                 ))}
@@ -80,14 +80,14 @@ export default function HeroVisual() {
                 <path
                   d="M0 100 L40 92 L80 96 L120 74 L160 78 L200 52 L240 40 L280 30 L320 12"
                   fill="none"
-                  stroke="#00E6BF"
+                  stroke="#00D2D2"
                   strokeWidth="2.5"
                   strokeLinecap="round"
                   strokeLinejoin="round"
                 />
                 {/* Endpoint marker — the "current value" dot real charts end on */}
-                <circle cx="320" cy="12" r="4.5" fill="#06283D" stroke="#00E6BF" strokeWidth="2.5" />
-                <circle cx="320" cy="12" r="4.5" fill="#00E6BF" opacity="0.35">
+                <circle cx="320" cy="12" r="4.5" fill="#F0FDFD" stroke="#00D2D2" strokeWidth="2.5" />
+                <circle cx="320" cy="12" r="4.5" fill="#00D2D2" opacity="0.35">
                   <animate attributeName="r" values="4.5;9;4.5" dur="2s" repeatCount="indefinite" />
                   <animate attributeName="opacity" values="0.35;0;0.35" dur="2s" repeatCount="indefinite" />
                 </circle>
@@ -122,9 +122,9 @@ export default function HeroVisual() {
             {tiles.map((tile) => (
               <div
                 key={tile.label}
-                className="rounded-xl bg-white/[0.03] border border-white/[0.06] p-3 text-left"
+                className="rounded-xl bg-mist-100 border border-navy-950/[0.07] p-3 text-left"
               >
-                <p className="text-lg font-bold text-white font-heading leading-none">{tile.value}</p>
+                <p className="text-lg font-bold text-navy-950 font-heading leading-none">{tile.value}</p>
                 <p className="text-[10px] text-slate-400 mt-1.5 leading-tight">{tile.label}</p>
               </div>
             ))}
@@ -135,24 +135,24 @@ export default function HeroVisual() {
       {/* Floating accent cards — positioned over empty zones so they never
           cover the dashboard's metrics. */}
       <div className="absolute -left-3 sm:-left-6 top-1/2 -translate-y-1/2">
-        <div className="flex items-center gap-2.5 glass-strong rounded-xl border border-white/10 px-3.5 py-2.5 shadow-xl shadow-black/30">
+        <div className="flex items-center gap-2.5 glass-strong rounded-xl border border-navy-950/10 px-3.5 py-2.5 shadow-xl shadow-black/30">
           <span className="flex items-center justify-center w-8 h-8 rounded-lg bg-teal-500/15 text-teal-400">
             <Search className="w-4 h-4" />
           </span>
           <div className="text-left">
-            <p className="text-xs font-bold text-white leading-none">#1 Ranking</p>
+            <p className="text-xs font-bold text-navy-950 leading-none">#1 Ranking</p>
             <p className="text-[10px] text-slate-400 mt-1">Google Search</p>
           </div>
         </div>
       </div>
 
       <div className="absolute -right-4 sm:-right-8 bottom-20">
-        <div className="flex items-center gap-2.5 glass-strong rounded-xl border border-white/10 px-3.5 py-2.5 shadow-xl shadow-black/30">
+        <div className="flex items-center gap-2.5 glass-strong rounded-xl border border-navy-950/10 px-3.5 py-2.5 shadow-xl shadow-black/30">
           <span className="flex items-center justify-center w-8 h-8 rounded-lg bg-cyan-400/15 text-cyan-400">
             <Users className="w-4 h-4" />
           </span>
           <div className="text-left">
-            <p className="text-xs font-bold text-white leading-none">+1,240 Leads</p>
+            <p className="text-xs font-bold text-navy-950 leading-none">+1,240 Leads</p>
             <p className="text-[10px] text-slate-400 mt-1">This month</p>
           </div>
         </div>

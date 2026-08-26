@@ -32,14 +32,14 @@ export default function FAQ({ items, className = '' }: FAQProps) {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.4, delay: index * 0.05 }}
-            className="rounded-xl border border-white/5 bg-navy-800/50 overflow-hidden"
+            className="rounded-xl border border-navy-950/5 bg-mist-200/50 overflow-hidden"
           >
             <button
               onClick={() => toggle(index)}
               className="w-full flex items-center justify-between px-6 py-5 text-left cursor-pointer group"
               aria-expanded={isOpen}
             >
-              <span className="text-white font-semibold text-base md:text-lg pr-4 group-hover:text-teal-500 transition-colors">
+              <span className="text-navy-950 font-semibold text-base md:text-lg pr-4 group-hover:text-teal-500 transition-colors">
                 {item.question}
               </span>
               <motion.span
@@ -59,7 +59,7 @@ export default function FAQ({ items, className = '' }: FAQProps) {
                   transition={{ duration: 0.3, ease: 'easeInOut' }}
                   className="overflow-hidden"
                 >
-                  <div className="px-6 pb-5 text-slate-400 leading-relaxed border-t border-white/5 pt-4">
+                  <div className="px-6 pb-5 text-slate-400 leading-relaxed border-t border-navy-950/5 pt-4">
                     {item.answer}
                   </div>
                 </motion.div>

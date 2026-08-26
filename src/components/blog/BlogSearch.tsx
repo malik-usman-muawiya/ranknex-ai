@@ -42,12 +42,12 @@ export default function BlogSearch({ onSearch, initialQuery = '' }: BlogSearchPr
         value={query}
         onChange={(e) => handleChange(e.target.value)}
         placeholder="Search articles..."
-        className="w-full rounded-xl border border-white/10 bg-navy-800/60 py-3 pl-11 pr-10 text-sm text-white placeholder-slate-500 outline-none backdrop-blur-sm transition-all focus:border-teal-500/50 focus:ring-2 focus:ring-teal-500/20"
+        className="w-full rounded-xl border border-navy-950/10 bg-mist-200/60 py-3 pl-11 pr-10 text-sm text-navy-950 placeholder-slate-500 outline-none backdrop-blur-sm transition-all focus:border-teal-500/50 focus:ring-2 focus:ring-teal-500/20"
       />
       {query && (
         <button
           onClick={handleClear}
-          className="absolute right-3 top-1/2 -translate-y-1/2 rounded-full p-1 text-slate-400 transition-colors hover:bg-white/10 hover:text-white"
+          className="absolute right-3 top-1/2 -translate-y-1/2 rounded-full p-1 text-slate-400 transition-colors hover:bg-white/10 hover:text-navy-950"
         >
           <X className="h-4 w-4" />
         </button>
