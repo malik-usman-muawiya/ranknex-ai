@@ -10,7 +10,7 @@ interface LogoProps {
 // background, natural aspect ratio ~1.3:1 (width:height).
 const LOGO_ASPECT = 260 / 200;
 
-export default function Logo({ className = '', size = 38 }: LogoProps) {
+export default function Logo({ className = '', size = 45 }: LogoProps) {
   const height = size;
   const width = Math.round(size * LOGO_ASPECT);
   return (
