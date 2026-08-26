@@ -16,7 +16,7 @@ export default function Logo({ className = '', size = 38 }: LogoProps) {
   return (
     <span className={`inline-flex items-center ${className}`}>
       <Image
-        src="/logo-mark.png"
+        src="/logo-mark.webp"
         alt="RankNex AI"
         width={width}
         height={height}
