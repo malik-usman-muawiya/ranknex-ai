@@ -2,27 +2,27 @@ import Image from 'next/image';
 
 interface LogoProps {
   className?: string;
-  showWordmark?: boolean;
   size?: number;
 }
 
-// Full logo image (network/arrow mark + "RankNex AI" wordmark), transparent
-// background, natural aspect ratio ~1.3:1 (width:height).
-const LOGO_ASPECT = 260 / 200;
-
-export default function Logo({ className = '', size = 45 }: LogoProps) {
-  const height = size;
-  const width = Math.round(size * LOGO_ASPECT);
+export default function Logo({
+  className = '',
+  size = 45,
+}: LogoProps) {
   return (
     <span className={`inline-flex items-center ${className}`}>
       <Image
         src="/logo-mark.webp"
         alt="RankNex AI"
-        width={width}
-        height={height}
+        width={180}
+        height={45}
         priority
-        className="shrink-0 object-contain"
-        style={{ height, width: 'auto' }}
+        className="h-auto w-auto object-contain"
+        style={{
+          height: `${size}px`,
+          width: '180px',
+          objectFit: 'contain',
+        }}
       />
     </span>
   );
