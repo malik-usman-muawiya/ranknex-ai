@@ -14,7 +14,7 @@ export default function Logo({
       <Image
         src="/logo-mark.webp"
         alt="RankNex AI"
-        width={180}
+        width={250}
         height={45}
         priority
         className="h-auto w-auto object-contain"
