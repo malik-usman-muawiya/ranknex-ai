@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import { useForm } from "react-hook-form";
 import {
   Mail,
@@ -15,6 +16,7 @@ import {
 import ScrollReveal from "@/components/ui/ScrollReveal";
 import SectionHeading from "@/components/ui/SectionHeading";
 import OfficeLocations from "@/components/contact/OfficeLocations";
+import ConfettiBurst from "@/components/ui/ConfettiBurst";
 import { getWhatsAppUrl } from "@/lib/utils";
 
 function WhatsAppIcon({ className }: { className?: string }) {
@@ -45,6 +47,7 @@ export default function ContactContent() {
   const [submitStatus, setSubmitStatus] = useState<"idle" | "success" | "error">("idle");
   const [responseMsg, setResponseMsg] = useState("");
   const [formLoadedAt] = useState(() => Date.now());
+  const [showConfetti, setShowConfetti] = useState(false);
 
   const {
     register,
@@ -69,6 +72,8 @@ export default function ContactContent() {
     if (data.website) {
       setSubmitStatus("success");
       setResponseMsg("Thank you! Your message has been received. We'll get back to you soon.");
+      setShowConfetti(true);
+      setTimeout(() => setShowConfetti(false), 2500);
       reset();
       return;
     }
@@ -89,6 +94,8 @@ export default function ContactContent() {
       if (response.ok) {
         setSubmitStatus("success");
         setResponseMsg(resData.message || "Message sent successfully!");
+        setShowConfetti(true);
+        setTimeout(() => setShowConfetti(false), 2500);
         reset();
       } else {
         setSubmitStatus("error");
@@ -350,19 +357,39 @@ export default function ContactContent() {
                   </div>
 
                   {/* Submission Status Alerts */}
-                  {submitStatus === "success" && (
-                    <div className="flex items-center gap-3 bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 p-4 rounded-xl text-sm">
-                      <CheckCircle2 className="w-5 h-5 shrink-0" />
-                      <p>{responseMsg}</p>
-                    </div>
-                  )}
+                  <AnimatePresence>
+                    {submitStatus === "success" && (
+                      <motion.div
+                        initial={{ opacity: 0, scale: 0.9, y: -10 }}
+                        animate={{ opacity: 1, scale: 1, y: 0 }}
+                        exit={{ opacity: 0, scale: 0.95 }}
+                        transition={{ type: "spring", stiffness: 300, damping: 20 }}
+                        className="flex items-center gap-3 bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 p-4 rounded-xl text-sm"
+                      >
+                        <motion.div
+                          initial={{ scale: 0, rotate: -45 }}
+                          animate={{ scale: 1, rotate: 0 }}
+                          transition={{ type: "spring", stiffness: 400, damping: 15, delay: 0.15 }}
+                        >
+                          <CheckCircle2 className="w-5 h-5 shrink-0" />
+                        </motion.div>
+                        <p>{responseMsg}</p>
+                      </motion.div>
+                    )}
 
-                  {submitStatus === "error" && (
-                    <div className="flex items-center gap-3 bg-red-500/10 border border-red-500/20 text-red-400 p-4 rounded-xl text-sm">
-                      <AlertCircle className="w-5 h-5 shrink-0" />
-                      <p>{responseMsg}</p>
-                    </div>
-                  )}
+                    {submitStatus === "error" && (
+                      <motion.div
+                        initial={{ opacity: 0, y: -10 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        exit={{ opacity: 0 }}
+                        className="flex items-center gap-3 bg-red-500/10 border border-red-500/20 text-red-400 p-4 rounded-xl text-sm"
+                      >
+                        <AlertCircle className="w-5 h-5 shrink-0" />
+                        <p>{responseMsg}</p>
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
+                  {showConfetti && <ConfettiBurst />}
 
                   {/* Submit Button */}
                   <button

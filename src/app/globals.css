@@ -102,6 +102,12 @@ h1, h2, h3, h4, h5, h6 {
   background: var(--color-teal-500);
 }
 
+@media (pointer: fine) {
+  body, a, button, [role="button"], .cursor-pointer {
+    cursor: none;
+  }
+}
+
 /* ============================================
    SELECTION
    ============================================ */

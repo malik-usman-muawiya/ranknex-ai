@@ -7,6 +7,7 @@ import { formatDate, readingTime } from "@/lib/utils";
 import { generateArticleSchema, generateBreadcrumbSchema } from "@/lib/seo";
 import { Calendar, Clock, ArrowLeft, Tag, Share2, Facebook, Twitter, Linkedin } from "lucide-react";
 import ScrollReveal from "@/components/ui/ScrollReveal";
+import ReadingProgressBar from "@/components/ui/ReadingProgressBar";
 
 interface PageProps {
   params: Promise<{ slug: string }>;
@@ -113,6 +114,8 @@ export default async function BlogPostPage({ params }: PageProps) {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
       />
+
+      <ReadingProgressBar />
 
       {/* Background Orbs */}
       <div className="orb orb-teal w-96 h-96 -top-48 -right-24 opacity-10" />

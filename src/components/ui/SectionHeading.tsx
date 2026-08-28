@@ -38,9 +38,16 @@ export default function SectionHeading({
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.6, delay: 0.1 }}
-        className="text-3xl md:text-4xl lg:text-4xl font-bold font-heading leading-tight text-center"
+        className="text-3xl md:text-4xl lg:text-4xl font-bold font-heading leading-tight text-center relative inline-block"
       >
         {title}
+        <motion.span
+          initial={{ scaleX: 0 }}
+          whileInView={{ scaleX: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.7, delay: 0.5, ease: [0.65, 0, 0.35, 1] }}
+          className="absolute left-1/2 -translate-x-1/2 -bottom-2 h-[3px] w-16 rounded-full bg-gradient-to-r from-teal-500 to-cyan-400 origin-center"
+        />
       </motion.h2>
       {subtitle && (
         <motion.p
