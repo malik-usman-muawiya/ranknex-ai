@@ -5,6 +5,7 @@ import { ArrowRight, MessageCircle, Sparkles } from 'lucide-react';
 import Link from 'next/link';
 import GradientOrbs from '@/components/ui/GradientOrbs';
 import ScrollReveal from '@/components/ui/ScrollReveal';
+import Magnetic from '@/components/ui/Magnetic';
 import { getWhatsAppUrl } from '@/lib/utils';
 
 export default function CTABanner() {
@@ -61,19 +62,23 @@ export default function CTABanner() {
                 </p>
 
                 <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-                  <Link href="/contact" className="btn-primary group text-base">
-                    <span>Get My Free Audit</span>
-                    <ArrowRight className="w-5 h-5 transition-transform group-hover:translate-x-1" />
-                  </Link>
-                  <a
-                    href={getWhatsAppUrl('Hi RankNex AI! I want to get a free SEO audit for my business.')}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="btn-secondary group text-base"
-                  >
-                    <MessageCircle className="w-5 h-5" />
-                    <span>Chat With Our Team on WhatsApp</span>
-                  </a>
+                  <Magnetic strength={0.3}>
+                    <Link href="/contact" className="btn-primary group text-base animate-cta-pulse">
+                      <span>Get My Free Audit</span>
+                      <ArrowRight className="w-5 h-5 transition-transform group-hover:translate-x-1" />
+                    </Link>
+                  </Magnetic>
+                  <Magnetic strength={0.25}>
+                    <a
+                      href={getWhatsAppUrl('Hi RankNex AI! I want to get a free SEO audit for my business.')}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="btn-secondary group text-base"
+                    >
+                      <MessageCircle className="w-5 h-5" />
+                      <span>Chat With Our Team on WhatsApp</span>
+                    </a>
+                  </Magnetic>
                 </div>
 
                 {/* Micro-trust */}

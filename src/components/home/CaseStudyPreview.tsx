@@ -5,6 +5,7 @@ import { TrendingUp, ArrowRight, ExternalLink } from 'lucide-react';
 import Link from 'next/link';
 import SectionHeading from '@/components/ui/SectionHeading';
 import ScrollReveal from '@/components/ui/ScrollReveal';
+import TiltCard from '@/components/ui/TiltCard';
 
 const caseStudies = [
   {
@@ -64,11 +65,12 @@ export default function CaseStudyPreview() {
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 md:gap-8">
           {caseStudies.map((study, index) => (
             <ScrollReveal key={index} delay={index * 0.15}>
-              <motion.div
-                className="card group h-full flex flex-col"
-                whileHover={{ y: -4 }}
-                transition={{ type: 'spring', stiffness: 300, damping: 20 }}
-              >
+              <TiltCard maxTilt={5}>
+                <motion.div
+                  className="card group h-full flex flex-col"
+                  whileHover={{ y: -4 }}
+                  transition={{ type: 'spring', stiffness: 300, damping: 20 }}
+                >
                 {/* Header */}
                 <div className="mb-5">
                   <div className="flex items-center gap-2 mb-3">
@@ -134,7 +136,8 @@ export default function CaseStudyPreview() {
                   <span>View Full Case Study</span>
                   <ArrowRight className="w-4 h-4" />
                 </Link>
-              </motion.div>
+                </motion.div>
+              </TiltCard>
             </ScrollReveal>
           ))}
         </div>

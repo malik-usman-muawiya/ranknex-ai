@@ -5,6 +5,7 @@ import Link from 'next/link';
 import ParticleBackground from '@/components/ui/ParticleBackground';
 import GradientOrbs from '@/components/ui/GradientOrbs';
 import HeroVisual from '@/components/home/HeroVisual';
+import Magnetic from '@/components/ui/Magnetic';
 import { getWhatsAppUrl } from '@/lib/utils';
 
 const trustPoints = [
@@ -85,19 +86,23 @@ export default function HeroSection() {
             className="flex flex-col sm:flex-row items-center justify-center gap-4 animate-fade-up"
             style={{ animationDelay: '0.35s' }}
           >
-            <Link href="/contact" className="btn-primary group text-base w-full sm:w-auto justify-center">
-              <span>Get Your Free SEO Audit. Worth $500</span>
-              <ArrowRight className="w-5 h-5 transition-transform group-hover:translate-x-1" />
-            </Link>
-            <a
-              href={getWhatsAppUrl('Hi RankNex AI! I\'d like to discuss growing my business online.')}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="btn-secondary group text-base w-full sm:w-auto justify-center"
-            >
-              <MessageCircle className="w-5 h-5" />
-              <span>Chat on WhatsApp</span>
-            </a>
+            <Magnetic strength={0.3} className="w-full sm:w-auto">
+              <Link href="/contact" className="btn-primary group text-base w-full sm:w-auto justify-center animate-cta-pulse">
+                <span>Get Your Free SEO Audit. Worth $500</span>
+                <ArrowRight className="w-5 h-5 transition-transform group-hover:translate-x-1" />
+              </Link>
+            </Magnetic>
+            <Magnetic strength={0.25} className="w-full sm:w-auto">
+              <a
+                href={getWhatsAppUrl('Hi RankNex AI! I\'d like to discuss growing my business online.')}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn-secondary group text-base w-full sm:w-auto justify-center"
+              >
+                <MessageCircle className="w-5 h-5" />
+                <span>Chat on WhatsApp</span>
+              </a>
+            </Magnetic>
           </div>
 
           {/* Trust indicators */}

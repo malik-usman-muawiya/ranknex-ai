@@ -14,6 +14,7 @@ import { ArrowRight } from 'lucide-react';
 import SectionHeading from '@/components/ui/SectionHeading';
 import ScrollReveal from '@/components/ui/ScrollReveal';
 import GradientOrbs from '@/components/ui/GradientOrbs';
+import TiltCard from '@/components/ui/TiltCard';
 
 const services = [
   {
@@ -95,36 +96,40 @@ export default function ServicesGrid() {
             return (
               <ScrollReveal key={index} delay={index * 0.1}>
                 <Link href={service.href} className="block h-full">
-                  <motion.div
-                    className="card group h-full flex flex-col"
-                    whileHover={{ y: -6 }}
-                    transition={{ type: 'spring', stiffness: 300, damping: 20 }}
-                  >
-                    {/* Icon */}
-                    <div
-                      className={`inline-flex items-center justify-center w-14 h-14 rounded-xl mb-5 transition-colors duration-300 ${
-                        service.color === 'teal'
-                          ? 'bg-teal-500/10 text-teal-500 group-hover:bg-teal-500/20'
-                          : 'bg-cyan-400/10 text-cyan-400 group-hover:bg-cyan-400/20'
-                      }`}
+                  <TiltCard maxTilt={6}>
+                    <motion.div
+                      className="card group h-full flex flex-col"
+                      whileHover={{ y: -6 }}
+                      transition={{ type: 'spring', stiffness: 300, damping: 20 }}
                     >
-                      <Icon className="w-7 h-7" />
-                    </div>
+                      {/* Icon */}
+                      <motion.div
+                        whileHover={{ scale: 1.15, rotate: 8 }}
+                        transition={{ type: 'spring', stiffness: 400, damping: 12 }}
+                        className={`inline-flex items-center justify-center w-14 h-14 rounded-xl mb-5 transition-colors duration-300 ${
+                          service.color === 'teal'
+                            ? 'bg-teal-500/10 text-teal-500 group-hover:bg-teal-500/20'
+                            : 'bg-cyan-400/10 text-cyan-400 group-hover:bg-cyan-400/20'
+                        }`}
+                      >
+                        <Icon className="w-7 h-7" />
+                      </motion.div>
 
-                    {/* Content */}
-                    <h3 className="text-xl font-bold font-heading text-navy-950 mb-3 group-hover:text-teal-500 transition-colors duration-300">
-                      {service.title}
-                    </h3>
-                    <p className="text-slate-400 text-sm leading-relaxed flex-1 mb-5">
-                      {service.description}
-                    </p>
+                      {/* Content */}
+                      <h3 className="text-xl font-bold font-heading text-navy-950 mb-3 group-hover:text-teal-500 transition-colors duration-300">
+                        {service.title}
+                      </h3>
+                      <p className="text-slate-400 text-sm leading-relaxed flex-1 mb-5">
+                        {service.description}
+                      </p>
 
-                    {/* Link */}
-                    <div className="flex items-center gap-2 text-teal-500 text-sm font-semibold group-hover:gap-3 transition-all duration-300">
-                      <span>{service.ctaText} →</span>
-                      <ArrowRight className="w-4 h-4" />
-                    </div>
-                  </motion.div>
+                      {/* Link */}
+                      <div className="flex items-center gap-2 text-teal-500 text-sm font-semibold group-hover:gap-3 transition-all duration-300">
+                        <span>{service.ctaText} →</span>
+                        <ArrowRight className="w-4 h-4" />
+                      </div>
+                    </motion.div>
+                  </TiltCard>
                 </Link>
               </ScrollReveal>
             );

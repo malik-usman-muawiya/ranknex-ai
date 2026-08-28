@@ -4,6 +4,7 @@ import { useState, useEffect, useRef, useCallback } from 'react';
 import Link from 'next/link';
 import { usePathname, useRouter } from 'next/navigation';
 import Logo from './Logo';
+import Magnetic from '@/components/ui/Magnetic';
 import { motion, AnimatePresence } from 'framer-motion';
 import {
   Menu,
@@ -130,13 +131,15 @@ export default function Header() {
               {/* Wrapper carries the responsive-hide: `.btn-primary` is
                   unlayered and sets display, which would override `hidden`. */}
               <div className="hidden lg:block">
-                <Link
-                  href="/contact"
-                  className="btn-primary !py-2.5 !px-5 !text-sm !rounded-lg"
-                >
-                  <span>Get Free Audit</span>
-                  <TrendingUp className="w-4 h-4" />
-                </Link>
+                <Magnetic strength={0.3}>
+                  <Link
+                    href="/contact"
+                    className="btn-primary !py-2.5 !px-5 !text-sm !rounded-lg animate-cta-pulse"
+                  >
+                    <span>Get Free Audit</span>
+                    <TrendingUp className="w-4 h-4" />
+                  </Link>
+                </Magnetic>
               </div>
 
               <button
