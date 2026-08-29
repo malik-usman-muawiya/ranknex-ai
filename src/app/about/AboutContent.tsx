@@ -406,7 +406,7 @@ export default function AboutContent() {
                 <div className="grid grid-cols-2 gap-3 w-full">
                   {[
                     { value: '2+ Yrs', label: 'SEO Experience' },
-                    { value: '30+', label: 'Backlink Platforms' },
+                    { value: '100+', label: 'Backlink Platforms' },
                     { value: '16x', label: 'Organic Click Growth' },
                     { value: '3', label: 'Markets Served' },
                   ].map((stat, i) => (
@@ -496,7 +496,7 @@ export default function AboutContent() {
                     },
                     {
                       icon: Users,
-                      value: '30+ Platforms',
+                      value: '100+ Platforms',
                       label: 'High-authority backlink campaigns executed across Medium, GitHub, Quora, Reddit and Pinterest',
                     },
                     {
