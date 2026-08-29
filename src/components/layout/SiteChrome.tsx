@@ -5,7 +5,6 @@ import { motion, AnimatePresence } from 'framer-motion';
 import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
 import WhatsAppButton from '@/components/layout/WhatsAppButton';
-import ChatWidget from '@/components/chat/ChatWidget';
 import CustomCursor from '@/components/ui/CustomCursor';
 
 export default function SiteChrome({ children }: { children: React.ReactNode }) {
@@ -38,7 +37,6 @@ export default function SiteChrome({ children }: { children: React.ReactNode }) 
         <Footer />
       </div>
       <WhatsAppButton />
-      <ChatWidget />
     </>
   );
 }
