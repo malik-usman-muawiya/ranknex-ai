@@ -115,7 +115,7 @@ export function generateArticleSchema(post: {
       name: SITE_NAME,
       logo: {
         "@type": "ImageObject",
-        url: `${SITE_URL}/logo.png`,
+        url: `${SITE_URL}/logo-schema.png`,
       },
     },
   };
@@ -127,7 +127,7 @@ export function generateOrganizationSchema() {
     "@type": "Organization",
     name: SITE_NAME,
     url: SITE_URL,
-    logo: `${SITE_URL}/logo.png`,
+    logo: `${SITE_URL}/logo-schema.png`,
     description: DEFAULT_DESCRIPTION,
     contactPoint: {
       "@type": "ContactPoint",
