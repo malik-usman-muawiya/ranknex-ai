@@ -15,6 +15,7 @@ import {
   Sparkles,
 } from 'lucide-react';
 import Link from 'next/link';
+import Image from 'next/image';
 
 const values = [
   {
@@ -366,6 +367,160 @@ export default function AboutContent() {
                 ))}
               </div>
             </ScrollReveal>
+          </div>
+        </div>
+      </section>
+
+      {/* Meet Your Specialist */}
+      <section className="section">
+        <div className="container">
+          <SectionHeading
+            tag="The Person Behind Your Rankings"
+            title={
+              <>
+                Meet the <span className="gradient-text">Search Specialist</span> Leading Your Account
+              </>
+            }
+            subtitle="Real search-engine results, tracked directly from Google Search Console, Google Analytics, and Google Business Profile."
+          />
+
+          <div className="grid lg:grid-cols-[0.85fr_1.15fr] gap-10 items-start max-w-6xl mx-auto">
+            {/* Photo + identity card */}
+            <ScrollReveal direction="left">
+              <div className="card-glass p-8 text-center h-full flex flex-col items-center">
+                <div className="relative w-40 h-40 md:w-48 md:h-48 rounded-2xl overflow-hidden mb-6 ring-2 ring-teal-500/20">
+                  <Image
+                    src="/team/muhammad-usman-seo-specialist.webp"
+                    alt="Muhammad Usman - SEO Specialist and Digital Marketing Expert specializing in Technical SEO, AEO, GEO and AIO"
+                    fill
+                    sizes="(max-width: 768px) 160px, 192px"
+                    className="object-cover"
+                  />
+                </div>
+                <h3 className="text-2xl font-bold text-navy-950 font-heading mb-1">
+                  Muhammad Usman
+                </h3>
+                <p className="text-teal-500 font-semibold mb-5">
+                  SEO Executive &amp; Digital Marketing Specialist
+                </p>
+                <div className="grid grid-cols-2 gap-3 w-full">
+                  {[
+                    { value: '2+ Yrs', label: 'SEO Experience' },
+                    { value: '30+', label: 'Backlink Platforms' },
+                    { value: '16x', label: 'Organic Click Growth' },
+                    { value: '3', label: 'Markets Served' },
+                  ].map((stat, i) => (
+                    <motion.div
+                      key={stat.label}
+                      initial={{ opacity: 0, scale: 0.9 }}
+                      whileInView={{ opacity: 1, scale: 1 }}
+                      viewport={{ once: true }}
+                      transition={{ delay: 0.2 + i * 0.1 }}
+                      className="bg-mist-100/50 rounded-lg p-3"
+                    >
+                      <div className="text-lg font-bold gradient-text-teal">{stat.value}</div>
+                      <div className="text-xs text-slate-400 mt-1">{stat.label}</div>
+                    </motion.div>
+                  ))}
+                </div>
+              </div>
+            </ScrollReveal>
+
+            {/* Bio + entity expertise + performance cards */}
+            <div className="space-y-6">
+              <ScrollReveal delay={0.1}>
+                <div className="card p-8">
+                  <p className="text-slate-300 leading-relaxed">
+                    A results-driven SEO specialist with hands-on experience running{' '}
+                    <strong className="text-navy-950">On-Page SEO</strong>,{' '}
+                    <strong className="text-navy-950">Technical SEO</strong>, and{' '}
+                    <strong className="text-navy-950">Off-Page SEO</strong> for real estate,
+                    e-commerce, and local service businesses across Pakistan, the UK, and the
+                    US. His work spans full technical audits, keyword research, content
+                    strategy, Google Business Profile optimization, and multi-platform link
+                    building, always measured against real Search Console and Analytics data,
+                    not vanity metrics.
+                  </p>
+                  <p className="text-slate-300 leading-relaxed mt-4">
+                    Beyond traditional rankings, he optimizes content for how search is
+                    actually evolving: structuring pages to win featured snippets and voice
+                    results through <strong className="text-navy-950">Answer Engine
+                    Optimization (AEO)</strong>, formatting content to be cited inside AI
+                    Overviews and chatbot answers through{' '}
+                    <strong className="text-navy-950">Generative Engine Optimization (GEO)</strong>,
+                    and preparing sites for AI-driven discovery through{' '}
+                    <strong className="text-navy-950">AI Optimization (AIO)</strong>, alongside
+                    core <strong className="text-navy-950">Local SEO</strong> and{' '}
+                    <strong className="text-navy-950">Search Engine Marketing (SEM)</strong>{' '}
+                    fundamentals.
+                  </p>
+
+                  <div className="flex flex-wrap gap-2 mt-6">
+                    {[
+                      'On-Page SEO',
+                      'Technical SEO',
+                      'Off-Page SEO',
+                      'Local SEO',
+                      'AEO (Answer Engine Optimization)',
+                      'GEO (Generative Engine Optimization)',
+                      'AIO (AI Optimization)',
+                      'SEM',
+                      'Keyword Research',
+                      'Content Strategy',
+                      'Google Business Profile (GBP)',
+                      'Link Building',
+                    ].map((tag) => (
+                      <span
+                        key={tag}
+                        className="px-3 py-1.5 rounded-full text-xs font-semibold text-teal-500 border border-teal-500/20 bg-teal-500/5"
+                      >
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              </ScrollReveal>
+
+              <ScrollReveal delay={0.2}>
+                <div className="grid sm:grid-cols-2 gap-4">
+                  {[
+                    {
+                      icon: TrendingUp,
+                      value: '22.4K → 1.98M',
+                      label: 'Clicks & impressions grown across a 6-month organic campaign, position improved from 27 to 6.2',
+                    },
+                    {
+                      icon: Target,
+                      value: '+101% Orders',
+                      label: 'E-commerce SEO client saw orders and revenue more than double within 28 days',
+                    },
+                    {
+                      icon: Users,
+                      value: '30+ Platforms',
+                      label: 'High-authority backlink campaigns executed across Medium, GitHub, Quora, Reddit and Pinterest',
+                    },
+                    {
+                      icon: ShieldCheck,
+                      value: 'Full Technical Audits',
+                      label: 'Indexing, crawling, redirect chains and duplicate-tag issues identified and resolved end-to-end',
+                    },
+                  ].map((item, i) => (
+                    <motion.div
+                      key={item.value}
+                      initial={{ opacity: 0, y: 15 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      viewport={{ once: true }}
+                      transition={{ delay: i * 0.08 }}
+                      className="card-glass p-5"
+                    >
+                      <item.icon className="w-6 h-6 text-teal-500 mb-3" />
+                      <div className="text-lg font-bold text-navy-950 mb-1">{item.value}</div>
+                      <p className="text-slate-400 text-sm leading-relaxed">{item.label}</p>
+                    </motion.div>
+                  ))}
+                </div>
+              </ScrollReveal>
+            </div>
           </div>
         </div>
       </section>
