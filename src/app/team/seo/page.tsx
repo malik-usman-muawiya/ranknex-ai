@@ -94,22 +94,22 @@ export default function SeoTeamPage() {
           ]}
           metrics={[
             {
-              icon: TrendingUp,
+              icon: <TrendingUp className="w-6 h-6 text-teal-500" />,
               value: "22.4K → 1.98M",
               label: "Clicks & impressions grown across a 6-month organic campaign, position improved from 27 to 6.2",
             },
             {
-              icon: Target,
+              icon: <Target className="w-6 h-6 text-teal-500" />,
               value: "+101% Orders",
               label: "E-commerce SEO client saw orders and revenue more than double within 28 days",
             },
             {
-              icon: Users,
+              icon: <Users className="w-6 h-6 text-teal-500" />,
               value: "100+ Platforms",
               label: "High-authority backlink campaigns executed across Medium, GitHub, Quora, Reddit and Pinterest",
             },
             {
-              icon: ShieldCheck,
+              icon: <ShieldCheck className="w-6 h-6 text-teal-500" />,
               value: "Full Technical Audits",
               label: "Indexing, crawling, redirect chains and duplicate-tag issues identified and resolved end-to-end",
             },
