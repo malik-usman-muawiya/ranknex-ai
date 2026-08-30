@@ -14,6 +14,7 @@ import {
   ArrowRight,
   ExternalLink,
   Info,
+  Code2,
 } from "lucide-react";
 import SectionHeading from "@/components/ui/SectionHeading";
 import ScrollReveal from "@/components/ui/ScrollReveal";
@@ -23,21 +24,51 @@ interface CaseStudiesContentProps {
   caseStudies: CaseStudy[];
 }
 
+// Case studies aren't tagged with a dedicated "service" field in the CMS —
+// clientIndustry doubles as that tag. These three values are reserved for
+// developer/engineering work; everything else is treated as an SEO case
+// study for the purpose of the two top-level category cards below.
+const DEVELOPER_INDUSTRIES = new Set([
+  "Odoo ERP Development",
+  "React Development",
+  "WordPress Development",
+]);
+
+type ServiceCategory = "SEO" | "Developer";
+
+function getServiceCategory(cs: CaseStudy): ServiceCategory {
+  return DEVELOPER_INDUSTRIES.has(cs.clientIndustry) ? "Developer" : "SEO";
+}
+
 export default function CaseStudiesContent({ caseStudies }: CaseStudiesContentProps) {
   const [selectedStudy, setSelectedStudy] = useState<CaseStudy | null>(null);
   const [activeFilter, setActiveFilter] = useState("All");
+  const [activeCategory, setActiveCategory] = useState<"All" | ServiceCategory>("All");
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
     setMounted(true);
   }, []);
 
-  const industries = ["All", ...Array.from(new Set(caseStudies.map((cs) => cs.clientIndustry)))];
+  const seoCount = caseStudies.filter((cs) => getServiceCategory(cs) === "SEO").length;
+  const developerCount = caseStudies.filter((cs) => getServiceCategory(cs) === "Developer").length;
+
+  const handleSelectCategory = (category: "All" | ServiceCategory) => {
+    setActiveCategory(category);
+    setActiveFilter("All");
+  };
+
+  const categoryFilteredStudies =
+    activeCategory === "All"
+      ? caseStudies
+      : caseStudies.filter((cs) => getServiceCategory(cs) === activeCategory);
+
+  const industries = ["All", ...Array.from(new Set(categoryFilteredStudies.map((cs) => cs.clientIndustry)))];
 
   const filteredStudies =
     activeFilter === "All"
-      ? caseStudies
-      : caseStudies.filter((cs) => cs.clientIndustry === activeFilter);
+      ? categoryFilteredStudies
+      : categoryFilteredStudies.filter((cs) => cs.clientIndustry === activeFilter);
 
   // Parse metrics into {label, value} badges. Handles two possible formats
   // coming from the CMS: a JSON string (object map or array of pairs), or
@@ -96,6 +127,52 @@ export default function CaseStudiesContent({ caseStudies }: CaseStudiesContentPr
           title={<>We Deliver Measurable <span className="gradient-text">Business Growth</span></>}
           subtitle="Explore our real-world case studies showcasing how we help brands in the UK, US, and Pakistan increase rankings, optimize ad spend, and scale inbound leads."
         />
+
+        {/* Service Category Cards */}
+        {developerCount > 0 && (
+          <ScrollReveal delay={0.05}>
+            <div className="grid sm:grid-cols-2 gap-5 max-w-3xl mx-auto mb-12">
+              {[
+                {
+                  key: "SEO" as const,
+                  icon: TrendingUp,
+                  title: "SEO Case Studies",
+                  desc: "Rankings, traffic and lead growth, tracked from real Search Console and Analytics data.",
+                  count: seoCount,
+                },
+                {
+                  key: "Developer" as const,
+                  icon: Code2,
+                  title: "Developer Case Studies",
+                  desc: "Custom Odoo ERP modules, React applications, and WordPress builds shipped to production.",
+                  count: developerCount,
+                },
+              ].map((cat) => (
+                <button
+                  key={cat.key}
+                  onClick={() => handleSelectCategory(activeCategory === cat.key ? "All" : cat.key)}
+                  className={`text-left rounded-2xl p-6 border transition-all cursor-pointer ${
+                    activeCategory === cat.key
+                      ? "bg-teal-500 border-teal-500 shadow-lg shadow-teal-500/25"
+                      : "card-glass border-navy-950/5 hover:border-teal-500/30"
+                  }`}
+                >
+                  <cat.icon className={`w-8 h-8 mb-4 ${activeCategory === cat.key ? "text-white" : "text-teal-500"}`} />
+                  <h3 className={`text-lg font-bold font-heading mb-1.5 ${activeCategory === cat.key ? "text-white" : "text-navy-950"}`}>
+                    {cat.title}
+                  </h3>
+                  <p className={`text-sm leading-relaxed mb-3 ${activeCategory === cat.key ? "text-white/85" : "text-slate-400"}`}>
+                    {cat.desc}
+                  </p>
+                  <span className={`text-xs font-semibold ${activeCategory === cat.key ? "text-white/90" : "text-teal-500"}`}>
+                    {cat.count} {cat.count === 1 ? "case study" : "case studies"}
+                    {activeCategory === cat.key ? " — click to view all" : ""}
+                  </span>
+                </button>
+              ))}
+            </div>
+          </ScrollReveal>
+        )}
 
         {/* Filter Tabs */}
         {industries.length > 2 && (

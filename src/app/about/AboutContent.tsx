@@ -525,6 +525,152 @@ export default function AboutContent() {
         </div>
       </section>
 
+      {/* Meet Your Developer */}
+      <section className="section">
+        <div className="container">
+          <SectionHeading
+            tag="The Engineer Behind Your Website"
+            title={
+              <>
+                Meet the <span className="gradient-text">Full-Stack Developer</span> Building Your Platform
+              </>
+            }
+            subtitle="Real production systems, from ERP customization to custom React apps and WordPress builds."
+          />
+
+          <div className="grid lg:grid-cols-[0.85fr_1.15fr] gap-10 items-start max-w-6xl mx-auto">
+            {/* Photo + identity card */}
+            <ScrollReveal direction="left">
+              <div className="card-glass p-8 text-center h-full flex flex-col items-center">
+                <div className="relative w-40 h-40 md:w-48 md:h-48 rounded-2xl overflow-hidden mb-6 ring-2 ring-teal-500/20">
+                  <Image
+                    src="/team/zohaib-full-stack-developer.webp"
+                    alt="Zohaib - Full-Stack Developer specializing in Odoo ERP, React, Next.js and WordPress development"
+                    fill
+                    sizes="(max-width: 768px) 160px, 192px"
+                    className="object-cover"
+                  />
+                </div>
+                <h3 className="text-2xl font-bold text-navy-950 font-heading mb-1">
+                  Zohaib
+                </h3>
+                <p className="text-teal-500 font-semibold mb-5">
+                  Full-Stack Developer &amp; ERP Specialist
+                </p>
+                <div className="grid grid-cols-2 gap-3 w-full">
+                  {[
+                    { value: '7+', label: 'Production Systems' },
+                    { value: '3', label: 'Tech Stacks' },
+                    { value: 'ERP', label: 'Odoo Customization' },
+                    { value: 'Full-Stack', label: 'React & WordPress' },
+                  ].map((stat, i) => (
+                    <motion.div
+                      key={stat.label}
+                      initial={{ opacity: 0, scale: 0.9 }}
+                      whileInView={{ opacity: 1, scale: 1 }}
+                      viewport={{ once: true }}
+                      transition={{ delay: 0.2 + i * 0.1 }}
+                      className="bg-mist-100/50 rounded-lg p-3"
+                    >
+                      <div className="text-lg font-bold gradient-text-teal">{stat.value}</div>
+                      <div className="text-xs text-slate-400 mt-1">{stat.label}</div>
+                    </motion.div>
+                  ))}
+                </div>
+              </div>
+            </ScrollReveal>
+
+            {/* Bio + entity expertise + performance cards */}
+            <div className="space-y-6">
+              <ScrollReveal delay={0.1}>
+                <div className="card p-8">
+                  <p className="text-slate-300 leading-relaxed">
+                    A full-stack developer with hands-on experience building and customizing{' '}
+                    <strong className="text-navy-950">Odoo ERP</strong> modules for legal case
+                    management, intellectual property tracking, corporate billing, HR &amp;
+                    payroll, and demarcation management — real production systems used by
+                    operating businesses, not demo templates.
+                  </p>
+                  <p className="text-slate-300 leading-relaxed mt-4">
+                    Beyond ERP work, he builds custom{' '}
+                    <strong className="text-navy-950">React</strong> applications from the ground
+                    up and delivers full{' '}
+                    <strong className="text-navy-950">WordPress</strong> websites for clients who
+                    need a site live and maintainable fast. Every project is built with clean,
+                    scalable code and deployed with the same standard RankNex AI holds its own
+                    platform to.
+                  </p>
+
+                  <div className="flex flex-wrap gap-2 mt-6">
+                    {[
+                      'Odoo ERP Development',
+                      'React.js',
+                      'Next.js',
+                      'WordPress Development',
+                      'Custom Module Development',
+                      'API Integration',
+                      'Database Design',
+                      'Full-Stack Development',
+                      'UI/UX Implementation',
+                      'Legal & IP Management Systems',
+                      'Corporate Billing Systems',
+                      'HR & Payroll Systems',
+                    ].map((tag) => (
+                      <span
+                        key={tag}
+                        className="px-3 py-1.5 rounded-full text-xs font-semibold text-teal-500 border border-teal-500/20 bg-teal-500/5"
+                      >
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              </ScrollReveal>
+
+              <ScrollReveal delay={0.2}>
+                <div className="grid sm:grid-cols-2 gap-4">
+                  {[
+                    {
+                      icon: Cpu,
+                      value: '5 Odoo Modules',
+                      label: 'Custom ERP systems built for legal, IP, billing, HR/payroll and demarcation management',
+                    },
+                    {
+                      icon: TrendingUp,
+                      value: '2 React Apps',
+                      label: 'Full-stack applications built from scratch, including an affiliate management platform',
+                    },
+                    {
+                      icon: ShieldCheck,
+                      value: '2 WordPress Builds',
+                      label: 'Complete client websites delivered end-to-end, from design to live deployment',
+                    },
+                    {
+                      icon: Users,
+                      value: 'End-to-End Delivery',
+                      label: 'From database design and API integration to production deployment and maintenance',
+                    },
+                  ].map((item, i) => (
+                    <motion.div
+                      key={item.value}
+                      initial={{ opacity: 0, y: 15 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      viewport={{ once: true }}
+                      transition={{ delay: i * 0.08 }}
+                      className="card-glass p-5"
+                    >
+                      <item.icon className="w-6 h-6 text-teal-500 mb-3" />
+                      <div className="text-lg font-bold text-navy-950 mb-1">{item.value}</div>
+                      <p className="text-slate-400 text-sm leading-relaxed">{item.label}</p>
+                    </motion.div>
+                  ))}
+                </div>
+              </ScrollReveal>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* CTA */}
       <section className="section">
         <div className="container">
