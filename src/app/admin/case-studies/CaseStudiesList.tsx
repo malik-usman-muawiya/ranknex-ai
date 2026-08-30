@@ -2,9 +2,10 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import { Edit, Trash2, Plus, Search, ExternalLink, Loader2, Star } from "lucide-react";
+import { Edit, Trash2, Plus, Search, ExternalLink, Loader2, Star, Download, CheckCircle2 } from "lucide-react";
 import { formatDate } from "@/lib/utils";
 import type { CaseStudy } from "@/types";
+import { DEVELOPER_CASE_STUDIES } from "@/data/developerCaseStudies";
 
 interface CaseStudiesListProps {
   initialStudies: CaseStudy[];
@@ -15,6 +16,60 @@ export default function CaseStudiesList({ initialStudies }: CaseStudiesListProps
   const [search, setSearch] = useState("");
   const [industryFilter, setIndustryFilter] = useState("all");
   const [deletingId, setDeletingId] = useState<string | null>(null);
+  const [isImporting, setIsImporting] = useState(false);
+  const [importResult, setImportResult] = useState<{ added: number; skipped: number } | null>(null);
+
+  // Missing = not yet in the DB, matched by title. Lets the button be
+  // pressed more than once safely and shows an accurate count up front.
+  const missingDeveloperStudies = DEVELOPER_CASE_STUDIES.filter(
+    (seed) => !studies.some((s) => s.title === seed.title)
+  );
+
+  const handleImportDeveloperCaseStudies = async () => {
+    if (missingDeveloperStudies.length === 0) return;
+    setIsImporting(true);
+    setImportResult(null);
+
+    let added = 0;
+    let skipped = 0;
+    const createdStudies: CaseStudy[] = [];
+
+    for (const seed of missingDeveloperStudies) {
+      try {
+        const res = await fetch("/api/case-studies", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            title: seed.title,
+            clientIndustry: seed.clientIndustry,
+            challenge: seed.challenge,
+            strategy: seed.strategy,
+            results: seed.results,
+            metrics: seed.metrics || "",
+            coverImage: seed.coverImage,
+            featured: seed.featured || false,
+            published: true,
+          }),
+        });
+
+        if (res.ok) {
+          const created = await res.json();
+          createdStudies.push(created);
+          added += 1;
+        } else {
+          skipped += 1;
+        }
+      } catch {
+        skipped += 1;
+      }
+    }
+
+    if (createdStudies.length > 0) {
+      setStudies((prev) => [...createdStudies, ...prev]);
+    }
+    setImportResult({ added, skipped });
+    setIsImporting(false);
+  };
 
   const handleDelete = async (id: string) => {
     if (!confirm("Are you sure you want to delete this case study? This action cannot be undone.")) return;
@@ -57,11 +112,42 @@ export default function CaseStudiesList({ initialStudies }: CaseStudiesListProps
           <h1 className="text-3xl font-bold font-heading text-white">Manage Case Studies</h1>
           <p className="text-slate-400 text-sm mt-1">Manage, showcase, and publish customer success metrics.</p>
         </div>
-        <Link href="/admin/case-studies/new" className="btn-primary py-2.5 px-5 text-sm inline-flex items-center gap-2">
-          <Plus className="w-4 h-4" />
-          <span>New Case Study</span>
-        </Link>
+        <div className="flex items-center gap-3">
+          {missingDeveloperStudies.length > 0 && (
+            <button
+              onClick={handleImportDeveloperCaseStudies}
+              disabled={isImporting}
+              className="py-2.5 px-5 text-sm inline-flex items-center gap-2 bg-white/5 hover:bg-white/10 border border-white/10 text-white rounded-lg transition-all cursor-pointer disabled:opacity-50"
+            >
+              {isImporting ? (
+                <Loader2 className="w-4 h-4 animate-spin" />
+              ) : (
+                <Download className="w-4 h-4" />
+              )}
+              <span>
+                {isImporting
+                  ? "Importing..."
+                  : `Import ${missingDeveloperStudies.length} Developer Case ${missingDeveloperStudies.length === 1 ? "Study" : "Studies"}`}
+              </span>
+            </button>
+          )}
+          <Link href="/admin/case-studies/new" className="btn-primary py-2.5 px-5 text-sm inline-flex items-center gap-2">
+            <Plus className="w-4 h-4" />
+            <span>New Case Study</span>
+          </Link>
+        </div>
       </div>
+
+      {importResult && (
+        <div className="flex items-center gap-2 bg-teal-500/10 border border-teal-500/20 text-teal-400 text-sm px-4 py-3 rounded-xl">
+          <CheckCircle2 className="w-4 h-4 flex-shrink-0" />
+          <span>
+            Imported {importResult.added} developer case {importResult.added === 1 ? "study" : "studies"}, published live.
+            {importResult.skipped > 0 && ` ${importResult.skipped} skipped (already existed or failed).`}
+          </span>
+        </div>
+      )}
+
 
       {/* Filters bar */}
       <div className="grid grid-cols-1 sm:grid-cols-12 gap-4 bg-navy-900 border border-white/5 p-4 rounded-xl">
