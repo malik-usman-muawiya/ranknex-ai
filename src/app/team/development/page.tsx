@@ -86,22 +86,22 @@ export default function DevelopmentTeamPage() {
           ]}
           metrics={[
             {
-              icon: Cpu,
+              icon: <Cpu className="w-6 h-6 text-teal-500" />,
               value: "5 Odoo Modules",
               label: "Custom ERP systems built for legal, IP, billing, HR/payroll and demarcation management",
             },
             {
-              icon: TrendingUp,
+              icon: <TrendingUp className="w-6 h-6 text-teal-500" />,
               value: "2 React Apps",
               label: "Full-stack applications built from scratch, including an affiliate management platform",
             },
             {
-              icon: ShieldCheck,
+              icon: <ShieldCheck className="w-6 h-6 text-teal-500" />,
               value: "2 WordPress Builds",
               label: "Complete client websites delivered end-to-end, from design to live deployment",
             },
             {
-              icon: Users,
+              icon: <Users className="w-6 h-6 text-teal-500" />,
               value: "End-to-End Delivery",
               label: "From database design and API integration to production deployment and maintenance",
             },
