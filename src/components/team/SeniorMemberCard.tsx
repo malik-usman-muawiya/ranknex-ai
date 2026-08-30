@@ -2,7 +2,6 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { LucideIcon } from "lucide-react";
 import ScrollReveal from "@/components/ui/ScrollReveal";
 
 interface Stat {
@@ -11,7 +10,7 @@ interface Stat {
 }
 
 interface Metric {
-  icon: LucideIcon;
+  icon: React.ReactNode;
   value: string;
   label: string;
 }
@@ -107,7 +106,7 @@ export default function SeniorMemberCard({
                 transition={{ delay: i * 0.08 }}
                 className="card-glass p-5"
               >
-                <item.icon className="w-6 h-6 text-teal-500 mb-3" />
+                <div className="mb-3">{item.icon}</div>
                 <div className="text-lg font-bold text-navy-950 mb-1">{item.value}</div>
                 <p className="text-slate-400 text-sm leading-relaxed">{item.label}</p>
               </motion.div>
