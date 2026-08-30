@@ -1,6 +1,7 @@
 import { Metadata } from "next";
 import Link from "next/link";
-import { TrendingUp, Code2, ArrowRight } from "lucide-react";
+import Image from "next/image";
+import { ArrowRight } from "lucide-react";
 import SectionHeading from "@/components/ui/SectionHeading";
 import ScrollReveal from "@/components/ui/ScrollReveal";
 
@@ -26,13 +27,15 @@ export default function TeamPage() {
   const categories = [
     {
       href: "/team/seo",
-      icon: TrendingUp,
+      photo: "/team/muhammad-usman-seo-specialist.webp",
+      photoAlt: "Muhammad Usman - SEO Executive leading the RankNex AI SEO team",
       title: "Meet the SEO Team",
       desc: "The SEO executive and specialists running keyword research, technical audits, content strategy, and link building for every client account.",
     },
     {
       href: "/team/development",
-      icon: Code2,
+      photo: "/team/zohaib-full-stack-developer.webp",
+      photoAlt: "Syed Muhammad Ahmad - Full-Stack Developer leading the RankNex AI development team",
       title: "Meet the Development Team",
       desc: "The full-stack developers building custom Odoo ERP modules, React applications, and WordPress websites, shipped to production.",
     },
@@ -56,7 +59,15 @@ export default function TeamPage() {
                 href={cat.href}
                 className="group text-left rounded-2xl p-7 card-glass border border-navy-950/5 hover:border-teal-500/40 hover:shadow-lg hover:shadow-teal-500/10 transition-all"
               >
-                <cat.icon className="w-9 h-9 mb-4 text-teal-500" />
+                <div className="relative w-16 h-16 rounded-xl overflow-hidden mb-4 ring-2 ring-teal-500/20">
+                  <Image
+                    src={cat.photo}
+                    alt={cat.photoAlt}
+                    fill
+                    sizes="64px"
+                    className="object-cover"
+                  />
+                </div>
                 <h3 className="text-xl font-bold font-heading text-navy-950 mb-2">
                   {cat.title}
                 </h3>
