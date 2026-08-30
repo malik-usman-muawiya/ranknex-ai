@@ -545,7 +545,7 @@ export default function AboutContent() {
                 <div className="relative w-40 h-40 md:w-48 md:h-48 rounded-2xl overflow-hidden mb-6 ring-2 ring-teal-500/20">
                   <Image
                     src="/team/zohaib-full-stack-developer.webp"
-                    alt="Zohaib - Full-Stack Developer specializing in Odoo ERP, React, Next.js and WordPress development"
+                    alt="Syed Muhammad Ahmad - Full-Stack Developer specializing in Odoo ERP, React, Next.js and WordPress development"
                     fill
                     sizes="(max-width: 768px) 160px, 192px"
                     className="object-cover"
