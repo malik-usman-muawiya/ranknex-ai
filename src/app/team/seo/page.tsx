@@ -125,7 +125,7 @@ export default function SeoTeamPage() {
           </ScrollReveal>
           <div className="grid sm:grid-cols-2 gap-6 max-w-3xl mx-auto">
             <JuniorMemberCard
-              photo={null}
+              photo="/team/syed-fahad-junior-seo-specialist.webp"
               photoAlt="Syed Fahad - Junior SEO Specialist and Social Media Manager at RankNex AI"
               name="Syed Fahad"
               title="Junior SEO Specialist | Social Media Management"
