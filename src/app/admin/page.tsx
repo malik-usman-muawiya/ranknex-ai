@@ -83,7 +83,7 @@ export default async function AdminDashboardPage() {
 
           <div className="divide-y divide-white/5">
             {recentBlogs.length > 0 ? (
-              recentBlogs.map((post) => (
+              recentBlogs.map((post: any) => (
                 <div key={post.id} className="py-4 first:pt-0 last:pb-0 flex items-center justify-between gap-4">
                   <div className="space-y-1">
                     <Link
@@ -131,7 +131,7 @@ export default async function AdminDashboardPage() {
 
           <div className="divide-y divide-white/5">
             {recentSubmissions.length > 0 ? (
-              recentSubmissions.map((sub) => (
+              recentSubmissions.map((sub: any) => (
                 <div key={sub.id} className="py-4 first:pt-0 last:pb-0 space-y-1">
                   <div className="flex items-start justify-between gap-3">
                     <span className="text-white text-sm font-semibold line-clamp-1">{sub.name}</span>

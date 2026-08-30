@@ -66,14 +66,14 @@ export default async function BlogPage() {
     .catch(() => 0);
 
   // Serialize dates for Next.js boundary passing
-  const initialPosts: BlogPost[] = postsRaw.map((post) => ({
+  const initialPosts: BlogPost[] = postsRaw.map((post: any) => ({
     ...post,
     publishedAt: post.publishedAt ? post.publishedAt.toISOString() : null,
     createdAt: post.createdAt.toISOString(),
     updatedAt: post.updatedAt.toISOString(),
   })) as unknown as BlogPost[];
 
-  const categories: BlogCategory[] = categoriesRaw.map((cat) => ({
+  const categories: BlogCategory[] = categoriesRaw.map((cat: any) => ({
     id: cat.id,
     name: cat.name,
     slug: cat.slug,

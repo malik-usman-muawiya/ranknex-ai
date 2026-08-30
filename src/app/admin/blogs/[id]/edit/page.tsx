@@ -4,7 +4,7 @@ import { authOptions } from "@/lib/auth";
 import { redirect, notFound } from "next/navigation";
 import prisma from "@/lib/db";
 import BlogEditor from "@/components/admin/BlogEditor";
-import type { BlogPost } from "@/types";
+import type { BlogPost, BlogCategory } from "@/types";
 
 interface PageProps {
   params: Promise<{ id: string }>;
@@ -45,7 +45,7 @@ export default async function AdminEditBlogPage({ params }: PageProps) {
     updatedAt: postRaw.updatedAt.toISOString(),
   } as unknown as BlogPost;
 
-  const categories = categoriesRaw.map((cat) => ({
+  const categories = categoriesRaw.map((cat: BlogCategory) => ({
     id: cat.id,
     name: cat.name,
     slug: cat.slug,

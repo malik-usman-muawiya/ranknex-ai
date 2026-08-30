@@ -195,7 +195,7 @@ export default async function BlogPostPage({ params }: PageProps) {
             {/* Tags */}
             {post.tags && (
               <ScrollReveal delay={0.3} className="mt-12 flex flex-wrap gap-2 pt-6 border-t border-navy-950/5">
-                {post.tags.split(",").map((tag) => (
+                {post.tags.split(",").map((tag: string) => (
                   <span
                     key={tag}
                     className="inline-flex items-center gap-1.5 px-3 py-1 rounded-lg bg-mist-200 text-xs font-semibold text-slate-400 border border-navy-950/5"
@@ -264,7 +264,7 @@ export default async function BlogPostPage({ params }: PageProps) {
               </h3>
             </ScrollReveal>
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
-              {relatedPosts.map((rPost, idx) => (
+              {relatedPosts.map((rPost: any, idx: number) => (
                 <ScrollReveal key={rPost.id} delay={idx * 0.05} direction="up">
                   <Link href={`/blog/${rPost.slug}`} className="group block">
                     <article className="card h-full flex flex-col overflow-hidden !p-0 bg-mist-100/30 hover:border-teal-500/30 transition-all border border-navy-950/5 rounded-2xl">

@@ -29,14 +29,14 @@ export default async function AdminBlogsPage() {
   ]);
 
   // Serialize dates
-  const posts: BlogPost[] = postsRaw.map((post) => ({
+  const posts: BlogPost[] = postsRaw.map((post: any) => ({
     ...post,
     publishedAt: post.publishedAt ? post.publishedAt.toISOString() : null,
     createdAt: post.createdAt.toISOString(),
     updatedAt: post.updatedAt.toISOString(),
   })) as unknown as BlogPost[];
 
-  const categories: BlogCategory[] = categoriesRaw.map((cat) => ({
+  const categories: BlogCategory[] = categoriesRaw.map((cat: BlogCategory) => ({
     id: cat.id,
     name: cat.name,
     slug: cat.slug,

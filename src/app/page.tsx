@@ -52,7 +52,7 @@ export default async function HomePage() {
     })
     .catch(() => []);
 
-  const latestPosts = latestPostsRaw.map((post, index) => {
+  const latestPosts = latestPostsRaw.map((post: any, index: number) => {
     const wordCount = post.content.replace(/<[^>]*>/g, " ").split(/\s+/).filter(Boolean).length;
     const readTime = `${Math.max(1, Math.round(wordCount / 200))} min read`;
     return {

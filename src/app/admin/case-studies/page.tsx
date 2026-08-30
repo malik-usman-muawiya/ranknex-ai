@@ -23,7 +23,7 @@ export default async function AdminCaseStudiesPage() {
   });
 
   // Serialize dates
-  const caseStudies: CaseStudy[] = studiesRaw.map((study) => ({
+  const caseStudies: CaseStudy[] = studiesRaw.map((study: any) => ({
     ...study,
     createdAt: study.createdAt.toISOString(),
     updatedAt: study.updatedAt.toISOString(),

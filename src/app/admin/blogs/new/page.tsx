@@ -4,6 +4,7 @@ import { authOptions } from "@/lib/auth";
 import { redirect } from "next/navigation";
 import prisma from "@/lib/db";
 import BlogEditor from "@/components/admin/BlogEditor";
+import type { BlogCategory } from "@/types";
 
 export const metadata: Metadata = {
   title: "New Blog Post | RankNex Admin",
@@ -21,7 +22,7 @@ export default async function AdminNewBlogPage() {
     orderBy: { name: "asc" },
   });
 
-  const categories = categoriesRaw.map((cat) => ({
+  const categories = categoriesRaw.map((cat: BlogCategory) => ({
     id: cat.id,
     name: cat.name,
     slug: cat.slug,
