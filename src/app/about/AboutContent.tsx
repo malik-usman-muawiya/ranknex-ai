@@ -552,7 +552,7 @@ export default function AboutContent() {
                   />
                 </div>
                 <h3 className="text-2xl font-bold text-navy-950 font-heading mb-1">
-                  Zohaib
+                  Syed Muhammad Ahmad
                 </h3>
                 <p className="text-teal-500 font-semibold mb-5">
                   Full-Stack Developer &amp; ERP Specialist
