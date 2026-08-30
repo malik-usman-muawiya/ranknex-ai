@@ -6,6 +6,7 @@ import ServicesGrid from "@/components/home/ServicesGrid";
 import AEOGeoSection from "@/components/home/AEOGeoSection";
 import LocalSEOSection from "@/components/home/LocalSEOSection";
 import WhyRankNex from "@/components/home/WhyRankNex";
+import CEOSection from "@/components/home/CEOSection";
 import ProcessSection from "@/components/home/ProcessSection";
 import TestimonialsSlider from "@/components/home/TestimonialsSlider";
 import CaseStudyPreview from "@/components/home/CaseStudyPreview";
@@ -75,6 +76,7 @@ export default async function HomePage() {
       <AEOGeoSection />
       <LocalSEOSection />
       <WhyRankNex />
+      <CEOSection />
       <ProcessSection />
       <TestimonialsSlider />
       <CaseStudyPreview />
