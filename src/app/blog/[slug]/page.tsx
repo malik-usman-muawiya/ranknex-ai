@@ -187,7 +187,7 @@ export default async function BlogPostPage({ params }: PageProps) {
           <div className="lg:col-span-9">
             <ScrollReveal delay={0.25}>
               <div
-                className="blog-content prose prose-invert max-w-none text-slate-300"
+                className="blog-content prose max-w-none text-slate-300"
                 dangerouslySetInnerHTML={{ __html: post.content }}
               />
             </ScrollReveal>

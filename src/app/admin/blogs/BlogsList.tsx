@@ -2,9 +2,10 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import { Edit, Trash2, Plus, Search, ExternalLink, Loader2 } from "lucide-react";
+import { Edit, Trash2, Plus, Search, ExternalLink, Loader2, Download, CheckCircle2 } from "lucide-react";
 import { formatDate } from "@/lib/utils";
 import type { BlogPost, BlogCategory } from "@/types";
+import { CASE_STUDY_BLOG_POSTS } from "@/data/caseStudyBlogPosts";
 
 interface BlogsListProps {
   initialPosts: BlogPost[];
@@ -17,6 +18,60 @@ export default function BlogsList({ initialPosts, categories }: BlogsListProps) 
   const [categoryFilter, setCategoryFilter] = useState("all");
   const [statusFilter, setStatusFilter] = useState("all");
   const [deletingId, setDeletingId] = useState<string | null>(null);
+  const [isImporting, setIsImporting] = useState(false);
+  const [importResult, setImportResult] = useState<{ added: number; skipped: number } | null>(null);
+
+  // Missing = not yet in the DB, matched by slug. Safe to click more than once.
+  const missingCaseStudyPosts = CASE_STUDY_BLOG_POSTS.filter(
+    (seed) => !posts.some((p) => p.slug === seed.slug)
+  );
+
+  const handleImportCaseStudyPosts = async () => {
+    if (missingCaseStudyPosts.length === 0) return;
+    setIsImporting(true);
+    setImportResult(null);
+
+    let added = 0;
+    let skipped = 0;
+    const createdPosts: BlogPost[] = [];
+
+    for (const seed of missingCaseStudyPosts) {
+      const category = categories.find((c) => c.slug === seed.categorySlug);
+      try {
+        const res = await fetch("/api/blogs", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            title: seed.title,
+            slug: seed.slug,
+            excerpt: seed.excerpt,
+            content: seed.content,
+            categoryId: category?.id,
+            tags: seed.tags,
+            metaTitle: seed.metaTitle,
+            metaDescription: seed.metaDescription,
+            status: "PUBLISHED",
+          }),
+        });
+
+        if (res.ok) {
+          const created = await res.json();
+          createdPosts.push(created);
+          added += 1;
+        } else {
+          skipped += 1;
+        }
+      } catch {
+        skipped += 1;
+      }
+    }
+
+    if (createdPosts.length > 0) {
+      setPosts((prev) => [...createdPosts, ...prev]);
+    }
+    setImportResult({ added, skipped });
+    setIsImporting(false);
+  };
 
   const handleDelete = async (id: string) => {
     if (!confirm("Are you sure you want to delete this blog post? This action cannot be undone.")) return;
@@ -58,11 +113,41 @@ export default function BlogsList({ initialPosts, categories }: BlogsListProps) 
           <h1 className="text-3xl font-bold font-heading text-white">Manage Blog Posts</h1>
           <p className="text-slate-400 text-sm mt-1">Create, edit, publish, and delete blog articles.</p>
         </div>
-        <Link href="/admin/blogs/new" className="btn-primary py-2.5 px-5 text-sm inline-flex items-center gap-2">
-          <Plus className="w-4 h-4" />
-          <span>New Blog Post</span>
-        </Link>
+        <div className="flex items-center gap-3">
+          {missingCaseStudyPosts.length > 0 && (
+            <button
+              onClick={handleImportCaseStudyPosts}
+              disabled={isImporting}
+              className="py-2.5 px-5 text-sm inline-flex items-center gap-2 bg-white/5 hover:bg-white/10 border border-white/10 text-white rounded-lg transition-all cursor-pointer disabled:opacity-50"
+            >
+              {isImporting ? (
+                <Loader2 className="w-4 h-4 animate-spin" />
+              ) : (
+                <Download className="w-4 h-4" />
+              )}
+              <span>
+                {isImporting
+                  ? "Importing..."
+                  : `Import ${missingCaseStudyPosts.length} Case Study ${missingCaseStudyPosts.length === 1 ? "Post" : "Posts"}`}
+              </span>
+            </button>
+          )}
+          <Link href="/admin/blogs/new" className="btn-primary py-2.5 px-5 text-sm inline-flex items-center gap-2">
+            <Plus className="w-4 h-4" />
+            <span>New Blog Post</span>
+          </Link>
+        </div>
       </div>
+
+      {importResult && (
+        <div className="flex items-center gap-2 bg-teal-500/10 border border-teal-500/20 text-teal-400 text-sm px-4 py-3 rounded-xl">
+          <CheckCircle2 className="w-4 h-4 flex-shrink-0" />
+          <span>
+            Imported {importResult.added} blog {importResult.added === 1 ? "post" : "posts"}, published live.
+            {importResult.skipped > 0 && ` ${importResult.skipped} skipped (already existed or failed).`}
+          </span>
+        </div>
+      )}
 
       {/* Filters bar */}
       <div className="grid grid-cols-1 md:grid-cols-12 gap-4 bg-navy-900 border border-white/5 p-4 rounded-xl">
