@@ -45,37 +45,39 @@ export async function POST(request: NextRequest) {
       const originalName = file.name.replace(/[^a-zA-Z0-9.-]/g, "_").toLowerCase();
       const filename = `${Date.now()}-${originalName}`;
 
-      // Target uploads directory in public/uploads
-      const uploadsDir = path.join(process.cwd(), "public", "uploads");
-      await mkdir(uploadsDir, { recursive: true });
+      // Tier 1: Try Vercel Blob if token is configured in environment
+      const blobToken =
+        process.env.BLOB_READ_WRITE_TOKEN || process.env.BLOB2_READ_WRITE_TOKEN;
 
-      const filePath = path.join(uploadsDir, filename);
-      await writeFile(filePath, buffer);
+      if (blobToken) {
+        try {
+          const { put } = await import("@vercel/blob");
+          const blob = await put(filename, file, {
+            access: "public",
+            token: blobToken,
+          });
+          return NextResponse.json({ url: blob.url });
+        } catch (blobErr) {
+          console.warn("Vercel blob upload failed, falling back:", blobErr);
+        }
+      }
 
-      const publicUrl = `/uploads/${filename}`;
-      return NextResponse.json({ url: publicUrl });
-    }
+      // Tier 2: Try writing to local filesystem (works on localhost, VPS, Docker)
+      try {
+        const uploadsDir = path.join(process.cwd(), "public", "uploads");
+        await mkdir(uploadsDir, { recursive: true });
 
-    // Handle Vercel Blob JSON payload if present
-    if (contentType.includes("application/json")) {
-      const body = await request.json();
-      
-      // If Vercel Blob client handler is used and token exists
-      if (process.env.BLOB_READ_WRITE_TOKEN || process.env.BLOB2_READ_WRITE_TOKEN) {
-        const { handleUpload } = await import("@vercel/blob/client");
-        const jsonResponse = await handleUpload({
-          body,
-          request,
-          token: process.env.BLOB2_READ_WRITE_TOKEN || process.env.BLOB_READ_WRITE_TOKEN,
-          onBeforeGenerateToken: async () => ({
-            allowedContentTypes: ["image/*"],
-            maximumSizeInBytes: 15 * 1024 * 1024,
-            addRandomSuffix: true,
-            tokenPayload: JSON.stringify({}),
-          }),
-          onUploadCompleted: async () => {},
-        });
-        return NextResponse.json(jsonResponse);
+        const filePath = path.join(uploadsDir, filename);
+        await writeFile(filePath, buffer);
+
+        const publicUrl = `/uploads/${filename}`;
+        return NextResponse.json({ url: publicUrl });
+      } catch (fsErr) {
+        // Tier 3: If filesystem is read-only (e.g. Vercel Serverless EROFS) and no Blob token
+        console.warn("Filesystem is read-only (EROFS), converting to base64 data URI:", fsErr);
+        const base64Data = buffer.toString("base64");
+        const dataUri = `data:${file.type};base64,${base64Data}`;
+        return NextResponse.json({ url: dataUri });
       }
     }
 

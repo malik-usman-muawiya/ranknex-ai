@@ -17,17 +17,21 @@ export default async function AdminCaseStudiesPage() {
     redirect("/admin/login");
   }
 
-  // Fetch all case studies
-  const studiesRaw = await prisma.caseStudy.findMany({
-    orderBy: { createdAt: "desc" },
-  });
+  let caseStudies: CaseStudy[] = [];
 
-  // Serialize dates
-  const caseStudies: CaseStudy[] = studiesRaw.map((study: any) => ({
-    ...study,
-    createdAt: study.createdAt.toISOString(),
-    updatedAt: study.updatedAt.toISOString(),
-  })) as unknown as CaseStudy[];
+  try {
+    const studiesRaw = await prisma.caseStudy.findMany({
+      orderBy: { createdAt: "desc" },
+    });
+
+    caseStudies = studiesRaw.map((study: any) => ({
+      ...study,
+      createdAt: study.createdAt.toISOString(),
+      updatedAt: study.updatedAt.toISOString(),
+    })) as unknown as CaseStudy[];
+  } catch (err) {
+    console.warn("Database query notice in AdminCaseStudiesPage:", err);
+  }
 
   return <CaseStudiesList initialStudies={caseStudies} />;
 }

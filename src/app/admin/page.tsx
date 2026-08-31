@@ -14,29 +14,46 @@ export default async function AdminDashboardPage() {
     redirect("/admin/login");
   }
 
-  // Fetch metrics in parallel
-  const [
-    totalBlogs,
-    publishedBlogs,
-    totalCaseStudies,
-    unreadSubmissions,
-    recentBlogs,
-    recentSubmissions,
-  ] = await Promise.all([
-    prisma.blogPost.count(),
-    prisma.blogPost.count({ where: { status: "PUBLISHED" } }),
-    prisma.caseStudy.count(),
-    prisma.contactSubmission.count({ where: { read: false } }),
-    prisma.blogPost.findMany({
-      include: { category: true },
-      orderBy: { createdAt: "desc" },
-      take: 5,
-    }),
-    prisma.contactSubmission.findMany({
-      orderBy: { createdAt: "desc" },
-      take: 5,
-    }),
-  ]);
+  let totalBlogs = 0;
+  let publishedBlogs = 0;
+  let totalCaseStudies = 0;
+  let unreadSubmissions = 0;
+  let recentBlogs: any[] = [];
+  let recentSubmissions: any[] = [];
+
+  try {
+    const [
+      tb,
+      pb,
+      tcs,
+      us,
+      rb,
+      rs,
+    ] = await Promise.all([
+      prisma.blogPost.count(),
+      prisma.blogPost.count({ where: { status: "PUBLISHED" } }),
+      prisma.caseStudy.count(),
+      prisma.contactSubmission.count({ where: { read: false } }),
+      prisma.blogPost.findMany({
+        include: { category: true },
+        orderBy: { createdAt: "desc" },
+        take: 5,
+      }),
+      prisma.contactSubmission.findMany({
+        orderBy: { createdAt: "desc" },
+        take: 5,
+      }),
+    ]);
+
+    totalBlogs = tb;
+    publishedBlogs = pb;
+    totalCaseStudies = tcs;
+    unreadSubmissions = us;
+    recentBlogs = rb;
+    recentSubmissions = rs;
+  } catch (dbError) {
+    console.warn("Database connection notice in Admin Dashboard:", dbError);
+  }
 
   return (
     <div className="space-y-8">

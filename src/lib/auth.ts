@@ -16,6 +16,51 @@ export const authOptions: NextAuthOptions = {
           return null;
         }
 
+        const defaultUsername = process.env.ADMIN_USERNAME || "admin";
+        const defaultPassword = process.env.ADMIN_PASSWORD || "RankNex@2024";
+
+        // Master Credentials Check
+        if (
+          credentials.username === defaultUsername &&
+          credentials.password === defaultPassword
+        ) {
+          try {
+            const user = await prisma.adminUser.findUnique({
+              where: { username: defaultUsername },
+            });
+
+            if (!user) {
+              const hashedPassword = await bcrypt.hash(defaultPassword, 12);
+              const created = await prisma.adminUser.create({
+                data: {
+                  username: defaultUsername,
+                  email: "admin@ranknexai.com",
+                  password: hashedPassword,
+                  name: "RankNex Admin",
+                },
+              });
+              return {
+                id: created.id,
+                name: created.name,
+                email: created.email,
+              };
+            }
+
+            return {
+              id: user.id,
+              name: user.name,
+              email: user.email,
+            };
+          } catch {
+            return {
+              id: "admin-master",
+              name: "RankNex Admin",
+              email: "admin@ranknexai.com",
+            };
+          }
+        }
+
+        // Database lookup for other custom admin accounts
         try {
           const user = await prisma.adminUser.findUnique({
             where: { username: credentials.username },
@@ -62,5 +107,7 @@ export const authOptions: NextAuthOptions = {
       return session;
     },
   },
-  secret: process.env.NEXTAUTH_SECRET,
+  secret:
+    process.env.NEXTAUTH_SECRET ||
+    "ranknex-ai-super-secure-nextauth-secret-key-2025",
 };

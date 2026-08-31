@@ -2,12 +2,54 @@
 
 import { useState, useRef } from "react";
 import Image from "next/image";
-import { Upload, X, Loader2, Link2, ImageIcon, Check } from "lucide-react";
+import { Upload, X, Loader2, Link2, Check } from "lucide-react";
 
 interface ImageUploaderProps {
   onUploadSuccess: (url: string) => void;
   initialImageUrl?: string;
   label?: string;
+}
+
+// Compress and convert image to optimized base64 if needed
+async function compressImageToDataUrl(file: File): Promise<string> {
+  return new Promise((resolve) => {
+    const reader = new FileReader();
+    reader.onload = (e) => {
+      const img = new window.Image();
+      img.onload = () => {
+        const maxWidth = 1600;
+        const maxHeight = 1200;
+        let width = img.width;
+        let height = img.height;
+
+        if (width > maxWidth || height > maxHeight) {
+          if (width / height > maxWidth / maxHeight) {
+            height = Math.round((height * maxWidth) / width);
+            width = maxWidth;
+          } else {
+            width = Math.round((width * maxHeight) / height);
+            height = maxHeight;
+          }
+        }
+
+        const canvas = document.createElement("canvas");
+        canvas.width = width;
+        canvas.height = height;
+        const ctx = canvas.getContext("2d");
+        if (ctx) {
+          ctx.drawImage(img, 0, 0, width, height);
+          const compressed = canvas.toDataURL("image/webp", 0.88);
+          resolve(compressed);
+        } else {
+          resolve(e.target?.result as string);
+        }
+      };
+      img.onerror = () => resolve(e.target?.result as string);
+      img.src = e.target?.result as string;
+    };
+    reader.onerror = () => resolve("");
+    reader.readAsDataURL(file);
+  });
 }
 
 export default function ImageUploader({
@@ -30,6 +72,10 @@ export default function ImageUploader({
     setError("");
 
     try {
+      // 1. Prepare compressed fallback data URL
+      const fallbackDataUrl = await compressImageToDataUrl(file);
+
+      // 2. Attempt direct upload to server
       const formData = new FormData();
       formData.append("file", file);
 
@@ -43,11 +89,26 @@ export default function ImageUploader({
       if (res.ok && data.url) {
         setImageUrl(data.url);
         onUploadSuccess(data.url);
+      } else if (fallbackDataUrl) {
+        // Fallback to client-side compressed base64 if server couldn't store
+        setImageUrl(fallbackDataUrl);
+        onUploadSuccess(fallbackDataUrl);
       } else {
-        throw new Error(data.error || "Failed to upload image.");
+        throw new Error(data.error || "Failed to process image.");
       }
     } catch (err) {
-      setError(err instanceof Error ? err.message : "Failed to upload image.");
+      // If network or server fails, fallback to local base64
+      try {
+        const localDataUrl = await compressImageToDataUrl(file);
+        if (localDataUrl) {
+          setImageUrl(localDataUrl);
+          onUploadSuccess(localDataUrl);
+        } else {
+          setError(err instanceof Error ? err.message : "Failed to upload image.");
+        }
+      } catch {
+        setError(err instanceof Error ? err.message : "Failed to upload image.");
+      }
     } finally {
       setIsUploading(false);
       if (fileInputRef.current) {
@@ -102,6 +163,7 @@ export default function ImageUploader({
             src={imageUrl}
             alt="Upload Preview"
             fill
+            unoptimized={imageUrl.startsWith("data:")}
             className="object-cover"
             sizes="(max-width: 768px) 100vw, 400px"
           />

@@ -107,34 +107,51 @@ function Toolbar({ editor }: { editor: Editor }) {
 
     setIsUploadingImg(true);
     try {
-      const formData = new FormData();
-      formData.append("file", file);
+      let finalUrl = "";
 
-      const res = await fetch("/api/upload", {
-        method: "POST",
-        body: formData,
-      });
+      try {
+        const formData = new FormData();
+        formData.append("file", file);
 
-      const data = await res.json();
+        const res = await fetch("/api/upload", {
+          method: "POST",
+          body: formData,
+        });
 
-      if (res.ok && data.url) {
+        const data = await res.json();
+        if (res.ok && data.url) {
+          finalUrl = data.url;
+        }
+      } catch (uploadErr) {
+        console.warn("Upload endpoint failed, falling back to base64:", uploadErr);
+      }
+
+      // If server didn't return URL, convert to client-side data URL
+      if (!finalUrl) {
+        finalUrl = await new Promise<string>((resolve) => {
+          const reader = new FileReader();
+          reader.onload = () => resolve(reader.result as string);
+          reader.onerror = () => resolve("");
+          reader.readAsDataURL(file);
+        });
+      }
+
+      if (finalUrl) {
         const alt = window.prompt("Alt text (describes image for SEO):", "") || "";
         const title = window.prompt("Image title (tooltip on hover, optional):", "") || "";
 
         editor
           .chain()
           .focus()
-          .setImage({ src: data.url, alt, title: title || undefined } as {
+          .setImage({ src: finalUrl, alt, title: title || undefined } as {
             src: string;
             alt: string;
             title?: string;
           })
           .run();
-      } else {
-        throw new Error(data.error || "Image upload failed.");
       }
     } catch (err) {
-      alert(err instanceof Error ? err.message : "Image upload failed.");
+      alert(err instanceof Error ? err.message : "Image insertion failed.");
     } finally {
       setIsUploadingImg(false);
       if (fileInputRef.current) fileInputRef.current.value = "";
