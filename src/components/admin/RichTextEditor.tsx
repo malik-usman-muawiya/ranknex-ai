@@ -2,15 +2,12 @@
 
 import { useCallback, useRef, useState } from "react";
 import { useEditor, EditorContent, type Editor } from "@tiptap/react";
-import { upload } from "@vercel/blob/client";
 import StarterKit from "@tiptap/starter-kit";
 import TiptapImage from "@tiptap/extension-image";
 import LinkExtension from "@tiptap/extension-link";
 import Placeholder from "@tiptap/extension-placeholder";
 
-// Extend the default Image extension so the `title` attribute (shown as a
-// hover tooltip) is preserved in the saved HTML — TipTap's base Image
-// extension only persists `src` and `alt` out of the box.
+// Extend the default Image extension so the `title` attribute is preserved
 const ImageExtension = TiptapImage.extend({
   addAttributes() {
     return {
@@ -24,6 +21,7 @@ const ImageExtension = TiptapImage.extend({
     };
   },
 });
+
 import {
   Bold,
   Italic,
@@ -65,10 +63,10 @@ function ToolbarButton({
       onClick={onClick}
       disabled={disabled}
       title={title}
-      className={`p-2 rounded-lg border transition-colors cursor-pointer disabled:opacity-30 disabled:cursor-not-allowed ${
+      className={`p-2 rounded-xl border transition-all cursor-pointer disabled:opacity-30 disabled:cursor-not-allowed ${
         active
-          ? "bg-teal-500/15 border-teal-500/40 text-teal-400"
-          : "bg-navy-950 border-white/10 text-slate-300 hover:text-white hover:border-teal-500/40"
+          ? "bg-teal-500/15 border-teal-500 text-teal-600 font-bold"
+          : "bg-white border-slate-200 text-slate-700 hover:text-navy-950 hover:border-teal-500/40 hover:bg-teal-500/5 shadow-2xs"
       }`}
     >
       {children}
@@ -80,9 +78,6 @@ function Toolbar({ editor }: { editor: Editor }) {
   const fileInputRef = useRef<HTMLInputElement>(null);
   const [isUploadingImg, setIsUploadingImg] = useState(false);
 
-  // Internal + external linking: prompts for a URL. Accepts full URLs
-  // (https://...) or internal paths (/services/seo, /blog/some-post) so
-  // writers can link to other RankNex AI pages directly from the editor.
   const setLink = useCallback(() => {
     const previousUrl = editor.getAttributes("link").href as string | undefined;
     const url = window.prompt(
@@ -90,7 +85,7 @@ function Toolbar({ editor }: { editor: Editor }) {
       previousUrl || "https://"
     );
 
-    if (url === null) return; // cancelled
+    if (url === null) return;
 
     if (url === "") {
       editor.chain().focus().extendMarkRange("link").unsetLink().run();
@@ -112,23 +107,32 @@ function Toolbar({ editor }: { editor: Editor }) {
 
     setIsUploadingImg(true);
     try {
-      const blob = await upload(file.name, file, {
-        access: "public",
-        handleUploadUrl: "/api/upload",
+      const formData = new FormData();
+      formData.append("file", file);
+
+      const res = await fetch("/api/upload", {
+        method: "POST",
+        body: formData,
       });
 
-      const alt = window.prompt("Alt text (describes the image for SEO & accessibility):", "") || "";
-      const title = window.prompt("Image title (optional, shown as tooltip on hover):", "") || "";
+      const data = await res.json();
 
-      editor
-        .chain()
-        .focus()
-        .setImage({ src: blob.url, alt, title: title || undefined } as {
-          src: string;
-          alt: string;
-          title?: string;
-        })
-        .run();
+      if (res.ok && data.url) {
+        const alt = window.prompt("Alt text (describes image for SEO):", "") || "";
+        const title = window.prompt("Image title (tooltip on hover, optional):", "") || "";
+
+        editor
+          .chain()
+          .focus()
+          .setImage({ src: data.url, alt, title: title || undefined } as {
+            src: string;
+            alt: string;
+            title?: string;
+          })
+          .run();
+      } else {
+        throw new Error(data.error || "Image upload failed.");
+      }
     } catch (err) {
       alert(err instanceof Error ? err.message : "Image upload failed.");
     } finally {
@@ -138,7 +142,7 @@ function Toolbar({ editor }: { editor: Editor }) {
   };
 
   return (
-    <div className="flex flex-wrap items-center gap-1.5 p-2.5 bg-navy-900 border border-white/10 border-b-0 rounded-t-xl sticky top-16 lg:top-0 z-10">
+    <div className="flex flex-wrap items-center gap-1.5 p-2.5 bg-slate-50 border border-slate-200 border-b-0 rounded-t-2xl sticky top-16 lg:top-0 z-10">
       <ToolbarButton
         title="Bold"
         active={editor.isActive("bold")}
@@ -154,7 +158,7 @@ function Toolbar({ editor }: { editor: Editor }) {
         <Italic className="w-4 h-4" />
       </ToolbarButton>
 
-      <span className="w-px h-6 bg-white/10 mx-1" />
+      <span className="w-px h-6 bg-slate-200 mx-1" />
 
       <ToolbarButton
         title="Heading 2"
@@ -171,7 +175,7 @@ function Toolbar({ editor }: { editor: Editor }) {
         <Heading3 className="w-4 h-4" />
       </ToolbarButton>
 
-      <span className="w-px h-6 bg-white/10 mx-1" />
+      <span className="w-px h-6 bg-slate-200 mx-1" />
 
       <ToolbarButton
         title="Bullet List"
@@ -195,7 +199,7 @@ function Toolbar({ editor }: { editor: Editor }) {
         <Quote className="w-4 h-4" />
       </ToolbarButton>
 
-      <span className="w-px h-6 bg-white/10 mx-1" />
+      <span className="w-px h-6 bg-slate-200 mx-1" />
 
       <ToolbarButton title="Insert Link" active={editor.isActive("link")} onClick={setLink}>
         <Link2 className="w-4 h-4" />
@@ -208,11 +212,11 @@ function Toolbar({ editor }: { editor: Editor }) {
         <Link2Off className="w-4 h-4" />
       </ToolbarButton>
       <ToolbarButton title="Insert Image" onClick={triggerImageUpload} disabled={isUploadingImg}>
-        {isUploadingImg ? <Loader2 className="w-4 h-4 animate-spin" /> : <ImageIcon className="w-4 h-4" />}
+        {isUploadingImg ? <Loader2 className="w-4 h-4 animate-spin text-teal-600" /> : <ImageIcon className="w-4 h-4" />}
       </ToolbarButton>
       <input ref={fileInputRef} type="file" accept="image/*" className="hidden" onChange={handleImageFile} />
 
-      <span className="w-px h-6 bg-white/10 mx-1" />
+      <span className="w-px h-6 bg-slate-200 mx-1" />
 
       <ToolbarButton
         title="Undo"
@@ -255,7 +259,7 @@ export default function RichTextEditor({ value, onChange, placeholder }: RichTex
     },
     editorProps: {
       attributes: {
-        class: "tiptap-editor-content",
+        class: "tiptap-editor-content prose prose-slate max-w-none focus:outline-none",
       },
     },
   });
@@ -267,7 +271,7 @@ export default function RichTextEditor({ value, onChange, placeholder }: RichTex
       <Toolbar editor={editor} />
       <EditorContent
         editor={editor}
-        className="w-full bg-navy-950 border border-white/10 rounded-b-xl p-4 min-h-[400px] focus-within:ring-2 focus-within:ring-teal-500/20 focus-within:border-teal-500 [&_.ProseMirror]:min-h-[380px] [&_.ProseMirror]:outline-none"
+        className="w-full bg-white border border-slate-200 rounded-b-2xl p-5 min-h-[400px] text-slate-800 focus-within:ring-2 focus-within:ring-teal-500/20 focus-within:border-teal-500 [&_.ProseMirror]:min-h-[380px] [&_.ProseMirror]:outline-none"
       />
     </div>
   );

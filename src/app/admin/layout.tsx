@@ -14,9 +14,9 @@ export default async function AdminLayout({
     return <>{children}</>;
   }
 
-  // If logged in, render the sidebar and admin dashboard structure
+  // If logged in, render the sidebar and admin dashboard structure with RankNex light theme
   return (
-    <div className="min-h-screen bg-navy-950 text-slate-300">
+    <div className="min-h-screen bg-[#F8FAFC] text-slate-800 antialiased font-sans">
       <AdminSidebar />
       <div className="lg:pl-64 pt-16 lg:pt-0">
         <main className="p-6 sm:p-10 max-w-7xl mx-auto">{children}</main>
