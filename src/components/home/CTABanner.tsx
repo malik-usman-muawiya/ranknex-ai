@@ -22,7 +22,7 @@ export default function CTABanner() {
         <ScrollReveal>
           <div className="relative rounded-3xl overflow-hidden">
             {/* Background */}
-            <div className="absolute inset-0 bg-gradient-to-br from-teal-500/10 via-navy-800/80 to-cyan-400/10" />
+            <div className="absolute inset-0 bg-gradient-to-br from-teal-500/[0.06] via-white to-cyan-400/[0.06]" />
             <div className="absolute inset-0 border border-teal-500/15 rounded-3xl" />
 
             {/* Grid pattern */}
@@ -30,7 +30,7 @@ export default function CTABanner() {
               className="absolute inset-0 opacity-[0.04]"
               style={{
                 backgroundImage:
-                  'radial-gradient(circle, rgba(255,255,255,0.3) 1px, transparent 1px)',
+                  'radial-gradient(circle, rgba(10,15,30,0.4) 1px, transparent 1px)',
                 backgroundSize: '24px 24px',
               }}
             />
