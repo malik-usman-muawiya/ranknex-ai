@@ -55,7 +55,6 @@ export default function BlogEditor({ initialData, categories, mode }: BlogEditor
   });
 
   const titleVal = watch("title");
-  const slugVal = watch("slug");
 
   // Auto-generate slug from title (only in create mode or if slug is empty)
   useEffect(() => {
@@ -105,15 +104,15 @@ export default function BlogEditor({ initialData, categories, mode }: BlogEditor
         <div className="flex items-center gap-3">
           <Link
             href="/admin/blogs"
-            className="p-2 text-slate-400 hover:text-white bg-white/5 hover:bg-white/10 rounded-xl transition-all border border-white/5"
+            className="p-2 text-slate-500 hover:text-navy-950 bg-white hover:bg-slate-50 rounded-xl transition-all border border-slate-200 shadow-2xs"
           >
             <ArrowLeft className="w-5 h-5" />
           </Link>
           <div>
-            <h1 className="text-3xl font-bold font-heading text-white">
+            <h1 className="text-3xl font-bold font-heading text-navy-950">
               {mode === "create" ? "New Blog Post" : "Edit Blog Post"}
             </h1>
-            <p className="text-slate-400 text-sm mt-1">
+            <p className="text-slate-500 text-sm mt-1">
               {mode === "create" ? "Scaffold and compose a new article." : "Refine your existing article content."}
             </p>
           </div>
@@ -139,7 +138,7 @@ export default function BlogEditor({ initialData, categories, mode }: BlogEditor
       </div>
 
       {submitError && (
-        <div className="bg-red-500/10 border border-red-500/20 text-red-400 p-4 rounded-xl text-sm">
+        <div className="bg-rose-50 border border-rose-200 text-rose-700 p-4 rounded-xl text-sm font-medium">
           {submitError}
         </div>
       )}
@@ -148,67 +147,67 @@ export default function BlogEditor({ initialData, categories, mode }: BlogEditor
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
         {/* Main Content Area */}
         <div className="lg:col-span-8 space-y-6">
-          <div className="card bg-navy-900 border border-white/5 p-6 rounded-2xl space-y-6 shadow-xl">
+          <div className="bg-white border border-slate-200/80 p-6 sm:p-8 rounded-2xl space-y-6 shadow-xs">
             {/* Title */}
             <div>
-              <label htmlFor="title" className="block text-sm font-semibold text-slate-300 mb-2">
-                Article Title <span className="text-red-500">*</span>
+              <label htmlFor="title" className="block text-sm font-semibold text-navy-950 mb-2">
+                Article Title <span className="text-rose-500">*</span>
               </label>
               <input
                 type="text"
                 id="title"
                 {...register("title", { required: "Title is required" })}
-                className={`w-full bg-navy-950 border rounded-xl py-3 px-4 text-white text-sm placeholder-slate-600 focus:outline-none focus:ring-2 focus:ring-teal-500/20 ${
-                  errors.title ? "border-red-500/60 focus:border-red-500" : "border-white/10 focus:border-teal-500"
+                className={`w-full bg-slate-50 border rounded-xl py-3 px-4 text-navy-950 text-sm placeholder-slate-400 focus:bg-white focus:outline-none focus:ring-2 focus:ring-teal-500/20 ${
+                  errors.title ? "border-rose-300 focus:border-rose-500" : "border-slate-200 focus:border-teal-500"
                 }`}
                 placeholder="10 SEO Trends to Master in 2025"
               />
-              {errors.title && <p className="text-red-500 text-xs mt-1.5">{errors.title.message}</p>}
+              {errors.title && <p className="text-rose-500 text-xs mt-1.5 font-medium">{errors.title.message}</p>}
             </div>
 
             {/* Slug */}
             <div>
-              <label htmlFor="slug" className="block text-sm font-semibold text-slate-300 mb-2">
-                URL Slug <span className="text-red-500">*</span>
+              <label htmlFor="slug" className="block text-sm font-semibold text-navy-950 mb-2">
+                URL Slug <span className="text-rose-500">*</span>
               </label>
               <input
                 type="text"
                 id="slug"
                 {...register("slug", { required: "Slug is required" })}
-                className={`w-full bg-navy-950 border rounded-xl py-3 px-4 text-white text-sm placeholder-slate-600 focus:outline-none focus:ring-2 focus:ring-teal-500/20 ${
-                  errors.slug ? "border-red-500/60 focus:border-red-500" : "border-white/10 focus:border-teal-500"
+                className={`w-full bg-slate-50 border rounded-xl py-3 px-4 text-navy-950 text-sm placeholder-slate-400 focus:bg-white focus:outline-none focus:ring-2 focus:ring-teal-500/20 ${
+                  errors.slug ? "border-rose-300 focus:border-rose-500" : "border-slate-200 focus:border-teal-500"
                 }`}
                 placeholder="ten-seo-trends-2025"
               />
-              {errors.slug && <p className="text-red-500 text-xs mt-1.5">{errors.slug.message}</p>}
+              {errors.slug && <p className="text-rose-500 text-xs mt-1.5 font-medium">{errors.slug.message}</p>}
             </div>
 
             {/* Excerpt */}
             <div>
-              <label htmlFor="excerpt" className="block text-sm font-semibold text-slate-300 mb-2">
-                Excerpt <span className="text-red-500">*</span>
+              <label htmlFor="excerpt" className="block text-sm font-semibold text-navy-950 mb-2">
+                Excerpt Summary <span className="text-rose-500">*</span>
               </label>
               <textarea
                 id="excerpt"
                 rows={3}
                 {...register("excerpt", { required: "Excerpt summary is required" })}
-                className={`w-full bg-navy-950 border rounded-xl py-3 px-4 text-white text-sm placeholder-slate-600 focus:outline-none focus:ring-2 focus:ring-teal-500/20 ${
-                  errors.excerpt ? "border-red-500/60 focus:border-red-500" : "border-white/10 focus:border-teal-500"
+                className={`w-full bg-slate-50 border rounded-xl py-3 px-4 text-navy-950 text-sm placeholder-slate-400 focus:bg-white focus:outline-none focus:ring-2 focus:ring-teal-500/20 ${
+                  errors.excerpt ? "border-rose-300 focus:border-rose-500" : "border-slate-200 focus:border-teal-500"
                 }`}
-                placeholder="Provide a brief 2-3 sentence summary of the article. This is shown on blog cards and search cards..."
+                placeholder="Provide a brief 2-3 sentence summary of the article..."
               ></textarea>
-              {errors.excerpt && <p className="text-red-500 text-xs mt-1.5">{errors.excerpt.message}</p>}
+              {errors.excerpt && <p className="text-rose-500 text-xs mt-1.5 font-medium">{errors.excerpt.message}</p>}
             </div>
 
-            {/* Rich Content Editor (WordPress-style WYSIWYG) */}
+            {/* Rich Content Editor */}
             <div>
               <div className="flex justify-between items-center mb-2">
-                <label className="block text-sm font-semibold text-slate-300">
-                  Article Body <span className="text-red-500">*</span>
+                <label className="block text-sm font-semibold text-navy-950">
+                  Article Body <span className="text-rose-500">*</span>
                 </label>
-                <span className="text-[10px] text-slate-500 font-bold uppercase tracking-wide bg-white/5 border border-white/5 px-2 py-0.5 rounded flex items-center gap-1">
-                  <Sparkles className="w-3 h-3 text-teal-500" />
-                  Rich Editor
+                <span className="text-[10px] text-teal-700 font-bold uppercase tracking-wide bg-teal-50 border border-teal-200 px-2 py-0.5 rounded flex items-center gap-1">
+                  <Sparkles className="w-3 h-3 text-teal-600" />
+                  WYSIWYG Editor
                 </span>
               </div>
               <input type="hidden" {...register("content", { required: "Body content is required" })} />
@@ -217,7 +216,7 @@ export default function BlogEditor({ initialData, categories, mode }: BlogEditor
                 onChange={(html) => setValue("content", html, { shouldValidate: true, shouldDirty: true })}
                 placeholder="Write your article here. Use the toolbar for headings, bold, lists, links, and images."
               />
-              {errors.content && <p className="text-red-500 text-xs mt-1.5">{errors.content.message}</p>}
+              {errors.content && <p className="text-rose-500 text-xs mt-1.5 font-medium">{errors.content.message}</p>}
             </div>
           </div>
         </div>
@@ -225,16 +224,16 @@ export default function BlogEditor({ initialData, categories, mode }: BlogEditor
         {/* Sidebar Configuration */}
         <div className="lg:col-span-4 space-y-6">
           {/* Main settings card */}
-          <div className="card bg-navy-900 border border-white/5 p-6 rounded-2xl space-y-6 shadow-xl">
+          <div className="bg-white border border-slate-200/80 p-6 rounded-2xl space-y-6 shadow-xs">
             {/* Status (Publish / Draft toggle) */}
             <div>
-              <label htmlFor="status" className="block text-sm font-semibold text-slate-300 mb-2">
+              <label htmlFor="status" className="block text-sm font-semibold text-navy-950 mb-2">
                 Post Status
               </label>
               <select
                 id="status"
                 {...register("status")}
-                className="w-full bg-navy-950 border border-white/10 rounded-xl py-3 px-4 text-slate-300 text-sm focus:outline-none focus:border-teal-500"
+                className="w-full bg-slate-50 border border-slate-200 rounded-xl py-3 px-4 text-navy-950 text-sm focus:bg-white focus:outline-none focus:border-teal-500 cursor-pointer"
               >
                 <option value="DRAFT">Draft</option>
                 <option value="PUBLISHED">Published</option>
@@ -243,13 +242,13 @@ export default function BlogEditor({ initialData, categories, mode }: BlogEditor
 
             {/* Category selection */}
             <div>
-              <label htmlFor="categoryId" className="block text-sm font-semibold text-slate-300 mb-2">
+              <label htmlFor="categoryId" className="block text-sm font-semibold text-navy-950 mb-2">
                 Category
               </label>
               <select
                 id="categoryId"
                 {...register("categoryId")}
-                className="w-full bg-navy-950 border border-white/10 rounded-xl py-3 px-4 text-slate-300 text-sm focus:outline-none focus:border-teal-500"
+                className="w-full bg-slate-50 border border-slate-200 rounded-xl py-3 px-4 text-navy-950 text-sm focus:bg-white focus:outline-none focus:border-teal-500 cursor-pointer"
               >
                 {categories.map((cat) => (
                   <option key={cat.id} value={cat.id}>
@@ -268,49 +267,49 @@ export default function BlogEditor({ initialData, categories, mode }: BlogEditor
 
             {/* Tags (comma separated string) */}
             <div>
-              <label htmlFor="tags" className="block text-sm font-semibold text-slate-300 mb-2">
-                Tags <span className="text-slate-500">(comma separated)</span>
+              <label htmlFor="tags" className="block text-sm font-semibold text-navy-950 mb-2">
+                Tags <span className="text-slate-400 font-normal">(comma separated)</span>
               </label>
               <input
                 type="text"
                 id="tags"
                 {...register("tags")}
-                className="w-full bg-navy-950 border border-white/10 rounded-xl py-3 px-4 text-white text-sm placeholder-slate-600 focus:outline-none focus:border-teal-500"
+                className="w-full bg-slate-50 border border-slate-200 rounded-xl py-3 px-4 text-navy-950 text-sm placeholder-slate-400 focus:bg-white focus:outline-none focus:border-teal-500"
                 placeholder="SEO, Google, Traffic, Marketing"
               />
             </div>
           </div>
 
           {/* SEO meta configuration card */}
-          <div className="card bg-navy-900 border border-white/5 p-6 rounded-2xl space-y-6 shadow-xl">
-            <h3 className="text-base font-bold text-white font-heading border-b border-white/5 pb-3">
-              SEO Optimization
+          <div className="bg-white border border-slate-200/80 p-6 rounded-2xl space-y-6 shadow-xs">
+            <h3 className="text-base font-bold text-navy-950 font-heading border-b border-slate-100 pb-3">
+              SEO Meta Settings
             </h3>
 
             {/* Meta Title */}
             <div>
-              <label htmlFor="metaTitle" className="block text-sm font-semibold text-slate-300 mb-2">
-                Meta Title <span className="text-slate-500">(Optional)</span>
+              <label htmlFor="metaTitle" className="block text-sm font-semibold text-navy-950 mb-2">
+                Meta Title <span className="text-slate-400 font-normal">(Optional)</span>
               </label>
               <input
                 type="text"
                 id="metaTitle"
                 {...register("metaTitle")}
-                className="w-full bg-navy-950 border border-white/10 rounded-xl py-3 px-4 text-white text-sm placeholder-slate-600 focus:outline-none focus:border-teal-500"
+                className="w-full bg-slate-50 border border-slate-200 rounded-xl py-3 px-4 text-navy-950 text-sm placeholder-slate-400 focus:bg-white focus:outline-none focus:border-teal-500"
                 placeholder="Google-optimized title tag"
               />
             </div>
 
             {/* Meta Description */}
             <div>
-              <label htmlFor="metaDescription" className="block text-sm font-semibold text-slate-300 mb-2">
-                Meta Description <span className="text-slate-500">(Optional)</span>
+              <label htmlFor="metaDescription" className="block text-sm font-semibold text-navy-950 mb-2">
+                Meta Description <span className="text-slate-400 font-normal">(Optional)</span>
               </label>
               <textarea
                 id="metaDescription"
                 rows={3}
                 {...register("metaDescription")}
-                className="w-full bg-navy-950 border border-white/10 rounded-xl py-3 px-4 text-white text-sm placeholder-slate-600 focus:outline-none focus:border-teal-500"
+                className="w-full bg-slate-50 border border-slate-200 rounded-xl py-3 px-4 text-navy-950 text-sm placeholder-slate-400 focus:bg-white focus:outline-none focus:border-teal-500"
                 placeholder="Google-optimized meta description tag"
               ></textarea>
             </div>
