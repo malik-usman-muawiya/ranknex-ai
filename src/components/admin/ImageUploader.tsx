@@ -28,11 +28,23 @@ export default function ImageUploader({
     setIsUploading(true);
     setError("");
 
+    // Vercel Blob's client SDK gives no built-in timeout — if the storage
+    // token is missing/misconfigured server-side, the request can hang
+    // indefinitely instead of failing fast. This makes sure the user sees
+    // an actual error instead of a spinner that never resolves.
+    const timeoutMs = 30000;
+    const timeout = new Promise<never>((_, reject) =>
+      setTimeout(() => reject(new Error("Upload timed out. Check that image storage is configured correctly.")), timeoutMs)
+    );
+
     try {
-      const blob = await upload(file.name, file, {
-        access: "public",
-        handleUploadUrl: "/api/upload",
-      });
+      const blob = await Promise.race([
+        upload(file.name, file, {
+          access: "public",
+          handleUploadUrl: "/api/upload",
+        }),
+        timeout,
+      ]);
 
       setImageUrl(blob.url);
       onUploadSuccess(blob.url);

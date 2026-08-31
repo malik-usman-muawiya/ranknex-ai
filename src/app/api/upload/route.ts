@@ -4,6 +4,13 @@ import { authOptions } from "@/lib/auth";
 import { handleUpload, type HandleUploadBody } from "@vercel/blob/client";
 
 export async function POST(request: NextRequest) {
+  if (!process.env.BLOB2_READ_WRITE_TOKEN) {
+    return NextResponse.json(
+      { error: "Image storage is not configured yet. Connect a Blob store to this Vercel project (Storage -> Create Database -> Blob) so BLOB2_READ_WRITE_TOKEN is available." },
+      { status: 500 }
+    );
+  }
+
   const body = (await request.json()) as HandleUploadBody;
 
   try {
